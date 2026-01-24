@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background-light text-primary-dark font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent-gold text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent-gold rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-gold/80;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Page transition wrapper */
+  .page-transition {
+    @apply animate-fade-in;
+  }
+
+  /* Gold accent underline */
+  .gold-underline {
+    @apply relative;
+  }
+
+  .gold-underline::after {
+    content: '';
+    @apply absolute -bottom-2 left-0 w-0 h-px bg-accent-gold transition-all duration-300;
+  }
+
+  .gold-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Section label styles */
+  .section-label {
+    @apply text-accent-gold text-xs uppercase tracking-[0.5em] font-bold flex items-center gap-4;
+  }
+
+  .section-label::before {
+    content: '';
+    @apply h-px w-8 bg-accent-gold;
+  }
+
+  /* Hero title styles */
+  .hero-title {
+    @apply text-6xl md:text-[10rem] font-bold leading-[0.9] tracking-tighter;
+  }
+
+  .hero-title-highlight {
+    @apply text-accent-gold font-serif italic font-light;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-accent-gold text-white px-14 py-6 font-bold uppercase tracking-[0.3em] text-[11px]
+           hover:bg-white hover:text-primary-dark transition-all shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply group flex items-center gap-4 text-[11px] uppercase tracking-[0.4em] font-bold
+           hover:text-accent-gold transition-colors;
+  }
+
+  .btn-outline {
+    @apply px-10 py-4 text-[10px] uppercase tracking-[0.4em] font-bold transition-all
+           border-2 border-white/30 text-white hover:bg-accent-gold hover:border-accent-gold;
+  }
+
+  /* Card styles */
+  .service-card {
+    @apply bg-primary-dark group relative overflow-hidden p-12 md:p-16
+           flex flex-col justify-end min-h-[600px] hover:bg-transparent
+           transition-all duration-700;
+  }
+
+  /* Form input styles */
+  .form-input {
+    @apply relative border-b border-white/20 focus-within:border-accent-gold transition-colors pb-4;
+  }
+
+  .form-label {
+    @apply text-[10px] uppercase tracking-[0.4em] text-accent-gold font-bold mb-4 block;
+  }
+
+  .form-field {
+    @apply w-full bg-transparent text-white text-2xl outline-none placeholder:text-white/10 font-light;
+  }
+
+  /* Contact info card */
+  .contact-info-card {
+    @apply flex items-start gap-10 group;
+  }
+
+  .contact-info-icon {
+    @apply bg-primary-dark p-6 text-accent-gold transition-transform group-hover:scale-110;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-gold to-amber-500 bg-clip-text text-transparent;
+  }
+
+  /* Overlay gradients */
+  .overlay-gradient-dark {
+    @apply bg-gradient-to-r from-primary-dark via-primary-dark/40 to-transparent;
+  }
+
+  .overlay-gradient-bottom {
+    @apply bg-gradient-to-t from-primary-dark via-transparent to-transparent;
+  }
+
+  /* Writing mode for vertical text */
+  .writing-vertical {
+    writing-mode: vertical-lr;
+  }
+}
