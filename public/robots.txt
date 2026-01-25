@@ -1,0 +1,17 @@
+# Robots.txt for RVS Bespoke
+# https://rvsbespoke.co.uk
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rvsbespoke.co.uk/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block common bot paths
+User-agent: *
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /assets/*.map$
