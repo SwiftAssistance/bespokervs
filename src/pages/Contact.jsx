@@ -36,9 +36,11 @@ const Contact = () => {
       <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
+            width={1200}
+            height={800}
             className="w-full h-full object-cover opacity-20"
-            alt="Contact RVS Bespoke"
+            alt="Contact RVS Bespoke furniture makers in Windsor, Berkshire"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>

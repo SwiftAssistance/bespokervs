@@ -11,9 +11,11 @@ const About = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=2000"
+            src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=1200"
+            width={1200}
+            height={800}
             className="w-full h-full object-cover opacity-30"
-            alt="RVS Workshop"
+            alt="RVS Bespoke joinery workshop in Windsor, Berkshire"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
@@ -63,8 +65,11 @@ const About = () => {
       <section className="px-8 bg-white pb-24">
         <div className="max-w-[1200px] mx-auto">
           <img
-            src="https://images.unsplash.com/photo-1540633596541-692790937a09?auto=format&fit=crop&q=80&w=1600"
-            alt="Workshop"
+            src="https://images.unsplash.com/photo-1540633596541-692790937a09?auto=format&fit=crop&q=80&w=1200"
+            width={1200}
+            height={500}
+            loading="lazy"
+            alt="Bespoke furniture workshop with traditional woodworking tools in Windsor"
             className="w-full h-[400px] md:h-[500px] object-cover"
           />
         </div>

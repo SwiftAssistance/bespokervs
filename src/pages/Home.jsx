@@ -134,7 +134,7 @@ const Home = () => {
 
       {/* Services Preview Section */}
       <section className="py-32 md:py-48 px-8 bg-primary-dark relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-32 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-32 pointer-events-none hidden md:block"></div>
 
         <div className="max-w-[1400px] mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">

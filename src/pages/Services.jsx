@@ -11,9 +11,11 @@ const Services = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&q=80&w=2000"
+            src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&q=80&w=1200"
+            width={1200}
+            height={800}
             className="w-full h-full object-cover opacity-30"
-            alt="Bespoke Craftsmanship"
+            alt="Bespoke fitted furniture craftsmanship in Windsor workshop"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
@@ -55,7 +57,10 @@ const Services = () => {
                 <div className="relative overflow-hidden group">
                   <img
                     src={service.heroImage}
-                    alt={service.title}
+                    width={800}
+                    height={500}
+                    loading="lazy"
+                    alt={`${service.title} - Bespoke furniture Windsor`}
                     className="w-full h-[500px] object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                   />
                   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-primary-dark/50 to-transparent"></div>
@@ -196,8 +201,11 @@ const Services = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=1000"
-                alt="Premium Wood Materials"
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800"
+                width={800}
+                height={600}
+                loading="lazy"
+                alt="Premium hardwood materials used in bespoke furniture Windsor"
                 className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/50 to-transparent"></div>
