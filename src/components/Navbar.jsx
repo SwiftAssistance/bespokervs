@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { siteConfig } from '../config/site';
@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const initialMount = useRef(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,24 +17,36 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
+  // Close mobile menu on route change (but not on initial mount)
   useEffect(() => {
+    if (initialMount.current) {
+      initialMount.current = false;
+      return;
+    }
     setIsMenuOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     };
   }, [isMenuOpen]);
 
   const isActive = (path) => location.pathname === path;
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
@@ -97,9 +110,11 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen(true)}
-            className="md:hidden p-3 rounded-full text-white bg-white/10 hover:bg-white/20 transition-colors"
+            type="button"
+            onClick={toggleMenu}
+            className="md:hidden p-3 rounded-full text-white bg-white/10 active:bg-white/30 transition-colors"
             aria-label="Open menu"
+            aria-expanded={isMenuOpen}
           >
             <Menu size={24} />
           </button>
@@ -107,41 +122,51 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-[150] bg-black/50 md:hidden"
+          onClick={closeMenu}
+        />
+      )}
+
+      {/* Mobile Menu Panel */}
       <div
-        className={`fixed inset-0 z-[200] bg-primary-dark transition-all duration-700 transform ${
+        className={`fixed inset-0 z-[200] bg-primary-dark md:hidden transition-transform duration-500 ease-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="p-8 flex justify-end">
           <button
-            onClick={() => setIsMenuOpen(false)}
-            className="text-white p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+            type="button"
+            onClick={closeMenu}
+            className="text-white p-3 bg-white/10 rounded-full active:bg-white/30 transition-colors"
             aria-label="Close menu"
           >
-            <X size={32} />
+            <X size={28} />
           </button>
         </div>
-        <div className="h-[70%] flex flex-col justify-center items-center space-y-12 text-white">
+        <div className="h-[70%] flex flex-col justify-center items-center space-y-10 text-white px-8">
           {siteConfig.navigation.main.map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className={`text-5xl font-light tracking-tighter transition-all ${
+              onClick={closeMenu}
+              className={`text-4xl font-light tracking-tight transition-colors ${
                 isActive(item.path)
                   ? 'text-accent-gold'
-                  : 'hover:text-accent-gold'
+                  : 'active:text-accent-gold'
               }`}
             >
               {item.name}
             </Link>
           ))}
-          <div className="pt-10 flex flex-col items-center gap-4">
+          <div className="pt-8 flex flex-col items-center gap-4">
             <span className="text-accent-gold text-xs uppercase tracking-[0.5em]">
-              Direct Line
+              Call Us
             </span>
             <a
               href={siteConfig.contact.phoneLink}
-              className="text-3xl font-bold tracking-widest hover:text-accent-gold transition-colors"
+              className="text-2xl font-bold tracking-wider active:text-accent-gold transition-colors"
             >
               {siteConfig.contact.phone}
             </a>
