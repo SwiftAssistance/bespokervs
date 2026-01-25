@@ -1,11 +1,8 @@
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import ContactModal from '../components/ContactModal';
 
 const HomeOffice = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const features = [
     'Custom desk to your dimensions',
     'Built-in shelving and storage',
@@ -48,28 +45,26 @@ const HomeOffice = () => {
 
       <div>
         {/* Hero Section */}
-        <section className="relative min-h-[55vh] flex items-center overflow-hidden bg-primary-dark pt-32">
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
-            <div className="w-full h-full bg-gradient-to-br from-primary-dark via-primary-dark to-primary-darker"></div>
-            <div className="absolute inset-0">
-              <div className="absolute top-32 right-20 w-64 h-64 bg-accent-gold/10 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-10 left-32 w-72 h-72 bg-accent-gold/5 rounded-full blur-3xl"></div>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200"
+              width={1200}
+              height={800}
+              className="w-full h-full object-cover opacity-30"
+              alt="Bespoke home office with custom desk and built-in storage in Windsor"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
           </div>
 
-          <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-16">
+          <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px w-12 bg-accent-gold"></div>
-                <span className="text-white/50 text-[11px] uppercase tracking-[0.5em] font-bold">
-                  Home Offices
-                </span>
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold text-white leading-[0.95] tracking-tight mb-6">
+              <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Home Offices</p>
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
                 Work From Home
                 <span className="block text-accent-gold font-serif italic font-light">In Style</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/50 max-w-xl leading-relaxed font-light">
+              <p className="text-xl text-white/70 max-w-xl leading-relaxed">
                 Bespoke desks and study furniture designed for productive remote working.
                 Built-in storage that keeps your workspace organised.
               </p>
@@ -78,14 +73,14 @@ const HomeOffice = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-20 md:py-28 px-8 bg-white">
+        <section className="py-20 md:py-32 px-8 bg-white">
           <div className="max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
+                <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
                   A Proper Place to Work
                 </h2>
-                <div className="space-y-5 text-gray-600 text-lg leading-relaxed">
+                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                   <p>
                     Working from home needs more than a laptop on the kitchen table. A dedicated
                     workspace helps you focus, keeps work separate from home life, and looks
@@ -103,86 +98,81 @@ const HomeOffice = () => {
                   </p>
                 </div>
 
-                <div className="mt-10">
-                  <h3 className="text-lg font-bold text-primary-dark mb-5">What We Include</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold text-primary-dark mb-6">What We Include</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <Check size={16} className="text-accent-gold mt-1 flex-shrink-0" />
-                        <span className="text-gray-600 text-sm">{feature}</span>
+                        <Check size={18} className="text-accent-gold mt-1 flex-shrink-0" />
+                        <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="w-full h-[280px] bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 flex items-center justify-center border border-gray-100">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-accent-gold/10 flex items-center justify-center">
-                      <span className="text-accent-gold text-2xl font-serif italic">O</span>
-                    </div>
-                    <p className="text-gray-400 text-xs uppercase tracking-wider">Office Project</p>
-                  </div>
-                </div>
-                <div className="w-full h-[200px] bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 flex items-center justify-center border border-gray-100">
-                  <div className="text-center">
-                    <p className="text-gray-400 text-xs uppercase tracking-wider">Storage Detail</p>
-                  </div>
-                </div>
+              <div className="space-y-6">
+                <img
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+                  width={800}
+                  height={350}
+                  loading="lazy"
+                  alt="Custom built-in home office desk with shelving in Berkshire"
+                  className="w-full h-[350px] object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=800"
+                  width={800}
+                  height={250}
+                  loading="lazy"
+                  alt="Bespoke study furniture with integrated storage in Windsor home"
+                  className="w-full h-[250px] object-cover"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Solutions Section */}
+        {/* Options Section */}
         <section className="py-20 px-8 bg-background-light">
           <div className="max-w-[1200px] mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-accent-gold text-xs uppercase tracking-[0.5em] font-bold mb-4 block">
-                Options
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight">
-                Office Solutions
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-12 text-center">
+              Office Solutions
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { title: 'Built-In Desk', desc: 'Custom desk fitted into alcoves, under stairs, or along walls. Maximises space while looking seamless.' },
                 { title: 'Study Room', desc: 'Complete home study with desk, bookshelves, filing storage, and seating. A proper room for proper work.' },
                 { title: 'Compact Office', desc: 'Clever solutions for small spaces. Fold-away desks, hidden storage, and dual-purpose furniture.' },
               ].map((item) => (
-                <div key={item.title} className="bg-white p-6 border border-gray-100 hover:border-accent-gold/30 hover:shadow-lg transition-all">
-                  <h3 className="text-lg font-bold text-primary-dark mb-3">{item.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                <div key={item.title} className="bg-white p-8 shadow-sm">
+                  <h3 className="text-xl font-bold text-primary-dark mb-3">{item.title}</h3>
+                  <p className="text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-8 bg-primary-dark">
-          <div className="max-w-[900px] mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+        {/* Areas Served */}
+        <section className="py-16 px-8 bg-white border-t border-gray-100">
+          <div className="max-w-[1200px] mx-auto text-center">
+            <h2 className="text-2xl font-bold text-primary-dark mb-6">
               Home Office Furniture Across Berkshire
             </h2>
-            <p className="text-white/50 mb-8 max-w-xl mx-auto text-sm">
-              We design and install bespoke home offices throughout Windsor, Ascot, Maidenhead, Slough, Eton, Datchet, and Sunningdale.
+            <p className="text-gray-500 mb-8 max-w-2xl mx-auto">
+              We design and install bespoke home offices throughout Windsor and the surrounding areas, including
+              Ascot, Maidenhead, Slough, Eton, Datchet, and Sunningdale.
             </p>
-            <button
-              type="button"
-              onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center gap-3 bg-accent-gold text-white px-10 py-5 font-bold uppercase tracking-widest text-[11px] hover:bg-white hover:text-primary-dark transition-all"
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-3 bg-primary-dark text-white px-10 py-5 font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-accent-gold transition-all"
             >
               Discuss Your Project <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </section>
       </div>
-
-      {/* Contact Modal */}
-      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };
