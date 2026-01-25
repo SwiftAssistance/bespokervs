@@ -33,28 +33,24 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-primary-dark pt-32">
+      <section className="relative min-h-[45vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
-            width={1200}
-            height={800}
-            className="w-full h-full object-cover opacity-20"
-            alt="Contact RVS Bespoke furniture makers in Windsor, Berkshire"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/60 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
+          <div className="w-full h-full bg-gradient-to-br from-primary-dark via-primary-dark to-primary-darker"></div>
+          <div className="absolute inset-0">
+            <div className="absolute top-20 right-32 w-72 h-72 bg-accent-gold/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 left-20 w-56 h-56 bg-accent-gold/5 rounded-full blur-3xl"></div>
+          </div>
         </div>
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-16">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-accent-gold"></div>
-              <span className="text-white/60 text-[11px] uppercase tracking-[0.6em] font-bold">
+              <span className="text-white/50 text-[11px] uppercase tracking-[0.5em] font-bold">
                 {contactPage.hero.title}
               </span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-[0.95] tracking-tight mb-6">
               {contactPage.hero.subtitle.split(' ')[0]} <br />
               <span className="text-accent-gold font-serif italic font-light">
                 {contactPage.hero.subtitle.split(' ').slice(1).join(' ')}
@@ -65,25 +61,25 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section className="py-32 px-8 bg-white">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section className="py-20 md:py-28 px-8 bg-white">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tighter mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-10">
               Let's Start a <br />
               <span className="text-accent-gold font-serif italic font-light">Conversation</span>
             </h2>
 
-            <div className="space-y-10 mb-16">
-              <div className="group contact-info-card">
-                <div className="contact-info-icon">
-                  <MapPin size={28} strokeWidth={1.5} />
+            <div className="space-y-8 mb-12">
+              <div className="flex items-start gap-6 group">
+                <div className="bg-background-light p-4 text-accent-gold group-hover:bg-accent-gold group-hover:text-white transition-colors">
+                  <MapPin size={24} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
+                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-widest mb-2">
                     Location
                   </h5>
-                  <p className="text-2xl font-light text-gray-500 leading-snug">
+                  <p className="text-lg text-gray-500 leading-snug">
                     {siteConfig.contact.address.line1}
                     <br />
                     {siteConfig.contact.address.line2}
@@ -91,73 +87,73 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="group contact-info-card">
-                <div className="contact-info-icon">
-                  <Phone size={28} strokeWidth={1.5} />
+              <div className="flex items-start gap-6 group">
+                <div className="bg-background-light p-4 text-accent-gold group-hover:bg-accent-gold group-hover:text-white transition-colors">
+                  <Phone size={24} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
+                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-widest mb-2">
                     Phone
                   </h5>
                   <a
                     href={siteConfig.contact.phoneLink}
-                    className="text-3xl font-bold text-primary-dark tracking-widest hover:text-accent-gold transition-colors"
+                    className="text-2xl font-bold text-primary-dark tracking-wide hover:text-accent-gold transition-colors"
                   >
                     {siteConfig.contact.phone}
                   </a>
                 </div>
               </div>
 
-              <div className="group contact-info-card">
-                <div className="contact-info-icon">
-                  <Mail size={28} strokeWidth={1.5} />
+              <div className="flex items-start gap-6 group">
+                <div className="bg-background-light p-4 text-accent-gold group-hover:bg-accent-gold group-hover:text-white transition-colors">
+                  <Mail size={24} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
+                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-widest mb-2">
                     Email
                   </h5>
                   <a
                     href={siteConfig.contact.emailLink}
-                    className="text-xl font-light text-gray-500 tracking-tight hover:text-accent-gold transition-colors"
+                    className="text-lg text-gray-500 hover:text-accent-gold transition-colors"
                   >
                     {siteConfig.contact.email}
                   </a>
                 </div>
               </div>
 
-              <div className="group contact-info-card">
-                <div className="contact-info-icon">
-                  <Clock size={28} strokeWidth={1.5} />
+              <div className="flex items-start gap-6 group">
+                <div className="bg-background-light p-4 text-accent-gold group-hover:bg-accent-gold group-hover:text-white transition-colors">
+                  <Clock size={24} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
+                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-widest mb-2">
                     {contactPage.showroom.title}
                   </h5>
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     {contactPage.showroom.hours.map((item, i) => (
-                      <div key={i} className="flex justify-between text-gray-500 max-w-xs">
-                        <span className="font-medium">{item.day}</span>
-                        <span>{item.time}</span>
+                      <div key={i} className="flex justify-between text-gray-500 max-w-[280px] text-sm">
+                        <span>{item.day}</span>
+                        <span className="text-primary-dark">{item.time}</span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm text-gray-400 mt-4 italic">{contactPage.showroom.note}</p>
+                  <p className="text-xs text-gray-400 mt-3">{contactPage.showroom.note}</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-primary-dark p-12 md:p-16 shadow-[0_50px_100px_rgba(0,0,0,0.2)] relative">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 pointer-events-none"></div>
+          <div className="bg-primary-dark p-10 md:p-12 relative">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-accent-gold/10"></div>
 
             {isSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-20">
-                <div className="w-20 h-20 bg-accent-gold rounded-full flex items-center justify-center mb-8">
-                  <CheckCircle size={40} className="text-white" />
+              <div className="h-full flex flex-col items-center justify-center text-center py-16">
+                <div className="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mb-6">
+                  <CheckCircle size={32} className="text-white" />
                 </div>
-                <h4 className="text-white text-3xl font-bold mb-4">Thank You!</h4>
-                <p className="text-white/60 text-lg max-w-sm">
+                <h4 className="text-white text-2xl font-bold mb-3">Thank You!</h4>
+                <p className="text-white/50 text-base max-w-sm">
                   We've received your message and will get back to you within 24 hours.
                 </p>
                 <button
@@ -178,56 +174,64 @@ const Contact = () => {
               </div>
             ) : (
               <>
-                <h4 className="text-white text-3xl font-bold mb-12 tracking-tight">
+                <h4 className="text-white text-2xl font-bold mb-8 tracking-tight">
                   {contactPage.form.title}
                 </h4>
-                <form onSubmit={handleSubmit} className="space-y-10">
-                  <div className="form-input">
-                    <label className="form-label">{contactPage.form.fields.name.label}</label>
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="border-b border-white/20 focus-within:border-accent-gold transition-colors pb-3">
+                    <label className="text-[10px] uppercase tracking-widest text-accent-gold font-bold mb-3 block">
+                      {contactPage.form.fields.name.label}
+                    </label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="form-field"
+                      className="w-full bg-transparent text-white text-lg outline-none placeholder:text-white/20 font-light"
                       placeholder={contactPage.form.fields.name.placeholder}
                     />
                   </div>
 
-                  <div className="form-input">
-                    <label className="form-label">{contactPage.form.fields.email.label}</label>
+                  <div className="border-b border-white/20 focus-within:border-accent-gold transition-colors pb-3">
+                    <label className="text-[10px] uppercase tracking-widest text-accent-gold font-bold mb-3 block">
+                      {contactPage.form.fields.email.label}
+                    </label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="form-field"
+                      className="w-full bg-transparent text-white text-lg outline-none placeholder:text-white/20 font-light"
                       placeholder={contactPage.form.fields.email.placeholder}
                     />
                   </div>
 
-                  <div className="form-input">
-                    <label className="form-label">{contactPage.form.fields.phone.label}</label>
+                  <div className="border-b border-white/20 focus-within:border-accent-gold transition-colors pb-3">
+                    <label className="text-[10px] uppercase tracking-widest text-accent-gold font-bold mb-3 block">
+                      {contactPage.form.fields.phone.label}
+                    </label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="form-field"
+                      className="w-full bg-transparent text-white text-lg outline-none placeholder:text-white/20 font-light"
                       placeholder={contactPage.form.fields.phone.placeholder}
                     />
                   </div>
 
-                  <div className="form-input">
-                    <label className="form-label">{contactPage.form.fields.projectType.label}</label>
+                  <div className="border-b border-white/20 focus-within:border-accent-gold transition-colors pb-3">
+                    <label className="text-[10px] uppercase tracking-widest text-accent-gold font-bold mb-3 block">
+                      {contactPage.form.fields.projectType.label}
+                    </label>
                     <select
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleChange}
                       required
-                      className="form-field appearance-none cursor-pointer"
+                      className="w-full bg-transparent text-white text-lg outline-none appearance-none cursor-pointer font-light"
                     >
                       {contactPage.form.projectTypes.map((type) => (
                         <option key={type} value={type} className="bg-primary-dark">
@@ -237,15 +241,17 @@ const Contact = () => {
                     </select>
                   </div>
 
-                  <div className="form-input">
-                    <label className="form-label">{contactPage.form.fields.message.label}</label>
+                  <div className="border-b border-white/20 focus-within:border-accent-gold transition-colors pb-3">
+                    <label className="text-[10px] uppercase tracking-widest text-accent-gold font-bold mb-3 block">
+                      {contactPage.form.fields.message.label}
+                    </label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows="4"
-                      className="form-field resize-none"
+                      rows="3"
+                      className="w-full bg-transparent text-white text-lg outline-none resize-none placeholder:text-white/20 font-light"
                       placeholder={contactPage.form.fields.message.placeholder}
                     ></textarea>
                   </div>
@@ -253,13 +259,13 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-6 bg-accent-gold text-white font-bold uppercase tracking-[0.5em] text-[11px] hover:bg-white hover:text-primary-dark transition-all shadow-xl flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-5 bg-accent-gold text-white font-bold uppercase tracking-widest text-[11px] hover:bg-white hover:text-primary-dark transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <span className="animate-pulse">Sending...</span>
                     ) : (
                       <>
-                        {contactPage.form.submitButton} <Send size={16} />
+                        {contactPage.form.submitButton} <Send size={14} />
                       </>
                     )}
                   </button>
@@ -271,7 +277,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="h-[500px] bg-gray-200 relative">
+      <section className="h-[400px] bg-gray-200 relative">
         <div className="absolute inset-0 bg-primary-dark/10">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2693867927!2d-0.6168!3d51.4785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI4JzQyLjYiTiAwwrAzNicxMC4xIlc!5e0!3m2!1sen!2suk!4v1234567890"
@@ -284,14 +290,14 @@ const Contact = () => {
             title="RVS Bespoke Location"
           ></iframe>
         </div>
-        <div className="absolute bottom-8 left-8 bg-white p-8 shadow-2xl max-w-sm">
-          <h4 className="font-bold text-primary-dark text-lg mb-2">{company.name}</h4>
-          <p className="text-gray-500 text-sm mb-4">{siteConfig.contact.address.full}</p>
+        <div className="absolute bottom-6 left-6 bg-white p-6 shadow-xl max-w-xs">
+          <h4 className="font-bold text-primary-dark text-base mb-2">{company.name}</h4>
+          <p className="text-gray-500 text-sm mb-3">{siteConfig.contact.address.full}</p>
           <a
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.contact.address.full)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent-gold text-sm font-bold uppercase tracking-widest hover:text-primary-dark transition-colors"
+            className="text-accent-gold text-xs font-bold uppercase tracking-widest hover:text-primary-dark transition-colors"
           >
             Get Directions
           </a>
@@ -299,16 +305,18 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 px-8 bg-background-light">
+      <section className="py-20 md:py-28 px-8 bg-background-light">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="section-label justify-center mb-8">Common Questions</h2>
-            <h3 className="text-4xl md:text-6xl font-bold text-primary-dark tracking-tighter">
+          <div className="text-center mb-12">
+            <span className="text-accent-gold text-xs uppercase tracking-[0.5em] font-bold mb-4 block">
+              Common Questions
+            </span>
+            <h3 className="text-3xl md:text-5xl font-bold text-primary-dark tracking-tight">
               Frequently Asked
             </h3>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-4">
             {[
               {
                 question: 'How long does a typical project take?',
@@ -331,9 +339,9 @@ const Contact = () => {
                   "Absolutely! We encourage clients to visit our workshop on Barry Avenue in Windsor. It's a great opportunity to see our craftsmanship firsthand and discuss your project in detail.",
               },
             ].map((faq, i) => (
-              <div key={i} className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <h4 className="text-xl font-bold text-primary-dark mb-4">{faq.question}</h4>
-                <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
+              <div key={i} className="bg-white p-6 border border-gray-100 hover:border-accent-gold/30 hover:shadow-lg transition-all">
+                <h4 className="text-lg font-bold text-primary-dark mb-3">{faq.question}</h4>
+                <p className="text-gray-500 text-sm leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
