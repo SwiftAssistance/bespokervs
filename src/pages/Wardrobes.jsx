@@ -48,7 +48,9 @@ const Wardrobes = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=2000"
+              src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=1200"
+              width={1200}
+              height={800}
               className="w-full h-full object-cover opacity-30"
               alt="Bespoke fitted wardrobe with custom storage solutions in Windsor"
             />
