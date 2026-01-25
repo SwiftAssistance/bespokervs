@@ -38,7 +38,7 @@ const Home = () => {
               <Link to="/contact" className="btn-primary">
                 {home.hero.cta.primary}
               </Link>
-              <Link to="/services" className="btn-secondary text-white">
+              <Link to="/services" className="group btn-secondary text-white">
                 {home.hero.cta.secondary}{' '}
                 <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
               </Link>
@@ -150,7 +150,7 @@ const Home = () => {
             {services.map((service, i) => (
               <div
                 key={service.id}
-                className="service-card"
+                className="group service-card"
               >
                 <img
                   src={service.image}

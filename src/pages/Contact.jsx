@@ -73,7 +73,7 @@ const Contact = () => {
             </h2>
 
             <div className="space-y-10 mb-16">
-              <div className="contact-info-card">
+              <div className="group contact-info-card">
                 <div className="contact-info-icon">
                   <MapPin size={28} strokeWidth={1.5} />
                 </div>
@@ -89,7 +89,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="contact-info-card">
+              <div className="group contact-info-card">
                 <div className="contact-info-icon">
                   <Phone size={28} strokeWidth={1.5} />
                 </div>
@@ -106,7 +106,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="contact-info-card">
+              <div className="group contact-info-card">
                 <div className="contact-info-icon">
                   <Mail size={28} strokeWidth={1.5} />
                 </div>
@@ -123,7 +123,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="contact-info-card">
+              <div className="group contact-info-card">
                 <div className="contact-info-icon">
                   <Clock size={28} strokeWidth={1.5} />
                 </div>
