@@ -81,7 +81,7 @@
   }
 
   .btn-secondary {
-    @apply group flex items-center gap-4 text-[11px] uppercase tracking-[0.4em] font-bold
+    @apply flex items-center gap-4 text-[11px] uppercase tracking-[0.4em] font-bold
            hover:text-accent-gold transition-colors;
   }
 
@@ -92,7 +92,7 @@
 
   /* Card styles */
   .service-card {
-    @apply bg-primary-dark group relative overflow-hidden p-12 md:p-16
+    @apply bg-primary-dark relative overflow-hidden p-12 md:p-16
            flex flex-col justify-end min-h-[600px] hover:bg-transparent
            transition-all duration-700;
   }
@@ -112,7 +112,7 @@
 
   /* Contact info card */
   .contact-info-card {
-    @apply flex items-start gap-10 group;
+    @apply flex items-start gap-10;
   }
 
   .contact-info-icon {
