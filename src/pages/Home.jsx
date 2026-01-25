@@ -6,7 +6,7 @@ const Home = () => {
   const { home, services, images, company } = siteConfig;
 
   return (
-    <div className="page-transition">
+    <div>
       {/* Hero Section */}
       <section className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-primary-dark">
         <div className="absolute inset-0 z-0">

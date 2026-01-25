@@ -65,7 +65,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-12">
-            {siteConfig.navigation.main.slice(1).map((item) => (
+            {siteConfig.navigation.main.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
