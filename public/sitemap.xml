@@ -12,9 +12,33 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Services Page -->
+  <!-- Services Overview -->
   <url>
     <loc>https://rvsbespoke.co.uk/services</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Bespoke Kitchens -->
+  <url>
+    <loc>https://rvsbespoke.co.uk/kitchens</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Fitted Wardrobes -->
+  <url>
+    <loc>https://rvsbespoke.co.uk/wardrobes</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Home Office -->
+  <url>
+    <loc>https://rvsbespoke.co.uk/home-office</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
