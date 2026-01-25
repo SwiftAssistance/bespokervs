@@ -21,17 +21,17 @@ const Services = () => {
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8 animate-fade-in">
+            <div className="flex items-center gap-4 mb-8">
               <div className="h-px w-12 bg-accent-gold"></div>
               <span className="text-white/60 text-[11px] uppercase tracking-[0.6em] font-bold">
                 Our Expertise
               </span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8 animate-slide-up">
+            <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8">
               Bespoke <br />
               <span className="text-accent-gold font-serif italic font-light">Services.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/60 font-light max-w-2xl leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-white/60 font-light max-w-2xl leading-relaxed">
               From initial consultation to final installation, we bring your vision to life with
               uncompromising attention to detail and craftsmanship.
             </p>

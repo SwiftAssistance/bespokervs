@@ -21,20 +21,20 @@ const Home = () => {
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-4 mb-8 animate-fade-in">
+            <div className="flex items-center gap-4 mb-8">
               <div className="h-px w-12 bg-accent-gold"></div>
               <span className="text-white/60 text-[11px] uppercase tracking-[0.6em] font-bold">
                 {company.established}
               </span>
             </div>
-            <h1 className="hero-title text-white mb-12 animate-slide-up">
+            <h1 className="hero-title text-white mb-12">
               {home.hero.title} <br />
               <span className="hero-title-highlight">{home.hero.titleHighlight}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/60 font-light max-w-2xl mb-16 leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-white/60 font-light max-w-2xl mb-16 leading-relaxed">
               {home.hero.description}
             </p>
-            <div className="flex flex-wrap gap-8 items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-wrap gap-8 items-center">
               <Link to="/contact" className="btn-primary">
                 {home.hero.cta.primary}
               </Link>
