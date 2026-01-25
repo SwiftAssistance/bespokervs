@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import ContactModal from '../components/ContactModal';
 
 const Home = () => {
   const { home, services, images, company } = siteConfig;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div>
@@ -38,9 +41,13 @@ const Home = () => {
               {home.hero.description}
             </p>
             <div className="flex flex-wrap gap-8 items-center">
-              <Link to="/contact" className="btn-primary">
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="btn-primary"
+              >
                 {home.hero.cta.primary}
-              </Link>
+              </button>
               <Link to="/services" className="group btn-secondary text-white">
                 {home.hero.cta.secondary}{' '}
                 <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
@@ -178,12 +185,13 @@ const Home = () => {
                   <p className="text-white/50 font-light leading-relaxed mb-10 max-w-xs">
                     {service.description}
                   </p>
-                  <Link
-                    to="/contact"
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(true)}
                     className="flex items-center gap-4 text-accent-gold font-bold text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-opacity delay-100"
                   >
                     {home.services.cta} <ArrowRight size={14} />
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}
@@ -258,11 +266,18 @@ const Home = () => {
           <p className="text-white/60 text-xl max-w-2xl mx-auto mb-12 font-light">
             Let's discuss your vision and create something exceptional together.
           </p>
-          <Link to="/contact" className="btn-primary inline-block">
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="btn-primary"
+          >
             Start Your Commission
-          </Link>
+          </button>
         </div>
       </section>
+
+      {/* Contact Modal */}
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
