@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import ContactModal from '../components/ContactModal';
 
 const Home = () => {
   const { home, services, images, company } = siteConfig;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div>
@@ -12,8 +15,11 @@ const Home = () => {
         <div className="absolute inset-0 z-0">
           <img
             src={images.hero}
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover opacity-50 scale-105"
             alt="Bespoke fitted kitchen handcrafted by RVS Bespoke in Windsor, Berkshire"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/40 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
@@ -35,9 +41,13 @@ const Home = () => {
               {home.hero.description}
             </p>
             <div className="flex flex-wrap gap-8 items-center">
-              <Link to="/contact" className="btn-primary">
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="btn-primary"
+              >
                 {home.hero.cta.primary}
-              </Link>
+              </button>
               <Link to="/services" className="group btn-secondary text-white">
                 {home.hero.cta.secondary}{' '}
                 <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
@@ -64,6 +74,9 @@ const Home = () => {
               <div className="relative z-10 p-4 border border-gray-100 bg-white shadow-2xl">
                 <img
                   src={images.about}
+                  width={800}
+                  height={600}
+                  loading="lazy"
                   className="w-full grayscale hover:grayscale-0 transition-all duration-1000"
                   alt="RVS Bespoke craftsmen at work in Windsor joinery workshop"
                 />
@@ -128,7 +141,7 @@ const Home = () => {
 
       {/* Services Preview Section */}
       <section className="py-32 md:py-48 px-8 bg-primary-dark relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-32 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-32 pointer-events-none hidden md:block"></div>
 
         <div className="max-w-[1400px] mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
@@ -154,6 +167,9 @@ const Home = () => {
               >
                 <img
                   src={service.image}
+                  width={600}
+                  height={800}
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-60 group-hover:scale-110 transition-all duration-[2s]"
                   alt={`${service.title} - Bespoke furniture Windsor`}
                 />
@@ -169,12 +185,13 @@ const Home = () => {
                   <p className="text-white/50 font-light leading-relaxed mb-10 max-w-xs">
                     {service.description}
                   </p>
-                  <Link
-                    to="/contact"
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(true)}
                     className="flex items-center gap-4 text-accent-gold font-bold text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-opacity delay-100"
                   >
                     {home.services.cta} <ArrowRight size={14} />
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}
@@ -233,6 +250,9 @@ const Home = () => {
         <div className="absolute inset-0">
           <img
             src={images.workshop}
+            width={1200}
+            height={800}
+            loading="lazy"
             className="w-full h-full object-cover opacity-20"
             alt="RVS Bespoke furniture workshop in Windsor, Berkshire"
           />
@@ -246,11 +266,18 @@ const Home = () => {
           <p className="text-white/60 text-xl max-w-2xl mx-auto mb-12 font-light">
             Let's discuss your vision and create something exceptional together.
           </p>
-          <Link to="/contact" className="btn-primary inline-block">
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="btn-primary"
+          >
             Start Your Commission
-          </Link>
+          </button>
         </div>
       </section>
+
+      {/* Contact Modal */}
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

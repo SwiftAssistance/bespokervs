@@ -48,7 +48,9 @@ const Wardrobes = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=2000"
+              src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=1200"
+              width={1200}
+              height={800}
               className="w-full h-full object-cover opacity-30"
               alt="Bespoke fitted wardrobe with custom storage solutions in Windsor"
             />
@@ -112,11 +114,17 @@ const Wardrobes = () => {
               <div className="space-y-6">
                 <img
                   src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800"
+                  width={800}
+                  height={350}
+                  loading="lazy"
                   alt="Custom fitted wardrobe interior with organised storage in Berkshire home"
                   className="w-full h-[350px] object-cover"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800"
+                  width={800}
+                  height={250}
+                  loading="lazy"
                   alt="Bespoke wardrobe doors handcrafted in Windsor workshop"
                   className="w-full h-[250px] object-cover"
                 />
