@@ -48,23 +48,23 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4 text-white/50 text-sm">
               <li>
-                <Link to="/services" className="hover:text-white transition-colors">
+                <Link to="/kitchens" className="hover:text-white transition-colors">
                   Bespoke Kitchens
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-white transition-colors">
+                <Link to="/wardrobes" className="hover:text-white transition-colors">
                   Fitted Wardrobes
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-white transition-colors">
+                <Link to="/home-office" className="hover:text-white transition-colors">
                   Home Offices
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="hover:text-white transition-colors">
-                  Custom Cabinetry
+                  All Services
                 </Link>
               </li>
             </ul>
