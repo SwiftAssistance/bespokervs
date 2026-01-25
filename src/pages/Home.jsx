@@ -13,7 +13,7 @@ const Home = () => {
           <img
             src={images.hero}
             className="w-full h-full object-cover opacity-50 scale-105"
-            alt="RVS Bespoke Joinery"
+            alt="Bespoke fitted kitchen handcrafted by RVS Bespoke in Windsor, Berkshire"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/40 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
@@ -65,7 +65,7 @@ const Home = () => {
                 <img
                   src={images.about}
                   className="w-full grayscale hover:grayscale-0 transition-all duration-1000"
-                  alt="Windsor Joinery Team"
+                  alt="RVS Bespoke craftsmen at work in Windsor joinery workshop"
                 />
               </div>
               <div className="absolute -bottom-10 -right-10 bg-primary-dark p-10 shadow-2xl z-20 hidden md:block">
@@ -155,7 +155,7 @@ const Home = () => {
                 <img
                   src={service.image}
                   className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-60 group-hover:scale-110 transition-all duration-[2s]"
-                  alt={service.title}
+                  alt={`${service.title} - Bespoke furniture Windsor`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/40 to-transparent"></div>
 
@@ -234,7 +234,7 @@ const Home = () => {
           <img
             src={images.workshop}
             className="w-full h-full object-cover opacity-20"
-            alt="Workshop"
+            alt="RVS Bespoke furniture workshop in Windsor, Berkshire"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary-dark/80"></div>
         </div>

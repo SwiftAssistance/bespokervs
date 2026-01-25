@@ -1,94 +1,146 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '../config/site';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-darker pt-32 pb-16 px-8 border-t border-white/5">
+    <footer className="bg-primary-darker pt-32 pb-16 px-8 border-t border-white/5" role="contentinfo">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-20 mb-32">
-          {/* Logo and Tagline */}
-          <div className="md:col-span-6">
-            <Link to="/" className="inline-block">
-              <div className="text-4xl font-bold tracking-tighter text-white mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+          {/* Logo and Contact Info */}
+          <div className="md:col-span-4">
+            <Link to="/" className="inline-block" aria-label="RVS Bespoke - Home">
+              <div className="text-4xl font-bold tracking-tighter text-white mb-8">
                 {siteConfig.company.name.split(' ')[0]}{' '}
                 <span className="text-accent-gold font-light">
                   {siteConfig.company.name.split(' ')[1]}
                 </span>
               </div>
             </Link>
-            <p className="text-white/30 text-lg max-w-md leading-relaxed font-light italic">
-              {siteConfig.footer.tagline}
+            <p className="text-white/40 text-sm leading-relaxed mb-8">
+              Bespoke fitted furniture handcrafted in Windsor. Kitchens, wardrobes & home offices made to measure.
             </p>
+            <div className="space-y-4 text-white/50 text-sm">
+              <a
+                href={siteConfig.contact.phoneLink}
+                className="flex items-center gap-3 hover:text-accent-gold transition-colors"
+                aria-label="Call us"
+              >
+                <Phone size={16} />
+                <span>{siteConfig.contact.phone}</span>
+              </a>
+              <div className="flex items-start gap-3">
+                <MapPin size={16} className="mt-1 flex-shrink-0" />
+                <address className="not-italic">
+                  {siteConfig.contact.address.line1}<br />
+                  {siteConfig.contact.address.line2}
+                </address>
+              </div>
+            </div>
           </div>
 
-          {/* Directory Links */}
+          {/* Services */}
+          <div className="md:col-span-2">
+            <h3 className="text-accent-gold text-[10px] uppercase tracking-[0.4em] font-bold mb-8">
+              Services
+            </h3>
+            <ul className="space-y-4 text-white/50 text-sm">
+              <li>
+                <Link to="/services" className="hover:text-white transition-colors">
+                  Bespoke Kitchens
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-white transition-colors">
+                  Fitted Wardrobes
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-white transition-colors">
+                  Home Offices
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-white transition-colors">
+                  Custom Cabinetry
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Areas We Serve */}
           <div className="md:col-span-3">
-            <h6 className="text-accent-gold text-[10px] uppercase tracking-[0.6em] font-bold mb-10">
-              Directory
-            </h6>
-            <ul className="space-y-6 text-white/50 text-xs font-bold uppercase tracking-[0.2em]">
+            <h3 className="text-accent-gold text-[10px] uppercase tracking-[0.4em] font-bold mb-8">
+              Areas We Serve
+            </h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-white/50 text-sm">
+              <li>Windsor</li>
+              <li>Ascot</li>
+              <li>Maidenhead</li>
+              <li>Slough</li>
+              <li>Eton</li>
+              <li>Datchet</li>
+              <li>Old Windsor</li>
+              <li>Sunningdale</li>
+              <li>Winkfield</li>
+              <li>Berkshire</li>
+            </ul>
+          </div>
+
+          {/* Quick Links & Social */}
+          <div className="md:col-span-3">
+            <h3 className="text-accent-gold text-[10px] uppercase tracking-[0.4em] font-bold mb-8">
+              Company
+            </h3>
+            <ul className="space-y-4 text-white/50 text-sm mb-10">
               {siteConfig.navigation.footer.map((item) => (
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    className="hover:text-white cursor-pointer transition-colors"
+                    className="hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
 
-          {/* Social Links */}
-          <div className="md:col-span-3">
-            <h6 className="text-accent-gold text-[10px] uppercase tracking-[0.6em] font-bold mb-10">
-              Social Connection
-            </h6>
-            <div className="flex items-center gap-8 text-accent-gold">
+            <div className="flex items-center gap-6 text-accent-gold">
               <a
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors"
-                aria-label="Follow us on Instagram"
+                aria-label="Follow RVS Bespoke on Instagram"
               >
-                <Instagram size={24} strokeWidth={1.5} />
+                <Instagram size={22} strokeWidth={1.5} />
               </a>
               <a
                 href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors"
-                aria-label="Follow us on Facebook"
+                aria-label="Follow RVS Bespoke on Facebook"
               >
-                <Facebook size={24} strokeWidth={1.5} />
+                <Facebook size={22} strokeWidth={1.5} />
               </a>
-              <div className="h-10 w-px bg-white/10 mx-2"></div>
-              <div className="text-[9px] text-white/20 uppercase tracking-[0.4em] leading-tight font-bold">
-                {siteConfig.footer.socialLabel.split(' ').slice(0, 2).join(' ')}{' '}
-                <br />
-                {siteConfig.footer.socialLabel.split(' ').slice(2).join(' ')}
-              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/20 uppercase tracking-[0.3em] space-y-6 md:space-y-0 text-center md:text-left font-bold">
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/20 uppercase tracking-[0.2em] space-y-4 md:space-y-0 text-center md:text-left">
           <p>
-            &copy; {currentYear} {siteConfig.footer.copyright}.{' '}
-            {siteConfig.contact.address.full}.
+            &copy; {currentYear} {siteConfig.footer.copyright}. Bespoke furniture makers in Windsor, Berkshire.
           </p>
-          <div className="flex gap-12">
+          <div className="flex gap-8">
             {siteConfig.footer.links.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className="hover:text-white cursor-pointer transition-colors"
+                className="hover:text-white transition-colors"
               >
                 {link.name}
               </Link>
