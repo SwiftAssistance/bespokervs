@@ -46,13 +46,13 @@ const Contact = () => {
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8 animate-fade-in">
+            <div className="flex items-center gap-4 mb-8">
               <div className="h-px w-12 bg-accent-gold"></div>
               <span className="text-white/60 text-[11px] uppercase tracking-[0.6em] font-bold">
                 {contactPage.hero.title}
               </span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8 animate-slide-up">
+            <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8">
               {contactPage.hero.subtitle.split(' ')[0]} <br />
               <span className="text-accent-gold font-serif italic font-light">
                 {contactPage.hero.subtitle.split(' ').slice(1).join(' ')}
