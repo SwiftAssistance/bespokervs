@@ -152,7 +152,7 @@ export const siteConfig = {
   },
 
   // Contact Page Content (Required)
-  contact: {
+  contactPage: {
     hero: {
       title: 'Get In Touch',
       subtitle: 'Visit the Workshop',
