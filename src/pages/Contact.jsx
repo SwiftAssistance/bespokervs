@@ -3,12 +3,12 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 
 const Contact = () => {
-  const { contact, company } = siteConfig;
+  const { contactPage, company } = siteConfig;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    projectType: contact.form.projectTypes[0],
+    projectType: contactPage.form.projectTypes[0],
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -49,13 +49,13 @@ const Contact = () => {
             <div className="flex items-center gap-4 mb-8 animate-fade-in">
               <div className="h-px w-12 bg-accent-gold"></div>
               <span className="text-white/60 text-[11px] uppercase tracking-[0.6em] font-bold">
-                {contact.hero.title}
+                {contactPage.hero.title}
               </span>
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8 animate-slide-up">
-              {contact.hero.subtitle.split(' ')[0]} <br />
+              {contactPage.hero.subtitle.split(' ')[0]} <br />
               <span className="text-accent-gold font-serif italic font-light">
-                {contact.hero.subtitle.split(' ').slice(1).join(' ')}
+                {contactPage.hero.subtitle.split(' ').slice(1).join(' ')}
               </span>
             </h1>
           </div>
@@ -129,17 +129,17 @@ const Contact = () => {
                 </div>
                 <div>
                   <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
-                    {contact.showroom.title}
+                    {contactPage.showroom.title}
                   </h5>
                   <div className="space-y-2">
-                    {contact.showroom.hours.map((item, i) => (
+                    {contactPage.showroom.hours.map((item, i) => (
                       <div key={i} className="flex justify-between text-gray-500 max-w-xs">
                         <span className="font-medium">{item.day}</span>
                         <span>{item.time}</span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm text-gray-400 mt-4 italic">{contact.showroom.note}</p>
+                  <p className="text-sm text-gray-400 mt-4 italic">{contactPage.showroom.note}</p>
                 </div>
               </div>
             </div>
@@ -165,7 +165,7 @@ const Contact = () => {
                       name: '',
                       email: '',
                       phone: '',
-                      projectType: contact.form.projectTypes[0],
+                      projectType: contactPage.form.projectTypes[0],
                       message: '',
                     });
                   }}
@@ -177,11 +177,11 @@ const Contact = () => {
             ) : (
               <>
                 <h4 className="text-white text-3xl font-bold mb-12 tracking-tight">
-                  {contact.form.title}
+                  {contactPage.form.title}
                 </h4>
                 <form onSubmit={handleSubmit} className="space-y-10">
                   <div className="form-input">
-                    <label className="form-label">{contact.form.fields.name.label}</label>
+                    <label className="form-label">{contactPage.form.fields.name.label}</label>
                     <input
                       type="text"
                       name="name"
@@ -189,12 +189,12 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="form-field"
-                      placeholder={contact.form.fields.name.placeholder}
+                      placeholder={contactPage.form.fields.name.placeholder}
                     />
                   </div>
 
                   <div className="form-input">
-                    <label className="form-label">{contact.form.fields.email.label}</label>
+                    <label className="form-label">{contactPage.form.fields.email.label}</label>
                     <input
                       type="email"
                       name="email"
@@ -202,24 +202,24 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="form-field"
-                      placeholder={contact.form.fields.email.placeholder}
+                      placeholder={contactPage.form.fields.email.placeholder}
                     />
                   </div>
 
                   <div className="form-input">
-                    <label className="form-label">{contact.form.fields.phone.label}</label>
+                    <label className="form-label">{contactPage.form.fields.phone.label}</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       className="form-field"
-                      placeholder={contact.form.fields.phone.placeholder}
+                      placeholder={contactPage.form.fields.phone.placeholder}
                     />
                   </div>
 
                   <div className="form-input">
-                    <label className="form-label">{contact.form.fields.projectType.label}</label>
+                    <label className="form-label">{contactPage.form.fields.projectType.label}</label>
                     <select
                       name="projectType"
                       value={formData.projectType}
@@ -227,7 +227,7 @@ const Contact = () => {
                       required
                       className="form-field appearance-none cursor-pointer"
                     >
-                      {contact.form.projectTypes.map((type) => (
+                      {contactPage.form.projectTypes.map((type) => (
                         <option key={type} value={type} className="bg-primary-dark">
                           {type}
                         </option>
@@ -236,7 +236,7 @@ const Contact = () => {
                   </div>
 
                   <div className="form-input">
-                    <label className="form-label">{contact.form.fields.message.label}</label>
+                    <label className="form-label">{contactPage.form.fields.message.label}</label>
                     <textarea
                       name="message"
                       value={formData.message}
@@ -244,7 +244,7 @@ const Contact = () => {
                       required
                       rows="4"
                       className="form-field resize-none"
-                      placeholder={contact.form.fields.message.placeholder}
+                      placeholder={contactPage.form.fields.message.placeholder}
                     ></textarea>
                   </div>
 
@@ -257,7 +257,7 @@ const Contact = () => {
                       <span className="animate-pulse">Sending...</span>
                     ) : (
                       <>
-                        {contact.form.submitButton} <Send size={16} />
+                        {contactPage.form.submitButton} <Send size={16} />
                       </>
                     )}
                   </button>
