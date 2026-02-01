@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
@@ -11,6 +12,15 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>RVS Bespoke | Handcrafted Bespoke Furniture in Windsor, Berkshire</title>
+        <meta name="description" content="Bespoke kitchens, fitted wardrobes and home office furniture handcrafted in our Windsor workshop. Serving Berkshire for over a decade. Free design consultation." />
+        <link rel="canonical" href="https://rvsbespoke.co.uk/" />
+        <meta property="og:title" content="RVS Bespoke | Handcrafted Bespoke Furniture in Windsor" />
+        <meta property="og:description" content="Exceptional handcrafted furniture for kitchens, offices, and living spaces. Built locally in our Windsor workshop for homes across Berkshire." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-primary-dark">
         <div className="absolute inset-0 z-0">

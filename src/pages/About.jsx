@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
@@ -8,6 +9,43 @@ const About = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>About RVS Bespoke | Master Furniture Craftsmen in Windsor, Berkshire</title>
+        <meta name="description" content="RVS Bespoke operates from our workshop at 3 Riverway, Barry Avenue, Windsor. We design and build bespoke kitchens, wardrobes, and home offices for clients across Berkshire." />
+        <link rel="canonical" href="https://rvsbespoke.co.uk/about" />
+        <meta name="keywords" content="about RVS Bespoke, Windsor furniture maker, Berkshire joinery workshop, bespoke craftsmen, Barry Avenue Windsor" />
+        <meta property="og:title" content="About RVS Bespoke | Master Craftsmen in Windsor" />
+        <meta property="og:description" content="Operating from our Windsor workshop, we design and build bespoke fitted furniture for homes across Berkshire." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/about" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About RVS Bespoke",
+          "description": "RVS Bespoke operates from a workshop at 3 Riverway on Barry Avenue in Windsor. We design and build fitted furniture for clients across Berkshire.",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "RVS Bespoke",
+            "description": "Bespoke furniture maker in Windsor, Berkshire",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "3 Riverway, Barry Ave",
+              "addressLocality": "Windsor",
+              "postalCode": "SL4 5JA",
+              "addressCountry": "GB"
+            },
+            "knowsAbout": ["Bespoke Kitchens", "Fitted Wardrobes", "Home Office Furniture", "Custom Joinery"]
+          }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://rvsbespoke.co.uk/about" }
+          ]
+        })}</script>
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">

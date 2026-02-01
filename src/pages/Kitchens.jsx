@@ -42,6 +42,17 @@ const Kitchens = () => {
             "serviceType": "Bespoke Kitchen Design and Installation"
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": "Kitchens", "item": "https://rvsbespoke.co.uk/kitchens" }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div>

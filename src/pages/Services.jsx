@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Check, ChevronRight } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
@@ -8,6 +9,45 @@ const Services = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Bespoke Furniture Services Windsor | Kitchens, Wardrobes & Offices | RVS Bespoke</title>
+        <meta name="description" content="Expert bespoke furniture services in Windsor: handcrafted kitchens, fitted wardrobes, and executive home offices. From design consultation to installation. Free quotes." />
+        <link rel="canonical" href="https://rvsbespoke.co.uk/services" />
+        <meta name="keywords" content="bespoke furniture services Windsor, custom kitchen design Berkshire, fitted wardrobe maker, home office furniture, joinery services Windsor" />
+        <meta property="og:title" content="Bespoke Furniture Services | RVS Bespoke Windsor" />
+        <meta property="og:description" content="From handcrafted kitchens to fitted wardrobes and executive offices. Bespoke furniture services in Windsor, Berkshire." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/services" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Bespoke Furniture Services",
+          "description": "Expert bespoke furniture services from RVS Bespoke in Windsor",
+          "numberOfItems": 3,
+          "itemListElement": services.map((service, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "item": {
+              "@type": "Service",
+              "name": service.title,
+              "description": service.fullDescription,
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "RVS Bespoke"
+              },
+              "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"]
+            }
+          }))
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" }
+          ]
+        })}</script>
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
