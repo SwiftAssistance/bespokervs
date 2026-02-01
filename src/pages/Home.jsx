@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { imgUrl, imgSrcSet } from '../utils/image';
 import ContactModal from '../components/ContactModal';
 
 const Home = () => {
@@ -14,12 +15,15 @@ const Home = () => {
       <section className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-primary-dark">
         <div className="absolute inset-0 z-0">
           <img
-            src={images.hero}
+            src={imgUrl(images.hero, 800)}
+            srcSet={imgSrcSet(images.hero, [400, 800, 1200, 1920])}
+            sizes="100vw"
             width={1920}
             height={1080}
             className="w-full h-full object-cover opacity-50 scale-105"
             alt="Bespoke fitted kitchen handcrafted by RVS Bespoke in Windsor, Berkshire"
             fetchPriority="high"
+            decoding="sync"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/40 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
@@ -73,10 +77,13 @@ const Home = () => {
               <div className="absolute -top-12 -left-12 w-48 h-48 bg-accent-gold/5 rounded-full blur-3xl"></div>
               <div className="relative z-10 p-4 border border-gray-100 bg-white shadow-2xl">
                 <img
-                  src={images.about}
+                  src={imgUrl(images.about, 600)}
+                  srcSet={imgSrcSet(images.about, [300, 600, 800])}
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                   width={800}
                   height={600}
                   loading="lazy"
+                  decoding="async"
                   className="w-full grayscale hover:grayscale-0 transition-all duration-1000"
                   alt="RVS Bespoke craftsmen at work in Windsor joinery workshop"
                 />
@@ -166,10 +173,13 @@ const Home = () => {
                 className="group service-card"
               >
                 <img
-                  src={service.image}
+                  src={imgUrl(service.image, 400)}
+                  srcSet={imgSrcSet(service.image, [300, 600, 800])}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   width={600}
                   height={800}
                   loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-60 group-hover:scale-110 transition-all duration-[2s]"
                   alt={`${service.title} - Bespoke furniture Windsor`}
                 />
@@ -249,10 +259,13 @@ const Home = () => {
       <section className="py-32 px-8 bg-primary-dark relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={images.workshop}
+            src={imgUrl(images.workshop, 600)}
+            srcSet={imgSrcSet(images.workshop, [400, 800, 1200])}
+            sizes="100vw"
             width={1200}
             height={800}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover opacity-20"
             alt="RVS Bespoke furniture workshop in Windsor, Berkshire"
           />

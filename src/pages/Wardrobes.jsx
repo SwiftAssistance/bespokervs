@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { imgUrl, imgSrcSet } from '../utils/image';
 
 const Wardrobes = () => {
   const features = [
@@ -48,11 +49,14 @@ const Wardrobes = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=1200"
+              src={imgUrl('https://images.unsplash.com/photo-1558997519-83ea9252edf8', 800)}
+              srcSet={imgSrcSet('https://images.unsplash.com/photo-1558997519-83ea9252edf8', [400, 800, 1200])}
+              sizes="100vw"
               width={1200}
               height={800}
               className="w-full h-full object-cover opacity-30"
               alt="Bespoke fitted wardrobe with custom storage solutions in Windsor"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
           </div>
@@ -113,18 +117,24 @@ const Wardrobes = () => {
 
               <div className="space-y-6">
                 <img
-                  src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800"
+                  src={imgUrl('https://images.unsplash.com/photo-1595428774223-ef52624120d2', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1595428774223-ef52624120d2', [400, 600, 800])}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
                   loading="lazy"
+                  decoding="async"
                   alt="Custom fitted wardrobe interior with organised storage in Berkshire home"
                   className="w-full h-[350px] object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800"
+                  src={imgUrl('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', [400, 600, 800])}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={250}
                   loading="lazy"
+                  decoding="async"
                   alt="Bespoke wardrobe doors handcrafted in Windsor workshop"
                   className="w-full h-[250px] object-cover"
                 />

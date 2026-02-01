@@ -65,8 +65,8 @@ export const siteConfig = {
         'Hand-finished surfaces',
         'Lifetime structural warranty',
       ],
-      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=1200',
-      heroImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=2000',
+      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=75&w=800',
+      heroImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=75&w=1200',
     },
     {
       id: 'offices',
@@ -82,8 +82,8 @@ export const siteConfig = {
         'Reception area design',
         'Acoustic panel integration',
       ],
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
-      heroImage: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=2000',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=75&w=800',
+      heroImage: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=75&w=1200',
     },
     {
       id: 'wardrobes',
@@ -99,8 +99,8 @@ export const siteConfig = {
         'Accessories and organizers',
         'Color-matched to your decor',
       ],
-      image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=1200',
-      heroImage: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=80&w=2000',
+      image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=75&w=800',
+      heroImage: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&q=75&w=1200',
     },
   ],
 
@@ -265,9 +265,9 @@ export const siteConfig = {
 
   // Images (Required)
   images: {
-    hero: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=95&w=2400',
-    about: 'https://images.unsplash.com/photo-1540633596541-692790937a09?auto=format&fit=crop&q=80&w=1000',
-    workshop: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=1200',
+    hero: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920',
+    about: 'https://images.unsplash.com/photo-1540633596541-692790937a09?auto=format&fit=crop&q=75&w=800',
+    workshop: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=75&w=800',
   },
 
   // SEO Configuration (Required)
