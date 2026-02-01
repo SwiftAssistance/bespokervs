@@ -5,7 +5,6 @@
 /* Base Styles */
 @layer base {
   html {
-    scroll-behavior: smooth;
     overflow-x: hidden;
   }
 
@@ -35,6 +34,12 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-accent-gold/80;
   }
+}
+
+/* Defer rendering of below-fold content for faster FCP/LCP */
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 /* Component Styles */

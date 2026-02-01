@@ -33,16 +33,10 @@ const Navbar = () => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  // Prevent body scroll when mobile menu is open
+  // Prevent body scroll when mobile menu is open — use class to avoid forced reflow
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
+    document.documentElement.classList.toggle('overflow-hidden', isMenuOpen);
+    return () => document.documentElement.classList.remove('overflow-hidden');
   }, [isMenuOpen]);
 
   const isActive = (path) => location.pathname === path;

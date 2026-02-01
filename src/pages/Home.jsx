@@ -15,15 +15,14 @@ const Home = () => {
       <section className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-primary-dark">
         <div className="absolute inset-0 z-0">
           <img
-            src={imgUrl(images.hero, 800)}
-            srcSet={imgSrcSet(images.hero, [400, 800, 1200, 1920])}
+            src={imgUrl(images.hero, 800, 60)}
+            srcSet={imgSrcSet(images.hero, [400, 800, 1200, 1920], 60)}
             sizes="100vw"
             width={1920}
             height={1080}
-            className="w-full h-full object-cover opacity-50 scale-105"
+            className="w-full h-full object-cover opacity-50"
             alt="Bespoke fitted kitchen handcrafted by RVS Bespoke in Windsor, Berkshire"
             fetchPriority="high"
-            decoding="sync"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/40 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
@@ -70,7 +69,7 @@ const Home = () => {
       </section>
 
       {/* About Preview Section */}
-      <section className="py-32 md:py-48 px-8 bg-white overflow-hidden">
+      <section className="py-32 md:py-48 px-8 bg-white overflow-hidden below-fold">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
             <div className="lg:col-span-5 relative">
@@ -147,7 +146,7 @@ const Home = () => {
       </section>
 
       {/* Services Preview Section */}
-      <section className="py-32 md:py-48 px-8 bg-primary-dark relative overflow-hidden">
+      <section className="py-32 md:py-48 px-8 bg-primary-dark relative overflow-hidden below-fold">
         <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-32 pointer-events-none hidden md:block"></div>
 
         <div className="max-w-[1400px] mx-auto relative z-10">
@@ -219,7 +218,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-32 md:py-48 px-8 bg-background-light">
+      <section className="py-32 md:py-48 px-8 bg-background-light below-fold">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-20">
             <h2 className="section-label justify-center mb-8">
@@ -256,7 +255,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-8 bg-primary-dark relative overflow-hidden">
+      <section className="py-32 px-8 bg-primary-dark relative overflow-hidden below-fold">
         <div className="absolute inset-0">
           <img
             src={imgUrl(images.workshop, 600)}
