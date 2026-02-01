@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { imgUrl, imgSrcSet } from '../utils/image';
 
 const HomeOffice = () => {
   const features = [
@@ -48,11 +49,14 @@ const HomeOffice = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200"
+              src={imgUrl('https://images.unsplash.com/photo-1497366811353-6870744d04b2', 800)}
+              srcSet={imgSrcSet('https://images.unsplash.com/photo-1497366811353-6870744d04b2', [400, 800, 1200])}
+              sizes="100vw"
               width={1200}
               height={800}
               className="w-full h-full object-cover opacity-30"
               alt="Bespoke home office with custom desk and built-in storage in Windsor"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
           </div>
@@ -113,18 +117,24 @@ const HomeOffice = () => {
 
               <div className="space-y-6">
                 <img
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+                  src={imgUrl('https://images.unsplash.com/photo-1497366216548-37526070297c', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1497366216548-37526070297c', [400, 600, 800])}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
                   loading="lazy"
+                  decoding="async"
                   alt="Custom built-in home office desk with shelving in Berkshire"
                   className="w-full h-[350px] object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=800"
+                  src={imgUrl('https://images.unsplash.com/photo-1556761175-4b46a572b786', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1556761175-4b46a572b786', [400, 600, 800])}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={250}
                   loading="lazy"
+                  decoding="async"
                   alt="Bespoke study furniture with integrated storage in Windsor home"
                   className="w-full h-[250px] object-cover"
                 />

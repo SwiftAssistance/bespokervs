@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, ChevronRight } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { imgUrl, imgSrcSet } from '../utils/image';
 
 const Services = () => {
   const { services, company } = siteConfig;
@@ -11,11 +12,14 @@ const Services = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&q=80&w=1200"
+            src={imgUrl('https://images.unsplash.com/photo-1615529182904-14819c35db37', 800)}
+            srcSet={imgSrcSet('https://images.unsplash.com/photo-1615529182904-14819c35db37', [400, 800, 1200])}
+            sizes="100vw"
             width={1200}
             height={800}
             className="w-full h-full object-cover opacity-30"
             alt="Bespoke fitted furniture craftsmanship in Windsor workshop"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/60 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
@@ -56,10 +60,13 @@ const Services = () => {
                 <div className="absolute -top-8 -left-8 w-32 h-32 bg-accent-gold/10 rounded-full blur-3xl"></div>
                 <div className="relative overflow-hidden group">
                   <img
-                    src={service.heroImage}
+                    src={imgUrl(service.heroImage, 600)}
+                    srcSet={imgSrcSet(service.heroImage, [400, 600, 800, 1200])}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     width={800}
                     height={500}
                     loading="lazy"
+                    decoding="async"
                     alt={`${service.title} - Bespoke furniture Windsor`}
                     className="w-full h-[500px] object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                   />
@@ -201,10 +208,13 @@ const Services = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800"
+                src={imgUrl('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', 600)}
+                srcSet={imgSrcSet('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', [400, 600, 800])}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 width={800}
                 height={600}
                 loading="lazy"
+                decoding="async"
                 alt="Premium hardwood materials used in bespoke furniture Windsor"
                 className="w-full h-[600px] object-cover"
               />

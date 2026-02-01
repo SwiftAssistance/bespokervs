@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { imgUrl, imgSrcSet } from '../utils/image';
 
 const Kitchens = () => {
   const features = [
@@ -48,11 +49,14 @@ const Kitchens = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=1200"
+              src={imgUrl('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136', 800)}
+              srcSet={imgSrcSet('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136', [400, 800, 1200])}
+              sizes="100vw"
               width={1200}
               height={800}
               className="w-full h-full object-cover opacity-30"
               alt="Bespoke fitted kitchen handcrafted in Windsor by RVS Bespoke"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
           </div>
@@ -113,18 +117,24 @@ const Kitchens = () => {
 
               <div className="space-y-6">
                 <img
-                  src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=800"
+                  src={imgUrl('https://images.unsplash.com/photo-1556911220-e15b29be8c8f', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1556911220-e15b29be8c8f', [400, 600, 800])}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
                   loading="lazy"
+                  decoding="async"
                   alt="Bespoke kitchen island with granite worktop in Windsor home"
                   className="w-full h-[350px] object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800"
+                  src={imgUrl('https://images.unsplash.com/photo-1600585154340-be6161a56a0c', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1600585154340-be6161a56a0c', [400, 600, 800])}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={250}
                   loading="lazy"
+                  decoding="async"
                   alt="Custom fitted kitchen cabinetry handmade in Berkshire"
                   className="w-full h-[250px] object-cover"
                 />

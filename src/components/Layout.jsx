@@ -6,9 +6,9 @@ import Footer from './Footer';
 const Layout = ({ children }) => {
   const { pathname } = useLocation();
 
-  // Scroll to top on route change
+  // Scroll to top on route change — use instant to avoid forced reflow
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
 
   return (
