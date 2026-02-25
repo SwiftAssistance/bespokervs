@@ -54,7 +54,7 @@ const Navbar = () => {
   }, []);
 
   const isActive = (path) => location.pathname === path;
-  const isRoomActive = () => siteConfig.rooms.some((room) => location.pathname === room.path);
+  const isServiceActive = () => siteConfig.rooms.some((room) => location.pathname === room.path);
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
@@ -88,6 +88,9 @@ const Navbar = () => {
                   {siteConfig.company.name.split(' ')[1]}
                 </span>
               </span>
+              <span className="text-[9px] uppercase tracking-[0.35em] text-white/40 mt-1.5">
+                {siteConfig.company.established}
+              </span>
               <div className="h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-accent-gold mt-1"></div>
             </div>
           </Link>
@@ -101,7 +104,7 @@ const Navbar = () => {
                     type="button"
                     onClick={() => setDropdownOpen(prev => !prev)}
                     className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative group flex items-center gap-1.5 ${
-                      isRoomActive()
+                      isServiceActive()
                         ? 'text-accent-gold'
                         : 'text-white/80 hover:text-accent-gold'
                     }`}
@@ -110,7 +113,7 @@ const Navbar = () => {
                     <ChevronDown size={12} className={`transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
                     <span
                       className={`absolute -bottom-2 left-0 h-px bg-accent-gold transition-all ${
-                        isRoomActive() ? 'w-full' : 'w-0 group-hover:w-full'
+                        isServiceActive() ? 'w-full' : 'w-0 group-hover:w-full'
                       }`}
                     ></span>
                   </button>
