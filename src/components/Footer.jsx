@@ -20,7 +20,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-8">
-              Bespoke fitted furniture handcrafted in Windsor. Kitchens, wardrobes & home offices made to measure.
+              Bespoke fitted furniture for every room, handcrafted in Windsor. Made to measure for your home.
             </p>
             <div className="space-y-4 text-white/50 text-sm">
               <a
@@ -41,32 +41,19 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Fitted Furniture */}
           <div className="md:col-span-2">
             <h3 className="text-accent-gold text-[10px] uppercase tracking-[0.4em] font-bold mb-8">
-              Services
+              Fitted Furniture
             </h3>
             <ul className="space-y-4 text-white/50 text-sm">
-              <li>
-                <Link to="/kitchens" className="hover:text-white transition-colors">
-                  Bespoke Kitchens
-                </Link>
-              </li>
-              <li>
-                <Link to="/wardrobes" className="hover:text-white transition-colors">
-                  Fitted Wardrobes
-                </Link>
-              </li>
-              <li>
-                <Link to="/home-office" className="hover:text-white transition-colors">
-                  Home Offices
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-white transition-colors">
-                  All Services
-                </Link>
-              </li>
+              {siteConfig.rooms.map((room) => (
+                <li key={room.id}>
+                  <Link to={room.path} className="hover:text-white transition-colors">
+                    {room.shortTitle}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
