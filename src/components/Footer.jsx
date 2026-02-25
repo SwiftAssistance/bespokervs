@@ -44,7 +44,7 @@ const Footer = () => {
           {/* Fitted Furniture */}
           <div className="md:col-span-2">
             <h3 className="text-accent-gold text-[10px] uppercase tracking-[0.4em] font-bold mb-8">
-              Fitted Furniture
+              Services
             </h3>
             <ul className="space-y-4 text-white/50 text-sm">
               {siteConfig.rooms.map((room) => (

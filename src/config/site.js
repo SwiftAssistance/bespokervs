@@ -11,7 +11,7 @@ export const siteConfig = {
     fullName: 'RVS Bespoke Furniture Ltd',
     tagline: 'Bespoke Excellence',
     description: 'Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire.',
-    established: 'ESTABLISHED IN WINDSOR',
+    established: 'Storage Solutions',
   },
 
   // Contact Information (Required)
@@ -38,7 +38,7 @@ export const siteConfig = {
     main: [
       { name: 'Home', path: '/' },
       {
-        name: 'Rooms',
+        name: 'Services',
         path: '/living-room',
         children: [
           { name: 'Living Room', path: '/living-room' },
@@ -223,7 +223,7 @@ export const siteConfig = {
       description: 'Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire.',
       cta: {
         primary: 'Begin Your Project',
-        secondary: 'Explore Rooms',
+        secondary: 'Explore Services',
       },
       scrollHint: 'Scroll to discover',
     },
@@ -234,7 +234,7 @@ export const siteConfig = {
       description: 'Operating from our specialized workshop at 3 Riverway on Barry Ave, RVS Bespoke is a family-rooted business dedicated to the art of fine joinery.',
       cta: 'Meet the Craftsmen',
     },
-    rooms: {
+    services: {
       sectionTitle: 'The Studio',
       title: 'Fitted Furniture.',
       quote: '"Every piece is a unique dialogue between the wood and your home."',
