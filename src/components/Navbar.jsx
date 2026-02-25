@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const location = useLocation();
   const initialMount = useRef(true);
   const dropdownRef = useRef(null);
@@ -34,6 +35,7 @@ const Navbar = () => {
     }
     setIsMenuOpen(false);
     setDropdownOpen(false);
+    setMobileDropdownOpen(false);
   }, [location.pathname]);
 
   // Prevent body scroll when mobile menu is open — use class to avoid forced reflow
@@ -100,23 +102,35 @@ const Navbar = () => {
             {siteConfig.navigation.main.map((item) =>
               item.children ? (
                 <div key={item.name} className="relative" ref={dropdownRef}>
-                  <button
-                    type="button"
-                    onClick={() => setDropdownOpen(prev => !prev)}
-                    className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative group flex items-center gap-1.5 ${
-                      isServiceActive()
-                        ? 'text-accent-gold'
-                        : 'text-white/80 hover:text-accent-gold'
-                    }`}
-                  >
-                    {item.name}
-                    <ChevronDown size={12} className={`transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
-                    <span
-                      className={`absolute -bottom-2 left-0 h-px bg-accent-gold transition-all ${
-                        isServiceActive() ? 'w-full' : 'w-0 group-hover:w-full'
+                  <div className="flex items-center gap-1.5">
+                    <Link
+                      to={item.path}
+                      className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative group ${
+                        isServiceActive() || isActive(item.path)
+                          ? 'text-accent-gold'
+                          : 'text-white/80 hover:text-accent-gold'
                       }`}
-                    ></span>
-                  </button>
+                    >
+                      {item.name}
+                      <span
+                        className={`absolute -bottom-2 left-0 h-px bg-accent-gold transition-all ${
+                          isServiceActive() || isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                        }`}
+                      ></span>
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setDropdownOpen(prev => !prev)}
+                      className={`transition-all ${
+                        isServiceActive() || isActive(item.path)
+                          ? 'text-accent-gold'
+                          : 'text-white/80 hover:text-accent-gold'
+                      }`}
+                      aria-label="Toggle services menu"
+                    >
+                      <ChevronDown size={12} className={`transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                  </div>
                   {dropdownOpen && (
                     <div className="absolute top-full left-0 mt-4 bg-primary-dark border border-white/10 shadow-2xl min-w-[220px] py-2">
                       {item.children.map((child) => (
@@ -206,24 +220,48 @@ const Navbar = () => {
         <div className="flex flex-col items-center space-y-8 text-white px-8 pb-16">
           {siteConfig.navigation.main.map((item) =>
             item.children ? (
-              <div key={item.name} className="flex flex-col items-center space-y-4">
-                <span className="text-accent-gold text-xs uppercase tracking-[0.5em]">
-                  {item.name}
-                </span>
-                {item.children.map((child) => (
+              <div key={item.name} className="flex flex-col items-center">
+                <div className="flex items-center gap-3">
                   <Link
-                    key={child.name}
-                    to={child.path}
+                    to={item.path}
                     onClick={closeMenu}
-                    className={`text-2xl font-light tracking-tight transition-colors ${
-                      isActive(child.path)
+                    className={`text-4xl font-light tracking-tight transition-colors ${
+                      isActive(item.path) || isServiceActive()
                         ? 'text-accent-gold'
                         : 'active:text-accent-gold'
                     }`}
                   >
-                    {child.name}
+                    {item.name}
                   </Link>
-                ))}
+                  <button
+                    type="button"
+                    onClick={() => setMobileDropdownOpen(prev => !prev)}
+                    className="text-white/60 active:text-accent-gold p-2"
+                    aria-label="Toggle services list"
+                  >
+                    <ChevronDown size={20} className={`transition-transform duration-300 ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
+                <div
+                  className={`flex flex-col items-center space-y-3 overflow-hidden transition-all duration-300 ${
+                    mobileDropdownOpen ? 'max-h-[500px] mt-4 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.name}
+                      to={child.path}
+                      onClick={closeMenu}
+                      className={`text-xl font-light tracking-tight transition-colors ${
+                        isActive(child.path)
+                          ? 'text-accent-gold'
+                          : 'text-white/60 active:text-accent-gold'
+                      }`}
+                    >
+                      {child.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             ) : (
               <Link
