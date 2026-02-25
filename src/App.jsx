@@ -11,6 +11,7 @@ const Kitchen = lazy(() => import('./pages/Kitchen'));
 const Cloakroom = lazy(() => import('./pages/Cloakroom'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Services = lazy(() => import('./pages/Services'));
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/bathroom" element={<Bathroom />} />
           <Route path="/kitchen" element={<Kitchen />} />
           <Route path="/cloakroom" element={<Cloakroom />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           {/* Catch-all route for 404 */}

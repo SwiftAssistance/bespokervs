@@ -39,7 +39,7 @@ export const siteConfig = {
       { name: 'Home', path: '/' },
       {
         name: 'Services',
-        path: '/living-room',
+        path: '/services',
         children: [
           { name: 'Living Room', path: '/living-room' },
           { name: 'Bedroom', path: '/bedroom' },
