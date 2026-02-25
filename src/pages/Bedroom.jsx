@@ -3,30 +3,30 @@ import { ArrowRight, Check } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
-const Kitchens = () => {
+const Bedroom = () => {
   const features = [
-    'Custom cabinetry with dovetail joints',
-    'Solid hardwood and premium materials',
-    'Soft-close drawers and hinges',
-    'Integrated appliance solutions',
-    'Bespoke island designs',
-    'Granite, quartz or timber worktops',
-    'Hand-painted or natural finishes',
-    'Lifetime structural warranty',
+    'Made-to-measure fitted wardrobes',
+    'Hinged or sliding door options',
+    'Custom internal layouts and organisers',
+    'Bedside tables and headboard units',
+    'Fitted dressing tables and vanity areas',
+    'Soft-close mechanisms throughout',
+    'Integrated LED lighting',
+    'Painted or timber finishes',
   ];
 
   return (
     <>
       <Helmet>
-        <title>Bespoke Kitchens Windsor | Handmade Fitted Kitchens | RVS Bespoke</title>
-        <meta name="description" content="Handcrafted bespoke kitchens in Windsor, Berkshire. Custom fitted kitchens designed and built in our local workshop. Serving Ascot, Maidenhead, Slough. Free design consultation." />
-        <meta name="keywords" content="bespoke kitchens Windsor, fitted kitchens Berkshire, handmade kitchens Ascot, custom kitchen design Maidenhead, luxury kitchens Slough, kitchen fitters Windsor, shaker kitchens Windsor, contemporary kitchens Berkshire" />
-        <link rel="canonical" href="https://rvsbespoke.co.uk/kitchens" />
+        <title>Fitted Bedroom Furniture Windsor | Bespoke Wardrobes & Storage | RVS Bespoke</title>
+        <meta name="description" content="Bespoke fitted bedroom furniture in Windsor, Berkshire. Custom wardrobes, dressing tables, and bedroom storage. Handcrafted in our workshop. Free consultation." />
+        <meta name="keywords" content="fitted bedroom furniture Windsor, bespoke wardrobes Berkshire, fitted wardrobes Ascot, custom bedroom storage Maidenhead, built-in wardrobes Windsor" />
+        <link rel="canonical" href="https://rvsbespoke.co.uk/bedroom" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Bespoke Kitchens Windsor",
+            "name": "Fitted Bedroom Furniture Windsor",
             "provider": {
               "@type": "LocalBusiness",
               "name": "RVS Bespoke",
@@ -38,8 +38,8 @@ const Kitchens = () => {
               }
             },
             "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
-            "description": "Handcrafted bespoke kitchens designed and built in our Windsor workshop. Custom fitted kitchens using premium materials and traditional joinery.",
-            "serviceType": "Bespoke Kitchen Design and Installation"
+            "description": "Bespoke fitted bedroom furniture designed and built in our Windsor workshop. Custom wardrobes, dressing tables, and bedroom storage solutions.",
+            "serviceType": "Fitted Bedroom Furniture Design and Installation"
           })}
         </script>
         <script type="application/ld+json">
@@ -48,8 +48,7 @@ const Kitchens = () => {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
-              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
-              { "@type": "ListItem", "position": 3, "name": "Kitchens", "item": "https://rvsbespoke.co.uk/kitchens" }
+              { "@type": "ListItem", "position": 2, "name": "Bedroom", "item": "https://rvsbespoke.co.uk/bedroom" }
             ]
           })}
         </script>
@@ -60,13 +59,13 @@ const Kitchens = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src={imgUrl('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136', 800)}
-              srcSet={imgSrcSet('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136', [400, 800, 1200])}
+              src={imgUrl('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', 800)}
+              srcSet={imgSrcSet('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', [400, 800, 1200])}
               sizes="100vw"
               width={1200}
               height={800}
               className="w-full h-full object-cover opacity-30"
-              alt="Bespoke fitted kitchen handcrafted in Windsor by RVS Bespoke"
+              alt="Bespoke fitted bedroom furniture with custom wardrobes in Windsor"
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
@@ -74,14 +73,14 @@ const Kitchens = () => {
 
           <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
             <div className="max-w-3xl">
-              <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Bespoke Kitchens</p>
+              <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Fitted Furniture</p>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                Handcrafted Kitchens
-                <span className="block text-accent-gold font-serif italic font-light">Made in Windsor</span>
+                Bedroom
+                <span className="block text-accent-gold font-serif italic font-light">Fitted Furniture</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Custom fitted kitchens designed around you and built in our local workshop.
-                From traditional shaker to contemporary handleless designs.
+                Bespoke fitted wardrobes, dressing areas, and bedroom storage designed
+                to maximise every inch of your space.
               </p>
             </div>
           </div>
@@ -93,23 +92,23 @@ const Kitchens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                  Your Kitchen, Your Way
+                  Storage That Works
                 </h2>
                 <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                   <p>
-                    Every kitchen we build starts with your ideas. We visit your home, measure the space,
-                    and discuss how you cook, entertain, and live. Then we design a kitchen that works
-                    for you — not a showroom compromise.
+                    Off-the-shelf wardrobes rarely fit properly. There are gaps at the top, wasted space
+                    in corners, and the internal layout is always a compromise. Our fitted bedroom
+                    furniture is made to measure, designed specifically for your room and your belongings.
                   </p>
                   <p>
-                    Our kitchens are built entirely in our Windsor workshop using solid hardwoods,
-                    premium sheet materials, and quality hardware. We don't use flat-pack carcasses
-                    or import pre-made units. Every cabinet, drawer, and shelf is made by us.
+                    We build fitted furniture for bedrooms of all sizes — from compact alcove wardrobes
+                    in Victorian terraces to spacious walk-in dressing rooms in new builds. Every shelf,
+                    rail, and drawer is positioned exactly where you need it.
                   </p>
                   <p>
-                    Whether you want a classic shaker kitchen, a sleek handleless design, or something
-                    completely unique, we can build it. We work with painted finishes, natural timber,
-                    and can match any colour you choose.
+                    Choose from hinged doors for a traditional look or sliding doors to save space.
+                    We offer painted finishes in any colour, natural timber veneers, and can incorporate
+                    mirrors, glass panels, or fabric inserts.
                   </p>
                 </div>
 
@@ -128,25 +127,25 @@ const Kitchens = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1556911220-e15b29be8c8f', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1556911220-e15b29be8c8f', [400, 600, 800])}
+                  src={imgUrl('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
                   loading="lazy"
                   decoding="async"
-                  alt="Bespoke kitchen island with granite worktop in Windsor home"
+                  alt="Custom fitted wardrobes with organised internal storage in Berkshire bedroom"
                   className="w-full h-[350px] object-cover"
                 />
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1600585154340-be6161a56a0c', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1600585154340-be6161a56a0c', [400, 600, 800])}
+                  src={imgUrl('https://images.unsplash.com/photo-1558997519-83ea9252edf8', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1558997519-83ea9252edf8', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={250}
                   loading="lazy"
                   decoding="async"
-                  alt="Custom fitted kitchen cabinetry handmade in Berkshire"
+                  alt="Bespoke fitted bedroom storage handcrafted in Windsor workshop"
                   className="w-full h-[250px] object-cover"
                 />
               </div>
@@ -154,23 +153,21 @@ const Kitchens = () => {
           </div>
         </section>
 
-        {/* Process Section */}
+        {/* Options Section */}
         <section className="py-20 px-8 bg-background-light">
           <div className="max-w-[1200px] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-12 text-center">
-              How We Work
+              Bedroom Solutions
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { step: '01', title: 'Design Visit', desc: 'We visit your home, take measurements, and discuss your requirements. No charge, no obligation.' },
-                { step: '02', title: 'Drawings & Quote', desc: 'Detailed plans and 3D visuals so you can see exactly what you\'re getting before we start.' },
-                { step: '03', title: 'Build', desc: 'Your kitchen is crafted in our workshop. Build time is typically 6-10 weeks depending on complexity.' },
-                { step: '04', title: 'Installation', desc: 'Our team fits your kitchen with care. We handle plumbing and electrical coordination.' },
+                { title: 'Fitted Wardrobes', desc: 'Hinged or sliding door wardrobes built into alcoves, across walls, or floor to ceiling. Custom interiors with rails, shelves, and drawers.' },
+                { title: 'Dressing Rooms', desc: 'Walk-in wardrobe systems with open shelving, shoe racks, jewellery drawers, and integrated lighting for a luxury dressing experience.' },
+                { title: 'Bedroom Storage', desc: 'Bedside cabinets, under-bed drawers, blanket boxes, and fitted headboard units. Matching furniture to complete the room.' },
               ].map((item) => (
-                <div key={item.step} className="bg-white p-8 shadow-sm">
-                  <span className="text-4xl font-bold text-accent-gold/30">{item.step}</span>
-                  <h3 className="text-xl font-bold text-primary-dark mt-4 mb-3">{item.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                <div key={item.title} className="bg-white p-8 shadow-sm">
+                  <h3 className="text-xl font-bold text-primary-dark mb-3">{item.title}</h3>
+                  <p className="text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -181,17 +178,17 @@ const Kitchens = () => {
         <section className="py-16 px-8 bg-white border-t border-gray-100">
           <div className="max-w-[1200px] mx-auto text-center">
             <h2 className="text-2xl font-bold text-primary-dark mb-6">
-              Bespoke Kitchen Installation Across Berkshire
+              Fitted Bedroom Furniture Across Berkshire
             </h2>
             <p className="text-gray-500 mb-8 max-w-2xl mx-auto">
-              We design and install bespoke kitchens throughout Windsor and the surrounding areas, including
-              Ascot, Maidenhead, Slough, Eton, Datchet, Old Windsor, and Sunningdale.
+              We design and install bespoke fitted bedroom furniture throughout Windsor and the surrounding areas,
+              including Ascot, Maidenhead, Slough, Eton, Datchet, and Sunningdale.
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center gap-3 bg-primary-dark text-white px-10 py-5 font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-accent-gold transition-all"
             >
-              Book a Design Visit <ArrowRight size={16} />
+              Get a Free Quote <ArrowRight size={16} />
             </Link>
           </div>
         </section>
@@ -200,4 +197,4 @@ const Kitchens = () => {
   );
 };
 
-export default Kitchens;
+export default Bedroom;

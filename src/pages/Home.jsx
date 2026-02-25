@@ -7,17 +7,17 @@ import { imgUrl, imgSrcSet } from '../utils/image';
 import ContactModal from '../components/ContactModal';
 
 const Home = () => {
-  const { home, services, images, company } = siteConfig;
+  const { home, rooms, images, company } = siteConfig;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div>
       <Helmet>
-        <title>RVS Bespoke | Handcrafted Bespoke Furniture in Windsor, Berkshire</title>
-        <meta name="description" content="Bespoke kitchens, fitted wardrobes and home office furniture handcrafted in our Windsor workshop. Serving Berkshire for over a decade. Free design consultation." />
+        <title>RVS Bespoke | Fitted Furniture for Every Room in Windsor, Berkshire</title>
+        <meta name="description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop. Serving Berkshire for over a decade. Free design consultation." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/" />
-        <meta property="og:title" content="RVS Bespoke | Handcrafted Bespoke Furniture in Windsor" />
-        <meta property="og:description" content="Exceptional handcrafted furniture for kitchens, offices, and living spaces. Built locally in our Windsor workshop for homes across Berkshire." />
+        <meta property="og:title" content="RVS Bespoke | Fitted Furniture for Every Room in Windsor" />
+        <meta property="og:description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -61,7 +61,7 @@ const Home = () => {
               >
                 {home.hero.cta.primary}
               </button>
-              <Link to="/services" className="group btn-secondary text-white">
+              <Link to="/living-room" className="group btn-secondary text-white">
                 {home.hero.cta.secondary}{' '}
                 <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
               </Link>
@@ -155,7 +155,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Preview Section */}
+      {/* Fitted Furniture Rooms Section */}
       <section className="py-32 md:py-48 px-8 bg-primary-dark relative overflow-hidden below-fold">
         <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-32 pointer-events-none hidden md:block"></div>
 
@@ -164,33 +164,34 @@ const Home = () => {
             <div className="max-w-2xl">
               <h2 className="section-label mb-8 text-accent-gold">
                 <span className="h-px w-8 bg-accent-gold mr-4 inline-block"></span>
-                {home.services.sectionTitle}
+                {home.rooms.sectionTitle}
               </h2>
               <h3 className="text-5xl md:text-8xl font-bold text-white tracking-tighter">
-                {home.services.title}
+                {home.rooms.title}
               </h3>
             </div>
             <p className="text-white/40 text-lg font-light italic max-w-xs md:text-right">
-              {home.services.quote}
+              {home.rooms.quote}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
-            {services.map((service, i) => (
-              <div
-                key={service.id}
+            {rooms.slice(0, 6).map((room, i) => (
+              <Link
+                key={room.id}
+                to={room.path}
                 className="group service-card"
               >
                 <img
-                  src={imgUrl(service.image, 400)}
-                  srcSet={imgSrcSet(service.image, [300, 600, 800])}
+                  src={imgUrl(room.image, 400)}
+                  srcSet={imgSrcSet(room.image, [300, 600, 800])}
                   sizes="(max-width: 768px) 100vw, 33vw"
                   width={600}
                   height={800}
                   loading="lazy"
                   decoding="async"
                   className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-60 group-hover:scale-110 transition-all duration-[2s]"
-                  alt={`${service.title} - Bespoke furniture Windsor`}
+                  alt={`${room.title} - Bespoke fitted furniture Windsor`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/40 to-transparent"></div>
 
@@ -199,30 +200,17 @@ const Home = () => {
                     0{i + 1}
                   </span>
                   <h4 className="text-3xl font-bold text-white mb-6 tracking-tight">
-                    {service.title}
+                    {room.shortTitle}
                   </h4>
                   <p className="text-white/50 font-light leading-relaxed mb-10 max-w-xs">
-                    {service.description}
+                    {room.description}
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => setIsModalOpen(true)}
-                    className="flex items-center gap-4 text-accent-gold font-bold text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-opacity delay-100"
-                  >
-                    {home.services.cta} <ArrowRight size={14} />
-                  </button>
+                  <span className="flex items-center gap-4 text-accent-gold font-bold text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                    View Details <ArrowRight size={14} />
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-4 text-white font-bold uppercase tracking-[0.3em] text-xs border-b-2 border-accent-gold pb-2 hover:gap-6 transition-all"
-            >
-              View All Services <ChevronRight size={16} />
-            </Link>
           </div>
         </div>
       </section>

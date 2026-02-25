@@ -1,13 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { siteConfig } from '../config/site';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
   const initialMount = useRef(true);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     let ticking = false;
@@ -31,6 +33,7 @@ const Navbar = () => {
       return;
     }
     setIsMenuOpen(false);
+    setDropdownOpen(false);
   }, [location.pathname]);
 
   // Prevent body scroll when mobile menu is open — use class to avoid forced reflow
@@ -39,7 +42,19 @@ const Navbar = () => {
     return () => document.documentElement.classList.remove('overflow-hidden');
   }, [isMenuOpen]);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const isActive = (path) => location.pathname === path;
+  const isRoomActive = () => siteConfig.rooms.some((room) => location.pathname === room.path);
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
@@ -79,24 +94,63 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-12">
-            {siteConfig.navigation.main.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative group ${
-                  isActive(item.path)
-                    ? 'text-accent-gold'
-                    : 'text-white/80 hover:text-accent-gold'
-                }`}
-              >
-                {item.name}
-                <span
-                  className={`absolute -bottom-2 left-0 h-px bg-accent-gold transition-all ${
-                    isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'
+            {siteConfig.navigation.main.map((item) =>
+              item.children ? (
+                <div key={item.name} className="relative" ref={dropdownRef}>
+                  <button
+                    type="button"
+                    onClick={() => setDropdownOpen(prev => !prev)}
+                    className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative group flex items-center gap-1.5 ${
+                      isRoomActive()
+                        ? 'text-accent-gold'
+                        : 'text-white/80 hover:text-accent-gold'
+                    }`}
+                  >
+                    {item.name}
+                    <ChevronDown size={12} className={`transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+                    <span
+                      className={`absolute -bottom-2 left-0 h-px bg-accent-gold transition-all ${
+                        isRoomActive() ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`}
+                    ></span>
+                  </button>
+                  {dropdownOpen && (
+                    <div className="absolute top-full left-0 mt-4 bg-primary-dark border border-white/10 shadow-2xl min-w-[220px] py-2">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          to={child.path}
+                          className={`block px-6 py-3 text-[10px] uppercase tracking-[0.3em] font-bold transition-colors ${
+                            isActive(child.path)
+                              ? 'text-accent-gold bg-white/5'
+                              : 'text-white/70 hover:text-accent-gold hover:bg-white/5'
+                          }`}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all relative group ${
+                    isActive(item.path)
+                      ? 'text-accent-gold'
+                      : 'text-white/80 hover:text-accent-gold'
                   }`}
-                ></span>
-              </Link>
-            ))}
+                >
+                  {item.name}
+                  <span
+                    className={`absolute -bottom-2 left-0 h-px bg-accent-gold transition-all ${
+                      isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  ></span>
+                </Link>
+              )
+            )}
             <a
               href={siteConfig.contact.phoneLink}
               className={`px-10 py-4 text-[10px] uppercase tracking-[0.4em] font-bold transition-all border-2 flex items-center gap-3 ${
@@ -132,7 +186,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed inset-0 z-[200] bg-primary-dark md:hidden transition-transform duration-500 ease-out ${
+        className={`fixed inset-0 z-[200] bg-primary-dark md:hidden transition-transform duration-500 ease-out overflow-y-auto ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -146,21 +200,43 @@ const Navbar = () => {
             <X size={28} />
           </button>
         </div>
-        <div className="h-[70%] flex flex-col justify-center items-center space-y-10 text-white px-8">
-          {siteConfig.navigation.main.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              onClick={closeMenu}
-              className={`text-4xl font-light tracking-tight transition-colors ${
-                isActive(item.path)
-                  ? 'text-accent-gold'
-                  : 'active:text-accent-gold'
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+        <div className="flex flex-col items-center space-y-8 text-white px-8 pb-16">
+          {siteConfig.navigation.main.map((item) =>
+            item.children ? (
+              <div key={item.name} className="flex flex-col items-center space-y-4">
+                <span className="text-accent-gold text-xs uppercase tracking-[0.5em]">
+                  {item.name}
+                </span>
+                {item.children.map((child) => (
+                  <Link
+                    key={child.name}
+                    to={child.path}
+                    onClick={closeMenu}
+                    className={`text-2xl font-light tracking-tight transition-colors ${
+                      isActive(child.path)
+                        ? 'text-accent-gold'
+                        : 'active:text-accent-gold'
+                    }`}
+                  >
+                    {child.name}
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={closeMenu}
+                className={`text-4xl font-light tracking-tight transition-colors ${
+                  isActive(item.path)
+                    ? 'text-accent-gold'
+                    : 'active:text-accent-gold'
+                }`}
+              >
+                {item.name}
+              </Link>
+            )
+          )}
           <div className="pt-8 flex flex-col items-center gap-4">
             <span className="text-accent-gold text-xs uppercase tracking-[0.5em]">
               Call Us
