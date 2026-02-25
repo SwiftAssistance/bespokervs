@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote } from 'lucide-react';
@@ -9,6 +9,17 @@ import ContactModal from '../components/ContactModal';
 const Home = () => {
   const { home, rooms: services, images, company } = siteConfig;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const testimonials = home.testimonials.items;
+
+  const nextTestimonial = useCallback(() => {
+    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+  }, [testimonials.length]);
+
+  useEffect(() => {
+    const timer = setInterval(nextTestimonial, 5000);
+    return () => clearInterval(timer);
+  }, [nextTestimonial]);
 
   return (
     <div>
@@ -176,7 +187,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
-            {services.slice(0, 6).map((service, i) => (
+            {services.slice(0, 3).map((service, i) => (
               <Link
                 key={service.id}
                 to={service.path}
@@ -212,6 +223,15 @@ const Home = () => {
               </Link>
             ))}
           </div>
+
+          <div className="mt-16 text-center">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-4 bg-accent-gold text-primary-dark px-12 py-5 font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-white transition-all"
+            >
+              Explore All Services <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -227,26 +247,48 @@ const Home = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {home.testimonials.items.map((testimonial, i) => (
+          <div className="relative max-w-3xl mx-auto min-h-[280px]">
+            {testimonials.map((testimonial, i) => (
               <div
                 key={i}
-                className="bg-white p-10 shadow-xl hover:shadow-2xl transition-shadow relative group"
+                className="absolute inset-0 transition-all duration-700 ease-in-out"
+                style={{
+                  opacity: activeTestimonial === i ? 1 : 0,
+                  transform: activeTestimonial === i ? 'translateY(0)' : 'translateY(20px)',
+                  pointerEvents: activeTestimonial === i ? 'auto' : 'none',
+                }}
               >
-                <Quote
-                  size={40}
-                  className="text-accent-gold/20 absolute top-8 right-8"
-                />
-                <p className="text-gray-600 text-lg leading-relaxed mb-8 italic">
-                  "{testimonial.quote}"
-                </p>
-                <div className="border-t border-gray-100 pt-6">
-                  <p className="font-bold text-primary-dark">{testimonial.author}</p>
-                  <p className="text-sm text-gray-400">
-                    {testimonial.location} — {testimonial.project}
+                <div className="bg-white p-12 shadow-xl relative">
+                  <Quote
+                    size={48}
+                    className="text-accent-gold/20 absolute top-8 right-8"
+                  />
+                  <p className="text-gray-600 text-xl md:text-2xl leading-relaxed mb-10 italic font-light">
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
+                  <div className="border-t border-gray-100 pt-6">
+                    <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
+                    <p className="text-sm text-gray-400">
+                      {testimonial.location} — {testimonial.project}
+                    </p>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Dots indicator */}
+          <div className="flex justify-center gap-3 mt-10">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveTestimonial(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  activeTestimonial === i ? 'bg-accent-gold w-8' : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`View testimonial ${i + 1}`}
+              />
             ))}
           </div>
         </div>
