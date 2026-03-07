@@ -51,12 +51,6 @@ const Home = () => {
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px w-12 bg-accent-gold"></div>
-              <span className="text-white/60 text-[11px] uppercase tracking-[0.6em] font-bold">
-                {company.established}
-              </span>
-            </div>
             <h1 className="hero-title text-white mb-12">
               {home.hero.title} <br />
               <span className="hero-title-highlight">{home.hero.titleHighlight}</span>
