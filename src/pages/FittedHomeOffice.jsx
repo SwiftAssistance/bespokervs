@@ -59,8 +59,8 @@ const FittedHomeOffice = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src={imgUrl('/images/home_office_hero.jpg', 800)}
-              srcSet={imgSrcSet('/images/home_office_hero.jpg', [400, 800, 1200])}
+              src={imgUrl('/images/home_office_hero.jpeg', 800)}
+              srcSet={imgSrcSet('/images/home_office_hero.jpeg', [400, 800, 1200])}
               sizes="100vw"
               width={1200}
               height={800}
@@ -127,8 +127,8 @@ const FittedHomeOffice = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('/images/home_office_1.jpg', 600)}
-                  srcSet={imgSrcSet('/images/home_office_1.jpg', [400, 600, 800])}
+                  src={imgUrl('/images/home_office_1.jpeg', 600)}
+                  srcSet={imgSrcSet('/images/home_office_1.jpeg', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
@@ -138,8 +138,8 @@ const FittedHomeOffice = () => {
                   className="w-full h-[350px] object-cover"
                 />
                 <img
-                  src={imgUrl('/images/home_office_2.jpg', 600)}
-                  srcSet={imgSrcSet('/images/home_office_2.jpg', [400, 600, 800])}
+                  src={imgUrl('/images/home_office_2.jpeg', 600)}
+                  srcSet={imgSrcSet('/images/home_office_2.jpeg', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={250}
