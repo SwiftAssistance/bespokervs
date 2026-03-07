@@ -59,8 +59,8 @@ const Cloakroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src={imgUrl('/images/cloakroom_hero.jpeg', 800)}
-              srcSet={imgSrcSet('/images/cloakroom_hero.jpeg', [400, 800, 1200])}
+              src={imgUrl('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', 800)}
+              srcSet={imgSrcSet('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', [400, 800, 1200])}
               sizes="100vw"
               width={1200}
               height={800}
@@ -128,8 +128,8 @@ const Cloakroom = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('/images/cloakroom_hero.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/cloakroom_hero.jpeg', [400, 600, 800])}
+                  src={imgUrl('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', 600)}
+                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
