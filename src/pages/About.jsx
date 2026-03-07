@@ -50,8 +50,8 @@ const About = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src={imgUrl('/images/about_hero.jpg', 800)}
-            srcSet={imgSrcSet('/images/about_hero.jpg', [400, 800, 1200])}
+            src={imgUrl('/images/about_hero.jpeg', 800)}
+            srcSet={imgSrcSet('/images/about_hero.jpeg', [400, 800, 1200])}
             sizes="100vw"
             width={1200}
             height={800}
@@ -107,8 +107,8 @@ const About = () => {
       <section className="px-8 bg-white pb-24">
         <div className="max-w-[1200px] mx-auto">
           <img
-            src={imgUrl('/images/about_workshop.jpg', 800)}
-            srcSet={imgSrcSet('/images/about_workshop.jpg', [400, 800, 1200])}
+            src={imgUrl('/images/about_workshop.jpeg', 800)}
+            srcSet={imgSrcSet('/images/about_workshop.jpeg', [400, 800, 1200])}
             sizes="100vw"
             width={1200}
             height={500}
