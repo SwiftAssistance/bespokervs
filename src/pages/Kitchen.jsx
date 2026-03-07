@@ -59,8 +59,8 @@ const Kitchen = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src={imgUrl('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136', 800)}
-              srcSet={imgSrcSet('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136', [400, 800, 1200])}
+              src={imgUrl('/images/kitchen_hero.jpg', 800)}
+              srcSet={imgSrcSet('/images/kitchen_hero.jpg', [400, 800, 1200])}
               sizes="100vw"
               width={1200}
               height={800}
@@ -127,8 +127,8 @@ const Kitchen = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1556911220-e15b29be8c8f', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1556911220-e15b29be8c8f', [400, 600, 800])}
+                  src={imgUrl('/images/kitchen_1.jpg', 600)}
+                  srcSet={imgSrcSet('/images/kitchen_1.jpg', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
@@ -138,8 +138,8 @@ const Kitchen = () => {
                   className="w-full h-[350px] object-cover"
                 />
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1600585154340-be6161a56a0c', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1600585154340-be6161a56a0c', [400, 600, 800])}
+                  src={imgUrl('/images/kitchen_2.jpg', 600)}
+                  srcSet={imgSrcSet('/images/kitchen_2.jpg', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={250}

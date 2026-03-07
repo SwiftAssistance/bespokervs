@@ -50,23 +50,8 @@
     <meta name="theme-color" content="#1a1a1a" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
-
-    <!-- Preload LCP hero image for fast mobile rendering -->
-    <link
-      rel="preload"
-      as="image"
-      fetchpriority="high"
-      imagesrcset="
-        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=60&w=400 400w,
-        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=60&w=800 800w,
-        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=60&w=1200 1200w,
-        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=60&w=1920 1920w
-      "
-      imagesizes="100vw"
-    />
+    <!-- Preload LCP hero image for fast rendering -->
+    <link rel="preload" as="image" fetchpriority="high" href="/images/home_hero.jpg" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
