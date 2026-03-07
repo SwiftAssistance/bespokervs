@@ -59,8 +59,8 @@ const Bedroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src={imgUrl('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', 800)}
-              srcSet={imgSrcSet('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', [400, 800, 1200])}
+              src={imgUrl('/images/bedroom_hero.jpg', 800)}
+              srcSet={imgSrcSet('/images/bedroom_hero.jpg', [400, 800, 1200])}
               sizes="100vw"
               width={1200}
               height={800}
@@ -127,8 +127,8 @@ const Bedroom = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', [400, 600, 800])}
+                  src={imgUrl('/images/bedroom_hero.jpg', 600)}
+                  srcSet={imgSrcSet('/images/bedroom_hero.jpg', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
@@ -138,8 +138,8 @@ const Bedroom = () => {
                   className="w-full h-[350px] object-cover"
                 />
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1558997519-83ea9252edf8', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1558997519-83ea9252edf8', [400, 600, 800])}
+                  src={imgUrl('/images/bedroom_2.jpg', 600)}
+                  srcSet={imgSrcSet('/images/bedroom_2.jpg', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={250}

@@ -67,7 +67,7 @@ export const siteConfig = {
       shortTitle: 'Living Room',
       shortDescription: 'Bespoke cabinetry and storage for your living space.',
       description: 'Transform your living room with bespoke fitted furniture. From media units and alcove cabinets to bookshelves and window seats, crafted to complement your home.',
-      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=75&w=800',
+      image: '/images/living_room_card.jpg',
       path: '/living-room',
     },
     {
@@ -76,7 +76,7 @@ export const siteConfig = {
       shortTitle: 'Bedroom',
       shortDescription: 'Wardrobes, dressing areas and bedroom storage.',
       description: 'Bespoke fitted wardrobes, bedside units, and dressing tables designed to maximise space and suit your style. Made to measure for any bedroom layout.',
-      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&q=75&w=800',
+      image: '/images/bedroom_card.jpg',
       path: '/bedroom',
     },
     {
@@ -85,7 +85,7 @@ export const siteConfig = {
       shortTitle: 'Home Office',
       shortDescription: 'Custom desks and study furniture for productive working.',
       description: 'Bespoke fitted desks, shelving, and storage designed for remote working. Built-in solutions that keep your workspace organised and looking professional.',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=75&w=800',
+      image: '/images/home_office_card.jpg',
       path: '/home-office',
     },
     {
@@ -94,7 +94,7 @@ export const siteConfig = {
       shortTitle: 'Bathroom',
       shortDescription: 'Bespoke vanity units and bathroom cabinetry.',
       description: 'Handcrafted fitted bathroom furniture including vanity units, storage cabinets, and shelving. Designed for moisture resistance and built to last.',
-      image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&q=75&w=800',
+      image: '/images/bathroom_card.jpg',
       path: '/bathroom',
     },
     {
@@ -103,7 +103,7 @@ export const siteConfig = {
       shortTitle: 'Kitchen',
       shortDescription: 'Handcrafted kitchens built to your specification.',
       description: 'Bespoke fitted kitchens designed around the way you cook and live. Every cabinet, drawer, and worktop crafted in our Windsor workshop.',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=75&w=800',
+      image: '/images/kitchen_card.jpg',
       path: '/kitchen',
     },
     {
@@ -112,7 +112,7 @@ export const siteConfig = {
       shortTitle: 'Cloakroom',
       shortDescription: 'Smart storage for hallways and cloakrooms.',
       description: 'Bespoke fitted cloakroom furniture including boot rooms, coat storage, and hallway cabinetry. Practical solutions that make the most of every inch.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=75&w=800',
+      image: '/images/cloakroom_card.jpg',
       path: '/cloakroom',
     },
   ],
@@ -161,7 +161,7 @@ export const siteConfig = {
       { value: '100%', label: 'Bespoke Design' },
       { value: '5 Star', label: 'Customer Rating' },
     ],
-    image: 'https://images.unsplash.com/photo-1540633596541-692790937a09?auto=format&fit=crop&q=80&w=1000',
+    image: '/images/about_workshop.jpg',
   },
 
   // Contact Page Content (Required)
@@ -280,9 +280,9 @@ export const siteConfig = {
 
   // Images (Required)
   images: {
-    hero: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920',
-    about: 'https://images.unsplash.com/photo-1540633596541-692790937a09?auto=format&fit=crop&q=75&w=800',
-    workshop: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=75&w=800',
+    hero: '/images/home_hero.jpg',
+    about: '/images/home_about.jpg',
+    workshop: '/images/workshop.jpg',
   },
 
   // SEO Configuration (Required)
