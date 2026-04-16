@@ -59,8 +59,7 @@ const LivingRoom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src={imgUrl('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0', 800)}
-              srcSet={imgSrcSet('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0', [400, 800, 1200])}
+              src="/images/hero_living_room.jpeg"
               sizes="100vw"
               width={1200}
               height={800}
