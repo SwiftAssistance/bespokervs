@@ -64,10 +64,10 @@ const Services = () => {
                     height={800}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-[2s]"
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-[2s]"
                     alt={`${service.title} - RVS Bespoke Windsor`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent"></div>
 
                   <div className="relative z-10 p-8 w-full">
                     <span className="text-accent-gold text-5xl font-serif italic opacity-30 block mb-4">
