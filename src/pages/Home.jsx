@@ -195,10 +195,10 @@ const Home = () => {
                   height={800}
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-60 group-hover:scale-110 transition-all duration-[2s]"
+                  className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-75 group-hover:scale-110 transition-all duration-[2s]"
                   alt={`${service.title} - Bespoke fitted furniture Windsor`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent"></div>
 
                 <div className="relative z-10 transform group-hover:-translate-y-4 transition-transform duration-700">
                   <span className="text-accent-gold text-6xl font-serif italic opacity-30 block mb-6">

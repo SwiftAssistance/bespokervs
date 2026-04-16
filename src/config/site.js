@@ -280,9 +280,9 @@ export const siteConfig = {
 
   // Images (Required)
   images: {
-    hero: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+    hero: '/images/hero_home.jpeg',
     about: '/images/home_about.jpeg',
-    workshop: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492',
+    workshop: '/images/hero_workshop.jpeg',
   },
 
   // SEO Configuration (Required)
