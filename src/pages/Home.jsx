@@ -52,8 +52,8 @@ const Home = () => {
     if (Math.abs(delta) > 50) {
       setActiveTestimonial((prev) =>
         delta < 0
-          ? (prev + 1) % testimonials.length
-          : (prev - 1 + testimonials.length) % testimonials.length
+          ? Math.min(prev + 1, testimonials.length - 1)
+          : Math.max(prev - 1, 0)
       );
     }
   };
