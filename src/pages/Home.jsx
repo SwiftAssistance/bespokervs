@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote, MapPin, Send, CheckCircle } from 'lucide-react';
@@ -29,25 +29,34 @@ const Home = () => {
     setContactSubmitted(true);
   };
 
-  const touchStartX = useRef(null);
-  const nextTestimonial = useCallback(() => {
-    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, [testimonials.length]);
-  const prevTestimonial = useCallback(() => {
-    setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  }, [testimonials.length]);
-  const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
-  const handleTouchEnd = (e) => {
-    if (touchStartX.current === null) return;
-    const delta = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(delta) > 50) delta > 0 ? nextTestimonial() : prevTestimonial();
-    touchStartX.current = null;
-  };
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef(0);
+  const dragActive = useRef(false);
 
-  useEffect(() => {
-    const timer = setInterval(nextTestimonial, 5000);
-    return () => clearInterval(timer);
-  }, [nextTestimonial]);
+  const onDragStart = (clientX) => {
+    dragActive.current = true;
+    dragStartX.current = clientX;
+    setIsDragging(true);
+  };
+  const onDragMove = (clientX) => {
+    if (!dragActive.current) return;
+    setDragOffset(clientX - dragStartX.current);
+  };
+  const onDragEnd = (clientX) => {
+    if (!dragActive.current) return;
+    dragActive.current = false;
+    setIsDragging(false);
+    const delta = clientX - dragStartX.current;
+    setDragOffset(0);
+    if (Math.abs(delta) > 50) {
+      setActiveTestimonial((prev) =>
+        delta < 0
+          ? (prev + 1) % testimonials.length
+          : (prev - 1 + testimonials.length) % testimonials.length
+      );
+    }
+  };
 
   return (
     <div>
@@ -220,34 +229,42 @@ const Home = () => {
             </h3>
           </div>
 
-          <div className="relative max-w-3xl mx-auto min-h-[280px] cursor-grab active:cursor-grabbing" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-            {testimonials.map((testimonial, i) => (
-              <div
-                key={i}
-                className="absolute inset-0 transition-all duration-700 ease-in-out"
-                style={{
-                  opacity: activeTestimonial === i ? 1 : 0,
-                  transform: activeTestimonial === i ? 'translateY(0)' : 'translateY(20px)',
-                  pointerEvents: activeTestimonial === i ? 'auto' : 'none',
-                }}
-              >
-                <div className="bg-white p-12 shadow-xl relative">
-                  <Quote
-                    size={48}
-                    className="text-accent-gold/20 absolute top-8 right-8"
-                  />
-                  <p className="text-gray-600 text-xl md:text-2xl leading-relaxed mb-10 italic font-light">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  <div className="border-t border-gray-100 pt-6">
-                    <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
-                    <p className="text-sm text-gray-400">
-                      {testimonial.location} — {testimonial.project}
+          <div
+            className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+            style={{ touchAction: 'pan-y' }}
+            onMouseDown={(e) => { e.preventDefault(); onDragStart(e.clientX); }}
+            onMouseMove={(e) => onDragMove(e.clientX)}
+            onMouseUp={(e) => onDragEnd(e.clientX)}
+            onMouseLeave={(e) => { if (dragActive.current) onDragEnd(e.clientX); }}
+            onTouchStart={(e) => onDragStart(e.touches[0].clientX)}
+            onTouchMove={(e) => onDragMove(e.touches[0].clientX)}
+            onTouchEnd={(e) => onDragEnd(e.changedTouches[0].clientX)}
+          >
+            <div
+              className="flex"
+              style={{
+                transform: `translateX(calc(-${activeTestimonial * 100}% + ${dragOffset}px))`,
+                transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                willChange: 'transform',
+              }}
+            >
+              {testimonials.map((testimonial, i) => (
+                <div key={i} className="min-w-full">
+                  <div className="bg-white p-12 shadow-xl relative">
+                    <Quote size={48} className="text-accent-gold/20 absolute top-8 right-8" />
+                    <p className="text-gray-600 text-xl md:text-2xl leading-relaxed mb-10 italic font-light">
+                      &ldquo;{testimonial.quote}&rdquo;
                     </p>
+                    <div className="border-t border-gray-100 pt-6">
+                      <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
+                      <p className="text-sm text-gray-400">
+                        {testimonial.location} — {testimonial.project}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Dots indicator */}
