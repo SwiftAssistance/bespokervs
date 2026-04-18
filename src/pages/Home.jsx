@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote, MapPin, Send, CheckCircle } from 'lucide-react';
@@ -29,9 +29,20 @@ const Home = () => {
     setContactSubmitted(true);
   };
 
+  const touchStartX = useRef(null);
   const nextTestimonial = useCallback(() => {
     setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
   }, [testimonials.length]);
+  const prevTestimonial = useCallback(() => {
+    setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }, [testimonials.length]);
+  const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 50) delta > 0 ? nextTestimonial() : prevTestimonial();
+    touchStartX.current = null;
+  };
 
   useEffect(() => {
     const timer = setInterval(nextTestimonial, 5000);
@@ -209,7 +220,7 @@ const Home = () => {
             </h3>
           </div>
 
-          <div className="relative max-w-3xl mx-auto min-h-[280px]">
+          <div className="relative max-w-3xl mx-auto min-h-[280px] cursor-grab active:cursor-grabbing" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
             {testimonials.map((testimonial, i) => (
               <div
                 key={i}
