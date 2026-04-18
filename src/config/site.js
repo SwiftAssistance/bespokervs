@@ -228,7 +228,7 @@ export const siteConfig = {
       scrollHint: 'Scroll to discover',
     },
     about: {
-      sectionTitle: 'Our Story',
+      sectionTitle: 'About Us',
       title: 'Where Precision Meets',
       titleHighlight: 'Heritage.',
       description: 'Operating from our specialized workshop at 3 Riverway on Barry Ave, RVS Bespoke is a family-rooted business dedicated to the art of fine joinery.',

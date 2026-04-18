@@ -84,77 +84,30 @@ const Home = () => {
       </section>
 
       {/* About Preview Section */}
-      <section className="py-32 md:py-48 px-8 bg-white overflow-hidden below-fold">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
-            <div className="lg:col-span-5 relative">
-              <div className="absolute -top-12 -left-12 w-48 h-48 bg-accent-gold/5 rounded-full blur-3xl"></div>
-              <div className="relative z-10 p-4 border border-gray-100 bg-white shadow-2xl">
-                <img
-                  src={imgUrl(images.about, 600)}
-                  srcSet={imgSrcSet(images.about, [300, 600, 800])}
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full grayscale hover:grayscale-0 transition-all duration-1000"
-                  alt="RVS Bespoke craftsmen at work in Windsor joinery workshop"
-                />
+      <section className="py-24 md:py-36 px-8 bg-white below-fold">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="section-label mb-8">{home.about.sectionTitle}</h2>
+          <p className="text-gray-500 text-xl leading-relaxed mb-12 font-light">
+            {home.about.description}
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-12">
+            <div className="space-y-3">
+              <div className="flex items-center justify-center gap-3 text-accent-gold">
+                <ShieldCheck size={20} />
+                <span className="text-[10px] font-bold uppercase tracking-widest">Master Joinery</span>
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-primary-dark p-10 shadow-2xl z-20 hidden md:block">
-                <div className="text-4xl font-serif text-accent-gold italic mb-1 tracking-tighter">
-                  Hand-Finished
-                </div>
-                <div className="text-[10px] text-white/40 uppercase tracking-[0.4em]">
-                  Barry Ave, Windsor
-                </div>
-              </div>
+              <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">
+                Traditional mortise and tenon joints combined with modern precision for lifetime durability.
+              </p>
             </div>
-
-            <div className="lg:col-span-7">
-              <div className="max-w-xl">
-                <h2 className="section-label mb-8">{home.about.sectionTitle}</h2>
-                <h3 className="text-5xl md:text-7xl font-bold text-primary-dark leading-[1.1] tracking-tighter mb-10">
-                  {home.about.title} <br />
-                  <span className="italic font-serif font-light">{home.about.titleHighlight}</span>
-                </h3>
-                <p className="text-gray-500 text-xl leading-relaxed mb-10 font-light">
-                  {home.about.description}
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-accent-gold">
-                      <ShieldCheck size={20} />
-                      <span className="text-[10px] font-bold uppercase tracking-widest">
-                        Master Joinery
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                      We use traditional mortise and tenon joints combined with modern precision for
-                      lifetime durability.
-                    </p>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-accent-gold">
-                      <Award size={20} />
-                      <span className="text-[10px] font-bold uppercase tracking-widest">
-                        Local Heritage
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                      Serving Windsor, Ascot, and the surrounding Berkshire areas for over a decade
-                      with distinction.
-                    </p>
-                  </div>
-                </div>
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-4 text-primary-dark font-bold uppercase tracking-[0.3em] text-xs border-b-2 border-accent-gold pb-2 hover:gap-6 transition-all"
-                >
-                  {home.about.cta} <ChevronRight size={16} />
-                </Link>
+            <div className="space-y-3">
+              <div className="flex items-center justify-center gap-3 text-accent-gold">
+                <Award size={20} />
+                <span className="text-[10px] font-bold uppercase tracking-widest">Local Heritage</span>
               </div>
+              <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">
+                Serving Windsor, Ascot, and the surrounding Berkshire areas for over a decade with distinction.
+              </p>
             </div>
           </div>
         </div>
