@@ -126,8 +126,7 @@ const LivingRoom = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0', [400, 600, 800])}
+                  src="/images/living_room_1.jpeg"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
