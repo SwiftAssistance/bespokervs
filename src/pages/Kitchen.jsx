@@ -134,7 +134,7 @@ const Kitchen = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Bespoke fitted kitchen island with granite worktop in Windsor home"
-                  className="w-full h-[350px] object-cover"
+                  className="w-full"
                 />
                 <img
                   src={imgUrl('/images/kitchen_2.jpeg', 600)}
@@ -145,7 +145,7 @@ const Kitchen = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Custom fitted kitchen cabinetry handmade in Berkshire"
-                  className="w-full h-[250px] object-cover"
+                  className="w-full"
                 />
               </div>
             </div>
