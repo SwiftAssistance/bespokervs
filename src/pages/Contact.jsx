@@ -88,10 +88,11 @@ const Contact = () => {
       <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero.jpeg"
+            src="/images/hero.webp"
             sizes="100vw"
             width={1200}
             height={800}
+            fetchPriority="high"
             className="w-full h-full object-cover opacity-20"
             alt="Contact RVS Bespoke furniture makers in Windsor, Berkshire"
             decoding="async"

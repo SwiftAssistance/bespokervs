@@ -59,8 +59,9 @@ const Bedroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/hero.webp"
               sizes="100vw"
+              fetchPriority="high"
               width={1200}
               height={800}
               className="w-full h-full object-cover opacity-30"
@@ -126,7 +127,7 @@ const Bedroom = () => {
 
               <div className="space-y-6">
                 <img
-                  src={'/images/bedroom_1.jpeg'}
+                  src={'/images/bedroom_1.webp'}
                   srcSet={undefined}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
@@ -137,8 +138,8 @@ const Bedroom = () => {
                   className="w-full"
                 />
                 <img
-                  src={imgUrl('/images/bedroom_2.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/bedroom_2.jpeg', [400, 600, 800])}
+                  src={imgUrl('/images/bedroom_2.webp', 600)}
+                  srcSet={imgSrcSet('/images/bedroom_2.webp', [400, 600, 800])}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={250}
