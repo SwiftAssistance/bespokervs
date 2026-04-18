@@ -59,7 +59,7 @@ const Cloakroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero_cloakroom.jpeg"
+              src="/images/hero.jpeg"
               sizes="100vw"
               width={1200}
               height={800}
