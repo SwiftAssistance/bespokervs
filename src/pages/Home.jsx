@@ -256,40 +256,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="h-[450px] relative below-fold">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2693867927!2d-0.6168!3d51.4785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI4JzQyLjYiTiAwwrAzNicxMC4xIlc!5e0!3m2!1sen!2suk!4v1234567890"
-          width="100%"
-          height="100%"
-          style={{ border: 0, filter: 'grayscale(100%) contrast(1.1)' }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="RVS Bespoke Location"
-        ></iframe>
-        <div className="absolute bottom-6 left-6 bg-white p-6 shadow-2xl">
-          <div className="flex items-center gap-2 text-accent-gold mb-2">
-            <MapPin size={16} />
-            <span className="text-[10px] font-bold uppercase tracking-widest">Our Location</span>
-          </div>
-          <p className="text-primary-dark font-bold">{contact.address.line1}</p>
-          <p className="text-gray-500 text-sm mb-3">{contact.address.line2}</p>
-          <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address.full)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent-gold text-xs font-bold uppercase tracking-widest hover:text-primary-dark transition-colors"
-          >
-            Get Directions →
-          </a>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
+      {/* Contact & Map Section */}
       <section className="py-24 px-8 bg-primary-dark below-fold">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-          <div className="text-white">
+          <div className="text-white flex flex-col">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
               Start Your <br />
               <span className="text-accent-gold font-serif italic font-light">Project</span>
@@ -297,7 +267,7 @@ const Home = () => {
             <p className="text-white/60 text-lg font-light mb-10">
               Tell us about your vision and we'll get back to you within 24 hours.
             </p>
-            <div className="space-y-4 text-sm text-white/50">
+            <div className="space-y-4 text-sm text-white/50 mb-10">
               <a href={contact.phoneLink} className="flex items-center gap-3 hover:text-accent-gold transition-colors">
                 <span className="w-px h-4 bg-accent-gold"></span>
                 {contact.phone}
@@ -305,6 +275,26 @@ const Home = () => {
               <a href={contact.emailLink} className="flex items-center gap-3 hover:text-accent-gold transition-colors">
                 <span className="w-px h-4 bg-accent-gold"></span>
                 {contact.email}
+              </a>
+            </div>
+            <div className="relative overflow-hidden" style={{ height: '240px' }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2693867927!2d-0.6168!3d51.4785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI4JzQyLjYiTiAwwrAzNicxMC4xIlc!5e0!3m2!1sen!2suk!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'grayscale(100%) contrast(1.1) brightness(0.85)' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="RVS Bespoke Location"
+              ></iframe>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address.full)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-3 right-3 bg-primary-dark/90 px-4 py-2 text-accent-gold text-[10px] font-bold uppercase tracking-widest hover:bg-accent-gold hover:text-white transition-all"
+              >
+                Get Directions →
               </a>
             </div>
           </div>
