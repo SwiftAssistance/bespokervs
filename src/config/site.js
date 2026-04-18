@@ -231,7 +231,7 @@ export const siteConfig = {
       sectionTitle: 'About Us',
       title: 'Where Precision Meets',
       titleHighlight: 'Heritage.',
-      description: 'Operating from our specialized workshop at 3 Riverway on Barry Ave, RVS Bespoke is a family-rooted business dedicated to the art of fine joinery.',
+      description: 'RVS Bespoke is a family-rooted Windsor business dedicated to the art of fine joinery — crafting bespoke fitted furniture for homes across Berkshire with over a decade of expertise.',
       cta: 'Meet the Craftsmen',
     },
     services: {
