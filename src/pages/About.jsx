@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight } from 'lucide-react';
-import { siteConfig } from '../config/site';
-import { imgUrl, imgSrcSet } from '../utils/image';
-
 const About = () => {
-  const { images, company } = siteConfig;
-
   return (
     <div>
       <Helmet>
@@ -47,27 +42,17 @@ const About = () => {
         })}</script>
       </Helmet>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-primary-dark pt-32">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/hero.jpeg"
-            sizes="100vw"
-            width={1200}
-            height={800}
-            className="w-full h-full object-cover opacity-30"
-            alt="RVS Bespoke joinery workshop in Windsor, Berkshire"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/60 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
-        </div>
-
-        <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
+      <section className="relative flex items-end overflow-hidden bg-primary-dark pt-32 pb-20">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full">
           <div className="max-w-3xl">
+            <p className="text-accent-gold uppercase tracking-[0.2em] text-xs font-bold mb-6">RVS Bespoke · Windsor</p>
             <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8">
               About <br />
-              <span className="text-accent-gold font-serif italic font-light">the Workshop</span>
+              <span className="text-accent-gold font-serif italic font-light">Us</span>
             </h1>
+            <p className="text-white/60 text-xl max-w-xl leading-relaxed">
+              A family-run joinery workshop designing and building bespoke fitted furniture for homes across Berkshire.
+            </p>
           </div>
         </div>
       </section>
@@ -76,74 +61,67 @@ const About = () => {
       <section className="py-24 px-8 bg-white">
         <div className="max-w-[900px] mx-auto">
           <p className="text-2xl md:text-3xl text-primary-dark font-light leading-relaxed mb-12">
-            RVS Bespoke operates from a workshop at 3 Riverway on Barry Avenue in Windsor.
-            We design and build fitted furniture — kitchens, wardrobes, home offices —
-            for clients across Berkshire.
+            We're a small, hands-on joinery business based at 3 Riverway, Barry Avenue, Windsor.
+            Every piece of furniture we make is designed and built specifically for the space it goes into.
           </p>
 
           <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
             <p>
-              The business started with a straightforward idea: furniture should be made to fit the space,
-              not the other way around. Off-the-shelf units rarely work perfectly in older properties
-              or rooms with awkward dimensions. Custom joinery solves that problem.
+              RVS Bespoke was founded on a simple belief: furniture should fit around your home, not the other way around.
+              Standard off-the-shelf units rarely work well in older properties or rooms with unusual proportions.
+              Made-to-measure joinery solves that — and it tends to look better doing it.
             </p>
             <p>
-              We handle everything in-house — initial measurements, design drawings, cabinet construction,
-              finishing, and installation. This means we can adjust details as the project develops
-              rather than being locked into decisions made weeks earlier.
+              We keep everything in-house, from the first site visit through to installation. That means
+              one consistent team, clear communication, and the flexibility to adapt as a project takes shape —
+              rather than being locked in by decisions made on day one.
             </p>
             <p>
-              Most of our work comes from Windsor, Ascot, Maidenhead, and the surrounding areas.
-              We've fitted kitchens in Victorian terraces, built library walls in Edwardian homes,
-              and designed office spaces in new-builds. Each project is different, which keeps
-              the work interesting.
+              Our clients are mostly in Windsor, Ascot, Maidenhead, and the surrounding villages.
+              We've fitted kitchens in Victorian terraces, built library walls in Edwardian houses,
+              and created home offices in modern new-builds. No two jobs are the same, which suits us well.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Workshop Image */}
-      <section className="px-8 bg-white pb-24">
-        <div className="max-w-[1200px] mx-auto">
-          <img
-            src={imgUrl('/images/about_workshop.jpeg', 800)}
-            srcSet={imgSrcSet('/images/about_workshop.jpeg', [400, 800, 1200])}
-            sizes="100vw"
-            width={1200}
-            height={500}
-            loading="lazy"
-            decoding="async"
-            alt="Bespoke furniture workshop with traditional woodworking tools in Windsor"
-            className="w-full"
-          />
         </div>
       </section>
 
       {/* How We Work */}
       <section className="py-24 px-8 bg-background-light">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tighter mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tighter mb-4">
             How it works
           </h2>
+          <p className="text-gray-500 text-lg mb-12">A straightforward process, from first conversation to final fit.</p>
 
-          <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-            <p>
-              Projects typically begin with a site visit. We measure the space, discuss what you're
-              looking for, and talk through materials and finishes. There's no charge for this.
-            </p>
-            <p>
-              After that, we put together drawings and a quote. For kitchens and larger projects,
-              we often produce 3D renders so you can see how things will look before any wood is cut.
-            </p>
-            <p>
-              Construction happens at the workshop. We use solid timber and quality sheet materials,
-              with traditional joinery methods where they make sense. Timescales depend on the project —
-              a set of wardrobes might take four to six weeks, a full kitchen eight to twelve.
-            </p>
-            <p>
-              Installation is carried out by the same people who built the furniture.
-              We don't subcontract fitting work.
-            </p>
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-gold mb-3">01 — Site Visit</p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                We start with a free visit to measure the space and understand what you're after.
+                No pressure — just a conversation about what's possible.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-gold mb-3">02 — Design & Quote</p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                We produce drawings and a detailed quote. For kitchens and larger projects,
+                we include 3D renders so you can visualise the result before anything is built.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-gold mb-3">03 — Construction</p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Everything is built at our Windsor workshop using solid timber and quality sheet materials.
+                Wardrobes typically take four to six weeks; kitchens eight to twelve.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-gold mb-3">04 — Installation</p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                The same team that built your furniture installs it.
+                We don't subcontract fitting work — ever.
+              </p>
+            </div>
           </div>
         </div>
       </section>
