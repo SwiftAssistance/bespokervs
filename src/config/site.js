@@ -280,9 +280,9 @@ export const siteConfig = {
 
   // Images (Required)
   images: {
-    hero: '/images/hero_home.jpeg',
+    hero: '/images/hero.jpeg',
     about: '/images/home_about.jpeg',
-    workshop: '/images/hero_workshop.jpeg',
+    workshop: '/images/hero.jpeg',
   },
 
   // SEO Configuration (Required)
