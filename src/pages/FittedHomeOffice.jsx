@@ -134,7 +134,7 @@ const FittedHomeOffice = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Custom fitted home office desk with shelving in Berkshire"
-                  className="w-full h-[350px] object-cover"
+                  className="w-full"
                 />
                 <img
                   src={imgUrl('/images/home_office_2.jpeg', 600)}
@@ -145,7 +145,7 @@ const FittedHomeOffice = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Bespoke fitted study furniture with integrated storage in Windsor home"
-                  className="w-full h-[250px] object-cover"
+                  className="w-full"
                 />
               </div>
             </div>

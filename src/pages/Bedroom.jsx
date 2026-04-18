@@ -126,15 +126,15 @@ const Bedroom = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1616594039964-ae9021a400a0', [400, 600, 800])}
+                  src={'/images/bedroom_1.jpeg'}
+                  srcSet={undefined}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
                   loading="lazy"
                   decoding="async"
                   alt="Custom fitted wardrobes with organised internal storage in Berkshire bedroom"
-                  className="w-full h-[350px] object-cover"
+                  className="w-full"
                 />
                 <img
                   src={imgUrl('/images/bedroom_2.jpeg', 600)}
@@ -145,7 +145,7 @@ const Bedroom = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Bespoke fitted bedroom storage handcrafted in Windsor workshop"
-                  className="w-full h-[250px] object-cover"
+                  className="w-full"
                 />
               </div>
             </div>

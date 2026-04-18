@@ -114,7 +114,7 @@ const About = () => {
             loading="lazy"
             decoding="async"
             alt="Bespoke furniture workshop with traditional woodworking tools in Windsor"
-            className="w-full h-[400px] md:h-[500px] object-cover"
+            className="w-full"
           />
         </div>
       </section>

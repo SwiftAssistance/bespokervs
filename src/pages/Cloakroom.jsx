@@ -127,15 +127,15 @@ const Cloakroom = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1558618666-fcd25c85cd64', [400, 600, 800])}
+                  src={'/images/cloakroom_1.jpeg'}
+                  srcSet={undefined}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
                   loading="lazy"
                   decoding="async"
                   alt="Custom fitted cloakroom with coat storage and bench seating in Berkshire"
-                  className="w-full h-[350px] object-cover"
+                  className="w-full"
                 />
                 <img
                   src={imgUrl('/images/cloakroom_2.jpeg', 600)}
@@ -146,7 +146,7 @@ const Cloakroom = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Bespoke hallway furniture handcrafted in Windsor workshop"
-                  className="w-full h-[250px] object-cover"
+                  className="w-full"
                 />
               </div>
             </div>

@@ -126,15 +126,15 @@ const Bathroom = () => {
 
               <div className="space-y-6">
                 <img
-                  src={imgUrl('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14', 600)}
-                  srcSet={imgSrcSet('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14', [400, 600, 800])}
+                  src={'/images/bathroom_1.jpeg'}
+                  srcSet={undefined}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   width={800}
                   height={350}
                   loading="lazy"
                   decoding="async"
                   alt="Custom fitted bathroom vanity unit with storage in Berkshire home"
-                  className="w-full h-[350px] object-cover"
+                  className="w-full"
                 />
                 <img
                   src={imgUrl('/images/bathroom_2.jpeg', 600)}
@@ -145,7 +145,7 @@ const Bathroom = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Bespoke fitted bathroom cabinets handcrafted in Windsor workshop"
-                  className="w-full h-[250px] object-cover"
+                  className="w-full"
                 />
               </div>
             </div>
