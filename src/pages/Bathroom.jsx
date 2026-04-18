@@ -59,8 +59,9 @@ const Bathroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/hero.webp"
               sizes="100vw"
+              fetchPriority="high"
               width={1200}
               height={800}
               className="w-full h-full object-cover opacity-30"
@@ -127,7 +128,7 @@ const Bathroom = () => {
               <div className="space-y-6">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={'/images/bathroom_1.jpeg'}
+                    src={'/images/bathroom_1.webp'}
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     width={800}
                     height={600}
@@ -139,8 +140,8 @@ const Bathroom = () => {
                 </div>
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={imgUrl('/images/bathroom_2.jpeg', 600)}
-                    srcSet={imgSrcSet('/images/bathroom_2.jpeg', [400, 600, 800])}
+                    src={imgUrl('/images/bathroom_2.webp', 600)}
+                    srcSet={imgSrcSet('/images/bathroom_2.webp', [400, 600, 800])}
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     width={800}
                     height={600}
