@@ -126,28 +126,31 @@ const Cloakroom = () => {
               </div>
 
               <div className="space-y-6">
-                <img
-                  src={'/images/cloakroom_1.jpeg'}
-                  srcSet={undefined}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  width={800}
-                  height={350}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Custom fitted cloakroom with coat storage and bench seating in Berkshire"
-                  className="w-full"
-                />
-                <img
-                  src={imgUrl('/images/cloakroom_2.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/cloakroom_2.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  width={800}
-                  height={250}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Bespoke hallway furniture handcrafted in Windsor workshop"
-                  className="w-full"
-                />
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={'/images/cloakroom_1.jpeg'}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    alt="Custom fitted cloakroom with coat storage and bench seating in Berkshire"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={imgUrl('/images/cloakroom_2.jpeg', 600)}
+                    srcSet={imgSrcSet('/images/cloakroom_2.jpeg', [400, 600, 800])}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    alt="Bespoke hallway furniture handcrafted in Windsor workshop"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -125,28 +125,32 @@ const FittedHomeOffice = () => {
               </div>
 
               <div className="space-y-6">
-                <img
-                  src={imgUrl('/images/home_office_1.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/home_office_1.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  width={800}
-                  height={350}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Custom fitted home office desk with shelving in Berkshire"
-                  className="w-full"
-                />
-                <img
-                  src={imgUrl('/images/home_office_2.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/home_office_2.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  width={800}
-                  height={250}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Bespoke fitted study furniture with integrated storage in Windsor home"
-                  className="w-full"
-                />
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={imgUrl('/images/home_office_1.jpeg', 600)}
+                    srcSet={imgSrcSet('/images/home_office_1.jpeg', [400, 600, 800])}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    alt="Custom fitted home office desk with shelving in Berkshire"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={imgUrl('/images/home_office_2.jpeg', 600)}
+                    srcSet={imgSrcSet('/images/home_office_2.jpeg', [400, 600, 800])}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    alt="Bespoke fitted study furniture with integrated storage in Windsor home"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
