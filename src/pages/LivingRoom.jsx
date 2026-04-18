@@ -133,7 +133,7 @@ const LivingRoom = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Bespoke fitted alcove cabinets and shelving in Windsor living room"
-                  className="w-full h-[350px] object-cover"
+                  className="w-full"
                 />
                 <img
                   src={imgUrl('/images/living_room_2.jpeg', 600)}
@@ -144,7 +144,7 @@ const LivingRoom = () => {
                   loading="lazy"
                   decoding="async"
                   alt="Custom fitted living room storage and display cabinets in Berkshire"
-                  className="w-full h-[250px] object-cover"
+                  className="w-full"
                 />
               </div>
             </div>
