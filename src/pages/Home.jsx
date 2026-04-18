@@ -118,19 +118,10 @@ const Home = () => {
         <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-32 pointer-events-none hidden md:block"></div>
 
         <div className="max-w-[1400px] mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
-            <div className="max-w-2xl">
-              <h2 className="section-label mb-8 text-accent-gold">
-                <span className="h-px w-8 bg-accent-gold mr-4 inline-block"></span>
-                {home.services.sectionTitle}
-              </h2>
-              <h3 className="text-5xl md:text-8xl font-bold text-white tracking-tighter">
-                {home.services.title}
-              </h3>
-            </div>
-            <p className="text-white/40 text-lg font-light italic max-w-xs md:text-right">
-              {home.services.quote}
-            </p>
+          <div className="mb-24">
+            <h3 className="text-5xl md:text-8xl font-bold text-white tracking-tighter">
+              {home.services.title}
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
