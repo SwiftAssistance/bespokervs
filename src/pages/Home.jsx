@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote } from 'lucide-react';
+import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote, MapPin, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import ContactModal from '../components/ContactModal';
@@ -11,6 +11,23 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const testimonials = home.testimonials.items;
+  const { contactPage, contact } = siteConfig;
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', projectType: contactPage.form.projectTypes[0], message: '' });
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+
+  const handleContactChange = (e) => {
+    const { name, value } = e.target;
+    setContactForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setContactSubmitting(true);
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setContactSubmitting(false);
+    setContactSubmitted(true);
+  };
 
   const nextTestimonial = useCallback(() => {
     setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -84,14 +101,14 @@ const Home = () => {
       </section>
 
       {/* About Preview Section */}
-      <section className="py-24 md:py-36 px-8 bg-white below-fold">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="section-label mb-8">{home.about.sectionTitle}</h2>
-          <p className="text-gray-500 text-xl leading-relaxed mb-12 font-light">
+      <section className="py-24 md:py-36 px-8 bg-background-light below-fold">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="section-label justify-center mb-10">{home.about.sectionTitle}</h2>
+          <p className="text-primary-dark text-2xl md:text-3xl leading-relaxed mb-14 font-light tracking-tight">
             {home.about.description}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-12">
-            <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row justify-center gap-16 mb-14">
+            <div className="space-y-4">
               <div className="flex items-center justify-center gap-3 text-accent-gold">
                 <ShieldCheck size={20} />
                 <span className="text-[10px] font-bold uppercase tracking-widest">Master Joinery</span>
@@ -100,7 +117,8 @@ const Home = () => {
                 Traditional mortise and tenon joints combined with modern precision for lifetime durability.
               </p>
             </div>
-            <div className="space-y-3">
+            <div className="w-px bg-gray-200 self-stretch hidden sm:block"></div>
+            <div className="space-y-4">
               <div className="flex items-center justify-center gap-3 text-accent-gold">
                 <Award size={20} />
                 <span className="text-[10px] font-bold uppercase tracking-widest">Local Heritage</span>
@@ -110,6 +128,12 @@ const Home = () => {
               </p>
             </div>
           </div>
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-4 text-primary-dark font-bold uppercase tracking-[0.3em] text-xs border-b-2 border-accent-gold pb-2 hover:gap-6 transition-all"
+          >
+            About Us <ChevronRight size={16} />
+          </Link>
         </div>
       </section>
 
@@ -232,37 +256,107 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 px-8 bg-primary-dark relative overflow-hidden below-fold">
-        <div className="absolute inset-0">
-          <img
-            src={imgUrl(images.workshop, 600)}
-            srcSet={imgSrcSet(images.workshop, [400, 800, 1200])}
-            sizes="100vw"
-            width={1200}
-            height={800}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover opacity-20"
-            alt="RVS Bespoke furniture workshop in Windsor, Berkshire"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary-dark/80"></div>
-        </div>
-
-        <div className="max-w-[1400px] mx-auto relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-8">
-            Ready to Begin Your Project?
-          </h2>
-          <p className="text-white/60 text-xl max-w-2xl mx-auto mb-12 font-light">
-            Let's discuss your vision and create something exceptional together.
-          </p>
-          <button
-            type="button"
-            onClick={() => setIsModalOpen(true)}
-            className="btn-primary"
+      {/* Map Section */}
+      <section className="h-[450px] relative below-fold">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2693867927!2d-0.6168!3d51.4785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI4JzQyLjYiTiAwwrAzNicxMC4xIlc!5e0!3m2!1sen!2suk!4v1234567890"
+          width="100%"
+          height="100%"
+          style={{ border: 0, filter: 'grayscale(100%) contrast(1.1)' }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="RVS Bespoke Location"
+        ></iframe>
+        <div className="absolute bottom-6 left-6 bg-white p-6 shadow-2xl">
+          <div className="flex items-center gap-2 text-accent-gold mb-2">
+            <MapPin size={16} />
+            <span className="text-[10px] font-bold uppercase tracking-widest">Our Location</span>
+          </div>
+          <p className="text-primary-dark font-bold">{contact.address.line1}</p>
+          <p className="text-gray-500 text-sm mb-3">{contact.address.line2}</p>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address.full)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-gold text-xs font-bold uppercase tracking-widest hover:text-primary-dark transition-colors"
           >
-            Start Your Commission
-          </button>
+            Get Directions →
+          </a>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-24 px-8 bg-primary-dark below-fold">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <div className="text-white">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
+              Start Your <br />
+              <span className="text-accent-gold font-serif italic font-light">Project</span>
+            </h2>
+            <p className="text-white/60 text-lg font-light mb-10">
+              Tell us about your vision and we'll get back to you within 24 hours.
+            </p>
+            <div className="space-y-4 text-sm text-white/50">
+              <a href={contact.phoneLink} className="flex items-center gap-3 hover:text-accent-gold transition-colors">
+                <span className="w-px h-4 bg-accent-gold"></span>
+                {contact.phone}
+              </a>
+              <a href={contact.emailLink} className="flex items-center gap-3 hover:text-accent-gold transition-colors">
+                <span className="w-px h-4 bg-accent-gold"></span>
+                {contact.email}
+              </a>
+            </div>
+          </div>
+
+          <div>
+            {contactSubmitted ? (
+              <div className="flex flex-col items-center justify-center text-center py-16">
+                <div className="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mb-6">
+                  <CheckCircle size={32} className="text-white" />
+                </div>
+                <h4 className="text-white text-2xl font-bold mb-3">Thank You!</h4>
+                <p className="text-white/60 max-w-sm">We'll be in touch within 24 hours.</p>
+                <button
+                  onClick={() => { setContactSubmitted(false); setContactForm({ name: '', email: '', phone: '', projectType: contactPage.form.projectTypes[0], message: '' }); }}
+                  className="mt-6 text-accent-gold text-xs uppercase tracking-widest hover:text-white transition-colors"
+                >
+                  Send Another
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleContactSubmit} className="space-y-8">
+                <div>
+                  <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Name</label>
+                  <input type="text" name="name" value={contactForm.name} onChange={handleContactChange} required placeholder="Your name"
+                    className="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder:text-white/30 focus:border-accent-gold outline-none transition-colors text-lg" />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Email</label>
+                  <input type="email" name="email" value={contactForm.email} onChange={handleContactChange} required placeholder="your@email.com"
+                    className="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder:text-white/30 focus:border-accent-gold outline-none transition-colors text-lg" />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Project Type</label>
+                  <select name="projectType" value={contactForm.projectType} onChange={handleContactChange}
+                    className="w-full bg-transparent border-b border-white/20 pb-3 text-white focus:border-accent-gold outline-none transition-colors text-lg appearance-none cursor-pointer">
+                    {contactPage.form.projectTypes.map((type) => (
+                      <option key={type} value={type} className="bg-primary-dark">{type}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Message</label>
+                  <textarea name="message" value={contactForm.message} onChange={handleContactChange} rows={3} placeholder="Tell us about your project..."
+                    className="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder:text-white/30 focus:border-accent-gold outline-none transition-colors resize-none text-lg" />
+                </div>
+                <button type="submit" disabled={contactSubmitting}
+                  className="w-full py-5 bg-accent-gold text-white font-bold uppercase tracking-[0.4em] text-[11px] hover:bg-white hover:text-primary-dark transition-all flex items-center justify-center gap-3 disabled:opacity-50">
+                  {contactSubmitting ? <span className="animate-pulse">Sending...</span> : <><span>Submit Enquiry</span><Send size={14} /></>}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </section>
 
