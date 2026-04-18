@@ -125,28 +125,32 @@ const Kitchen = () => {
               </div>
 
               <div className="space-y-6">
-                <img
-                  src={imgUrl('/images/kitchen_1.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/kitchen_1.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  width={800}
-                  height={350}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Bespoke fitted kitchen island with granite worktop in Windsor home"
-                  className="w-full"
-                />
-                <img
-                  src={imgUrl('/images/kitchen_2.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/kitchen_2.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  width={800}
-                  height={250}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Custom fitted kitchen cabinetry handmade in Berkshire"
-                  className="w-full"
-                />
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={imgUrl('/images/kitchen_1.jpeg', 600)}
+                    srcSet={imgSrcSet('/images/kitchen_1.jpeg', [400, 600, 800])}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    alt="Bespoke fitted kitchen island with granite worktop in Windsor home"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={imgUrl('/images/kitchen_2.jpeg', 600)}
+                    srcSet={imgSrcSet('/images/kitchen_2.jpeg', [400, 600, 800])}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    alt="Custom fitted kitchen cabinetry handmade in Berkshire"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
