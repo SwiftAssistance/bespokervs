@@ -63,7 +63,7 @@ const Kitchen = () => {
               sizes="100vw"
               width={1200}
               height={800}
-              className="w-full h-full object-cover opacity-30"
+              className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted kitchen handcrafted in Windsor by RVS Bespoke"
               decoding="async"
             />

@@ -92,7 +92,7 @@ const Contact = () => {
             sizes="100vw"
             width={1200}
             height={800}
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-30"
             alt="Contact RVS Bespoke furniture makers in Windsor, Berkshire"
             decoding="async"
           />
