@@ -42,8 +42,20 @@ const About = () => {
         })}</script>
       </Helmet>
       {/* Hero Section */}
-      <section className="relative flex items-end overflow-hidden bg-primary-dark pt-32 pb-20">
-        <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/hero.jpeg"
+            sizes="100vw"
+            width={1200}
+            height={800}
+            className="w-full h-full object-cover opacity-40"
+            alt="RVS Bespoke joinery workshop in Windsor, Berkshire"
+            decoding="async"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
+        </div>
+        <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
           <div className="max-w-3xl">
             <p className="text-accent-gold uppercase tracking-[0.2em] text-xs font-bold mb-6">RVS Bespoke · Windsor</p>
             <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8">

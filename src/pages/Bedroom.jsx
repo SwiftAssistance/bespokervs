@@ -63,7 +63,7 @@ const Bedroom = () => {
               sizes="100vw"
               width={1200}
               height={800}
-              className="w-full h-full object-cover opacity-30"
+              className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted bedroom furniture with custom wardrobes in Windsor"
               decoding="async"
             />

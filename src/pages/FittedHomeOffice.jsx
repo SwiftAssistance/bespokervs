@@ -63,7 +63,7 @@ const FittedHomeOffice = () => {
               sizes="100vw"
               width={1200}
               height={800}
-              className="w-full h-full object-cover opacity-30"
+              className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted home office with custom desk and storage in Windsor"
               decoding="async"
             />
