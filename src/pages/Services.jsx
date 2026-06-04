@@ -17,7 +17,7 @@ const Services = () => {
 
       <div>
         {/* Hero Section */}
-        <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-primary-dark pt-32">
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
               src={imgUrl(siteConfig.images.workshop, 800)}
