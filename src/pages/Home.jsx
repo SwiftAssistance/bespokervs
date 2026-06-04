@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, ChevronRight, ShieldCheck, Award, Quote, MapPin, Send, CheckCircle } from 'lucide-react';
+import { ArrowRight, Quote, MapPin, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import ContactModal from '../components/ContactModal';
@@ -117,43 +117,6 @@ const Home = () => {
             {home.hero.scrollHint}
           </span>
           <div className="h-20 w-px bg-gradient-to-b from-accent-gold to-transparent"></div>
-        </div>
-      </section>
-
-      {/* About Preview Section */}
-      <section className="py-24 md:py-36 px-8 bg-background-light below-fold">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="section-label justify-center mb-10">{home.about.sectionTitle}</h2>
-          <p className="text-primary-dark text-2xl md:text-3xl leading-relaxed mb-14 font-light tracking-tight">
-            {home.about.description}
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-16 mb-14">
-            <div className="space-y-4">
-              <div className="flex items-center justify-center gap-3 text-accent-gold">
-                <ShieldCheck size={20} />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Master Joinery</span>
-              </div>
-              <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">
-                Traditional mortise and tenon joints combined with modern precision for lifetime durability.
-              </p>
-            </div>
-            <div className="w-px bg-gray-200 self-stretch hidden sm:block"></div>
-            <div className="space-y-4">
-              <div className="flex items-center justify-center gap-3 text-accent-gold">
-                <Award size={20} />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Local Heritage</span>
-              </div>
-              <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">
-                Serving Windsor, Ascot, and the surrounding Berkshire areas for over a decade with distinction.
-              </p>
-            </div>
-          </div>
-          <Link
-            to="/about"
-            className="inline-flex items-center gap-4 text-primary-dark font-bold uppercase tracking-[0.3em] text-xs border-b-2 border-accent-gold pb-2 hover:gap-6 transition-all"
-          >
-            About Us <ChevronRight size={16} />
-          </Link>
         </div>
       </section>
 
