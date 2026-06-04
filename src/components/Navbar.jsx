@@ -101,7 +101,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-12">
             {siteConfig.navigation.main.map((item) =>
               item.children ? (
-                <div key={item.name} className="relative" ref={dropdownRef}>
+                <div key={item.name} className="relative" ref={dropdownRef} onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
                   <div className="flex items-center gap-1.5">
                     <Link
                       to={item.path}
@@ -118,18 +118,13 @@ const Navbar = () => {
                         }`}
                       ></span>
                     </Link>
-                    <button
-                      type="button"
-                      onClick={() => setDropdownOpen(prev => !prev)}
-                      className={`transition-all ${
+                    <span className={`transition-all pointer-events-none ${
                         isServiceActive() || isActive(item.path)
                           ? 'text-accent-gold'
-                          : 'text-white/80 hover:text-accent-gold'
-                      }`}
-                      aria-label="Toggle services menu"
-                    >
+                          : 'text-white/80'
+                      }`}>
                       <ChevronDown size={12} className={`transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
-                    </button>
+                    </span>
                   </div>
                   {dropdownOpen && (
                     <div className="absolute top-full left-0 mt-4 bg-primary-dark border border-white/10 shadow-2xl min-w-[220px] py-2">

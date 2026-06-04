@@ -120,11 +120,11 @@
 
   /* Contact info card */
   .contact-info-card {
-    @apply flex items-start gap-10;
+    @apply flex items-start gap-5;
   }
 
   .contact-info-icon {
-    @apply bg-primary-dark p-6 text-accent-gold transition-transform group-hover:scale-110;
+    @apply bg-primary-dark p-4 text-accent-gold transition-transform group-hover:scale-110;
   }
 }
 

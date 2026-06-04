@@ -45,18 +45,6 @@ const Contact = () => {
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": faqs.map((faq) => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq.answer
-            }
-          }))
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
@@ -106,16 +94,16 @@ const Contact = () => {
               <span className="text-accent-gold font-serif italic font-light">Conversation</span>
             </h2>
 
-            <div className="space-y-6 mb-8">
+            <div className="space-y-4 mb-8">
               <div className="group contact-info-card">
                 <div className="contact-info-icon">
                   <MapPin size={28} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
+                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-1">
                     Location
                   </h5>
-                  <p className="text-2xl font-light text-gray-500 leading-snug">
+                  <p className="text-lg font-light text-gray-500 leading-snug">
                     {siteConfig.contact.address.line1}
                     <br />
                     {siteConfig.contact.address.line2}
@@ -128,12 +116,12 @@ const Contact = () => {
                   <Phone size={28} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
+                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-1">
                     Phone
                   </h5>
                   <a
                     href={siteConfig.contact.phoneLink}
-                    className="text-3xl font-bold text-primary-dark tracking-widest hover:text-accent-gold transition-colors"
+                    className="text-xl font-bold text-primary-dark tracking-widest hover:text-accent-gold transition-colors"
                   >
                     {siteConfig.contact.phone}
                   </a>
@@ -145,7 +133,7 @@ const Contact = () => {
                   <Mail size={28} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
+                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-1">
                     Email
                   </h5>
                   <a
