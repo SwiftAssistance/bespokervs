@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
@@ -116,16 +116,16 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section className="py-32 px-8 bg-white">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section className="py-16 px-8 bg-white">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tighter mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tighter mb-8">
               Let's Start a <br />
               <span className="text-accent-gold font-serif italic font-light">Conversation</span>
             </h2>
 
-            <div className="space-y-10 mb-16">
+            <div className="space-y-6 mb-8">
               <div className="group contact-info-card">
                 <div className="contact-info-icon">
                   <MapPin size={28} strokeWidth={1.5} />
@@ -176,30 +176,11 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="group contact-info-card">
-                <div className="contact-info-icon">
-                  <Clock size={28} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h5 className="font-bold text-primary-dark uppercase text-[10px] tracking-[0.4em] mb-4">
-                    {contactPage.showroom.title}
-                  </h5>
-                  <div className="space-y-2">
-                    {contactPage.showroom.hours.map((item, i) => (
-                      <div key={i} className="flex justify-between text-gray-500 max-w-xs">
-                        <span className="font-medium">{item.day}</span>
-                        <span>{item.time}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-sm text-gray-400 mt-4 italic">{contactPage.showroom.note}</p>
-                </div>
-              </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-primary-dark p-12 md:p-16 shadow-[0_50px_100px_rgba(0,0,0,0.2)] relative">
+          <div className="bg-primary-dark p-8 md:p-10 shadow-[0_50px_100px_rgba(0,0,0,0.2)] relative">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 pointer-events-none"></div>
 
             {isSubmitted ? (
@@ -229,10 +210,10 @@ const Contact = () => {
               </div>
             ) : (
               <>
-                <h4 className="text-white text-3xl font-bold mb-12 tracking-tight">
+                <h4 className="text-white text-2xl font-bold mb-6 tracking-tight">
                   {contactPage.form.title}
                 </h4>
-                <form onSubmit={handleSubmit} className="space-y-10">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="form-input">
                     <label className="form-label">{contactPage.form.fields.name.label}</label>
                     <input
@@ -295,7 +276,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows="4"
+                      rows="3"
                       className="form-field resize-none"
                       placeholder={contactPage.form.fields.message.placeholder}
                     ></textarea>
