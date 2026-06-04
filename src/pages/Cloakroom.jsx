@@ -65,8 +65,8 @@ const Cloakroom = () => {
             <div className="max-w-3xl">
               <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Fitted Furniture</p>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                Cloakroom
-                <span className="block text-accent-gold font-serif italic font-light">Fitted Furniture</span>
+                Cloakroom &amp; Under
+                <span className="block text-accent-gold font-serif italic font-light">the Stairs</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
                 Bespoke boot rooms, coat storage, and hallway cabinetry that keeps

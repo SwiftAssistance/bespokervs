@@ -1,17 +1,16 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { imgUrl, imgSrcSet } from '../utils/image';
 import ImageCarousel from '../components/ImageCarousel';
 
-const LivingRoom = () => {
+const LoftConversion = () => {
 
   return (
     <>
       <Helmet>
-        <title>Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke</title>
-        <meta name="description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Custom cabinets, storage and joinery handcrafted in our workshop." />
-        <link rel="canonical" href="https://rvsbespoke.co.uk/living-room" />
+        <title>Loft Conversion Fitted Furniture Windsor | Bespoke Storage | RVS Bespoke</title>
+        <meta name="description" content="Bespoke fitted furniture for loft conversions in Windsor, Berkshire. Custom storage, wardrobes and built-in joinery to make the most of your loft space." />
+        <link rel="canonical" href="https://rvsbespoke.co.uk/loft-conversion" />
       </Helmet>
 
       <div>
@@ -24,7 +23,7 @@ const LivingRoom = () => {
               width={1200}
               height={800}
               className="w-full h-full object-cover opacity-40"
-              alt="Bespoke fitted living room, dining room and kitchen furniture in Windsor"
+              alt="Bespoke fitted loft conversion furniture in Windsor"
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
@@ -34,12 +33,12 @@ const LivingRoom = () => {
             <div className="max-w-3xl">
               <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Fitted Furniture</p>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                Living Room, Dining Room
-                <span className="block text-accent-gold font-serif italic font-light">&amp; Kitchen</span>
+                Loft
+                <span className="block text-accent-gold font-serif italic font-light">Conversion</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Bespoke fitted furniture for the heart of your home — from alcove cabinets and media walls
-                to kitchen cabinetry and dining storage. All handcrafted in our Windsor workshop.
+                Bespoke fitted furniture designed specifically for loft spaces — working with eaves,
+                sloped ceilings, and awkward angles to maximise every usable inch.
               </p>
             </div>
           </div>
@@ -50,18 +49,18 @@ const LivingRoom = () => {
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                Furniture That Fits Your Home
+                Making the Most of Your Loft
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Whether it's alcove cabinets in the living room, a fitted sideboard in the dining room,
-                or bespoke kitchen cabinetry — we design and build everything to measure, working around
-                your space and the way you live.
+                Loft conversions come with unusual shapes — sloped ceilings, low eaves, and
+                tight corners that off-the-shelf furniture simply can't handle. We design and build
+                fitted joinery that turns those awkward spaces into genuinely useful storage.
               </p>
             </div>
             <div className="max-w-3xl mx-auto">
               <ImageCarousel images={[
-                { src: '/images/living_room_1.jpeg', alt: 'Bespoke fitted alcove cabinets and shelving in Windsor living room' },
-                { src: imgUrl('/images/living_room_2.jpeg', 1200), srcSet: imgSrcSet('/images/living_room_2.jpeg', [600, 900, 1200]), alt: 'Custom fitted living room storage and display cabinets in Berkshire' },
+                { src: '/images/bedroom_1.jpeg', alt: 'Bespoke fitted loft conversion storage in Windsor' },
+                { src: '/images/bedroom_2.jpeg', alt: 'Custom fitted eaves storage and wardrobes in Berkshire loft' },
               ]} />
             </div>
           </div>
@@ -75,9 +74,9 @@ const LivingRoom = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: 'Living Room Storage', desc: 'Alcove cabinets, media walls, bookshelves and window seats — designed to make the most of every inch of your living space.' },
-                { title: 'Dining Room Furniture', desc: 'Fitted sideboards, display cabinets and built-in storage that complement your dining room and keep clutter out of sight.' },
-                { title: 'Kitchen Cabinetry', desc: 'Handmade kitchen units built in our Windsor workshop using solid timber and quality materials. No flat-pack, no compromise.' },
+                { title: 'Eaves Storage', desc: 'Built-in cupboards and drawers fitted into the low eaves — space that would otherwise sit empty behind a knee wall.' },
+                { title: 'Fitted Wardrobes', desc: 'Wardrobes designed around sloped ceilings, using every centimetre of headroom and making the room feel complete.' },
+                { title: 'Bedroom & Office', desc: 'Whether your loft is a bedroom, home office, or both, we fit it out with furniture built specifically for the space.' },
               ].map((item) => (
                 <div key={item.title} className="bg-white p-8 shadow-sm">
                   <h3 className="text-xl font-bold text-primary-dark mb-3">{item.title}</h3>
@@ -92,10 +91,10 @@ const LivingRoom = () => {
         <section className="py-16 px-8 bg-white border-t border-gray-100">
           <div className="max-w-[1200px] mx-auto text-center">
             <h2 className="text-2xl font-bold text-primary-dark mb-6">
-              Serving Windsor and Berkshire
+              Loft Conversion Furniture Across Berkshire
             </h2>
             <p className="text-gray-500 mb-8 max-w-2xl mx-auto">
-              We design and install bespoke fitted furniture throughout Windsor and the surrounding areas,
+              We design and install bespoke loft furniture throughout Windsor and the surrounding areas,
               including Ascot, Maidenhead, Slough, Eton, Datchet, and Sunningdale.
             </p>
             <Link
@@ -111,4 +110,4 @@ const LivingRoom = () => {
   );
 };
 
-export default LivingRoom;
+export default LoftConversion;
