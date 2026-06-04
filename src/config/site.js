@@ -53,7 +53,7 @@ export const siteConfig = {
     ],
     footer: [
       { name: 'Home', path: '/' },
-      { name: 'About the Studio', path: '/about' },
+      { name: 'About Us', path: '/about' },
       { name: 'Contact Us', path: '/contact' },
     ],
   },
