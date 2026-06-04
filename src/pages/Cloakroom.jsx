@@ -89,10 +89,12 @@ const Cloakroom = () => {
                 everything has its place.
               </p>
             </div>
-            <ImageCarousel images={[
-              { src: '/images/cloakroom_1.jpeg', alt: 'Custom fitted cloakroom with coat storage and bench seating in Berkshire' },
-              { src: imgUrl('/images/cloakroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/cloakroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke hallway furniture handcrafted in Windsor workshop' },
-            ]} />
+            <div className="max-w-3xl mx-auto">
+              <ImageCarousel images={[
+                { src: '/images/cloakroom_1.jpeg', alt: 'Custom fitted cloakroom with coat storage and bench seating in Berkshire' },
+                { src: imgUrl('/images/cloakroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/cloakroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke hallway furniture handcrafted in Windsor workshop' },
+              ]} />
+            </div>
           </div>
         </section>
 

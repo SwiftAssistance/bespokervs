@@ -89,10 +89,12 @@ const Bedroom = () => {
                 furniture is made to measure, designed specifically for your room and your belongings.
               </p>
             </div>
-            <ImageCarousel images={[
-              { src: '/images/bedroom_1.jpeg', alt: 'Custom fitted wardrobes with organised internal storage in Berkshire bedroom' },
-              { src: imgUrl('/images/bedroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/bedroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted bedroom storage handcrafted in Windsor workshop' },
-            ]} />
+            <div className="max-w-3xl mx-auto">
+              <ImageCarousel images={[
+                { src: '/images/bedroom_1.jpeg', alt: 'Custom fitted wardrobes with organised internal storage in Berkshire bedroom' },
+                { src: imgUrl('/images/bedroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/bedroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted bedroom storage handcrafted in Windsor workshop' },
+              ]} />
+            </div>
           </div>
         </section>
 

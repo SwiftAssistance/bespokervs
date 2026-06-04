@@ -89,10 +89,12 @@ const Kitchen = () => {
                 for you — not a showroom compromise.
               </p>
             </div>
-            <ImageCarousel images={[
-              { src: imgUrl('/images/kitchen_1.jpeg', 1200), srcSet: imgSrcSet('/images/kitchen_1.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted kitchen island with granite worktop in Windsor home' },
-              { src: imgUrl('/images/kitchen_2.jpeg', 1200), srcSet: imgSrcSet('/images/kitchen_2.jpeg', [600, 900, 1200]), alt: 'Custom fitted kitchen cabinetry handmade in Berkshire' },
-            ]} />
+            <div className="max-w-3xl mx-auto">
+              <ImageCarousel images={[
+                { src: imgUrl('/images/kitchen_1.jpeg', 1200), srcSet: imgSrcSet('/images/kitchen_1.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted kitchen island with granite worktop in Windsor home' },
+                { src: imgUrl('/images/kitchen_2.jpeg', 1200), srcSet: imgSrcSet('/images/kitchen_2.jpeg', [600, 900, 1200]), alt: 'Custom fitted kitchen cabinetry handmade in Berkshire' },
+              ]} />
+            </div>
           </div>
         </section>
 
