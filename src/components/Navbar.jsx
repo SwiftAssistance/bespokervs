@@ -127,7 +127,8 @@ const Navbar = () => {
                     </span>
                   </div>
                   {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-4 bg-primary-dark border border-white/10 shadow-2xl min-w-[220px] py-2">
+                    <div className="absolute top-full left-0 pt-3 min-w-[220px]">
+                    <div className="bg-primary-dark border border-white/10 shadow-2xl py-2">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
@@ -141,6 +142,7 @@ const Navbar = () => {
                           {child.name}
                         </Link>
                       ))}
+                    </div>
                     </div>
                   )}
                 </div>
