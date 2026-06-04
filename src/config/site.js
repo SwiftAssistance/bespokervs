@@ -54,6 +54,7 @@ export const siteConfig = {
     footer: [
       { name: 'Home', path: '/' },
       { name: 'About Us', path: '/about' },
+      { name: 'Areas We Cover', path: '/areas' },
       { name: 'Contact Us', path: '/contact' },
     ],
   },
