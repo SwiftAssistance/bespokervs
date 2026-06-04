@@ -109,10 +109,7 @@ const Contact = () => {
               </span>
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8">
-              {contactPage.hero.subtitle.split(' ')[0]} <br />
-              <span className="text-accent-gold font-serif italic font-light">
-                {contactPage.hero.subtitle.split(' ').slice(1).join(' ')}
-              </span>
+              Contact <span className="text-accent-gold font-serif italic font-light">Us</span>
             </h1>
           </div>
         </div>
