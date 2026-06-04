@@ -11,7 +11,50 @@ const LivingRoom = () => {
       <Helmet>
         <title>Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Custom cabinets, storage and joinery handcrafted in our workshop." />
+        <meta name="keywords" content="fitted living room furniture Windsor, bespoke kitchen cabinets Berkshire, fitted dining room storage Ascot, alcove cabinets Windsor, media wall Maidenhead, kitchen joinery Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/living-room" />
+        <meta property="og:title" content="Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke" />
+        <meta property="og:description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Custom cabinets, storage and joinery handcrafted in our workshop." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/living-room" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke" />
+        <meta name="twitter:description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Handcrafted in our workshop." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Fitted Living Room, Dining Room & Kitchen Furniture Windsor",
+            "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
+            "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
+            "description": "Bespoke fitted furniture for living rooms, dining rooms and kitchens. Alcove cabinets, media walls, kitchen cabinetry and dining storage handcrafted in Windsor.",
+            "serviceType": "Fitted Living Room, Dining Room & Kitchen Furniture Design and Installation",
+            "url": "https://rvsbespoke.co.uk/living-room",
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": "Living Room, Dining Room & Kitchen", "item": "https://rvsbespoke.co.uk/living-room" },
+            ],
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you make fitted alcove cabinets in Windsor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — alcove cabinets and shelving are one of our most popular commissions. We measure and build to the exact dimensions of your alcove so everything fits perfectly." } },
+              { "@type": "Question", "name": "Can you build a bespoke media wall?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We design and build fitted media walls with integrated TV housing, shelving, and concealed cable management. Every wall is made to measure for your room." } },
+              { "@type": "Question", "name": "Do you make kitchen furniture?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We make bespoke kitchen cabinetry handcrafted in our Windsor workshop — not flat-pack. Units are built from solid timber and quality materials to your exact measurements." } },
+              { "@type": "Question", "name": "How long does a fitted living room take?", "acceptedAnswer": { "@type": "Answer", "text": "A typical alcove or media wall project takes four to six weeks from design sign-off to installation. Larger projects covering the full room may take longer — we'll give you a timeline upfront." } },
+              { "@type": "Question", "name": "Can you match the paint or finish to my existing room?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can paint to any colour including Farrow & Ball, Little Greene, or your own specification. We can also work with natural timbers, stained finishes, and handleless designs." } },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div>

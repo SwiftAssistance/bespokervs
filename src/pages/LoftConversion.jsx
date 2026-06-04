@@ -10,7 +10,49 @@ const LoftConversion = () => {
       <Helmet>
         <title>Loft Conversion Fitted Furniture Windsor | Bespoke Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted furniture for loft conversions in Windsor, Berkshire. Custom storage, wardrobes and built-in joinery to make the most of your loft space." />
+        <meta name="keywords" content="loft conversion fitted furniture Windsor, bespoke eaves storage Berkshire, fitted wardrobes loft conversion Ascot, sloped ceiling wardrobes Windsor, loft joinery Berkshire" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/loft-conversion" />
+        <meta property="og:title" content="Loft Conversion Fitted Furniture Windsor | Bespoke Storage | RVS Bespoke" />
+        <meta property="og:description" content="Bespoke fitted furniture for loft conversions in Windsor, Berkshire. Custom storage, wardrobes and built-in joinery to make the most of your loft space." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/loft-conversion" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Loft Conversion Fitted Furniture Windsor | Bespoke Storage | RVS Bespoke" />
+        <meta name="twitter:description" content="Bespoke fitted furniture for loft conversions in Windsor, Berkshire. Custom eaves storage and wardrobes handcrafted in our workshop." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Loft Conversion Fitted Furniture Windsor",
+            "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
+            "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
+            "description": "Bespoke fitted furniture for loft conversions — working with eaves, sloped ceilings and awkward angles to maximise every usable inch of your loft space.",
+            "serviceType": "Loft Conversion Fitted Furniture Design and Installation",
+            "url": "https://rvsbespoke.co.uk/loft-conversion",
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": "Loft Conversion", "item": "https://rvsbespoke.co.uk/loft-conversion" },
+            ],
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Can you fit furniture in a loft conversion?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — loft conversions are a speciality of ours. We design and build furniture that works around eaves, sloped ceilings, and the unusual shapes that come with loft spaces." } },
+              { "@type": "Question", "name": "Can you build wardrobes under a sloped ceiling?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We design wardrobes specifically for sloped ceilings, using every centimetre of available headroom. The result looks like the furniture was always part of the room." } },
+              { "@type": "Question", "name": "What can you fit into the eaves space?", "acceptedAnswer": { "@type": "Answer", "text": "We can fit pull-out drawers, shelving, hanging rails, and cupboards into eaves spaces — turning dead space behind a knee wall into genuinely useful storage." } },
+              { "@type": "Question", "name": "Do you work on loft conversions across Berkshire?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We install loft conversion furniture throughout Windsor, Ascot, Maidenhead, Slough, Datchet, and the wider Berkshire area." } },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div>

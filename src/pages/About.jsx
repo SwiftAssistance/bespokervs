@@ -55,6 +55,8 @@ const About = () => {
         <meta property="og:description" content="Operating from our Windsor workshop, we design and build bespoke fitted furniture for homes across Berkshire." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/about" />
         <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="About RVS Bespoke | Master Craftsmen in Windsor" />
+        <meta name="twitter:description" content="Operating from our Windsor workshop, we design and build bespoke fitted furniture for homes across Berkshire." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",

@@ -13,24 +13,22 @@ const Cloakroom = () => {
         <meta name="description" content="Bespoke fitted cloakroom furniture in Windsor, Berkshire. Custom boot rooms, coat storage, and hallway cabinetry. Handcrafted in our workshop. Free consultation." />
         <meta name="keywords" content="fitted cloakroom furniture Windsor, bespoke boot room Berkshire, hallway storage Ascot, coat cupboard Maidenhead, fitted hallway furniture Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/cloakroom" />
+        <meta property="og:title" content="Fitted Cloakroom Furniture Windsor | Bespoke Boot Room & Hallway Storage | RVS Bespoke" />
+        <meta property="og:description" content="Bespoke fitted cloakroom furniture in Windsor, Berkshire. Custom boot rooms, coat storage, and hallway cabinetry. Handcrafted in our workshop." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/cloakroom" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Fitted Cloakroom Furniture Windsor | Bespoke Boot Room & Hallway Storage | RVS Bespoke" />
+        <meta name="twitter:description" content="Bespoke fitted cloakroom furniture in Windsor, Berkshire. Custom boot rooms, coat storage, and hallway cabinetry. Handcrafted in our workshop." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "Fitted Cloakroom Furniture Windsor",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "RVS Bespoke",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Windsor",
-                "addressRegion": "Berkshire",
-                "postalCode": "SL4 5JA"
-              }
-            },
+            "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
             "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
             "description": "Bespoke fitted cloakroom and hallway furniture designed and built in our Windsor workshop. Custom boot rooms, coat storage, and hallway solutions.",
-            "serviceType": "Fitted Cloakroom Furniture Design and Installation"
+            "serviceType": "Fitted Cloakroom Furniture Design and Installation",
+            "url": "https://rvsbespoke.co.uk/cloakroom",
           })}
         </script>
         <script type="application/ld+json">
@@ -39,8 +37,21 @@ const Cloakroom = () => {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
-              { "@type": "ListItem", "position": 2, "name": "Cloakroom", "item": "https://rvsbespoke.co.uk/cloakroom" }
-            ]
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": "Cloakroom & Under the Stairs", "item": "https://rvsbespoke.co.uk/cloakroom" },
+            ],
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you build fitted cloakroom furniture in Windsor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design and build bespoke fitted cloakroom and hallway furniture across Windsor and Berkshire, including boot rooms, coat storage, and hallway cabinets." } },
+              { "@type": "Question", "name": "Can you fit furniture under the stairs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — under-stair storage is one of our specialities. We build pull-out drawers, shelving, and cupboards that make full use of the awkward triangular space beneath your staircase." } },
+              { "@type": "Question", "name": "What is a boot room?", "acceptedAnswer": { "@type": "Answer", "text": "A boot room is a dedicated entrance storage area with bench seating, hooks for coats, space for muddy boots, and easy-clean surfaces. We build bespoke boot rooms that are practical for families and beautiful enough to impress guests." } },
+              { "@type": "Question", "name": "Can you fit storage into a narrow hallway?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design slim fitted cabinets, coat hooks, and shelving for narrow hallways — maximising storage without blocking the space." } },
+            ],
           })}
         </script>
       </Helmet>

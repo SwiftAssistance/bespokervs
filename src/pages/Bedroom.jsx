@@ -13,24 +13,22 @@ const Bedroom = () => {
         <meta name="description" content="Bespoke fitted bedroom furniture in Windsor, Berkshire. Custom wardrobes, dressing tables, and bedroom storage. Handcrafted in our workshop. Free consultation." />
         <meta name="keywords" content="fitted bedroom furniture Windsor, bespoke wardrobes Berkshire, fitted wardrobes Ascot, custom bedroom storage Maidenhead, built-in wardrobes Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/bedroom" />
+        <meta property="og:title" content="Fitted Bedroom Furniture Windsor | Bespoke Wardrobes & Storage | RVS Bespoke" />
+        <meta property="og:description" content="Bespoke fitted bedroom furniture in Windsor, Berkshire. Custom wardrobes, dressing tables, and bedroom storage. Handcrafted in our workshop." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/bedroom" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Fitted Bedroom Furniture Windsor | Bespoke Wardrobes & Storage | RVS Bespoke" />
+        <meta name="twitter:description" content="Bespoke fitted bedroom furniture in Windsor, Berkshire. Custom wardrobes, dressing tables, and bedroom storage. Handcrafted in our workshop." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "Fitted Bedroom Furniture Windsor",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "RVS Bespoke",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Windsor",
-                "addressRegion": "Berkshire",
-                "postalCode": "SL4 5JA"
-              }
-            },
+            "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
             "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
             "description": "Bespoke fitted bedroom furniture designed and built in our Windsor workshop. Custom wardrobes, dressing tables, and bedroom storage solutions.",
-            "serviceType": "Fitted Bedroom Furniture Design and Installation"
+            "serviceType": "Fitted Bedroom Furniture Design and Installation",
+            "url": "https://rvsbespoke.co.uk/bedroom",
           })}
         </script>
         <script type="application/ld+json">
@@ -39,8 +37,21 @@ const Bedroom = () => {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
-              { "@type": "ListItem", "position": 2, "name": "Bedroom", "item": "https://rvsbespoke.co.uk/bedroom" }
-            ]
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": "Bedroom", "item": "https://rvsbespoke.co.uk/bedroom" },
+            ],
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you make fitted wardrobes in Windsor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — fitted wardrobes are one of our most popular services. We design and build to the exact dimensions of your bedroom, making the most of every available inch." } },
+              { "@type": "Question", "name": "Can you build fitted wardrobes in an awkward space?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We regularly work around chimney breasts, alcoves, sloped ceilings, and other challenging spaces. Bespoke joinery is specifically designed to handle what off-the-shelf furniture cannot." } },
+              { "@type": "Question", "name": "How long do fitted wardrobes take?", "acceptedAnswer": { "@type": "Answer", "text": "Fitted bedrooms and wardrobes typically take four to six weeks from design sign-off to installation. We confirm a timeline before anything is ordered." } },
+              { "@type": "Question", "name": "Can I choose my own wardrobe interior layout?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We design the interior around how you actually use the space — hanging rails, shelves, drawers, shoe storage and more, all configured to your requirements." } },
+            ],
           })}
         </script>
       </Helmet>

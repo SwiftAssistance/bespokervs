@@ -68,6 +68,20 @@ const Home = () => {
         <meta property="og:description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/" />
         <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="RVS Bespoke | Fitted Furniture for Every Room in Windsor" />
+        <meta name="twitter:description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://rvsbespoke.co.uk/#webpage",
+            "url": "https://rvsbespoke.co.uk/",
+            "name": "RVS Bespoke | Fitted Furniture Windsor, Berkshire",
+            "description": "Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire.",
+            "publisher": { "@id": "https://rvsbespoke.co.uk/#organization" },
+            "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" }] },
+          })}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-primary-dark">

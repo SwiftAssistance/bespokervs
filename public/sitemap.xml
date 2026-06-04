@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://rvsbespoke.co.uk/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,49 +15,144 @@
   <!-- Services Overview -->
   <url>
     <loc>https://rvsbespoke.co.uk/services</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Bespoke Kitchens -->
+  <!-- Living Room, Dining Room & Kitchen -->
   <url>
-    <loc>https://rvsbespoke.co.uk/kitchens</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://rvsbespoke.co.uk/living-room</loc>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Fitted Wardrobes -->
+  <!-- Fitted Bedroom Furniture -->
   <url>
-    <loc>https://rvsbespoke.co.uk/wardrobes</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://rvsbespoke.co.uk/bedroom</loc>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Home Office -->
+  <!-- Fitted Home Office -->
   <url>
     <loc>https://rvsbespoke.co.uk/home-office</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- About Page -->
+  <!-- Loft Conversion -->
+  <url>
+    <loc>https://rvsbespoke.co.uk/loft-conversion</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Cloakroom & Under the Stairs -->
+  <url>
+    <loc>https://rvsbespoke.co.uk/cloakroom</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About -->
   <url>
     <loc>https://rvsbespoke.co.uk/about</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Contact Page -->
+  <!-- Contact -->
   <url>
     <loc>https://rvsbespoke.co.uk/contact</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Areas Index -->
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Area Pages -->
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/windsor</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/ascot</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/maidenhead</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/slough</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/eton</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/sunningdale</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/datchet</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/virginia-water</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/wokingham</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rvsbespoke.co.uk/areas/bracknell</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

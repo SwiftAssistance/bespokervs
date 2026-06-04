@@ -13,24 +13,22 @@ const FittedHomeOffice = () => {
         <meta name="description" content="Bespoke fitted home office furniture in Windsor, Berkshire. Custom desks, built-in studies and office storage. Designed for remote working. Free consultation." />
         <meta name="keywords" content="fitted home office furniture Windsor, bespoke desk Berkshire, fitted study Ascot, custom office Maidenhead, built-in desk Windsor, home office design Slough" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/home-office" />
+        <meta property="og:title" content="Fitted Home Office Furniture Windsor | Bespoke Desks & Studies | RVS Bespoke" />
+        <meta property="og:description" content="Bespoke fitted home office furniture in Windsor, Berkshire. Custom desks, built-in studies and office storage. Designed for remote working." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/home-office" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Fitted Home Office Furniture Windsor | Bespoke Desks & Studies | RVS Bespoke" />
+        <meta name="twitter:description" content="Bespoke fitted home office furniture in Windsor, Berkshire. Custom desks, built-in studies and office storage. Designed for remote working." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "Fitted Home Office Furniture Windsor",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "RVS Bespoke",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Windsor",
-                "addressRegion": "Berkshire",
-                "postalCode": "SL4 5JA"
-              }
-            },
+            "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
             "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
             "description": "Bespoke fitted home office furniture designed and built in our Windsor workshop. Custom desks, studies, and office storage solutions.",
-            "serviceType": "Fitted Home Office Furniture Design and Installation"
+            "serviceType": "Fitted Home Office Furniture Design and Installation",
+            "url": "https://rvsbespoke.co.uk/home-office",
           })}
         </script>
         <script type="application/ld+json">
@@ -39,8 +37,21 @@ const FittedHomeOffice = () => {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
-              { "@type": "ListItem", "position": 2, "name": "Home Office", "item": "https://rvsbespoke.co.uk/home-office" }
-            ]
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": "Home Office", "item": "https://rvsbespoke.co.uk/home-office" },
+            ],
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you build fitted home offices in Windsor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design and install bespoke fitted home offices across Windsor and Berkshire — from a single fitted desk and shelving to a full room built-in study." } },
+              { "@type": "Question", "name": "Can you fit a home office into a small room?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Bespoke joinery is ideal for small rooms because we build to the exact dimensions of the space, using every available inch without wasted gaps." } },
+              { "@type": "Question", "name": "What does a fitted home office typically include?", "acceptedAnswer": { "@type": "Answer", "text": "Most fitted home offices include a built-in desk, overhead and under-desk storage, shelving, and cable management. We design around your specific workflow and equipment." } },
+              { "@type": "Question", "name": "How long does a fitted home office take?", "acceptedAnswer": { "@type": "Answer", "text": "A fitted home office typically takes four to six weeks from design confirmation to installation. Larger or more complex studies may take longer." } },
+            ],
           })}
         </script>
       </Helmet>

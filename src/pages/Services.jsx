@@ -12,7 +12,39 @@ const Services = () => {
       <Helmet>
         <title>Our Services | Bespoke Fitted Furniture | RVS Bespoke Windsor</title>
         <meta name="description" content="Explore our full range of bespoke fitted furniture services. From kitchens and bedrooms to living rooms and home offices. Handcrafted in Windsor, Berkshire." />
+        <meta name="keywords" content="bespoke fitted furniture Windsor, fitted furniture services Berkshire, bespoke joinery Windsor, fitted rooms Windsor, bespoke furniture maker Berkshire" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/services" />
+        <meta property="og:title" content="Our Services | Bespoke Fitted Furniture | RVS Bespoke Windsor" />
+        <meta property="og:description" content="Explore our full range of bespoke fitted furniture services. From kitchens and bedrooms to living rooms and home offices. Handcrafted in Windsor, Berkshire." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/services" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Our Services | Bespoke Fitted Furniture | RVS Bespoke Windsor" />
+        <meta name="twitter:description" content="Explore our full range of bespoke fitted furniture services. From kitchens and bedrooms to living rooms and home offices. Handcrafted in Windsor, Berkshire." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+            ],
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Bespoke Fitted Furniture Services",
+            "url": "https://rvsbespoke.co.uk/services",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Fitted Living Room, Dining Room & Kitchen", "url": "https://rvsbespoke.co.uk/living-room" },
+              { "@type": "ListItem", "position": 2, "name": "Fitted Bedroom Furniture", "url": "https://rvsbespoke.co.uk/bedroom" },
+              { "@type": "ListItem", "position": 3, "name": "Fitted Home Office Furniture", "url": "https://rvsbespoke.co.uk/home-office" },
+              { "@type": "ListItem", "position": 4, "name": "Loft Conversion Fitted Furniture", "url": "https://rvsbespoke.co.uk/loft-conversion" },
+              { "@type": "ListItem", "position": 5, "name": "Fitted Cloakroom & Under the Stairs", "url": "https://rvsbespoke.co.uk/cloakroom" },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div>

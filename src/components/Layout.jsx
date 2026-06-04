@@ -1,7 +1,95 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { siteConfig } from '../config/site';
+
+const globalSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://rvsbespoke.co.uk/#organization",
+    "name": "RVS Bespoke",
+    "legalName": "RVS Bespoke Furniture Ltd",
+    "url": "https://rvsbespoke.co.uk",
+    "logo": "https://rvsbespoke.co.uk/images/hero.jpeg",
+    "telephone": siteConfig.contact.phone,
+    "email": siteConfig.contact.email,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": siteConfig.contact.address.line1,
+      "addressLocality": "Windsor",
+      "addressRegion": "Berkshire",
+      "postalCode": "SL4 5JA",
+      "addressCountry": "GB",
+    },
+    "sameAs": [
+      siteConfig.social.instagram,
+      siteConfig.social.facebook,
+    ],
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.4831,
+        "longitude": -0.6044,
+      },
+      "geoRadius": "30000",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://rvsbespoke.co.uk/#localbusiness",
+    "name": "RVS Bespoke",
+    "image": "https://rvsbespoke.co.uk/images/hero.jpeg",
+    "url": "https://rvsbespoke.co.uk",
+    "telephone": siteConfig.contact.phone,
+    "email": siteConfig.contact.email,
+    "priceRange": "££-£££",
+    "currenciesAccepted": "GBP",
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": siteConfig.contact.address.line1,
+      "addressLocality": "Windsor",
+      "addressRegion": "Berkshire",
+      "postalCode": "SL4 5JA",
+      "addressCountry": "GB",
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.4831,
+      "longitude": -0.6044,
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00" },
+    ],
+    "areaServed": ["Windsor","Ascot","Maidenhead","Slough","Eton","Datchet","Sunningdale","Virginia Water","Wokingham","Bracknell","Berkshire","Surrey"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Bespoke Fitted Furniture Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fitted Living Room & Kitchen Furniture" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fitted Bedroom Furniture & Wardrobes" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fitted Home Office Furniture" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Loft Conversion Fitted Furniture" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fitted Cloakroom & Under-Stairs Storage" } },
+      ],
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://rvsbespoke.co.uk/#website",
+    "url": "https://rvsbespoke.co.uk",
+    "name": "RVS Bespoke",
+    "description": siteConfig.seo.description,
+    "publisher": { "@id": "https://rvsbespoke.co.uk/#organization" },
+  },
+];
 
 const WhatsAppButton = () => (
   <a
@@ -27,6 +115,19 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <meta property="og:site_name" content="RVS Bespoke" />
+        <meta property="og:image" content="https://rvsbespoke.co.uk/images/hero.jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_GB" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@rvsbespoke" />
+        <meta name="twitter:image" content="https://rvsbespoke.co.uk/images/hero.jpeg" />
+        {globalSchema.map((schema, i) => (
+          <script key={i} type="application/ld+json">{JSON.stringify(schema)}</script>
+        ))}
+      </Helmet>
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />

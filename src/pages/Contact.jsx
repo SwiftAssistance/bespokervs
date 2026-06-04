@@ -43,6 +43,8 @@ const Contact = () => {
         <meta property="og:description" content="Visit our workshop or get in touch for a free design consultation. Bespoke furniture makers in Windsor, Berkshire." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/contact" />
         <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Contact RVS Bespoke | Windsor Workshop" />
+        <meta name="twitter:description" content="Get in touch for a free design consultation. Bespoke furniture makers in Windsor, Berkshire." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
