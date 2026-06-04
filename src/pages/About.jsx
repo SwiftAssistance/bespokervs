@@ -10,11 +10,11 @@ const faqs = [
   },
   {
     question: 'How long does a typical project take?',
-    answer: 'Wardrobes and fitted bedroom furniture typically take four to six weeks from order to installation. Kitchens and larger projects are usually eight to twelve weeks. We'll give you a clear timeline before anything is confirmed.',
+    answer: "Wardrobes and fitted bedroom furniture typically take four to six weeks from order to installation. Kitchens and larger projects are usually eight to twelve weeks. We'll give you a clear timeline before anything is confirmed.",
   },
   {
     question: 'Do you offer a free consultation?',
-    answer: 'Yes — we start with a free site visit to measure up and understand what you're after. There's no obligation and no hard sell, just a straightforward conversation about what's possible.',
+    answer: "Yes — we start with a free site visit to measure up and understand what you're after. There's no obligation and no hard sell, just a straightforward conversation about what's possible.",
   },
   {
     question: 'Can I choose my own materials and finishes?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: 'Do you subcontract the installation?',
-    answer: 'Never. The same team that builds your furniture installs it. This keeps quality consistent and means there's always someone accountable if anything needs adjusting.',
+    answer: "Never. The same team that builds your furniture installs it. This keeps quality consistent and means there's always someone accountable if anything needs adjusting.",
   },
 ];
 
