@@ -73,25 +73,14 @@ const About = () => {
       <section className="py-24 px-8 bg-white">
         <div className="max-w-[900px] mx-auto">
           <p className="text-2xl md:text-3xl text-primary-dark font-light leading-relaxed mb-12">
-            We're a small, hands-on joinery business based at 3 Riverway, Barry Avenue, Windsor.
-            Every piece of furniture we make is designed and built specifically for the space it goes into.
+            Established in Windsor, we have been providing domestic fitted furniture for over 2 decades.
           </p>
 
           <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
             <p>
-              RVS Bespoke was founded on a simple belief: furniture should fit around your home, not the other way around.
-              Standard off-the-shelf units rarely work well in older properties or rooms with unusual proportions.
-              Made-to-measure joinery solves that — and it tends to look better doing it.
-            </p>
-            <p>
-              We keep everything in-house, from the first site visit through to installation. That means
-              one consistent team, clear communication, and the flexibility to adapt as a project takes shape —
-              rather than being locked in by decisions made on day one.
-            </p>
-            <p>
-              Our clients are mostly in Windsor, Ascot, Maidenhead, and the surrounding villages.
-              We've fitted kitchens in Victorian terraces, built library walls in Edwardian houses,
-              and created home offices in modern new-builds. No two jobs are the same, which suits us well.
+              Our design and build services include every type of storage solution imaginable — whether loft space,
+              living room, bedroom or basement, we aim to maximise usage of the available space whilst enhancing
+              your home's interior style.
             </p>
           </div>
         </div>
