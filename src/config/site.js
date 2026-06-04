@@ -29,7 +29,7 @@ export const siteConfig = {
 
   // Social Media Links (Required)
   social: {
-    instagram: 'https://instagram.com/rvsbespoke',
+    instagram: 'https://www.instagram.com/rvs_bespoke',
     facebook: 'https://facebook.com/rvsbespoke',
   },
 
