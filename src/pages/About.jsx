@@ -1,6 +1,48 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Plus, Minus } from 'lucide-react';
+
+const faqs = [
+  {
+    question: 'What areas do you cover?',
+    answer: 'We work primarily across Windsor, Ascot, Maidenhead, Slough, and the surrounding Berkshire villages. For larger projects we can discuss installations further afield.',
+  },
+  {
+    question: 'How long does a typical project take?',
+    answer: 'Wardrobes and fitted bedroom furniture typically take four to six weeks from order to installation. Kitchens and larger projects are usually eight to twelve weeks. We'll give you a clear timeline before anything is confirmed.',
+  },
+  {
+    question: 'Do you offer a free consultation?',
+    answer: 'Yes — we start with a free site visit to measure up and understand what you're after. There's no obligation and no hard sell, just a straightforward conversation about what's possible.',
+  },
+  {
+    question: 'Can I choose my own materials and finishes?',
+    answer: 'Absolutely. Every piece is made to order, so you choose the materials, colours, and finishes. We can match paint colours, work with natural timbers, or incorporate mirrors and glass — whatever suits your home.',
+  },
+  {
+    question: 'Do you subcontract the installation?',
+    answer: 'Never. The same team that builds your furniture installs it. This keeps quality consistent and means there's always someone accountable if anything needs adjusting.',
+  },
+];
+
+const FAQItem = ({ question, answer }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-gray-200">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between py-5 text-left gap-4"
+      >
+        <span className="text-lg font-medium text-primary-dark">{question}</span>
+        {open ? <Minus size={18} className="text-accent-gold flex-shrink-0" /> : <Plus size={18} className="text-accent-gold flex-shrink-0" />}
+      </button>
+      {open && (
+        <p className="pb-5 text-gray-500 leading-relaxed">{answer}</p>
+      )}
+    </div>
+  );
+};
 const About = () => {
   return (
     <div>
@@ -81,6 +123,18 @@ const About = () => {
               living room, bedroom or basement, we aim to maximise usage of the available space whilst enhancing
               your home's interior style.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 px-8 bg-white border-t border-gray-100">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="text-3xl font-bold text-primary-dark tracking-tight mb-8">Frequently Asked Questions</h2>
+          <div>
+            {faqs.map((faq) => (
+              <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
+            ))}
           </div>
         </div>
       </section>
