@@ -59,8 +59,7 @@ const About = () => {
           <div className="max-w-3xl">
             <p className="text-accent-gold uppercase tracking-[0.2em] text-xs font-bold mb-6">RVS Bespoke · Windsor</p>
             <h1 className="text-6xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter mb-8">
-              About <br />
-              <span className="text-accent-gold font-serif italic font-light">Us</span>
+              About <span className="text-accent-gold font-serif italic font-light">Us</span>
             </h1>
             <p className="text-white/60 text-xl max-w-xl leading-relaxed">
               A family-run joinery workshop designing and building bespoke fitted furniture for homes across Berkshire.
