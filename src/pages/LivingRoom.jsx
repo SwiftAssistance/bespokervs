@@ -89,10 +89,12 @@ const LivingRoom = () => {
                 for everything from books to media equipment.
               </p>
             </div>
+            <div className="max-w-3xl mx-auto">
             <ImageCarousel images={[
               { src: '/images/living_room_1.jpeg', alt: 'Bespoke fitted alcove cabinets and shelving in Windsor living room' },
               { src: imgUrl('/images/living_room_2.jpeg', 1200), srcSet: imgSrcSet('/images/living_room_2.jpeg', [600, 900, 1200]), alt: 'Custom fitted living room storage and display cabinets in Berkshire' },
             ]} />
+            </div>
           </div>
         </section>
 

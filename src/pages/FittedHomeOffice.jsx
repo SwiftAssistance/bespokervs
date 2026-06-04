@@ -89,10 +89,12 @@ const FittedHomeOffice = () => {
                 professional on video calls.
               </p>
             </div>
-            <ImageCarousel images={[
-              { src: imgUrl('/images/home_office_1.jpeg', 1200), srcSet: imgSrcSet('/images/home_office_1.jpeg', [600, 900, 1200]), alt: 'Custom fitted home office desk with shelving in Berkshire' },
-              { src: imgUrl('/images/home_office_2.jpeg', 1200), srcSet: imgSrcSet('/images/home_office_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted study furniture with integrated storage in Windsor home' },
-            ]} />
+            <div className="max-w-3xl mx-auto">
+              <ImageCarousel images={[
+                { src: imgUrl('/images/home_office_1.jpeg', 1200), srcSet: imgSrcSet('/images/home_office_1.jpeg', [600, 900, 1200]), alt: 'Custom fitted home office desk with shelving in Berkshire' },
+                { src: imgUrl('/images/home_office_2.jpeg', 1200), srcSet: imgSrcSet('/images/home_office_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted study furniture with integrated storage in Windsor home' },
+              ]} />
+            </div>
           </div>
         </section>
 

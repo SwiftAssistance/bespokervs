@@ -89,10 +89,12 @@ const Bathroom = () => {
                 environments, with finishes that resist humidity and splashes.
               </p>
             </div>
-            <ImageCarousel images={[
-              { src: '/images/bathroom_1.jpeg', alt: 'Custom fitted bathroom vanity unit with storage in Berkshire home' },
-              { src: imgUrl('/images/bathroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/bathroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted bathroom cabinets handcrafted in Windsor workshop' },
-            ]} />
+            <div className="max-w-3xl mx-auto">
+              <ImageCarousel images={[
+                { src: '/images/bathroom_1.jpeg', alt: 'Custom fitted bathroom vanity unit with storage in Berkshire home' },
+                { src: imgUrl('/images/bathroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/bathroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted bathroom cabinets handcrafted in Windsor workshop' },
+              ]} />
+            </div>
           </div>
         </section>
 
