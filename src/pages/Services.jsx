@@ -36,8 +36,7 @@ const Services = () => {
             <div className="max-w-3xl">
               <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">What We Do</p>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                Our
-                <span className="block text-accent-gold font-serif italic font-light">Services</span>
+                Our <span className="text-accent-gold font-serif italic font-light">Services</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
                 Bespoke fitted furniture for every room in your home. Each piece designed around your space and handcrafted in our Windsor workshop.
