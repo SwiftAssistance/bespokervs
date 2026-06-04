@@ -37,6 +37,7 @@ export const siteConfig = {
   navigation: {
     main: [
       { name: 'Home', path: '/' },
+      { name: 'About Us', path: '/about' },
       {
         name: 'Services',
         path: '/services',
@@ -49,7 +50,6 @@ export const siteConfig = {
           { name: 'Cloakroom', path: '/cloakroom' },
         ],
       },
-      { name: 'About Us', path: '/about' },
       { name: 'Contact', path: '/contact' },
     ],
     footer: [
