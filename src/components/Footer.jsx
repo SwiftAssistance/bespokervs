@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { areas } from '../config/areas';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -63,16 +64,13 @@ const Footer = () => {
               Areas We Serve
             </h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-white/50 text-sm">
-              <li>Windsor</li>
-              <li>Ascot</li>
-              <li>Maidenhead</li>
-              <li>Slough</li>
-              <li>Eton</li>
-              <li>Datchet</li>
-              <li>Old Windsor</li>
-              <li>Sunningdale</li>
-              <li>Winkfield</li>
-              <li>Berkshire</li>
+              {areas.map((area) => (
+                <li key={area.slug}>
+                  <Link to={`/areas/${area.slug}`} className="hover:text-white transition-colors">
+                    {area.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
