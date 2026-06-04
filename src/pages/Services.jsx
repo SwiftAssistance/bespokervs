@@ -55,7 +55,7 @@ const Services = () => {
               className={`group flex flex-col md:flex-row ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''} border-b border-gray-100 hover:bg-background-light transition-colors duration-300`}
             >
               {/* Image */}
-              <div className="w-full md:w-1/2 aspect-[16/9] md:aspect-auto md:min-h-[380px] overflow-hidden relative">
+              <div className="w-full md:w-2/5 aspect-[4/3] md:aspect-auto md:min-h-[260px] overflow-hidden relative">
                 <img
                   src={imgUrl(service.image, 800)}
                   srcSet={imgSrcSet(service.image, [400, 800, 1200])}
@@ -70,15 +70,15 @@ const Services = () => {
               </div>
 
               {/* Text */}
-              <div className="w-full md:w-1/2 flex items-center px-10 md:px-16 py-12">
+              <div className="w-full md:w-3/5 flex items-center px-8 md:px-12 py-8">
                 <div>
-                  <span className="text-accent-gold text-xs font-bold uppercase tracking-[0.4em] block mb-4">
+                  <span className="text-accent-gold text-xs font-bold uppercase tracking-[0.4em] block mb-2">
                     0{i + 1}
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-5">
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary-dark tracking-tight mb-3">
                     {service.shortTitle}
                   </h2>
-                  <p className="text-gray-500 leading-relaxed mb-8 max-w-md">
+                  <p className="text-gray-500 leading-relaxed mb-5 max-w-md text-sm">
                     {service.description}
                   </p>
                   <span className="inline-flex items-center gap-3 text-primary-dark font-bold text-[10px] uppercase tracking-[0.4em] border-b-2 border-accent-gold pb-1 group-hover:gap-5 transition-all">
