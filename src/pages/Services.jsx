@@ -4,40 +4,6 @@ import { Helmet } from 'react-helmet-async';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
-const ServiceCard = ({ service, index, tall }) => (
-  <Link
-    to={service.path}
-    className={`group relative overflow-hidden bg-primary-dark flex items-end w-full ${tall ? 'min-h-[500px]' : 'min-h-[380px]'}`}
-  >
-    <img
-      src={imgUrl(service.image, 800)}
-      srcSet={imgSrcSet(service.image, [400, 800, 1200])}
-      sizes="(max-width: 768px) 100vw, 50vw"
-      width={1200}
-      height={800}
-      loading="lazy"
-      decoding="async"
-      className="absolute inset-0 w-full h-full object-cover object-center opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-[2s]"
-      alt={`${service.title} - RVS Bespoke Windsor`}
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent"></div>
-    <div className="relative z-10 p-8 w-full">
-      <span className="text-accent-gold text-4xl font-serif italic opacity-30 block mb-3">
-        0{index + 1}
-      </span>
-      <h2 className={`font-bold text-white mb-3 tracking-tight ${tall ? 'text-3xl md:text-4xl' : 'text-2xl'}`}>
-        {service.shortTitle}
-      </h2>
-      <p className="text-white/50 font-light leading-relaxed mb-6 text-sm max-w-xl">
-        {service.description}
-      </p>
-      <span className="flex items-center gap-3 text-accent-gold font-bold text-[10px] uppercase tracking-[0.4em] group-hover:gap-5 transition-all">
-        View Details <ArrowRight size={14} />
-      </span>
-    </div>
-  </Link>
-);
-
 const Services = () => {
   const services = siteConfig.rooms;
 
@@ -80,26 +46,48 @@ const Services = () => {
           </div>
         </section>
 
-        {/* All Services Grid */}
-        <section className="py-20 md:py-32 px-8 bg-white">
-          <div className="max-w-[1400px] mx-auto space-y-8">
+        {/* All Services */}
+        <section className="bg-white">
+          {services.map((service, i) => (
+            <Link
+              key={service.id}
+              to={service.path}
+              className={`group flex flex-col md:flex-row ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''} border-b border-gray-100 hover:bg-background-light transition-colors duration-300`}
+            >
+              {/* Image */}
+              <div className="w-full md:w-1/2 aspect-[16/9] md:aspect-auto md:min-h-[380px] overflow-hidden relative">
+                <img
+                  src={imgUrl(service.image, 800)}
+                  srcSet={imgSrcSet(service.image, [400, 800, 1200])}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  alt={`${service.title} - RVS Bespoke Windsor`}
+                />
+              </div>
 
-            {/* Row 1: first service spans full width */}
-            <ServiceCard service={services[0]} index={0} tall />
-
-            {/* Row 2: two equal cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <ServiceCard service={services[1]} index={1} />
-              <ServiceCard service={services[2]} index={2} />
-            </div>
-
-            {/* Row 3: two equal cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <ServiceCard service={services[3]} index={3} />
-              <ServiceCard service={services[4]} index={4} />
-            </div>
-
-          </div>
+              {/* Text */}
+              <div className="w-full md:w-1/2 flex items-center px-10 md:px-16 py-12">
+                <div>
+                  <span className="text-accent-gold text-xs font-bold uppercase tracking-[0.4em] block mb-4">
+                    0{i + 1}
+                  </span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-5">
+                    {service.shortTitle}
+                  </h2>
+                  <p className="text-gray-500 leading-relaxed mb-8 max-w-md">
+                    {service.description}
+                  </p>
+                  <span className="inline-flex items-center gap-3 text-primary-dark font-bold text-[10px] uppercase tracking-[0.4em] border-b-2 border-accent-gold pb-1 group-hover:gap-5 transition-all">
+                    View Details <ArrowRight size={14} />
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
         </section>
 
         {/* CTA */}
