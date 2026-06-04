@@ -219,8 +219,8 @@ export const siteConfig = {
   home: {
     hero: {
       title: 'Bespoke',
-      titleHighlight: 'Excellence.',
-      description: 'Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire.',
+      titleHighlight: 'Storage Solutions.',
+      description: 'Handcrafted fitted furniture for your home.',
       cta: {
         primary: 'Begin Your Project',
         secondary: 'Explore Services',
