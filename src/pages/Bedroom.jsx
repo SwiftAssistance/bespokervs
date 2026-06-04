@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import ImageCarousel from '../components/ImageCarousel';
 
 const Bedroom = () => {
 
@@ -88,33 +89,10 @@ const Bedroom = () => {
                 furniture is made to measure, designed specifically for your room and your belongings.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src="/images/bedroom_1.jpeg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Custom fitted wardrobes with organised internal storage in Berkshire bedroom"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={imgUrl('/images/bedroom_2.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/bedroom_2.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Bespoke fitted bedroom storage handcrafted in Windsor workshop"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+            <ImageCarousel images={[
+              { src: '/images/bedroom_1.jpeg', alt: 'Custom fitted wardrobes with organised internal storage in Berkshire bedroom' },
+              { src: imgUrl('/images/bedroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/bedroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted bedroom storage handcrafted in Windsor workshop' },
+            ]} />
           </div>
         </section>
 
