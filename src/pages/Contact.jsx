@@ -4,25 +4,6 @@ import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
-const faqs = [
-  {
-    question: 'How long does a typical project take?',
-    answer: 'Project timelines vary depending on complexity. A bespoke kitchen typically takes 8-12 weeks from design approval to installation. Smaller projects like fitted wardrobes may be completed in 4-6 weeks.',
-  },
-  {
-    question: 'Do you provide design consultations?',
-    answer: 'Yes, we offer complimentary initial consultations at your home or our Windsor showroom. During this meeting, we discuss your vision, take measurements, and provide guidance on materials and design options.',
-  },
-  {
-    question: 'What areas do you serve?',
-    answer: 'We primarily serve Windsor, Ascot, Maidenhead, Slough, and the wider Berkshire area. For larger projects, we can discuss installations throughout the South East of England.',
-  },
-  {
-    question: 'Can I visit your workshop?',
-    answer: "Absolutely! We encourage clients to visit our workshop on Barry Avenue in Windsor. It's a great opportunity to see our craftsmanship firsthand and discuss your project in detail.",
-  },
-];
-
 const Contact = () => {
   const { contactPage, company } = siteConfig;
   const [formData, setFormData] = useState({
@@ -330,26 +311,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-32 px-8 bg-background-light">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="section-label justify-center mb-8">Common Questions</h2>
-            <h3 className="text-4xl md:text-6xl font-bold text-primary-dark tracking-tighter">
-              Frequently Asked
-            </h3>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, i) => (
-              <div key={i} className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <h4 className="text-xl font-bold text-primary-dark mb-4">{faq.question}</h4>
-                <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
