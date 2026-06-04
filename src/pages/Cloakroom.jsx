@@ -1,19 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
 const Cloakroom = () => {
-  const features = [
-    'Fitted coat hooks and hanging rails',
-    'Custom shoe racks and boot storage',
-    'Built-in bench seating with storage',
-    'Fitted shelving and cubby holes',
-    'Bag and hat storage solutions',
-    'Umbrella stands and key hooks',
-    'Painted or timber finishes',
-    'Moisture-resistant materials',
-  ];
 
   return (
     <>
@@ -86,71 +76,43 @@ const Cloakroom = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-20 md:py-32 px-8 bg-white">
+        <section className="py-20 md:py-28 px-8 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                  First Impressions Count
-                </h2>
-                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                  <p>
-                    The hallway and cloakroom are the first things guests see when they enter your home.
-                    Fitted furniture turns a cluttered entrance into an organised, welcoming space where
-                    everything has its place.
-                  </p>
-                  <p>
-                    We design and build bespoke cloakroom furniture that tackles the practical challenges
-                    of family life — muddy boots, wet coats, school bags, and dog leads. Our fitted
-                    solutions include bench seating with storage underneath, hanging rails at different
-                    heights, and shoe racks that keep the floor clear.
-                  </p>
-                  <p>
-                    Whether you have a dedicated boot room, an under-stairs cupboard, or a narrow
-                    hallway, we create fitted furniture that makes the most of your space. Durable
-                    materials and practical finishes mean it stands up to daily wear and tear.
-                  </p>
-                </div>
-
-                <div className="mt-12">
-                  <h3 className="text-xl font-bold text-primary-dark mb-6">What We Offer</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check size={18} className="text-accent-gold mt-1 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
+                First Impressions Count
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                The hallway and cloakroom are the first things guests see when they enter your home.
+                Fitted furniture turns a cluttered entrance into an organised, welcoming space where
+                everything has its place.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="/images/cloakroom_1.jpeg"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Custom fitted cloakroom with coat storage and bench seating in Berkshire"
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              <div className="space-y-6">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={'/images/cloakroom_1.jpeg'}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    alt="Custom fitted cloakroom with coat storage and bench seating in Berkshire"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={imgUrl('/images/cloakroom_2.jpeg', 600)}
-                    srcSet={imgSrcSet('/images/cloakroom_2.jpeg', [400, 600, 800])}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    alt="Bespoke hallway furniture handcrafted in Windsor workshop"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={imgUrl('/images/cloakroom_2.jpeg', 600)}
+                  srcSet={imgSrcSet('/images/cloakroom_2.jpeg', [400, 600, 800])}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Bespoke hallway furniture handcrafted in Windsor workshop"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

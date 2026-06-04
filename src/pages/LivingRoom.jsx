@@ -1,19 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
 const LivingRoom = () => {
-  const features = [
-    'Bespoke alcove cabinets and shelving',
-    'Custom media units and TV walls',
-    'Fitted bookshelves and display cases',
-    'Window seats with hidden storage',
-    'Built-in sideboards and dressers',
-    'Fireplace surrounds and mantels',
-    'Painted or natural timber finishes',
-    'Colour-matched to your decor',
-  ];
 
   return (
     <>
@@ -86,65 +76,42 @@ const LivingRoom = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-20 md:py-32 px-8 bg-white">
+        <section className="py-20 md:py-28 px-8 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                  Furniture That Fits Your Life
-                </h2>
-                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                  <p>
-                    Your living room is where you relax, entertain, and spend time with family. It deserves
-                    furniture that works as hard as you do — fitted perfectly to your space, with storage
-                    for everything from books to media equipment.
-                  </p>
-                  <p>
-                    We design and build bespoke fitted furniture for living rooms of every size and shape.
-                    Alcove cabinets that use every inch, media walls that hide cables and clutter, and
-                    bookshelves that turn a wall into a feature.
-                  </p>
-                  <p>
-                    Every piece is made to measure in our Windsor workshop. We work with you to choose
-                    materials, finishes, and details that complement your home — from contemporary painted
-                    units to traditional timber designs.
-                  </p>
-                </div>
-
-                <div className="mt-12">
-                  <h3 className="text-xl font-bold text-primary-dark mb-6">What We Offer</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check size={18} className="text-accent-gold mt-1 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="space-y-6">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
+                Furniture That Fits Your Life
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Your living room is where you relax, entertain, and spend time with family. It deserves
+                furniture that works as hard as you do — fitted perfectly to your space, with storage
+                for everything from books to media equipment.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src="/images/living_room_1.jpeg"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   width={800}
-                  height={350}
+                  height={600}
                   loading="lazy"
                   decoding="async"
                   alt="Bespoke fitted alcove cabinets and shelving in Windsor living room"
-                  className="w-full"
+                  className="w-full h-full object-cover"
                 />
+              </div>
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={imgUrl('/images/living_room_2.jpeg', 600)}
                   srcSet={imgSrcSet('/images/living_room_2.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   width={800}
-                  height={250}
+                  height={600}
                   loading="lazy"
                   decoding="async"
                   alt="Custom fitted living room storage and display cabinets in Berkshire"
-                  className="w-full"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>

@@ -1,19 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
 const Bedroom = () => {
-  const features = [
-    'Made-to-measure fitted wardrobes',
-    'Hinged or sliding door options',
-    'Custom internal layouts and organisers',
-    'Bedside tables and headboard units',
-    'Fitted dressing tables and vanity areas',
-    'Soft-close mechanisms throughout',
-    'Integrated LED lighting',
-    'Painted or timber finishes',
-  ];
 
   return (
     <>
@@ -86,66 +76,42 @@ const Bedroom = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-20 md:py-32 px-8 bg-white">
+        <section className="py-20 md:py-28 px-8 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                  Storage That Works
-                </h2>
-                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                  <p>
-                    Off-the-shelf wardrobes rarely fit properly. There are gaps at the top, wasted space
-                    in corners, and the internal layout is always a compromise. Our fitted bedroom
-                    furniture is made to measure, designed specifically for your room and your belongings.
-                  </p>
-                  <p>
-                    We build fitted furniture for bedrooms of all sizes — from compact alcove wardrobes
-                    in Victorian terraces to spacious walk-in dressing rooms in new builds. Every shelf,
-                    rail, and drawer is positioned exactly where you need it.
-                  </p>
-                  <p>
-                    Choose from hinged doors for a traditional look or sliding doors to save space.
-                    We offer painted finishes in any colour, natural timber veneers, and can incorporate
-                    mirrors, glass panels, or fabric inserts.
-                  </p>
-                </div>
-
-                <div className="mt-12">
-                  <h3 className="text-xl font-bold text-primary-dark mb-6">What's Included</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check size={18} className="text-accent-gold mt-1 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="space-y-6">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
+                Storage That Works
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Off-the-shelf wardrobes rarely fit properly. There are gaps at the top, wasted space
+                in corners, and the internal layout is always a compromise. Our fitted bedroom
+                furniture is made to measure, designed specifically for your room and your belongings.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src={'/images/bedroom_1.jpeg'}
-                  srcSet={undefined}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  src="/images/bedroom_1.jpeg"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   width={800}
-                  height={350}
+                  height={600}
                   loading="lazy"
                   decoding="async"
                   alt="Custom fitted wardrobes with organised internal storage in Berkshire bedroom"
-                  className="w-full"
+                  className="w-full h-full object-cover"
                 />
+              </div>
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={imgUrl('/images/bedroom_2.jpeg', 600)}
                   srcSet={imgSrcSet('/images/bedroom_2.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   width={800}
-                  height={250}
+                  height={600}
                   loading="lazy"
                   decoding="async"
                   alt="Bespoke fitted bedroom storage handcrafted in Windsor workshop"
-                  className="w-full"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
