@@ -285,7 +285,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-6 bg-accent-gold text-white font-bold uppercase tracking-[0.5em] text-[11px] hover:bg-white hover:text-primary-dark transition-all shadow-xl flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-accent-gold text-white font-bold uppercase tracking-[0.5em] text-[11px] hover:bg-white hover:text-primary-dark transition-all shadow-xl flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <span className="animate-pulse">Sending...</span>
