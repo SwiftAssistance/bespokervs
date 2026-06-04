@@ -16,8 +16,8 @@ export const siteConfig = {
 
   // Contact Information (Required)
   contact: {
-    phone: '01753 622159',
-    phoneLink: 'tel:01753622159',
+    phone: '07963 422797',
+    phoneLink: 'tel:07963422797',
     email: 'enquiries@rvsbespoke.co.uk',
     emailLink: 'mailto:enquiries@rvsbespoke.co.uk',
     address: {

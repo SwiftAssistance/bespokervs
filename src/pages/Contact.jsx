@@ -55,7 +55,7 @@ const Contact = () => {
     <div>
       <Helmet>
         <title>Contact RVS Bespoke | Visit Our Windsor Workshop | Free Consultation</title>
-        <meta name="description" content="Get in touch with RVS Bespoke for a free design consultation. Visit our workshop at 3 Riverway, Barry Ave, Windsor SL4 5JA. Call 01753 622159 or email us." />
+        <meta name="description" content="Get in touch with RVS Bespoke for a free design consultation. Visit our workshop at 3 Riverway, Barry Ave, Windsor SL4 5JA. Call 07963 422797 or email us." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/contact" />
         <meta name="keywords" content="contact RVS Bespoke, Windsor furniture maker phone, bespoke kitchen consultation, Barry Avenue Windsor workshop, free furniture quote Berkshire" />
         <meta property="og:title" content="Contact RVS Bespoke | Windsor Workshop" />
