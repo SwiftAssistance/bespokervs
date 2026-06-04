@@ -168,7 +168,7 @@ export const siteConfig = {
   contactPage: {
     hero: {
       title: 'Get In Touch',
-      subtitle: 'Visit the Workshop',
+      subtitle: 'Contact Us',
     },
     form: {
       title: 'New Commission',
