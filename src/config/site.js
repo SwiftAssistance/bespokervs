@@ -171,8 +171,8 @@ export const siteConfig = {
       subtitle: 'Contact Us',
     },
     form: {
-      title: 'New Commission',
-      submitButton: 'Submit Project Request',
+      title: 'Get In Touch',
+      submitButton: 'Send Message',
       projectTypes: [
         'Fitted Living Room',
         'Fitted Bedroom',
