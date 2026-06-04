@@ -97,47 +97,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* How We Work */}
-      <section className="py-24 px-8 bg-background-light">
-        <div className="max-w-[900px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tighter mb-4">
-            How it works
-          </h2>
-          <p className="text-gray-500 text-lg mb-12">A straightforward process, from first conversation to final fit.</p>
-
-          <div className="grid md:grid-cols-2 gap-10">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-gold mb-3">01 — Site Visit</p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                We start with a free visit to measure the space and understand what you're after.
-                No pressure — just a conversation about what's possible.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-gold mb-3">02 — Design & Quote</p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                We produce drawings and a detailed quote. For kitchens and larger projects,
-                we include 3D renders so you can visualise the result before anything is built.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-gold mb-3">03 — Construction</p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Everything is built at our Windsor workshop using solid timber and quality sheet materials.
-                Wardrobes typically take four to six weeks; kitchens eight to twelve.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-gold mb-3">04 — Installation</p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                The same team that built your furniture installs it.
-                We don't subcontract fitting work — ever.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 px-8 bg-primary-dark">
         <div className="max-w-[900px] mx-auto text-center">
