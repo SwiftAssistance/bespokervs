@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import ImageCarousel from '../components/ImageCarousel';
 
 const Cloakroom = () => {
 
@@ -88,33 +89,10 @@ const Cloakroom = () => {
                 everything has its place.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src="/images/cloakroom_1.jpeg"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Custom fitted cloakroom with coat storage and bench seating in Berkshire"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={imgUrl('/images/cloakroom_2.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/cloakroom_2.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Bespoke hallway furniture handcrafted in Windsor workshop"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+            <ImageCarousel images={[
+              { src: '/images/cloakroom_1.jpeg', alt: 'Custom fitted cloakroom with coat storage and bench seating in Berkshire' },
+              { src: imgUrl('/images/cloakroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/cloakroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke hallway furniture handcrafted in Windsor workshop' },
+            ]} />
           </div>
         </section>
 

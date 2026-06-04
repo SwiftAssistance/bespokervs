@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import ImageCarousel from '../components/ImageCarousel';
 
 const FittedHomeOffice = () => {
 
@@ -88,34 +89,10 @@ const FittedHomeOffice = () => {
                 professional on video calls.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={imgUrl('/images/home_office_1.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/home_office_1.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Custom fitted home office desk with shelving in Berkshire"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={imgUrl('/images/home_office_2.jpeg', 600)}
-                  srcSet={imgSrcSet('/images/home_office_2.jpeg', [400, 600, 800])}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Bespoke fitted study furniture with integrated storage in Windsor home"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+            <ImageCarousel images={[
+              { src: imgUrl('/images/home_office_1.jpeg', 1200), srcSet: imgSrcSet('/images/home_office_1.jpeg', [600, 900, 1200]), alt: 'Custom fitted home office desk with shelving in Berkshire' },
+              { src: imgUrl('/images/home_office_2.jpeg', 1200), srcSet: imgSrcSet('/images/home_office_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted study furniture with integrated storage in Windsor home' },
+            ]} />
           </div>
         </section>
 
