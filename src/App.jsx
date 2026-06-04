@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 
+const NotFound = lazy(() => import('./pages/NotFound'));
 const LivingRoom = lazy(() => import('./pages/LivingRoom'));
 const Bedroom = lazy(() => import('./pages/Bedroom'));
 const FittedHomeOffice = lazy(() => import('./pages/FittedHomeOffice'));
@@ -26,7 +27,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Layout>
