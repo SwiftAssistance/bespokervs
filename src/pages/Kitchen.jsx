@@ -1,19 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
 const Kitchen = () => {
-  const features = [
-    'Custom cabinetry with dovetail joints',
-    'Solid hardwood and premium materials',
-    'Soft-close drawers and hinges',
-    'Integrated appliance solutions',
-    'Bespoke island designs',
-    'Granite, quartz or timber worktops',
-    'Hand-painted or natural finishes',
-    'Lifetime structural warranty',
-  ];
 
   return (
     <>
@@ -86,71 +76,44 @@ const Kitchen = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-20 md:py-32 px-8 bg-white">
+        <section className="py-20 md:py-28 px-8 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                  Your Kitchen, Your Way
-                </h2>
-                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                  <p>
-                    Every kitchen we build starts with your ideas. We visit your home, measure the space,
-                    and discuss how you cook, entertain, and live. Then we design a kitchen that works
-                    for you — not a showroom compromise.
-                  </p>
-                  <p>
-                    Our fitted kitchens are built entirely in our Windsor workshop using solid hardwoods,
-                    premium sheet materials, and quality hardware. We don't use flat-pack carcasses
-                    or import pre-made units. Every cabinet, drawer, and shelf is made by us.
-                  </p>
-                  <p>
-                    Whether you want a classic shaker kitchen, a sleek handleless design, or something
-                    completely unique, we can build it. We work with painted finishes, natural timber,
-                    and can match any colour you choose.
-                  </p>
-                </div>
-
-                <div className="mt-12">
-                  <h3 className="text-xl font-bold text-primary-dark mb-6">What's Included</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check size={18} className="text-accent-gold mt-1 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
+                Your Kitchen, Your Way
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Every kitchen we build starts with your ideas. We visit your home, measure the space,
+                and discuss how you cook, entertain, and live. Then we design a kitchen that works
+                for you — not a showroom compromise.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={imgUrl('/images/kitchen_1.jpeg', 600)}
+                  srcSet={imgSrcSet('/images/kitchen_1.jpeg', [400, 600, 800])}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Bespoke fitted kitchen island with granite worktop in Windsor home"
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              <div className="space-y-6">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={imgUrl('/images/kitchen_1.jpeg', 600)}
-                    srcSet={imgSrcSet('/images/kitchen_1.jpeg', [400, 600, 800])}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    alt="Bespoke fitted kitchen island with granite worktop in Windsor home"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={imgUrl('/images/kitchen_2.jpeg', 600)}
-                    srcSet={imgSrcSet('/images/kitchen_2.jpeg', [400, 600, 800])}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    alt="Custom fitted kitchen cabinetry handmade in Berkshire"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={imgUrl('/images/kitchen_2.jpeg', 600)}
+                  srcSet={imgSrcSet('/images/kitchen_2.jpeg', [400, 600, 800])}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Custom fitted kitchen cabinetry handmade in Berkshire"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

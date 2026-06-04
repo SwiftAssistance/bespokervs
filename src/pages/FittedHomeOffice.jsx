@@ -1,19 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
 const FittedHomeOffice = () => {
-  const features = [
-    'Custom desk to your dimensions',
-    'Built-in shelving and storage',
-    'Integrated cable management',
-    'Filing drawers and cupboards',
-    'Matching bookcases',
-    'Timber or painted finishes',
-    'Task lighting integration',
-    'Ergonomic design focus',
-  ];
 
   return (
     <>
@@ -86,71 +76,44 @@ const FittedHomeOffice = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-20 md:py-32 px-8 bg-white">
+        <section className="py-20 md:py-28 px-8 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                  A Proper Place to Work
-                </h2>
-                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                  <p>
-                    Working from home needs more than a laptop on the kitchen table. A dedicated
-                    workspace helps you focus, keeps work separate from home life, and looks
-                    professional on video calls.
-                  </p>
-                  <p>
-                    We design fitted home offices that make the most of whatever space you have — whether
-                    that's a spare bedroom, an alcove in the living room, or a corner of the loft.
-                    Every desk, shelf, and drawer is built to fit the space exactly.
-                  </p>
-                  <p>
-                    Our designs include integrated cable management to keep wires hidden, task
-                    lighting to reduce eye strain, and enough storage to keep paperwork organised.
-                    The result is a workspace that's practical and pleasant to use every day.
-                  </p>
-                </div>
-
-                <div className="mt-12">
-                  <h3 className="text-xl font-bold text-primary-dark mb-6">What We Include</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check size={18} className="text-accent-gold mt-1 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
+                A Proper Place to Work
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Working from home needs more than a laptop on the kitchen table. A dedicated
+                workspace helps you focus, keeps work separate from home life, and looks
+                professional on video calls.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={imgUrl('/images/home_office_1.jpeg', 600)}
+                  srcSet={imgSrcSet('/images/home_office_1.jpeg', [400, 600, 800])}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Custom fitted home office desk with shelving in Berkshire"
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              <div className="space-y-6">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={imgUrl('/images/home_office_1.jpeg', 600)}
-                    srcSet={imgSrcSet('/images/home_office_1.jpeg', [400, 600, 800])}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    alt="Custom fitted home office desk with shelving in Berkshire"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={imgUrl('/images/home_office_2.jpeg', 600)}
-                    srcSet={imgSrcSet('/images/home_office_2.jpeg', [400, 600, 800])}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    alt="Bespoke fitted study furniture with integrated storage in Windsor home"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={imgUrl('/images/home_office_2.jpeg', 600)}
+                  srcSet={imgSrcSet('/images/home_office_2.jpeg', [400, 600, 800])}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Bespoke fitted study furniture with integrated storage in Windsor home"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

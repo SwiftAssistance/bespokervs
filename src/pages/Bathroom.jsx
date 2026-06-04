@@ -1,19 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 
 const Bathroom = () => {
-  const features = [
-    'Bespoke vanity units and basins',
-    'Fitted storage cabinets and shelving',
-    'Moisture-resistant materials and finishes',
-    'Mirrored cabinets with lighting',
-    'Towel storage and linen cupboards',
-    'Under-sink cabinetry',
-    'Painted or timber finishes',
-    'Wall-hung or freestanding options',
-  ];
 
   return (
     <>
@@ -86,70 +76,43 @@ const Bathroom = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-20 md:py-32 px-8 bg-white">
+        <section className="py-20 md:py-28 px-8 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                  Built for the Bathroom
-                </h2>
-                <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                  <p>
-                    Bathrooms need furniture that looks beautiful and handles moisture without complaint.
-                    Our fitted bathroom furniture is built using materials specifically chosen for wet
-                    environments, with finishes that resist humidity and splashes.
-                  </p>
-                  <p>
-                    We design vanity units that fit your basin perfectly, with storage underneath for
-                    toiletries and cleaning supplies. Mirrored cabinets with integrated lighting,
-                    towel cupboards, and fitted shelving — all built to your exact dimensions.
-                  </p>
-                  <p>
-                    Whether you have a compact en-suite or a spacious family bathroom, we create
-                    fitted furniture that maximises storage and makes the room feel considered
-                    and complete.
-                  </p>
-                </div>
-
-                <div className="mt-12">
-                  <h3 className="text-xl font-bold text-primary-dark mb-6">What We Offer</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check size={18} className="text-accent-gold mt-1 flex-shrink-0" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
+                Built for the Bathroom
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Bathrooms need furniture that looks beautiful and handles moisture without complaint.
+                Our fitted bathroom furniture is built using materials specifically chosen for wet
+                environments, with finishes that resist humidity and splashes.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="/images/bathroom_1.jpeg"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Custom fitted bathroom vanity unit with storage in Berkshire home"
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              <div className="space-y-6">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={'/images/bathroom_1.jpeg'}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    alt="Custom fitted bathroom vanity unit with storage in Berkshire home"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={imgUrl('/images/bathroom_2.jpeg', 600)}
-                    srcSet={imgSrcSet('/images/bathroom_2.jpeg', [400, 600, 800])}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    decoding="async"
-                    alt="Bespoke fitted bathroom cabinets handcrafted in Windsor workshop"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={imgUrl('/images/bathroom_2.jpeg', 600)}
+                  srcSet={imgSrcSet('/images/bathroom_2.jpeg', [400, 600, 800])}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Bespoke fitted bathroom cabinets handcrafted in Windsor workshop"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
