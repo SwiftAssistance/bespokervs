@@ -49,9 +49,15 @@ const ImageCarousel = ({ images }) => {
           </div>
         ))}
 
-        {/* Zoom hint */}
-        <div className="absolute top-3 right-3 bg-black/50 text-white p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-          <ZoomIn size={16} />
+        {/* Click to enlarge overlay */}
+        <div
+          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-zoom-in"
+          onClick={() => setLightbox(true)}
+        >
+          <div className="bg-black/60 text-white flex items-center gap-2 px-5 py-3 rounded text-sm font-medium tracking-wide">
+            <ZoomIn size={18} />
+            Click to enlarge
+          </div>
         </div>
 
         {images.length > 1 && (
