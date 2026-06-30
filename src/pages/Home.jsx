@@ -135,49 +135,50 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-32 md:py-48 px-8 bg-primary-dark relative overflow-hidden below-fold">
-        <div className="absolute top-0 right-0 w-[50%] h-full bg-white/5 skew-x-12 translate-x-32 pointer-events-none hidden md:block"></div>
-
-        <div className="max-w-[1400px] mx-auto relative z-10">
-          <div className="mb-24">
-            <h3 className="text-5xl md:text-8xl font-bold text-white tracking-tighter">
+      <section className="py-32 md:py-48 px-8 bg-white below-fold">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="mb-20">
+            <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-4 font-medium">What We Do</p>
+            <h3 className="text-5xl md:text-7xl font-bold text-primary-dark tracking-tighter">
               {home.services.title}
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+          <div className="divide-y divide-gray-100 border-t border-gray-100">
             {services.slice(0, 3).map((service, i) => (
               <Link
                 key={service.id}
                 to={service.path}
-                className="group service-card"
+                className={`group flex flex-col md:flex-row ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''} hover:bg-background-light transition-colors duration-300`}
               >
-                <img
-                  src={imgUrl(service.image, 400)}
-                  srcSet={imgSrcSet(service.image, [300, 600, 800])}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  width={600}
-                  height={800}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover object-center opacity-55 group-hover:opacity-75 group-hover:scale-110 transition-all duration-[2s]"
-                  alt={`${service.title} - Bespoke fitted furniture Windsor`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent"></div>
-
-                <div className="relative z-10 transform group-hover:-translate-y-4 transition-transform duration-700">
-                  <span className="text-accent-gold text-6xl font-serif italic opacity-30 block mb-6">
-                    0{i + 1}
-                  </span>
-                  <h4 className="text-3xl font-bold text-white mb-6 tracking-tight">
-                    {service.shortTitle}
-                  </h4>
-                  <p className="text-white/50 font-light leading-relaxed mb-10 max-w-xs">
-                    {service.description}
-                  </p>
-                  <span className="flex items-center gap-4 text-accent-gold font-bold text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-opacity delay-100">
-                    View Details <ArrowRight size={14} />
-                  </span>
+                <div className="w-full md:w-2/5 aspect-[4/3] md:aspect-auto md:min-h-[300px] overflow-hidden relative">
+                  <img
+                    src={imgUrl(service.image, 800)}
+                    srcSet={imgSrcSet(service.image, [400, 800, 1200])}
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    alt={`${service.title} - RVS Bespoke Windsor`}
+                  />
+                </div>
+                <div className="w-full md:w-3/5 flex items-center px-8 md:px-16 py-10">
+                  <div>
+                    <span className="text-accent-gold text-xs font-bold uppercase tracking-[0.4em] block mb-3">
+                      0{i + 1}
+                    </span>
+                    <h4 className="text-2xl md:text-4xl font-bold text-primary-dark tracking-tight mb-4">
+                      {service.shortTitle}
+                    </h4>
+                    <p className="text-gray-500 leading-relaxed mb-7 max-w-md">
+                      {service.description}
+                    </p>
+                    <span className="inline-flex items-center gap-3 text-primary-dark font-bold text-[10px] uppercase tracking-[0.4em] border-b-2 border-accent-gold pb-1 group-hover:gap-5 transition-all">
+                      View Details <ArrowRight size={14} />
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -186,7 +187,7 @@ const Home = () => {
           <div className="mt-16 text-center">
             <Link
               to="/services"
-              className="inline-flex items-center gap-4 bg-accent-gold text-primary-dark px-12 py-5 font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-white transition-all"
+              className="inline-flex items-center gap-4 bg-primary-dark text-white px-12 py-5 font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-accent-gold transition-all"
             >
               Explore All Services <ArrowRight size={16} />
             </Link>
