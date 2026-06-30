@@ -88,15 +88,15 @@ const ImageCarousel = ({ images }) => {
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+          className="fixed inset-0 z-[300] bg-black/95 flex items-center justify-center"
           onClick={() => setLightbox(false)}
         >
           <button
             onClick={() => setLightbox(false)}
             aria-label="Close"
-            className="absolute top-4 right-4 text-white/80 hover:text-white p-2"
+            className="absolute top-4 right-4 z-10 bg-white text-black hover:bg-gray-200 p-2 rounded-full shadow-lg"
           >
-            <X size={28} />
+            <X size={24} />
           </button>
 
           <div className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
