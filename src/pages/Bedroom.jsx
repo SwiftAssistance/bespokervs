@@ -103,7 +103,25 @@ const Bedroom = () => {
             <div className="max-w-3xl mx-auto">
               <ImageCarousel images={[
                 { src: '/images/bedroom_1.jpeg', alt: 'Custom fitted wardrobes with organised internal storage in Berkshire bedroom' },
-                { src: imgUrl('/images/bedroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/bedroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted bedroom storage handcrafted in Windsor workshop' },
+                { src: '/images/bedroom_2.jpeg', alt: 'Bespoke fitted bedroom storage handcrafted in Windsor workshop' },
+                { src: '/images/bedroom_3.jpeg', alt: 'Floor to ceiling fitted wardrobes with sliding doors in Windsor bedroom' },
+                { src: '/images/bedroom_4.jpeg', alt: 'Bespoke dressing room with open shelving and hanging rails in Berkshire' },
+                { src: '/images/bedroom_5.jpeg', alt: 'Custom fitted wardrobe interiors with drawers and shelves in Ascot' },
+                { src: '/images/bedroom_6.jpeg', alt: 'Handcrafted fitted bedroom furniture with painted finish in Windsor' },
+                { src: '/images/bedroom_7.jpeg', alt: 'Bespoke walk-in wardrobe with island unit in Maidenhead home' },
+                { src: '/images/bedroom_8.jpeg', alt: 'Fitted alcove wardrobes with integrated bedside units in Windsor' },
+                { src: '/images/bedroom_9.jpeg', alt: 'Custom fitted headboard with bedside cabinets in Berkshire bedroom' },
+                { src: '/images/bedroom_10.jpeg', alt: 'Bespoke fitted dressing table with mirror in Windsor home' },
+                { src: '/images/bedroom_11.jpeg', alt: 'Floor to ceiling painted wardrobes in Ascot bedroom' },
+                { src: '/images/bedroom_12.jpeg', alt: 'Custom fitted bedroom storage with soft close drawers in Slough' },
+                { src: '/images/bedroom_13.jpeg', alt: 'Bespoke fitted wardrobe with internal lighting in Windsor' },
+                { src: '/images/bedroom_14.jpeg', alt: 'Handcrafted fitted bedroom in Maidenhead with shaker doors' },
+                { src: '/images/bedroom_15.jpeg', alt: 'Custom built-in wardrobes with open display shelving in Berkshire' },
+                { src: '/images/bedroom_16.jpeg', alt: 'Bespoke fitted sliding door wardrobes in Windsor bedroom' },
+                { src: '/images/bedroom_17.jpeg', alt: 'Fitted bedroom furniture with matching chest of drawers in Ascot' },
+                { src: '/images/bedroom_18.jpeg', alt: 'Custom fitted wardrobe with shoe storage and drawers in Windsor' },
+                { src: '/images/bedroom_19.jpeg', alt: 'Bespoke fitted bedroom with luxury dressing room in Berkshire' },
+                { src: '/images/bedroom_20.jpeg', alt: 'Handcrafted fitted wardrobes with integrated lighting in Windsor home' },
               ]} />
             </div>
           </div>
