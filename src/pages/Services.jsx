@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { siteConfig } from '../config/site';
+import { servicesFaqs } from '../config/faqs';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import FAQSection from '../components/FAQSection';
 
 const Services = () => {
   const services = siteConfig.rooms;
@@ -120,6 +122,14 @@ const Services = () => {
             </Link>
           ))}
         </section>
+
+        {/* FAQ */}
+        <FAQSection
+          faqs={servicesFaqs}
+          title="How We Work"
+          subtitle="Common questions about our design, build, and installation process."
+          className="bg-background-light"
+        />
 
         {/* CTA */}
         <section className="py-20 px-8 bg-primary-dark text-center">

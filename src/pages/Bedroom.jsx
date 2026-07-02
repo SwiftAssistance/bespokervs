@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import { bedroomFaqs } from '../config/faqs';
 import ImageCarousel from '../components/ImageCarousel';
+import FAQSection from '../components/FAQSection';
 
 const Bedroom = () => {
 
@@ -39,18 +41,6 @@ const Bedroom = () => {
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
               { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
               { "@type": "ListItem", "position": 3, "name": "Bedroom", "item": "https://rvsbespoke.co.uk/bedroom" },
-            ],
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              { "@type": "Question", "name": "Do you make fitted wardrobes in Windsor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — fitted wardrobes are one of our most popular services. We design and build to the exact dimensions of your bedroom, making the most of every available inch." } },
-              { "@type": "Question", "name": "Can you build fitted wardrobes in an awkward space?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We regularly work around chimney breasts, alcoves, sloped ceilings, and other challenging spaces. Bespoke joinery is specifically designed to handle what off-the-shelf furniture cannot." } },
-              { "@type": "Question", "name": "How long do fitted wardrobes take?", "acceptedAnswer": { "@type": "Answer", "text": "Fitted bedrooms and wardrobes typically take four to six weeks from design sign-off to installation. We confirm a timeline before anything is ordered." } },
-              { "@type": "Question", "name": "Can I choose my own wardrobe interior layout?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We design the interior around how you actually use the space — hanging rails, shelves, drawers, shoe storage and more, all configured to your requirements." } },
             ],
           })}
         </script>
@@ -149,6 +139,13 @@ const Bedroom = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQSection
+          faqs={bedroomFaqs}
+          title="Fitted Wardrobe & Bedroom FAQs"
+          subtitle="Common questions about fitted wardrobes, dressing rooms, and bedroom storage in Windsor and Berkshire."
+        />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

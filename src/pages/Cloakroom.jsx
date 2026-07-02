@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import { cloakroomFaqs } from '../config/faqs';
 import ImageCarousel from '../components/ImageCarousel';
+import FAQSection from '../components/FAQSection';
 
 const Cloakroom = () => {
 
@@ -39,18 +41,6 @@ const Cloakroom = () => {
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
               { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
               { "@type": "ListItem", "position": 3, "name": "Cloakroom & Under the Stairs", "item": "https://rvsbespoke.co.uk/cloakroom" },
-            ],
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              { "@type": "Question", "name": "Do you build fitted cloakroom furniture in Windsor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design and build bespoke fitted cloakroom and hallway furniture across Windsor and Berkshire, including boot rooms, coat storage, and hallway cabinets." } },
-              { "@type": "Question", "name": "Can you fit furniture under the stairs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — under-stair storage is one of our specialities. We build pull-out drawers, shelving, and cupboards that make full use of the awkward triangular space beneath your staircase." } },
-              { "@type": "Question", "name": "What is a boot room?", "acceptedAnswer": { "@type": "Answer", "text": "A boot room is a dedicated entrance storage area with bench seating, hooks for coats, space for muddy boots, and easy-clean surfaces. We build bespoke boot rooms that are practical for families and beautiful enough to impress guests." } },
-              { "@type": "Question", "name": "Can you fit storage into a narrow hallway?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design slim fitted cabinets, coat hooks, and shelving for narrow hallways — maximising storage without blocking the space." } },
             ],
           })}
         </script>
@@ -142,6 +132,13 @@ const Cloakroom = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQSection
+          faqs={cloakroomFaqs}
+          title="Cloakroom & Under-Stairs FAQs"
+          subtitle="Common questions about boot rooms, hallway storage, and under-stair furniture in Windsor and Berkshire."
+        />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">
