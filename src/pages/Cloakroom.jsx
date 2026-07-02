@@ -117,11 +117,6 @@ const Cloakroom = () => {
                 { src: '/images/cloakroom_13.jpeg', alt: 'Handcrafted boot room cabinetry with shaker doors in Windsor' },
                 { src: '/images/cloakroom_14.jpeg', alt: 'Fitted cloakroom with WC and vanity storage in Berkshire' },
                 { src: '/images/cloakroom_15.jpeg', alt: 'Bespoke fitted hallway with bench and coat cupboards in Windsor' },
-                { src: '/images/cloakroom_16.jpeg', alt: 'Custom fitted under-stair shelving and cupboards in Maidenhead' },
-                { src: '/images/cloakroom_17.jpeg', alt: 'Fitted boot room with mudroom flooring in Windsor home' },
-                { src: '/images/cloakroom_18.jpeg', alt: 'Bespoke painted hallway storage with mirror in Berkshire' },
-                { src: '/images/cloakroom_19.jpeg', alt: 'Custom fitted cloakroom furniture in Ascot home' },
-                { src: '/images/cloakroom_20.jpeg', alt: 'Handcrafted fitted hallway cabinet with soft close doors in Windsor' },
               ]} />
             </div>
           </div>
