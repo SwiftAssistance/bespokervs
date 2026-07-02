@@ -51,11 +51,13 @@ export const siteConfig = {
           { name: 'Cloakroom & Under the Stairs', path: '/cloakroom' },
         ],
       },
+      { name: 'Our Work', path: '/portfolio' },
       { name: 'Contact', path: '/contact' },
     ],
     footer: [
       { name: 'Home', path: '/' },
       { name: 'About Us', path: '/about' },
+      { name: 'Our Work', path: '/portfolio' },
       { name: 'Areas We Cover', path: '/areas' },
       { name: 'Contact Us', path: '/contact' },
     ],

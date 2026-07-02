@@ -65,6 +65,12 @@ const AreaPage = () => {
         <meta name="description" content={description} />
         <meta name="keywords" content={`fitted furniture ${area.name}, bespoke fitted furniture ${area.name}, fitted wardrobes ${area.name}, fitted bedroom ${area.name}, fitted kitchen ${area.name}, ${area.county} furniture maker`} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <script type="application/ld+json">{JSON.stringify(schema.localBusiness)}</script>
         <script type="application/ld+json">{JSON.stringify(schema.breadcrumb)}</script>
       </Helmet>

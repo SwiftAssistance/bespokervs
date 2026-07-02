@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import { homeOfficeFaqs } from '../config/faqs';
+import { portfolioImages } from '../config/portfolio';
 import ImageCarousel from '../components/ImageCarousel';
 import FAQSection from '../components/FAQSection';
 
@@ -91,28 +92,7 @@ const FittedHomeOffice = () => {
               </p>
             </div>
             <div className="max-w-3xl mx-auto">
-              <ImageCarousel images={[
-                { src: '/images/home_office_1.jpeg', alt: 'Custom fitted home office desk with shelving in Berkshire' },
-                { src: '/images/home_office_2.jpeg', alt: 'Bespoke fitted study furniture with integrated storage in Windsor home' },
-                { src: '/images/home_office_3.jpeg', alt: 'Fitted home office with floor to ceiling bookshelves in Windsor' },
-                { src: '/images/home_office_4.jpeg', alt: 'Bespoke built-in desk and storage in Berkshire home office' },
-                { src: '/images/home_office_5.jpeg', alt: 'Custom fitted study with painted cabinetry in Ascot home' },
-                { src: '/images/home_office_6.jpeg', alt: 'Handcrafted fitted home office with cable management in Windsor' },
-                { src: '/images/home_office_7.jpeg', alt: 'Fitted alcove desk with overhead storage in Maidenhead' },
-                { src: '/images/home_office_8.jpeg', alt: 'Bespoke fitted study room with integrated shelving in Berkshire' },
-                { src: '/images/home_office_9.jpeg', alt: 'Custom fitted desk with drawer storage in Windsor home office' },
-                { src: '/images/home_office_10.jpeg', alt: 'Handcrafted home office furniture with shaker doors in Ascot' },
-                { src: '/images/home_office_11.jpeg', alt: 'Fitted home office with built-in bookcase and filing in Windsor' },
-                { src: '/images/home_office_12.jpeg', alt: 'Bespoke fitted home study with matching storage units in Berkshire' },
-                { src: '/images/home_office_13.jpeg', alt: 'Custom fitted corner desk with overhead cabinets in Slough' },
-                { src: '/images/home_office_14.jpeg', alt: 'Fitted home office with display shelving in Windsor home' },
-                { src: '/images/home_office_15.jpeg', alt: 'Bespoke built-in desk and shelving in Maidenhead home office' },
-                { src: '/images/home_office_16.jpeg', alt: 'Custom fitted study with painted bookcases in Berkshire' },
-                { src: '/images/home_office_17.jpeg', alt: 'Handcrafted fitted home office with integrated lighting in Windsor' },
-                { src: '/images/home_office_18.jpeg', alt: 'Fitted home office with pull-out drawers and shelves in Ascot' },
-                { src: '/images/home_office_19.jpeg', alt: 'Bespoke fitted desk unit with storage cabinets in Windsor' },
-                { src: '/images/home_office_20.jpeg', alt: 'Custom fitted home study with full wall cabinetry in Berkshire' },
-              ]} />
+              <ImageCarousel images={portfolioImages('home-office')} />
             </div>
           </div>
         </section>

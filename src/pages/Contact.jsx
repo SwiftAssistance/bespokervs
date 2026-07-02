@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import { sendEnquiry, enquiryFallbackText } from '../utils/enquiry';
 
 const Contact = () => {
   const { contactPage, company } = siteConfig;
@@ -13,7 +14,8 @@ const Contact = () => {
     projectType: contactPage.form.projectTypes[0],
     message: '',
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(null); // null | 'sent' | 'mailto'
+  const [submitError, setSubmitError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -24,12 +26,14 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setSubmitError(false);
+    try {
+      setIsSubmitted(await sendEnquiry(formData));
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -161,11 +165,13 @@ const Contact = () => {
                 </div>
                 <h4 className="text-white text-3xl font-bold mb-4">Thank You!</h4>
                 <p className="text-white/60 text-lg max-w-sm">
-                  We've received your message and will get back to you within 24 hours.
+                  {isSubmitted === 'mailto'
+                    ? `Your email app has opened with your enquiry ready — just press send. ${enquiryFallbackText}`
+                    : "We've received your message and will get back to you within 24 hours."}
                 </p>
                 <button
                   onClick={() => {
-                    setIsSubmitted(false);
+                    setIsSubmitted(null);
                     setFormData({
                       name: '',
                       email: '',
@@ -252,6 +258,13 @@ const Contact = () => {
                       placeholder={contactPage.form.fields.message.placeholder}
                     ></textarea>
                   </div>
+
+                  {submitError && (
+                    <p className="text-red-400 text-sm">
+                      Sorry, your enquiry couldn't be sent. Please try again, or call{' '}
+                      <a href={siteConfig.contact.phoneLink} className="underline">{siteConfig.contact.phone}</a>.
+                    </p>
+                  )}
 
                   <button
                     type="submit"

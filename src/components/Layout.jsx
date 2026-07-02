@@ -30,13 +30,13 @@ const Layout = ({ children }) => {
     <div className="min-h-screen flex flex-col">
       <Helmet>
         <meta property="og:site_name" content="RVS Bespoke" />
-        <meta property="og:image" content="https://rvsbespoke.co.uk/images/hero.jpeg" />
-        <meta property="og:image:width" content="945" />
-        <meta property="og:image:height" content="686" />
+        <meta property="og:image" content="https://rvsbespoke.co.uk/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_GB" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@rvsbespoke" />
-        <meta name="twitter:image" content="https://rvsbespoke.co.uk/images/hero.jpeg" />
+        <meta name="twitter:image" content="https://rvsbespoke.co.uk/og-image.jpg" />
       </Helmet>
       <Navbar />
       <main className="flex-grow">{children}</main>

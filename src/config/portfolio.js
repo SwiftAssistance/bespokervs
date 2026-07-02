@@ -1,0 +1,146 @@
+/**
+ * Portfolio / project gallery images.
+ * Single source of truth for the real project photos shown in the service
+ * page carousels and on the portfolio page. Alt text is written for image
+ * SEO: what the piece is + where it was installed.
+ */
+
+export const portfolio = [
+  {
+    id: 'living-room',
+    title: 'Living Room, Dining Room & Kitchen',
+    path: '/living-room',
+    description:
+      'Alcove cabinets, media walls, kitchen cabinetry and dining room storage — all handcrafted in our Windsor workshop.',
+    images: [
+      { src: '/images/living_room_1.jpeg', alt: 'Bespoke fitted alcove cabinets and shelving in Windsor living room' },
+      { src: '/images/living_room_2.jpeg', alt: 'Custom fitted living room storage and display cabinets in Berkshire' },
+      { src: '/images/living_room_3.jpeg', alt: 'Fitted media wall with integrated shelving in Windsor home' },
+      { src: '/images/living_room_4.jpeg', alt: 'Bespoke alcove bookcase with cabinet storage in Berkshire living room' },
+      { src: '/images/living_room_5.jpeg', alt: 'Custom fitted entertainment unit with TV housing in Windsor' },
+      { src: '/images/living_room_6.jpeg', alt: 'Handcrafted fitted living room cabinetry in Ascot home' },
+      { src: '/images/living_room_7.jpeg', alt: 'Bespoke painted alcove cabinets with open shelving in Maidenhead' },
+      { src: '/images/living_room_8.jpeg', alt: 'Fitted media wall with concealed cable management in Windsor' },
+      { src: '/images/living_room_9.jpeg', alt: 'Custom built-in display cabinets in Berkshire living room' },
+      { src: '/images/living_room_10.jpeg', alt: 'Bespoke fitted dining room sideboard handcrafted in Windsor' },
+      { src: '/images/living_room_11.jpeg', alt: 'Fitted kitchen cabinetry with island in Windsor home' },
+      { src: '/images/living_room_12.jpeg', alt: 'Custom kitchen units with granite worktop in Berkshire' },
+      { src: '/images/living_room_13.jpeg', alt: 'Bespoke handmade kitchen cabinetry in Ascot home' },
+      { src: '/images/living_room_14.jpeg', alt: 'Fitted dining room storage with glass display in Windsor' },
+      { src: '/images/living_room_15.jpeg', alt: 'Custom alcove shelving and cabinets in Slough living room' },
+      { src: '/images/living_room_16.jpeg', alt: 'Bespoke fitted window seat with storage in Windsor home' },
+      { src: '/images/living_room_17.jpeg', alt: 'Handcrafted media wall with floating shelves in Berkshire' },
+      { src: '/images/living_room_18.jpeg', alt: 'Fitted kitchen island with seating in Maidenhead home' },
+      { src: '/images/living_room_19.jpeg', alt: 'Bespoke fitted living room with painted cabinetry in Windsor' },
+      { src: '/images/living_room_20.jpeg', alt: 'Custom dining room fitted furniture handcrafted in Berkshire' },
+      { src: '/images/living_room_21.jpeg', alt: 'Bespoke fitted living room cabinetry in Windsor home' },
+      { src: '/images/living_room_22.jpeg', alt: 'Custom fitted alcove storage in Berkshire living room' },
+      { src: '/images/living_room_23.jpeg', alt: 'Handcrafted fitted living room furniture in Ascot home' },
+      { src: '/images/living_room_24.jpeg', alt: 'Fitted media wall with shelving in Windsor living room' },
+      { src: '/images/living_room_25.jpeg', alt: 'Bespoke fitted dining room storage in Berkshire home' },
+      { src: '/images/living_room_26.jpeg', alt: 'Custom fitted kitchen cabinetry handcrafted in Windsor' },
+      { src: '/images/living_room_27.jpeg', alt: 'Bespoke fitted living room with painted alcove cabinets in Windsor' },
+    ],
+  },
+  {
+    id: 'bedroom',
+    title: 'Fitted Bedrooms & Wardrobes',
+    path: '/bedroom',
+    description:
+      'Fitted wardrobes, dressing rooms and bedroom storage made to measure for homes across Berkshire.',
+    images: [
+      { src: '/images/bedroom_1.jpeg', alt: 'Custom fitted wardrobes with organised internal storage in Berkshire bedroom' },
+      { src: '/images/bedroom_2.jpeg', alt: 'Bespoke fitted bedroom storage handcrafted in Windsor workshop' },
+      { src: '/images/bedroom_3.jpeg', alt: 'Floor to ceiling fitted wardrobes with sliding doors in Windsor bedroom' },
+      { src: '/images/bedroom_4.jpeg', alt: 'Bespoke dressing room with open shelving and hanging rails in Berkshire' },
+      { src: '/images/bedroom_5.jpeg', alt: 'Custom fitted wardrobe interiors with drawers and shelves in Ascot' },
+      { src: '/images/bedroom_6.jpeg', alt: 'Handcrafted fitted bedroom furniture with painted finish in Windsor' },
+      { src: '/images/bedroom_7.jpeg', alt: 'Bespoke walk-in wardrobe with island unit in Maidenhead home' },
+      { src: '/images/bedroom_8.jpeg', alt: 'Fitted alcove wardrobes with integrated bedside units in Windsor' },
+      { src: '/images/bedroom_9.jpeg', alt: 'Custom fitted headboard with bedside cabinets in Berkshire bedroom' },
+      { src: '/images/bedroom_10.jpeg', alt: 'Bespoke fitted dressing table with mirror in Windsor home' },
+      { src: '/images/bedroom_11.jpeg', alt: 'Floor to ceiling painted wardrobes in Ascot bedroom' },
+      { src: '/images/bedroom_12.jpeg', alt: 'Custom fitted bedroom storage with soft close drawers in Slough' },
+      { src: '/images/bedroom_13.jpeg', alt: 'Bespoke fitted wardrobe with internal lighting in Windsor' },
+      { src: '/images/bedroom_14.jpeg', alt: 'Handcrafted fitted bedroom in Maidenhead with shaker doors' },
+      { src: '/images/bedroom_15.jpeg', alt: 'Custom built-in wardrobes with open display shelving in Berkshire' },
+      { src: '/images/bedroom_16.jpeg', alt: 'Bespoke fitted sliding door wardrobes in Windsor bedroom' },
+      { src: '/images/bedroom_17.jpeg', alt: 'Fitted bedroom furniture with matching chest of drawers in Ascot' },
+      { src: '/images/bedroom_18.jpeg', alt: 'Custom fitted wardrobe with shoe storage and drawers in Windsor' },
+      { src: '/images/bedroom_23.jpeg', alt: 'Bespoke fitted bedroom with luxury dressing room in Berkshire' },
+      { src: '/images/bedroom_20.jpeg', alt: 'Handcrafted fitted wardrobes with integrated lighting in Windsor home' },
+      { src: '/images/bedroom_21.jpeg', alt: 'Bespoke fitted bedroom furniture in Windsor home' },
+      { src: '/images/bedroom_22.jpeg', alt: 'Custom fitted wardrobe with painted finish in Berkshire bedroom' },
+    ],
+  },
+  {
+    id: 'home-office',
+    title: 'Fitted Home Offices',
+    path: '/home-office',
+    description:
+      'Built-in desks, shelving and office storage designed for productive working from home.',
+    images: [
+      { src: '/images/home_office_1.jpeg', alt: 'Custom fitted home office desk with shelving in Berkshire' },
+      { src: '/images/home_office_2.jpeg', alt: 'Bespoke fitted study furniture with integrated storage in Windsor home' },
+      { src: '/images/home_office_3.jpeg', alt: 'Fitted home office with floor to ceiling bookshelves in Windsor' },
+      { src: '/images/home_office_4.jpeg', alt: 'Bespoke built-in desk and storage in Berkshire home office' },
+      { src: '/images/home_office_5.jpeg', alt: 'Custom fitted study with painted cabinetry in Ascot home' },
+      { src: '/images/home_office_6.jpeg', alt: 'Handcrafted fitted home office with cable management in Windsor' },
+      { src: '/images/home_office_7.jpeg', alt: 'Fitted alcove desk with overhead storage in Maidenhead' },
+      { src: '/images/home_office_8.jpeg', alt: 'Bespoke fitted study room with integrated shelving in Berkshire' },
+      { src: '/images/home_office_9.jpeg', alt: 'Custom fitted desk with drawer storage in Windsor home office' },
+      { src: '/images/home_office_10.jpeg', alt: 'Handcrafted home office furniture with shaker doors in Ascot' },
+      { src: '/images/home_office_11.jpeg', alt: 'Fitted home office with built-in bookcase and filing in Windsor' },
+      { src: '/images/home_office_12.jpeg', alt: 'Bespoke fitted home study with matching storage units in Berkshire' },
+      { src: '/images/home_office_13.jpeg', alt: 'Custom fitted corner desk with overhead cabinets in Slough' },
+      { src: '/images/home_office_14.jpeg', alt: 'Fitted home office with display shelving in Windsor home' },
+    ],
+  },
+  {
+    id: 'loft-conversion',
+    title: 'Loft Conversions',
+    path: '/loft-conversion',
+    description:
+      'Wardrobes and eaves storage built for sloped ceilings and the awkward angles of loft spaces.',
+    images: [
+      { src: '/images/loft_1.jpeg', alt: 'Bespoke fitted loft conversion storage in Windsor' },
+      { src: '/images/loft_2.jpeg', alt: 'Custom fitted eaves storage and wardrobes in Berkshire loft' },
+      { src: '/images/loft_3.jpeg', alt: 'Fitted wardrobes under sloped ceiling in Windsor loft conversion' },
+      { src: '/images/loft_4.jpeg', alt: 'Bespoke eaves cupboards with pull-out drawers in Berkshire loft' },
+      { src: '/images/loft_5.jpeg', alt: 'Custom fitted loft bedroom with built-in wardrobes in Ascot' },
+      { src: '/images/loft_6.jpeg', alt: 'Handcrafted loft conversion furniture with eaves storage in Windsor' },
+      { src: '/images/loft_7.jpeg', alt: 'Fitted loft office with built-in desk and shelving in Maidenhead' },
+      { src: '/images/loft_8.jpeg', alt: 'Bespoke sloped ceiling wardrobes in Windsor loft conversion' },
+      { src: '/images/loft_9.jpeg', alt: 'Custom fitted eaves storage with painted doors in Berkshire' },
+      { src: '/images/loft_10.jpeg', alt: 'Fitted loft conversion bedroom furniture in Ascot home' },
+    ],
+  },
+  {
+    id: 'cloakroom',
+    title: 'Cloakrooms & Under the Stairs',
+    path: '/cloakroom',
+    description:
+      'Boot rooms, hallway cabinetry and under-stair storage that make the most of every inch.',
+    images: [
+      { src: '/images/cloakroom_1.jpeg', alt: 'Custom fitted cloakroom with coat storage and bench seating in Berkshire' },
+      { src: '/images/cloakroom_2.jpeg', alt: 'Bespoke hallway furniture handcrafted in Windsor workshop' },
+      { src: '/images/cloakroom_3.jpeg', alt: 'Fitted boot room with bench seating and coat hooks in Windsor' },
+      { src: '/images/cloakroom_4.jpeg', alt: 'Bespoke under-stairs storage with pull-out drawers in Berkshire' },
+      { src: '/images/cloakroom_5.jpeg', alt: 'Custom fitted hallway cabinet with shoe storage in Ascot' },
+      { src: '/images/cloakroom_6.jpeg', alt: 'Handcrafted fitted boot room with painted cabinetry in Windsor' },
+      { src: '/images/cloakroom_7.jpeg', alt: 'Fitted under-stair cupboard with shelving in Maidenhead home' },
+      { src: '/images/cloakroom_8.jpeg', alt: 'Bespoke fitted cloakroom with hooks and coat storage in Slough' },
+      { src: '/images/cloakroom_9.jpeg', alt: 'Custom fitted hallway storage unit in Windsor home' },
+      { src: '/images/cloakroom_10.jpeg', alt: 'Fitted boot room with family coat and boot storage in Berkshire' },
+      { src: '/images/cloakroom_11.jpeg', alt: 'Bespoke fitted hallway furniture with drawers in Windsor' },
+      { src: '/images/cloakroom_12.jpeg', alt: 'Custom under-stairs cupboard with pull-out storage in Ascot' },
+      { src: '/images/cloakroom_13.jpeg', alt: 'Handcrafted boot room cabinetry with shaker doors in Windsor' },
+      { src: '/images/cloakroom_14.jpeg', alt: 'Fitted cloakroom with WC and vanity storage in Berkshire' },
+      { src: '/images/cloakroom_15.jpeg', alt: 'Bespoke fitted hallway with bench and coat cupboards in Windsor' },
+    ],
+  },
+];
+
+export const portfolioImages = (id) => portfolio.find((p) => p.id === id)?.images ?? [];
+
+export default portfolio;

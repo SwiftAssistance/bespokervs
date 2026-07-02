@@ -5,6 +5,7 @@ import { ArrowRight, Quote, MapPin, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { homeFaqs } from '../config/faqs';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import { sendEnquiry, enquiryFallbackText } from '../utils/enquiry';
 import ContactModal from '../components/ContactModal';
 import FAQSection from '../components/FAQSection';
 
@@ -15,7 +16,8 @@ const Home = () => {
   const testimonials = home.testimonials.items;
   const { contactPage, contact } = siteConfig;
   const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', projectType: contactPage.form.projectTypes[0], message: '' });
-  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactSubmitted, setContactSubmitted] = useState(null); // null | 'sent' | 'mailto'
+  const [contactError, setContactError] = useState(false);
   const [contactSubmitting, setContactSubmitting] = useState(false);
 
   const handleContactChange = (e) => {
@@ -26,9 +28,14 @@ const Home = () => {
   const handleContactSubmit = async (e) => {
     e.preventDefault();
     setContactSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setContactSubmitting(false);
-    setContactSubmitted(true);
+    setContactError(false);
+    try {
+      setContactSubmitted(await sendEnquiry(contactForm));
+    } catch {
+      setContactError(true);
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
   const [dragOffset, setDragOffset] = useState(0);
@@ -96,7 +103,7 @@ const Home = () => {
             height={1080}
             className="w-full h-full object-cover opacity-50"
             alt="Bespoke fitted kitchen handcrafted by RVS Bespoke in Windsor, Berkshire"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/40 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent"></div>
@@ -322,9 +329,13 @@ const Home = () => {
                   <CheckCircle size={32} className="text-white" />
                 </div>
                 <h4 className="text-white text-2xl font-bold mb-3">Thank You!</h4>
-                <p className="text-white/60 max-w-sm">We'll be in touch within 24 hours.</p>
+                <p className="text-white/60 max-w-sm">
+                  {contactSubmitted === 'mailto'
+                    ? `Your email app has opened with your enquiry ready — just press send. ${enquiryFallbackText}`
+                    : "We'll be in touch within 24 hours."}
+                </p>
                 <button
-                  onClick={() => { setContactSubmitted(false); setContactForm({ name: '', email: '', phone: '', projectType: contactPage.form.projectTypes[0], message: '' }); }}
+                  onClick={() => { setContactSubmitted(null); setContactForm({ name: '', email: '', phone: '', projectType: contactPage.form.projectTypes[0], message: '' }); }}
                   className="mt-6 text-accent-gold text-xs uppercase tracking-widest hover:text-white transition-colors"
                 >
                   Send Another
@@ -356,6 +367,12 @@ const Home = () => {
                   <textarea name="message" value={contactForm.message} onChange={handleContactChange} rows={3} placeholder="Tell us about your project..."
                     className="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder:text-white/30 focus:border-accent-gold outline-none transition-colors resize-none text-lg" />
                 </div>
+                {contactError && (
+                  <p className="text-red-400 text-sm">
+                    Sorry, your enquiry couldn't be sent. Please try again, or call{' '}
+                    <a href={contact.phoneLink} className="underline">{contact.phone}</a>.
+                  </p>
+                )}
                 <button type="submit" disabled={contactSubmitting}
                   className="w-full py-5 bg-accent-gold text-white font-bold uppercase tracking-[0.4em] text-[11px] hover:bg-white hover:text-primary-dark transition-all flex items-center justify-center gap-3 disabled:opacity-50">
                   {contactSubmitting ? <span className="animate-pulse">Sending...</span> : <><span>Submit Enquiry</span><Send size={14} /></>}
