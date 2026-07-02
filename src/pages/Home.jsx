@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Quote, MapPin, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { homeFaqs } from '../config/faqs';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import ContactModal from '../components/ContactModal';
+import FAQSection from '../components/FAQSection';
 
 const Home = () => {
   const { home, rooms: services, images, company } = siteConfig;
@@ -261,6 +263,14 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <div className="below-fold">
+        <FAQSection
+          faqs={homeFaqs}
+          subtitle="Everything you need to know about commissioning bespoke fitted furniture in Windsor and Berkshire."
+        />
+      </div>
 
       {/* Contact & Map Section */}
       <section className="py-24 px-8 bg-primary-dark below-fold">

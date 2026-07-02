@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { loftConversionFaqs } from '../config/faqs';
 import ImageCarousel from '../components/ImageCarousel';
+import FAQSection from '../components/FAQSection';
 
 const LoftConversion = () => {
 
@@ -38,18 +40,6 @@ const LoftConversion = () => {
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
               { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
               { "@type": "ListItem", "position": 3, "name": "Loft Conversion", "item": "https://rvsbespoke.co.uk/loft-conversion" },
-            ],
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              { "@type": "Question", "name": "Can you fit furniture in a loft conversion?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — loft conversions are a speciality of ours. We design and build furniture that works around eaves, sloped ceilings, and the unusual shapes that come with loft spaces." } },
-              { "@type": "Question", "name": "Can you build wardrobes under a sloped ceiling?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We design wardrobes specifically for sloped ceilings, using every centimetre of available headroom. The result looks like the furniture was always part of the room." } },
-              { "@type": "Question", "name": "What can you fit into the eaves space?", "acceptedAnswer": { "@type": "Answer", "text": "We can fit pull-out drawers, shelving, hanging rails, and cupboards into eaves spaces — turning dead space behind a knee wall into genuinely useful storage." } },
-              { "@type": "Question", "name": "Do you work on loft conversions across Berkshire?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We install loft conversion furniture throughout Windsor, Ascot, Maidenhead, Slough, Datchet, and the wider Berkshire area." } },
             ],
           })}
         </script>
@@ -136,6 +126,13 @@ const LoftConversion = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQSection
+          faqs={loftConversionFaqs}
+          title="Loft Conversion Furniture FAQs"
+          subtitle="Common questions about fitted wardrobes, eaves storage, and joinery for loft conversions in Windsor and Berkshire."
+        />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import { homeOfficeFaqs } from '../config/faqs';
 import ImageCarousel from '../components/ImageCarousel';
+import FAQSection from '../components/FAQSection';
 
 const FittedHomeOffice = () => {
 
@@ -39,18 +41,6 @@ const FittedHomeOffice = () => {
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
               { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
               { "@type": "ListItem", "position": 3, "name": "Home Office", "item": "https://rvsbespoke.co.uk/home-office" },
-            ],
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              { "@type": "Question", "name": "Do you build fitted home offices in Windsor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design and install bespoke fitted home offices across Windsor and Berkshire — from a single fitted desk and shelving to a full room built-in study." } },
-              { "@type": "Question", "name": "Can you fit a home office into a small room?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Bespoke joinery is ideal for small rooms because we build to the exact dimensions of the space, using every available inch without wasted gaps." } },
-              { "@type": "Question", "name": "What does a fitted home office typically include?", "acceptedAnswer": { "@type": "Answer", "text": "Most fitted home offices include a built-in desk, overhead and under-desk storage, shelving, and cable management. We design around your specific workflow and equipment." } },
-              { "@type": "Question", "name": "How long does a fitted home office take?", "acceptedAnswer": { "@type": "Answer", "text": "A fitted home office typically takes four to six weeks from design confirmation to installation. Larger or more complex studies may take longer." } },
             ],
           })}
         </script>
@@ -147,6 +137,13 @@ const FittedHomeOffice = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQSection
+          faqs={homeOfficeFaqs}
+          title="Fitted Home Office FAQs"
+          subtitle="Common questions about bespoke desks, built-in studies, and home office storage in Windsor and Berkshire."
+        />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { areas } from '../config/areas';
 import { siteConfig } from '../config/site';
+import { areaFaqs } from '../config/faqs';
+import FAQSection from '../components/FAQSection';
 
 const services = [
   { name: 'Fitted Living Room, Dining Room & Kitchen', path: '/living-room', short: 'Living Room & Kitchen' },
@@ -10,29 +12,6 @@ const services = [
   { name: 'Fitted Home Office', path: '/home-office', short: 'Home Office' },
   { name: 'Loft Conversion Furniture', path: '/loft-conversion', short: 'Loft Conversion' },
   { name: 'Cloakroom & Under the Stairs', path: '/cloakroom', short: 'Cloakroom & Under the Stairs' },
-];
-
-const faqs = (area) => [
-  {
-    q: `Do you fit furniture in ${area.name}?`,
-    a: `Yes — we cover ${area.name} and the surrounding ${area.county} area from our workshop in Windsor. We handle the full project from design to installation.`,
-  },
-  {
-    q: `How far do you travel from Windsor to ${area.name}?`,
-    a: `${area.name} is well within our regular service area. We visit clients there for site consultations and return for installation. There are no extra travel charges for projects in ${area.name}.`,
-  },
-  {
-    q: `What fitted furniture do you offer in ${area.name}?`,
-    a: `We offer the full range: fitted wardrobes and bedrooms, living room alcove cabinets and media walls, kitchen and dining room furniture, home offices, loft conversion joinery, and cloakroom and under-stair storage.`,
-  },
-  {
-    q: `How long does a fitted furniture project in ${area.name} take?`,
-    a: `Timelines depend on the project. Fitted bedrooms and wardrobes typically take four to six weeks from order to installation. Kitchens and larger commissions are usually eight to twelve weeks. We confirm a timeline before anything is agreed.`,
-  },
-  {
-    q: `Is there a free consultation for ${area.name} homeowners?`,
-    a: `Yes. We offer a free no-obligation site visit to measure up and discuss your requirements. There is no hard sell — just a conversation about what is possible in your space.`,
-  },
 ];
 
 const AreaPage = () => {
@@ -45,7 +24,7 @@ const AreaPage = () => {
   const canonicalUrl = `https://rvsbespoke.co.uk/areas/${area.slug}`;
   const title = `Fitted Furniture ${area.name} | Bespoke Wardrobes, Kitchens & Storage | RVS Bespoke`;
   const description = `Bespoke fitted furniture in ${area.name}, ${area.county}. Wardrobes, kitchens, home offices and more — designed and built in our Windsor workshop. Free consultation available.`;
-  const areaFaqs = faqs(area);
+  const faqs = areaFaqs(area);
 
   const schema = {
     localBusiness: {
@@ -77,15 +56,6 @@ const AreaPage = () => {
         { "@type": "ListItem", "position": 3, "name": area.name, "item": canonicalUrl },
       ],
     },
-    faqPage: {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": areaFaqs.map(({ q, a }) => ({
-        "@type": "Question",
-        "name": q,
-        "acceptedAnswer": { "@type": "Answer", "text": a },
-      })),
-    },
   };
 
   return (
@@ -97,7 +67,6 @@ const AreaPage = () => {
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(schema.localBusiness)}</script>
         <script type="application/ld+json">{JSON.stringify(schema.breadcrumb)}</script>
-        <script type="application/ld+json">{JSON.stringify(schema.faqPage)}</script>
       </Helmet>
 
       <div>
@@ -168,21 +137,11 @@ const AreaPage = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-20 px-8 bg-white">
-          <div className="max-w-[900px] mx-auto">
-            <h2 className="text-3xl font-bold text-primary-dark tracking-tight mb-10">
-              Frequently Asked Questions
-            </h2>
-            <div className="divide-y divide-gray-100">
-              {areaFaqs.map(({ q, a }) => (
-                <div key={q} className="py-6">
-                  <h3 className="text-base font-bold text-primary-dark mb-2">{q}</h3>
-                  <p className="text-gray-500 leading-relaxed text-sm">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection
+          faqs={faqs}
+          title={`Fitted Furniture in ${area.name} — FAQs`}
+          subtitle={`Common questions from ${area.name} homeowners about our bespoke fitted furniture service.`}
+        />
 
         {/* CTA */}
         <section className="py-20 px-8 bg-primary-dark text-center">
