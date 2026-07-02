@@ -122,6 +122,9 @@ const Bedroom = () => {
                 { src: '/images/bedroom_18.jpeg', alt: 'Custom fitted wardrobe with shoe storage and drawers in Windsor' },
                 { src: '/images/bedroom_19.jpeg', alt: 'Bespoke fitted bedroom with luxury dressing room in Berkshire' },
                 { src: '/images/bedroom_20.jpeg', alt: 'Handcrafted fitted wardrobes with integrated lighting in Windsor home' },
+                { src: '/images/bedroom_21.jpeg', alt: 'Bespoke fitted bedroom furniture in Windsor home' },
+                { src: '/images/bedroom_22.jpeg', alt: 'Custom fitted wardrobe with painted finish in Berkshire bedroom' },
+                { src: '/images/bedroom_23.jpeg', alt: 'Handcrafted fitted bedroom storage in Windsor' },
               ]} />
             </div>
           </div>
