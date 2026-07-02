@@ -9,7 +9,7 @@ import { Plus, Minus } from 'lucide-react';
  * answer engines (Google AI Overviews, ChatGPT, Perplexity) draw from.
  */
 const FAQSection = ({ faqs, title = 'Frequently Asked Questions', subtitle, className = 'bg-white' }) => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const schema = {
     '@context': 'https://schema.org',
