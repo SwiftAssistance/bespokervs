@@ -123,6 +123,13 @@ const LivingRoom = () => {
                 { src: '/images/living_room_18.jpeg', alt: 'Fitted kitchen island with seating in Maidenhead home' },
                 { src: '/images/living_room_19.jpeg', alt: 'Bespoke fitted living room with painted cabinetry in Windsor' },
                 { src: '/images/living_room_20.jpeg', alt: 'Custom dining room fitted furniture handcrafted in Berkshire' },
+                { src: '/images/living_room_21.jpeg', alt: 'Bespoke fitted living room cabinetry in Windsor home' },
+                { src: '/images/living_room_22.jpeg', alt: 'Custom fitted alcove storage in Berkshire living room' },
+                { src: '/images/living_room_23.jpeg', alt: 'Handcrafted fitted living room furniture in Ascot home' },
+                { src: '/images/living_room_24.jpeg', alt: 'Fitted media wall with shelving in Windsor living room' },
+                { src: '/images/living_room_25.jpeg', alt: 'Bespoke fitted dining room storage in Berkshire home' },
+                { src: '/images/living_room_26.jpeg', alt: 'Custom fitted kitchen cabinetry handcrafted in Windsor' },
+                { src: '/images/living_room_27.jpeg', alt: 'Bespoke fitted living room with painted alcove cabinets in Windsor' },
               ]} />
             </div>
           </div>
