@@ -31,6 +31,8 @@ export const siteConfig = {
   social: {
     instagram: 'https://www.instagram.com/rvs_bespoke',
     facebook: 'https://facebook.com/rvsbespoke',
+    googleMaps: 'https://maps.google.com/?cid=9552230865193343288',
+    googleReview: 'https://search.google.com/local/writereview?placeid=ChIJeRlJexx7dkgROBlfrFxXkIQ',
   },
 
   // Navigation Links (Required)
