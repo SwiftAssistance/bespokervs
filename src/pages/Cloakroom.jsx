@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import { cloakroomFaqs } from '../config/faqs';
+import { portfolioImages } from '../config/portfolio';
 import ImageCarousel from '../components/ImageCarousel';
 import FAQSection from '../components/FAQSection';
 
@@ -91,23 +92,7 @@ const Cloakroom = () => {
               </p>
             </div>
             <div className="max-w-3xl mx-auto">
-              <ImageCarousel images={[
-                { src: '/images/cloakroom_1.jpeg', alt: 'Custom fitted cloakroom with coat storage and bench seating in Berkshire' },
-                { src: '/images/cloakroom_2.jpeg', alt: 'Bespoke hallway furniture handcrafted in Windsor workshop' },
-                { src: '/images/cloakroom_3.jpeg', alt: 'Fitted boot room with bench seating and coat hooks in Windsor' },
-                { src: '/images/cloakroom_4.jpeg', alt: 'Bespoke under-stairs storage with pull-out drawers in Berkshire' },
-                { src: '/images/cloakroom_5.jpeg', alt: 'Custom fitted hallway cabinet with shoe storage in Ascot' },
-                { src: '/images/cloakroom_6.jpeg', alt: 'Handcrafted fitted boot room with painted cabinetry in Windsor' },
-                { src: '/images/cloakroom_7.jpeg', alt: 'Fitted under-stair cupboard with shelving in Maidenhead home' },
-                { src: '/images/cloakroom_8.jpeg', alt: 'Bespoke fitted cloakroom with hooks and coat storage in Slough' },
-                { src: '/images/cloakroom_9.jpeg', alt: 'Custom fitted hallway storage unit in Windsor home' },
-                { src: '/images/cloakroom_10.jpeg', alt: 'Fitted boot room with family coat and boot storage in Berkshire' },
-                { src: '/images/cloakroom_11.jpeg', alt: 'Bespoke fitted hallway furniture with drawers in Windsor' },
-                { src: '/images/cloakroom_12.jpeg', alt: 'Custom under-stairs cupboard with pull-out storage in Ascot' },
-                { src: '/images/cloakroom_13.jpeg', alt: 'Handcrafted boot room cabinetry with shaker doors in Windsor' },
-                { src: '/images/cloakroom_14.jpeg', alt: 'Fitted cloakroom with WC and vanity storage in Berkshire' },
-                { src: '/images/cloakroom_15.jpeg', alt: 'Bespoke fitted hallway with bench and coat cupboards in Windsor' },
-              ]} />
+              <ImageCarousel images={portfolioImages('cloakroom')} />
             </div>
           </div>
         </section>

@@ -15,7 +15,8 @@ import '@fontsource/playfair-display/latin-700.css';
 
 import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root');
+const app = (
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
@@ -24,3 +25,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </HelmetProvider>
   </React.StrictMode>
 );
+
+// Prerendered pages (see scripts/prerender.mjs) are hydrated in place;
+// the dev/FCP shell is replaced with a fresh client render.
+if (container.dataset.ssr) {
+  ReactDOM.hydrateRoot(container, app);
+} else {
+  ReactDOM.createRoot(container).render(app);
+}

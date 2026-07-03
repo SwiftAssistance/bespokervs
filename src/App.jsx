@@ -14,6 +14,7 @@ const Cloakroom = lazy(() => import('./pages/Cloakroom'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Services = lazy(() => import('./pages/Services'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/loft-conversion" element={<LoftConversion />} />
           <Route path="/cloakroom" element={<Cloakroom />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/areas" element={<Areas />} />

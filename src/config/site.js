@@ -31,6 +31,8 @@ export const siteConfig = {
   social: {
     instagram: 'https://www.instagram.com/rvs_bespoke',
     facebook: 'https://facebook.com/rvsbespoke',
+    googleMaps: 'https://maps.google.com/?cid=9552230865193343288',
+    googleReview: 'https://search.google.com/local/writereview?placeid=ChIJeRlJexx7dkgROBlfrFxXkIQ',
   },
 
   // Navigation Links (Required)
@@ -49,11 +51,13 @@ export const siteConfig = {
           { name: 'Cloakroom & Under the Stairs', path: '/cloakroom' },
         ],
       },
+      { name: 'Our Work', path: '/portfolio' },
       { name: 'Contact', path: '/contact' },
     ],
     footer: [
       { name: 'Home', path: '/' },
       { name: 'About Us', path: '/about' },
+      { name: 'Our Work', path: '/portfolio' },
       { name: 'Areas We Cover', path: '/areas' },
       { name: 'Contact Us', path: '/contact' },
     ],
@@ -115,7 +119,7 @@ export const siteConfig = {
       subtitle: 'Where Precision Meets Heritage',
     },
     story: {
-      intro: 'Operating from our specialized workshop at 3 Riverway on Barry Ave, RVS Bespoke is a family-rooted business dedicated to the art of fine joinery.',
+      intro: 'Operating from our specialised workshop at 3 Riverway on Barry Ave, RVS Bespoke is a family-rooted business dedicated to the art of fine joinery.',
       history: 'Founded with a passion for exceptional craftsmanship, RVS Bespoke has grown from a small workshop to become one of Windsor\'s most respected bespoke furniture makers. Our journey began with a simple belief: that furniture should be built to last generations, not just years.',
       philosophy: 'Every piece that leaves our workshop carries the hallmarks of traditional craftsmanship combined with modern precision. We believe in taking the time to understand not just what our clients want, but how they live, ensuring every commission perfectly fits their lifestyle.',
       commitment: 'We are committed to sustainable practices, sourcing materials responsibly and building furniture designed to last a lifetime. Our workshop operates with minimal waste, and we actively seek out reclaimed and certified sustainable timbers.',
@@ -202,7 +206,7 @@ export const siteConfig = {
         { day: 'Saturday', time: '10:00 AM - 4:00 PM' },
         { day: 'Sunday', time: 'By Appointment' },
       ],
-      note: 'We recommend booking an appointment for personalized consultations.',
+      note: 'We recommend booking an appointment for personalised consultations.',
     },
   },
 

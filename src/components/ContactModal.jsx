@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { sendEnquiry, enquiryFallbackText } from '../utils/enquiry';
 
 const ContactModal = ({ isOpen, onClose }) => {
   const { contactPage } = siteConfig;
@@ -11,7 +12,8 @@ const ContactModal = ({ isOpen, onClose }) => {
     projectType: contactPage.form.projectTypes[0],
     message: '',
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitResult, setSubmitResult] = useState(null); // null | 'sent' | 'mailto'
+  const [submitError, setSubmitError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Prevent body scroll when modal is open
@@ -45,19 +47,23 @@ const ContactModal = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setSubmitError(false);
+    try {
+      const result = await sendEnquiry(formData);
+      setSubmitResult(result);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     onClose();
     // Reset form after animation
     setTimeout(() => {
-      setIsSubmitted(false);
+      setSubmitResult(null);
+      setSubmitError(false);
       setFormData({
         name: '',
         email: '',
@@ -90,7 +96,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           <X size={24} />
         </button>
 
-        {isSubmitted ? (
+        {submitResult ? (
           <div className="p-12 text-center">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle size={32} className="text-green-600" />
@@ -99,7 +105,9 @@ const ContactModal = ({ isOpen, onClose }) => {
               Thank You!
             </h3>
             <p className="text-gray-500 mb-8">
-              We've received your enquiry and will be in touch within 24 hours.
+              {submitResult === 'mailto'
+                ? `Your email app has opened with your enquiry ready — just press send. ${enquiryFallbackText}`
+                : "We've received your enquiry and will be in touch within 24 hours."}
             </p>
             <button
               type="button"
@@ -194,6 +202,13 @@ const ContactModal = ({ isOpen, onClose }) => {
                   className="w-full border-b-2 border-gray-200 py-3 text-lg focus:border-accent-gold outline-none transition-colors resize-none"
                 />
               </div>
+
+              {submitError && (
+                <p className="text-red-600 text-sm">
+                  Sorry, your enquiry couldn't be sent. Please try again, or call{' '}
+                  <a href={siteConfig.contact.phoneLink} className="underline">{siteConfig.contact.phone}</a>.
+                </p>
+              )}
 
               <button
                 type="submit"

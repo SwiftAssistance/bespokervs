@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, MapPin, Phone } from 'lucide-react';
+import { Instagram, Facebook, MapPin, Phone, Star } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { areas } from '../config/areas';
 
@@ -112,6 +112,16 @@ const Footer = () => {
                 <Facebook size={22} strokeWidth={1.5} />
               </a>
             </div>
+
+            <a
+              href={siteConfig.social.googleReview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 text-white/50 text-sm hover:text-accent-gold transition-colors"
+            >
+              <Star size={16} className="text-accent-gold" />
+              Review us on Google
+            </a>
           </div>
         </div>
 
