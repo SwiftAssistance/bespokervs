@@ -86,7 +86,7 @@ const LivingRoom = () => {
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Whether it's alcove cabinets in the living room, a fitted sideboard in the dining room,
-                or bespoke kitchen cabinetry — we design and build everything to measure, working around
+                or bespoke bookshelves — we design and build everything to measure, working around
                 your space and the way you live.
               </p>
             </div>
