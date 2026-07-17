@@ -112,27 +112,6 @@ const Cloakroom = () => {
           </div>
         </section>
 
-        {/* Options Section */}
-        <section className="py-20 px-8 bg-background-light">
-          <div className="max-w-[1200px] mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-12 text-center">
-              Cloakroom Solutions
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { title: 'Boot Rooms', desc: 'Dedicated muddy boot and coat storage with bench seating, drying space, and easy-clean surfaces for active families.' },
-                { title: 'Hallway Storage', desc: 'Slim fitted cabinets, coat hooks, and shelving designed for narrow hallways. Maximum storage without blocking the way.' },
-                { title: 'Under-Stairs', desc: 'Clever pull-out drawers, shelving, and hanging space fitted into the awkward space beneath your staircase.' },
-              ].map((item) => (
-                <div key={item.title} className="bg-white p-8 shadow-sm">
-                  <h3 className="text-xl font-bold text-primary-dark mb-3">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FAQ */}
         <FAQSection
           faqs={cloakroomFaqs}

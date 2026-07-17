@@ -98,27 +98,6 @@ const Bathroom = () => {
           </div>
         </section>
 
-        {/* Options Section */}
-        <section className="py-20 px-8 bg-background-light">
-          <div className="max-w-[1200px] mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-12 text-center">
-              Bathroom Solutions
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { title: 'Vanity Units', desc: 'Custom vanity units built to fit your basin and space. Soft-close drawers, internal organisers, and moisture-resistant finishes.' },
-                { title: 'Storage Cabinets', desc: 'Tall boys, wall-hung cabinets, and fitted shelving to keep towels, toiletries, and linens organised and accessible.' },
-                { title: 'En-Suite Solutions', desc: 'Compact fitted furniture for smaller bathrooms. Clever storage that makes the most of every inch without cluttering the room.' },
-              ].map((item) => (
-                <div key={item.title} className="bg-white p-8 shadow-sm">
-                  <h3 className="text-xl font-bold text-primary-dark mb-3">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">
           <div className="max-w-[1200px] mx-auto text-center">

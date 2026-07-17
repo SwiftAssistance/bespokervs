@@ -119,27 +119,6 @@ const Bedroom = () => {
           </div>
         </section>
 
-        {/* Options Section */}
-        <section className="py-20 px-8 bg-background-light">
-          <div className="max-w-[1200px] mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-12 text-center">
-              Bedroom Solutions
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { title: 'Fitted Wardrobes', desc: 'Hinged or sliding door wardrobes built into alcoves, across walls, or floor to ceiling. Custom interiors with rails, shelves, and drawers.' },
-                { title: 'Dressing Rooms', desc: 'Walk-in wardrobe systems with open shelving, shoe racks, jewellery drawers, and integrated lighting for a luxury dressing experience.' },
-                { title: 'Bedroom Storage', desc: 'Bedside cabinets, under-bed drawers, blanket boxes, and fitted headboard units. Matching furniture to complete the room.' },
-              ].map((item) => (
-                <div key={item.title} className="bg-white p-8 shadow-sm">
-                  <h3 className="text-xl font-bold text-primary-dark mb-3">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FAQ */}
         <FAQSection
           faqs={bedroomFaqs}
