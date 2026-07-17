@@ -91,11 +91,6 @@ const Contact = () => {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tighter mb-8">
-              Let's Start a <br />
-              <span className="text-accent-gold font-serif italic font-light">Conversation</span>
-            </h2>
-
             <div className="space-y-4 mb-8">
               <div className="group contact-info-card">
                 <div className="contact-info-icon">

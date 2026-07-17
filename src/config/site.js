@@ -165,12 +165,11 @@ export const siteConfig = {
       title: 'Get In Touch',
       submitButton: 'Send Message',
       projectTypes: [
-        'Fitted Living Room',
-        'Fitted Bedroom',
-        'Fitted Home Office',
-        'Fitted Bathroom',
-        'Fitted Kitchen',
-        'Fitted Cloakroom',
+        'Living Room, Dining Room & Kitchen',
+        'Bedroom',
+        'Home Office',
+        'Loft Conversion',
+        'Cloakroom & Under the Stairs',
         'Other',
       ],
       fields: {
