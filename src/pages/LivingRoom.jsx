@@ -124,27 +124,6 @@ const LivingRoom = () => {
           </div>
         </section>
 
-        {/* Options Section */}
-        <section className="py-20 px-8 bg-background-light">
-          <div className="max-w-[1200px] mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-12 text-center">
-              What We Build
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { title: 'Living Room Storage', desc: 'Alcove cabinets, media walls, bookshelves and window seats — designed to make the most of every inch of your living space.' },
-                { title: 'Dining Room Furniture', desc: 'Fitted sideboards, display cabinets and built-in storage that complement your dining room and keep clutter out of sight.' },
-                { title: 'Kitchen Cabinetry', desc: 'Handmade kitchen units built in our Windsor workshop using solid timber and quality materials. No flat-pack, no compromise.' },
-              ].map((item) => (
-                <div key={item.title} className="bg-white p-8 shadow-sm">
-                  <h3 className="text-xl font-bold text-primary-dark mb-3">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FAQ */}
         <FAQSection
           faqs={livingRoomFaqs}

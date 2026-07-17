@@ -106,27 +106,6 @@ const LoftConversion = () => {
           </div>
         </section>
 
-        {/* Options Section */}
-        <section className="py-20 px-8 bg-background-light">
-          <div className="max-w-[1200px] mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-12 text-center">
-              What We Build
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { title: 'Eaves Storage', desc: 'Built-in cupboards and drawers fitted into the low eaves — space that would otherwise sit empty behind a knee wall.' },
-                { title: 'Fitted Wardrobes', desc: 'Wardrobes designed around sloped ceilings, using every centimetre of headroom and making the room feel complete.' },
-                { title: 'Bedroom & Office', desc: 'Whether your loft is a bedroom, home office, or both, we fit it out with furniture built specifically for the space.' },
-              ].map((item) => (
-                <div key={item.title} className="bg-white p-8 shadow-sm">
-                  <h3 className="text-xl font-bold text-primary-dark mb-3">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FAQ */}
         <FAQSection
           faqs={loftConversionFaqs}
