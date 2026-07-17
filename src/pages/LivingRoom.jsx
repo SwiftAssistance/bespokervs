@@ -71,7 +71,7 @@ const LivingRoom = () => {
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
                 Bespoke fitted furniture for the heart of your home — from alcove cabinets and media walls
-                to kitchen cabinetry and dining storage. All handcrafted in our Windsor workshop.
+                to bookshelves and dining storage. All handcrafted in our Windsor workshop.
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ const LivingRoom = () => {
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Whether it's alcove cabinets in the living room, a fitted sideboard in the dining room,
-                or bespoke kitchen cabinetry — we design and build everything to measure, working around
+                or bespoke bookshelves — we design and build everything to measure, working around
                 your space and the way you live.
               </p>
             </div>
