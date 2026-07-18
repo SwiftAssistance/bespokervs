@@ -266,10 +266,7 @@ const Home = () => {
 
       {/* FAQ Section */}
       <div className="below-fold">
-        <FAQSection
-          faqs={homeFaqs}
-          subtitle="Everything you need to know about commissioning bespoke fitted furniture in Windsor and Berkshire."
-        />
+        <FAQSection faqs={homeFaqs} />
       </div>
 
       {/* Contact & Map Section */}

@@ -107,11 +107,7 @@ const LoftConversion = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection
-          faqs={loftConversionFaqs}
-          title="Loft Conversion Furniture FAQs"
-          subtitle="Common questions about fitted wardrobes, eaves storage, and joinery for loft conversions in Windsor and Berkshire."
-        />
+        <FAQSection faqs={loftConversionFaqs} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

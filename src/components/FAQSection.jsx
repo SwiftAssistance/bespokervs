@@ -8,7 +8,7 @@ import { Plus, Minus } from 'lucide-react';
  * the visible content — a requirement for FAQ rich results and the signal
  * answer engines (Google AI Overviews, ChatGPT, Perplexity) draw from.
  */
-const FAQSection = ({ faqs, title = 'Frequently Asked Questions', subtitle, className = 'bg-white' }) => {
+const FAQSection = ({ faqs, title = 'FAQs', subtitle, className = 'bg-white' }) => {
   const [openIndex, setOpenIndex] = useState(0);
 
   const schema = {
