@@ -137,11 +137,7 @@ const AreaPage = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection
-          faqs={faqs}
-          title={`Fitted Furniture in ${area.name} — FAQs`}
-          subtitle={`Common questions from ${area.name} homeowners about our bespoke fitted furniture service.`}
-        />
+        <FAQSection faqs={faqs} />
 
         {/* CTA */}
         <section className="py-20 px-8 bg-primary-dark text-center">

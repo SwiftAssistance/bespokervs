@@ -124,12 +124,7 @@ const Services = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection
-          faqs={servicesFaqs}
-          title="How We Work"
-          subtitle="Common questions about our design, build, and installation process."
-          className="bg-background-light"
-        />
+        <FAQSection faqs={servicesFaqs} className="bg-background-light" />
 
         {/* CTA */}
         <section className="py-20 px-8 bg-primary-dark text-center">

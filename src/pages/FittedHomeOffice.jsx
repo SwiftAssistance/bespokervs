@@ -118,11 +118,7 @@ const FittedHomeOffice = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection
-          faqs={homeOfficeFaqs}
-          title="Fitted Home Office FAQs"
-          subtitle="Common questions about bespoke desks, built-in studies, and home office storage in Windsor and Berkshire."
-        />
+        <FAQSection faqs={homeOfficeFaqs} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

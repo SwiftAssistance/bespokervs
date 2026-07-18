@@ -125,11 +125,7 @@ const LivingRoom = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection
-          faqs={livingRoomFaqs}
-          title="Living Room, Dining Room & Kitchen FAQs"
-          subtitle="Common questions about fitted alcove cabinets, media walls, and kitchen cabinetry in Windsor and Berkshire."
-        />
+        <FAQSection faqs={livingRoomFaqs} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

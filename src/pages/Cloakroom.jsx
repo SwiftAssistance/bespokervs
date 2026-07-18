@@ -113,11 +113,7 @@ const Cloakroom = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection
-          faqs={cloakroomFaqs}
-          title="Cloakroom & Under-Stairs FAQs"
-          subtitle="Common questions about boot rooms, hallway storage, and under-stair furniture in Windsor and Berkshire."
-        />
+        <FAQSection faqs={cloakroomFaqs} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

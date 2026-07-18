@@ -120,11 +120,7 @@ const Bedroom = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection
-          faqs={bedroomFaqs}
-          title="Fitted Wardrobe & Bedroom FAQs"
-          subtitle="Common questions about fitted wardrobes, dressing rooms, and bedroom storage in Windsor and Berkshire."
-        />
+        <FAQSection faqs={bedroomFaqs} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">
