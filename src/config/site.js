@@ -94,7 +94,7 @@ export const siteConfig = {
       shortTitle: 'Loft Conversion',
       shortDescription: 'Fitted joinery designed for sloped ceilings and eaves.',
       description: 'Fitted furniture designed for under eaves and awkward spaces',
-      image: '/images/bedroom_card.jpeg',
+      image: '/images/loft_service.jpeg',
       path: '/loft-conversion',
     },
     {
