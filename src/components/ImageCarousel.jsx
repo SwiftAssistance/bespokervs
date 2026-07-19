@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ZoomIn, Instagram, Facebook } from 'lucide-react';
+import { siteConfig } from '../config/site';
 
 const ImageCarousel = ({ images }) => {
   const [index, setIndex] = useState(0);
@@ -89,6 +90,28 @@ const ImageCarousel = ({ images }) => {
             </div>
           </>
         )}
+      </div>
+
+      {/* Social Links */}
+      <div className="flex items-center justify-center gap-10 mt-6">
+        <a
+          href={siteConfig.social.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-2 text-primary-dark hover:text-accent-gold transition-colors"
+        >
+          <Instagram size={22} strokeWidth={1.5} />
+          <span className="text-xs text-gray-500">{siteConfig.social.instagram.replace('https://www.', '').replace('https://', '')}</span>
+        </a>
+        <a
+          href={siteConfig.social.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-2 text-primary-dark hover:text-accent-gold transition-colors"
+        >
+          <Facebook size={22} strokeWidth={1.5} />
+          <span className="text-xs text-gray-500">{siteConfig.social.facebook.replace('https://www.', '').replace('https://', '')}</span>
+        </a>
       </div>
 
       {/* Lightbox */}
