@@ -106,12 +106,6 @@ const FittedHomeOffice = () => {
                 { src: '/images/home_office_12.jpeg', alt: 'Bespoke fitted home study with matching storage units in Berkshire' },
                 { src: '/images/home_office_13.jpeg', alt: 'Custom fitted corner desk with overhead cabinets in Slough' },
                 { src: '/images/home_office_14.jpeg', alt: 'Fitted home office with display shelving in Windsor home' },
-                { src: '/images/home_office_15.jpeg', alt: 'Bespoke built-in desk and shelving in Maidenhead home office' },
-                { src: '/images/home_office_16.jpeg', alt: 'Custom fitted study with painted bookcases in Berkshire' },
-                { src: '/images/home_office_17.jpeg', alt: 'Handcrafted fitted home office with integrated lighting in Windsor' },
-                { src: '/images/home_office_18.jpeg', alt: 'Fitted home office with pull-out drawers and shelves in Ascot' },
-                { src: '/images/home_office_19.jpeg', alt: 'Bespoke fitted desk unit with storage cabinets in Windsor' },
-                { src: '/images/home_office_20.jpeg', alt: 'Custom fitted home study with full wall cabinetry in Berkshire' },
               ]} />
             </div>
           </div>
