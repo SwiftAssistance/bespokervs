@@ -93,7 +93,6 @@ const LivingRoom = () => {
             <div className="max-w-3xl mx-auto">
               <ImageCarousel images={[
                 { src: '/images/living_room_1.jpeg', alt: 'Bespoke fitted alcove cabinets and shelving in Windsor living room' },
-                { src: '/images/living_room_14.jpeg', alt: 'Fitted dining room storage with glass display in Windsor' },
                 { src: '/images/living_room_25.jpeg', alt: 'Bespoke fitted dining room storage in Berkshire home' },
                 { src: '/images/living_room_27.jpeg', alt: 'Bespoke fitted living room with painted alcove cabinets in Windsor' },
                 { src: '/images/living_room_3.jpeg', alt: 'Fitted media wall with integrated shelving in Windsor home' },
