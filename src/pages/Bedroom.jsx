@@ -95,7 +95,6 @@ const Bedroom = () => {
                 { src: '/images/bedroom_1.jpeg', alt: 'Custom fitted wardrobes with organised internal storage in Berkshire bedroom' },
                 { src: '/images/bedroom_2.jpeg', alt: 'Bespoke fitted bedroom storage handcrafted in Windsor workshop' },
                 { src: '/images/bedroom_15.jpeg', alt: 'Custom built-in wardrobes with open display shelving in Berkshire' },
-                { src: '/images/bedroom_3.jpeg', alt: 'Floor to ceiling fitted wardrobes with sliding doors in Windsor bedroom' },
                 { src: '/images/bedroom_4.jpeg', alt: 'Bespoke dressing room with open shelving and hanging rails in Berkshire' },
                 { src: '/images/bedroom_5.jpeg', alt: 'Custom fitted wardrobe interiors with drawers and shelves in Ascot' },
                 { src: '/images/bedroom_6.jpeg', alt: 'Handcrafted fitted bedroom furniture with painted finish in Windsor' },
