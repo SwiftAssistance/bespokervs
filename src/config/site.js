@@ -18,8 +18,8 @@ export const siteConfig = {
   contact: {
     phone: '07963 422797',
     phoneLink: 'tel:07963422797',
-    email: 'enquiries@rvsbespoke.co.uk',
-    emailLink: 'mailto:enquiries@rvsbespoke.co.uk',
+    email: 'rvsbuilding@aol.com',
+    emailLink: 'mailto:rvsbuilding@aol.com',
     address: {
       line1: '3 Riverway, Barry Ave',
       line2: 'Windsor SL4 5JA',
