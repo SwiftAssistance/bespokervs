@@ -8,7 +8,7 @@
 export const siteFaqs = [
   {
     question: 'What areas do you cover?',
-    answer: 'We usually work within a 15 miles radius from Windsor where we are based.',
+    answer: 'We usually work within a 15 miles radius of Windsor where we are based.',
   },
   {
     question: 'Do you handle everything from design to installation?',
