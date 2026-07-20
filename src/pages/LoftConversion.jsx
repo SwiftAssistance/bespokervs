@@ -91,14 +91,14 @@ const LoftConversion = () => {
               <ImageCarousel images={[
                 { src: '/images/loft_1.jpeg', alt: 'Bespoke fitted loft conversion storage in Windsor' },
                 { src: '/images/loft_3.jpeg', alt: 'Fitted wardrobes under sloped ceiling in Windsor loft conversion' },
+                { src: '/images/loft_6.jpeg', alt: 'Handcrafted loft conversion furniture with eaves storage in Windsor' },
                 { src: '/images/loft_2.jpeg', alt: 'Custom fitted eaves storage and wardrobes in Berkshire loft' },
                 { src: '/images/loft_4.jpeg', alt: 'Bespoke eaves cupboards with pull-out drawers in Berkshire loft' },
                 { src: '/images/loft_5.jpeg', alt: 'Custom fitted loft bedroom with built-in wardrobes in Ascot' },
-                { src: '/images/loft_6.jpeg', alt: 'Handcrafted loft conversion furniture with eaves storage in Windsor' },
                 { src: '/images/loft_7.jpeg', alt: 'Fitted loft office with built-in desk and shelving in Maidenhead' },
+                { src: '/images/loft_10.jpeg', alt: 'Fitted loft conversion bedroom furniture in Ascot home' },
                 { src: '/images/loft_8.jpeg', alt: 'Bespoke sloped ceiling wardrobes in Windsor loft conversion' },
                 { src: '/images/loft_9.jpeg', alt: 'Custom fitted eaves storage with painted doors in Berkshire' },
-                { src: '/images/loft_10.jpeg', alt: 'Fitted loft conversion bedroom furniture in Ascot home' },
               ]} />
             </div>
           </div>
