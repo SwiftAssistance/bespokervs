@@ -69,8 +69,7 @@ const LoftConversion = () => {
                 <span className="block text-accent-gold font-serif italic font-light">Conversion</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Bespoke fitted furniture designed specifically for loft spaces — working with eaves,
-                sloped ceilings, and awkward angles to maximise every usable inch.
+                Bespoke fitted furniture designed specifically for loft spaces
               </p>
             </div>
           </div>
@@ -84,9 +83,8 @@ const LoftConversion = () => {
                 Making the Most of Your Loft
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Loft conversions come with unusual shapes — sloped ceilings, low eaves, and
-                tight corners that off-the-shelf furniture simply can't handle. We design and build
-                fitted joinery that turns those awkward spaces into genuinely useful storage.
+                Loft conversion fitted furniture designed to maximise space usage especially
+                in the under eaves areas.
               </p>
             </div>
             <div className="max-w-3xl mx-auto">
