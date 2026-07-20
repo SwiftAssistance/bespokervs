@@ -70,8 +70,7 @@ const LivingRoom = () => {
                 <span className="block text-accent-gold font-serif italic font-light">&amp; Kitchen</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Bespoke fitted furniture for the heart of your home — from alcove cabinets and media walls
-                to bookshelves and dining storage. All handcrafted in our Windsor workshop.
+                Bespoke fitted furniture in the heart of your home
               </p>
             </div>
           </div>
@@ -85,9 +84,9 @@ const LivingRoom = () => {
                 Furniture That Fits Your Home
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Whether it's alcove cabinets in the living room, a fitted sideboard in the dining room,
-                or bespoke bookshelves — we design and build everything to measure, working around
-                your space and the way you live.
+                Whether it's living room alcove cabinets, a dining room fitted sideboard or bespoke
+                bookshelves — all our work is built to maximise usage of space and designed to
+                complement your room's overall aesthetic.
               </p>
             </div>
             <div className="max-w-3xl mx-auto">
