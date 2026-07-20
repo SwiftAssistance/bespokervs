@@ -70,7 +70,7 @@ const Bedroom = () => {
                 <span className="block text-accent-gold font-serif italic font-light">Fitted Furniture</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Bespoke fitted wardrobes, dressing areas, and bedroom storage designed
+                Bespoke fitted wardrobes, walk in wardrobes, and bedroom storage designed
                 to maximise every inch of your space.
               </p>
             </div>
@@ -85,9 +85,9 @@ const Bedroom = () => {
                 Storage That Works
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Off-the-shelf wardrobes rarely fit properly. There are gaps at the top, wasted space
-                in corners, and the internal layout is always a compromise. Our fitted bedroom
-                furniture is made to measure, designed specifically for your room and your belongings.
+                The internal layout of stand alone wardrobes is usually a compromise. Our bedroom
+                fitted furniture is designed to maximise usage of the available space and designed
+                specifically for your room and your belongings.
               </p>
             </div>
             <div className="max-w-3xl mx-auto">
