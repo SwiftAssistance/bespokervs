@@ -84,7 +84,7 @@ const Cloakroom = () => {
                 Fitted Storage for Busy Hallways
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Fitted furniture designed to make the most of your waste space under your stairs
+                Fitted furniture designed to make the most of your wasted space under your stairs
                 and de clutter your hallway.
               </p>
             </div>
