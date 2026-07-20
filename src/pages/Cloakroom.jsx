@@ -70,8 +70,7 @@ const Cloakroom = () => {
                 <span className="block text-accent-gold font-serif italic font-light">the Stairs</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Bespoke boot rooms, coat storage, and hallway cabinetry that keeps
-                your entrance organised and welcoming.
+                Bespoke under stairs, cloakroom and hallway cabinetry
               </p>
             </div>
           </div>
@@ -82,12 +81,11 @@ const Cloakroom = () => {
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <h2 className="text-4xl md:text-5xl font-bold text-primary-dark tracking-tight mb-8">
-                First Impressions Count
+                Fitted Storage for Busy Hallways
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                The hallway and cloakroom are the first things guests see when they enter your home.
-                Fitted furniture turns a cluttered entrance into an organised, welcoming space where
-                everything has its place.
+                Fitted furniture designed to make the most of your waste space under your stairs
+                and de clutter your hallway.
               </p>
             </div>
             <div className="max-w-3xl mx-auto">
