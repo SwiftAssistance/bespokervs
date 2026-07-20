@@ -106,7 +106,6 @@ const Bedroom = () => {
                 { src: '/images/bedroom_13.jpeg', alt: 'Bespoke fitted wardrobe with internal lighting in Windsor' },
                 { src: '/images/bedroom_14.jpeg', alt: 'Handcrafted fitted bedroom in Maidenhead with shaker doors' },
                 { src: '/images/bedroom_16.jpeg', alt: 'Bespoke fitted sliding door wardrobes in Windsor bedroom' },
-                { src: '/images/bedroom_17.jpeg', alt: 'Fitted bedroom furniture with matching chest of drawers in Ascot' },
                 { src: '/images/bedroom_18.jpeg', alt: 'Custom fitted wardrobe with shoe storage and drawers in Windsor' },
                 { src: '/images/bedroom_19.jpeg', alt: 'Bespoke fitted bedroom with luxury dressing room in Berkshire' },
                 { src: '/images/bedroom_20.jpeg', alt: 'Handcrafted fitted wardrobes with integrated lighting in Windsor home' },

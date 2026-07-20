@@ -101,7 +101,6 @@ const FittedHomeOffice = () => {
                 { src: '/images/home_office_7.jpeg', alt: 'Fitted alcove desk with overhead storage in Maidenhead' },
                 { src: '/images/home_office_8.jpeg', alt: 'Bespoke fitted study room with integrated shelving in Berkshire' },
                 { src: '/images/home_office_9.jpeg', alt: 'Custom fitted desk with drawer storage in Windsor home office' },
-                { src: '/images/home_office_10.jpeg', alt: 'Handcrafted home office furniture with shaker doors in Ascot' },
                 { src: '/images/home_office_11.jpeg', alt: 'Fitted home office with built-in bookcase and filing in Windsor' },
                 { src: '/images/home_office_12.jpeg', alt: 'Bespoke fitted home study with matching storage units in Berkshire' },
                 { src: '/images/home_office_13.jpeg', alt: 'Custom fitted corner desk with overhead cabinets in Slough' },
