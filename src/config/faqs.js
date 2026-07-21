@@ -16,8 +16,13 @@ export const siteFaqs = [
   },
   {
     question: 'What is the process from enquiring to finished installation?',
-    answer:
-      '1) A site visit to discuss ideas and design, followed by a quote. 2) If you decide to go ahead, a deposit will be taken and the work booked in. 3) Two weeks before the start date, another visit to run through final details and measurements.',
+    answer: [
+      'The process starts with a phone call to discuss your project',
+      'If the project is suitable, we will arrange a free site visit to discuss further, followed by a free quote',
+      'If you decide to go ahead, a deposit will be taken and a start date agreed',
+      'Approximately 2 weeks before the work is due to start, we will pay another visit to finalise design and take detailed dimensions',
+      'Installation with minimal possible disruption',
+    ],
   },
   {
     question: 'What finishes are available?',
