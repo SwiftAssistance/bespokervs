@@ -70,8 +70,7 @@ const FittedHomeOffice = () => {
                 <span className="block text-accent-gold font-serif italic font-light">Fitted Furniture</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Bespoke desks and study furniture designed for productive remote working.
-                Built-in storage that keeps your workspace organised.
+                Bespoke desks and sturdy furniture designed for productive remote working
               </p>
             </div>
           </div>
