@@ -39,10 +39,23 @@ const Home = () => {
   const dragStartX = useRef(0);
   const dragActive = useRef(false);
 
-  const goToNextTestimonial = () => { setSlideTransitionEnabled(true); setSlideIndex((prev) => prev + 1); };
-  const goToPrevTestimonial = () => { setSlideTransitionEnabled(true); setSlideIndex((prev) => prev - 1); };
+  const testimonialAnimating = useRef(false);
+
+  const goToNextTestimonial = () => {
+    if (testimonialAnimating.current) return;
+    testimonialAnimating.current = true;
+    setSlideTransitionEnabled(true);
+    setSlideIndex((prev) => prev + 1);
+  };
+  const goToPrevTestimonial = () => {
+    if (testimonialAnimating.current) return;
+    testimonialAnimating.current = true;
+    setSlideTransitionEnabled(true);
+    setSlideIndex((prev) => prev - 1);
+  };
 
   const handleTestimonialTransitionEnd = () => {
+    testimonialAnimating.current = false;
     if (slideIndex === loopedTestimonials.length - 1) {
       setSlideTransitionEnabled(false);
       setSlideIndex(1);
