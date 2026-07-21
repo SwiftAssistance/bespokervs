@@ -12,7 +12,7 @@ export const siteFaqs = [
   },
   {
     question: 'Do you handle everything from design to installation?',
-    answer: 'Yes we handle everything from design to installation.',
+    answer: 'Yes, we do not subcontract any of the work, including lighting and electrical.',
   },
   {
     question: 'What is the process from enquiring to finished installation?',
