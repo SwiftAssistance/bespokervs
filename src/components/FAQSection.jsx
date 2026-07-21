@@ -17,7 +17,12 @@ const FAQSection = ({ faqs, title = 'Frequently Asked Questions', subtitle, clas
     mainEntity: faqs.map(({ question, answer }) => ({
       '@type': 'Question',
       name: question,
-      acceptedAnswer: { '@type': 'Answer', text: answer },
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: Array.isArray(answer)
+          ? answer.map((step, i) => `${i + 1}. ${step}`).join(' ')
+          : answer,
+      },
     })),
   };
 
@@ -53,7 +58,15 @@ const FAQSection = ({ faqs, title = 'Frequently Asked Questions', subtitle, clas
                 </h3>
                 {/* Answer stays in the DOM when closed so crawlers and answer engines can read it */}
                 <div id={panelId} hidden={!isOpen}>
-                  <p className="pb-5 text-gray-500 leading-relaxed">{answer}</p>
+                  {Array.isArray(answer) ? (
+                    <ol className="pb-5 text-gray-500 leading-relaxed list-decimal pl-5 space-y-1">
+                      {answer.map((step) => (
+                        <li key={step}>{step}</li>
+                      ))}
+                    </ol>
+                  ) : (
+                    <p className="pb-5 text-gray-500 leading-relaxed">{answer}</p>
+                  )}
                 </div>
               </div>
             );
