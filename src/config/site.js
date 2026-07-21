@@ -236,13 +236,13 @@ export const siteConfig = {
       items: [
         {
           quote: 'Richard has now completed three projects in our house: window seat storage, under stairs storage/pull outs and most recently has added additional storage to our shed interior. Richard’s attention to detail is second to none.',
-          author: 'Rebecca Donegan',
+          author: 'Rebecca D',
           location: 'Ascot',
           project: 'Window Seat & Under-Stairs Storage',
         },
         {
           quote: 'Richard built us a fabulous bookcase with storage, drawers led lighting and integrated tv. We were so thrilled with his work, which is finished to the highest standard.',
-          author: 'Jez Ashton',
+          author: 'Jez A',
           location: 'Maidenhead',
           project: 'Fitted Bookcase & Media Wall',
         },
