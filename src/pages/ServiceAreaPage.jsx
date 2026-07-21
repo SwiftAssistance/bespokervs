@@ -3,41 +3,37 @@ import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { areas } from '../config/areas';
 import { siteConfig } from '../config/site';
-import { areaFaqs } from '../config/faqs';
+import { serviceAreaFaqs } from '../config/faqs';
+import { imgUrl, imgSrcSet } from '../utils/image';
 import FAQSection from '../components/FAQSection';
 
-const AreaPage = () => {
-  const { areaSlug } = useParams();
+const ServiceAreaPage = () => {
+  const { areaSlug, serviceSlug } = useParams();
   const area = areas.find((a) => a.slug === areaSlug);
+  const service = siteConfig.rooms.find((r) => r.id === serviceSlug);
 
-  if (!area) return <Navigate to="/404" replace />;
+  if (!area || !service) return <Navigate to="/404" replace />;
 
-  const { contact } = siteConfig;
-  const canonicalUrl = `https://rvsbespoke.co.uk/areas/${area.slug}`;
-  const title = `Fitted Furniture ${area.name} | Bespoke Wardrobes, Kitchens & Storage | RVS Bespoke`;
-  const description = `Bespoke fitted furniture in ${area.name}, ${area.county}. Wardrobes, kitchens, home offices and more — designed and built in our Windsor workshop. Free consultation available.`;
-  const faqs = areaFaqs(area);
+  const otherServices = siteConfig.rooms.filter((r) => r.id !== service.id);
+  const nearbyAreas = area.nearby
+    .map((name) => areas.find((a) => a.name === name))
+    .filter(Boolean);
+
+  const canonicalUrl = `https://rvsbespoke.co.uk/areas/${area.slug}/${service.id}`;
+  const title = `Fitted ${service.shortTitle} ${area.name} | Bespoke ${service.shortTitle} | RVS Bespoke`;
+  const description = `Bespoke fitted ${service.shortTitle.toLowerCase()} in ${area.name}, ${area.county}. ${service.description}. Designed and built in our Windsor workshop.`;
+  const faqs = serviceAreaFaqs(area, service);
 
   const schema = {
-    localBusiness: {
+    service: {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "RVS Bespoke",
-      "image": "https://rvsbespoke.co.uk/images/hero.jpeg",
-      "url": "https://rvsbespoke.co.uk",
-      "telephone": contact.phone,
-      "email": contact.email,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": contact.address.line1,
-        "addressLocality": "Windsor",
-        "addressRegion": "Berkshire",
-        "postalCode": "SL4 5JA",
-        "addressCountry": "GB",
-      },
+      "@type": "Service",
+      "name": `Fitted ${service.shortTitle} ${area.name}`,
+      "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
       "areaServed": [area.name, ...area.nearby, area.county],
       "description": description,
-      "priceRange": "££-£££",
+      "serviceType": service.title,
+      "url": canonicalUrl,
     },
     breadcrumb: {
       "@context": "https://schema.org",
@@ -45,7 +41,8 @@ const AreaPage = () => {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
         { "@type": "ListItem", "position": 2, "name": "Areas We Cover", "item": "https://rvsbespoke.co.uk/areas" },
-        { "@type": "ListItem", "position": 3, "name": area.name, "item": canonicalUrl },
+        { "@type": "ListItem", "position": 3, "name": area.name, "item": `https://rvsbespoke.co.uk/areas/${area.slug}` },
+        { "@type": "ListItem", "position": 4, "name": service.shortTitle, "item": canonicalUrl },
       ],
     },
   };
@@ -55,9 +52,13 @@ const AreaPage = () => {
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content={`fitted furniture ${area.name}, bespoke fitted furniture ${area.name}, fitted wardrobes ${area.name}, fitted bedroom ${area.name}, fitted kitchen ${area.name}, ${area.county} furniture maker`} />
+        <meta name="keywords" content={`fitted ${service.shortTitle.toLowerCase()} ${area.name}, bespoke ${service.shortTitle.toLowerCase()} ${area.name}, ${service.shortTitle.toLowerCase()} installer ${area.county}, fitted furniture ${area.name}`} />
         <link rel="canonical" href={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify(schema.localBusiness)}</script>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify(schema.service)}</script>
         <script type="application/ld+json">{JSON.stringify(schema.breadcrumb)}</script>
       </Helmet>
 
@@ -66,11 +67,13 @@ const AreaPage = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src={imgUrl(service.image, 800)}
+              srcSet={imgSrcSet(service.image, [400, 800, 1200])}
+              sizes="100vw"
               width={1200}
               height={800}
               className="w-full h-full object-cover opacity-30"
-              alt={`Bespoke fitted furniture in ${area.name}, ${area.county}`}
+              alt={`Bespoke fitted ${service.shortTitle.toLowerCase()} in ${area.name}, ${area.county}`}
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent" />
@@ -82,11 +85,11 @@ const AreaPage = () => {
                 {area.county} · {area.postcode}
               </p>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                Fitted Furniture{' '}
+                Fitted {service.shortTitle}{' '}
                 <span className="text-accent-gold font-serif italic font-light">{area.name}</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Bespoke fitted furniture designed and built in our Windsor workshop — installed in homes across {area.name} and {area.county}.
+                {service.description} — designed and built in our Windsor workshop for homes across {area.name}.
               </p>
             </div>
           </div>
@@ -96,23 +99,31 @@ const AreaPage = () => {
         <section className="py-20 px-8 bg-white">
           <div className="max-w-[900px] mx-auto text-center">
             <p className="text-gray-600 text-xl leading-relaxed">{area.intro}</p>
-
-            {area.nearby.length > 0 && (
+            {nearbyAreas.length > 0 && (
               <p className="text-gray-400 text-sm mt-6">
-                We also cover nearby areas including {area.nearby.join(', ')}.
+                We also fit {service.shortTitle.toLowerCase()} in nearby{' '}
+                {nearbyAreas.map((a, i) => (
+                  <span key={a.slug}>
+                    <Link to={`/areas/${a.slug}/${service.id}`} className="text-primary-dark underline hover:text-accent-gold">
+                      {a.name}
+                    </Link>
+                    {i < nearbyAreas.length - 1 ? ', ' : ''}
+                  </span>
+                ))}
+                .
               </p>
             )}
           </div>
         </section>
 
-        {/* Services */}
+        {/* Other Services in this area */}
         <section className="py-20 px-8 bg-background-light">
           <div className="max-w-[1200px] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-10 text-center">
-              What We Build in {area.name}
+              More Fitted Furniture in {area.name}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {siteConfig.rooms.map((s) => (
+              {otherServices.map((s) => (
                 <Link
                   key={s.id}
                   to={`/areas/${area.slug}/${s.id}`}
@@ -135,7 +146,7 @@ const AreaPage = () => {
         <section className="py-20 px-8 bg-primary-dark text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
-              Based in {area.name}?
+              Fitted {service.shortTitle} in {area.name}?
             </h2>
             <p className="text-white/60 text-lg mb-10 font-light">
               Book a free design consultation at your home. No obligation, no hard sell — just an honest conversation about your space.
@@ -153,4 +164,4 @@ const AreaPage = () => {
   );
 };
 
-export default AreaPage;
+export default ServiceAreaPage;

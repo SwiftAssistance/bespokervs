@@ -48,3 +48,8 @@ export const aboutFaqs = siteFaqs;
  * Location-specific FAQ pages reuse the same site-wide Q&As.
  */
 export const areaFaqs = () => siteFaqs;
+
+/**
+ * Service + area combination pages reuse the same site-wide Q&As.
+ */
+export const serviceAreaFaqs = () => siteFaqs;

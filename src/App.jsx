@@ -6,6 +6,7 @@ import Home from './pages/Home';
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Areas = lazy(() => import('./pages/Areas'));
 const AreaPage = lazy(() => import('./pages/AreaPage'));
+const ServiceAreaPage = lazy(() => import('./pages/ServiceAreaPage'));
 const LivingRoom = lazy(() => import('./pages/LivingRoom'));
 const Bedroom = lazy(() => import('./pages/Bedroom'));
 const FittedHomeOffice = lazy(() => import('./pages/FittedHomeOffice'));
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/areas" element={<Areas />} />
           <Route path="/areas/:areaSlug" element={<AreaPage />} />
+          <Route path="/areas/:areaSlug/:serviceSlug" element={<ServiceAreaPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
