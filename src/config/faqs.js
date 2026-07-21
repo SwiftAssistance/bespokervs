@@ -27,7 +27,7 @@ export const siteFaqs = [
   {
     question: 'What finishes are available?',
     answer:
-      'All our fitted furniture is hand painted in either eggshell or satinwood finishes, colour choice is up to you.',
+      'All our fitted furniture is hand painted in either eggshell or satinwood finishes, colour choice is up to you.\nPopular colours include: Dulux, Little Greene, Farrow & Ball',
   },
   {
     question: "What's included in the price?",
