@@ -70,8 +70,7 @@ const Bedroom = () => {
                 <span className="block text-accent-gold font-serif italic font-light">Fitted Furniture</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                Bespoke fitted wardrobes, walk in wardrobes, and bedroom storage designed
-                to maximise every inch of your space.
+                Bespoke fitted furniture, walk in wardrobes, and bedroom storage
               </p>
             </div>
           </div>

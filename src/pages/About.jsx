@@ -76,11 +76,11 @@ const About = () => {
       {/* Main Story */}
       <section className="py-24 px-8 bg-white">
         <div className="max-w-[900px] mx-auto">
-          <p className="text-2xl md:text-3xl text-primary-dark font-light leading-relaxed mb-12">
+          <p className="text-2xl md:text-3xl text-primary-dark font-light leading-relaxed mb-12 text-center">
             Established in Windsor, we have been providing domestic fitted furniture for over 2 decades.
           </p>
 
-          <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+          <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-center">
             <p>
               Our design and build services include every type of storage solution imaginable — whether loft space,
               living room, bedroom or basement, we aim to maximise usage of the available space whilst enhancing
