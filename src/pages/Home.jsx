@@ -11,8 +11,11 @@ import FAQSection from '../components/FAQSection';
 const Home = () => {
   const { home, rooms: services, images, company } = siteConfig;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const testimonials = home.testimonials.items;
+  const loopedTestimonials = [testimonials[testimonials.length - 1], ...testimonials, testimonials[0]];
+  const [slideIndex, setSlideIndex] = useState(1);
+  const [slideTransitionEnabled, setSlideTransitionEnabled] = useState(true);
+  const activeTestimonial = ((slideIndex - 1) % testimonials.length + testimonials.length) % testimonials.length;
   const { contactPage, contact } = siteConfig;
   const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', projectType: contactPage.form.projectTypes[0], message: '' });
   const [contactSubmitted, setContactSubmitted] = useState(false);
@@ -36,8 +39,24 @@ const Home = () => {
   const dragStartX = useRef(0);
   const dragActive = useRef(false);
 
-  const goToNextTestimonial = () => setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-  const goToPrevTestimonial = () => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const goToNextTestimonial = () => { setSlideTransitionEnabled(true); setSlideIndex((prev) => prev + 1); };
+  const goToPrevTestimonial = () => { setSlideTransitionEnabled(true); setSlideIndex((prev) => prev - 1); };
+
+  const handleTestimonialTransitionEnd = () => {
+    if (slideIndex === loopedTestimonials.length - 1) {
+      setSlideTransitionEnabled(false);
+      setSlideIndex(1);
+    } else if (slideIndex === 0) {
+      setSlideTransitionEnabled(false);
+      setSlideIndex(testimonials.length);
+    }
+  };
+
+  useEffect(() => {
+    if (slideTransitionEnabled) return;
+    const raf = requestAnimationFrame(() => setSlideTransitionEnabled(true));
+    return () => cancelAnimationFrame(raf);
+  }, [slideTransitionEnabled]);
 
   const onDragStart = (clientX) => {
     dragActive.current = true;
@@ -223,13 +242,14 @@ const Home = () => {
             >
               <div
                 className="flex"
+                onTransitionEnd={handleTestimonialTransitionEnd}
                 style={{
-                  transform: `translateX(calc(-${activeTestimonial * 100}% + ${dragOffset}px))`,
-                  transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                  transform: `translateX(calc(-${slideIndex * 100}% + ${dragOffset}px))`,
+                  transition: isDragging || !slideTransitionEnabled ? 'none' : 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                   willChange: 'transform',
                 }}
               >
-                {testimonials.map((testimonial, i) => (
+                {loopedTestimonials.map((testimonial, i) => (
                   <div key={i} className="min-w-full">
                     <div className="bg-white p-12 shadow-xl relative">
                       <Quote size={48} className="text-accent-gold/20 absolute top-8 right-8" />
@@ -272,7 +292,7 @@ const Home = () => {
               <button
                 key={i}
                 type="button"
-                onClick={() => setActiveTestimonial(i)}
+                onClick={() => { setSlideTransitionEnabled(true); setSlideIndex(i + 1); }}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                   activeTestimonial === i ? 'bg-accent-gold w-8' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
