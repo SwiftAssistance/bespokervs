@@ -40,34 +40,47 @@ const Home = () => {
   const dragActive = useRef(false);
 
   const testimonialAnimating = useRef(false);
+  const pendingTestimonialDirection = useRef(0);
 
   const goToNextTestimonial = () => {
-    if (testimonialAnimating.current) return;
+    if (testimonialAnimating.current) { pendingTestimonialDirection.current = 1; return; }
     testimonialAnimating.current = true;
     setSlideTransitionEnabled(true);
     setSlideIndex((prev) => prev + 1);
   };
   const goToPrevTestimonial = () => {
-    if (testimonialAnimating.current) return;
+    if (testimonialAnimating.current) { pendingTestimonialDirection.current = -1; return; }
     testimonialAnimating.current = true;
     setSlideTransitionEnabled(true);
     setSlideIndex((prev) => prev - 1);
   };
 
-  const handleTestimonialTransitionEnd = () => {
+  const releaseTestimonialLock = () => {
     testimonialAnimating.current = false;
+    const direction = pendingTestimonialDirection.current;
+    pendingTestimonialDirection.current = 0;
+    if (direction === 1) goToNextTestimonial();
+    else if (direction === -1) goToPrevTestimonial();
+  };
+
+  const handleTestimonialTransitionEnd = () => {
     if (slideIndex === loopedTestimonials.length - 1) {
       setSlideTransitionEnabled(false);
       setSlideIndex(1);
     } else if (slideIndex === 0) {
       setSlideTransitionEnabled(false);
       setSlideIndex(testimonials.length);
+    } else {
+      releaseTestimonialLock();
     }
   };
 
   useEffect(() => {
     if (slideTransitionEnabled) return;
-    const raf = requestAnimationFrame(() => setSlideTransitionEnabled(true));
+    const raf = requestAnimationFrame(() => {
+      setSlideTransitionEnabled(true);
+      releaseTestimonialLock();
+    });
     return () => cancelAnimationFrame(raf);
   }, [slideTransitionEnabled]);
 
