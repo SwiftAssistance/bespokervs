@@ -252,6 +252,12 @@ export const siteConfig = {
           location: 'Bracknell',
           project: 'Study & Lounge Entertainment Centre',
         },
+        {
+          quote: 'Richard made us some alcove cabinets and wardrobes earlier this year. They have really transformed our house. Richard was so helpful giving us advice, kept us informed about progress and everything was immaculately tidy each day.',
+          author: 'Priya W',
+          location: 'Wokingham',
+          project: 'Alcove Cabinets & Wardrobes',
+        },
       ],
     },
   },
