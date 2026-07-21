@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Quote, MapPin, Send, CheckCircle } from 'lucide-react';
+import { ArrowRight, Quote, MapPin, Send, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { homeFaqs } from '../config/faqs';
 import { imgUrl, imgSrcSet } from '../utils/image';
@@ -36,6 +36,9 @@ const Home = () => {
   const dragStartX = useRef(0);
   const dragActive = useRef(false);
 
+  const goToNextTestimonial = () => setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+  const goToPrevTestimonial = () => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+
   const onDragStart = (clientX) => {
     dragActive.current = true;
     dragStartX.current = clientX;
@@ -52,11 +55,8 @@ const Home = () => {
     const delta = clientX - dragStartX.current;
     setDragOffset(0);
     if (Math.abs(delta) > 50) {
-      setActiveTestimonial((prev) =>
-        delta < 0
-          ? Math.min(prev + 1, testimonials.length - 1)
-          : Math.max(prev - 1, 0)
-      );
+      if (delta < 0) goToNextTestimonial();
+      else goToPrevTestimonial();
     }
   };
 
@@ -209,42 +209,61 @@ const Home = () => {
             </h3>
           </div>
 
-          <div
-            className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
-            style={{ touchAction: 'pan-y' }}
-            onMouseDown={(e) => { e.preventDefault(); onDragStart(e.clientX); }}
-            onMouseMove={(e) => onDragMove(e.clientX)}
-            onMouseUp={(e) => onDragEnd(e.clientX)}
-            onMouseLeave={(e) => { if (dragActive.current) onDragEnd(e.clientX); }}
-            onTouchStart={(e) => onDragStart(e.touches[0].clientX)}
-            onTouchMove={(e) => onDragMove(e.touches[0].clientX)}
-            onTouchEnd={(e) => onDragEnd(e.changedTouches[0].clientX)}
-          >
+          <div className="relative">
             <div
-              className="flex"
-              style={{
-                transform: `translateX(calc(-${activeTestimonial * 100}% + ${dragOffset}px))`,
-                transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                willChange: 'transform',
-              }}
+              className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+              style={{ touchAction: 'pan-y' }}
+              onMouseDown={(e) => { e.preventDefault(); onDragStart(e.clientX); }}
+              onMouseMove={(e) => onDragMove(e.clientX)}
+              onMouseUp={(e) => onDragEnd(e.clientX)}
+              onMouseLeave={(e) => { if (dragActive.current) onDragEnd(e.clientX); }}
+              onTouchStart={(e) => onDragStart(e.touches[0].clientX)}
+              onTouchMove={(e) => onDragMove(e.touches[0].clientX)}
+              onTouchEnd={(e) => onDragEnd(e.changedTouches[0].clientX)}
             >
-              {testimonials.map((testimonial, i) => (
-                <div key={i} className="min-w-full">
-                  <div className="bg-white p-12 shadow-xl relative">
-                    <Quote size={48} className="text-accent-gold/20 absolute top-8 right-8" />
-                    <p className="text-gray-600 text-xl md:text-2xl leading-relaxed mb-10 italic font-light">
-                      &ldquo;{testimonial.quote}&rdquo;
-                    </p>
-                    <div className="border-t border-gray-100 pt-6">
-                      <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
-                      <p className="text-sm text-gray-400">
-                        {testimonial.location} — {testimonial.project}
+              <div
+                className="flex"
+                style={{
+                  transform: `translateX(calc(-${activeTestimonial * 100}% + ${dragOffset}px))`,
+                  transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                  willChange: 'transform',
+                }}
+              >
+                {testimonials.map((testimonial, i) => (
+                  <div key={i} className="min-w-full">
+                    <div className="bg-white p-12 shadow-xl relative">
+                      <Quote size={48} className="text-accent-gold/20 absolute top-8 right-8" />
+                      <p className="text-gray-600 text-xl md:text-2xl leading-relaxed mb-10 italic font-light">
+                        &ldquo;{testimonial.quote}&rdquo;
                       </p>
+                      <div className="border-t border-gray-100 pt-6">
+                        <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
+                        <p className="text-sm text-gray-400">
+                          {testimonial.location} — {testimonial.project}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            <button
+              type="button"
+              onClick={goToPrevTestimonial}
+              aria-label="Previous testimonial"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 bg-white hover:bg-accent-gold text-primary-dark hover:text-white p-3 shadow-lg transition-colors"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              type="button"
+              onClick={goToNextTestimonial}
+              aria-label="Next testimonial"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 bg-white hover:bg-accent-gold text-primary-dark hover:text-white p-3 shadow-lg transition-colors"
+            >
+              <ChevronRight size={20} />
+            </button>
           </div>
 
           {/* Dots indicator */}
