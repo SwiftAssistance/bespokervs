@@ -102,7 +102,7 @@ const AreaPage = () => {
 
         {/* Intro */}
         <section className="py-20 px-8 bg-white">
-          <div className="max-w-[900px] mx-auto">
+          <div className="max-w-[900px] mx-auto text-center">
             <p className="text-gray-600 text-xl leading-relaxed">{area.intro}</p>
 
             {area.nearby.length > 0 && (
