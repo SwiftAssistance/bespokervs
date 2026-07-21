@@ -258,6 +258,18 @@ export const siteConfig = {
           location: 'Wokingham',
           project: 'Alcove Cabinets & Wardrobes',
         },
+        {
+          quote: 'Richard made us some alcove cabinets and wardrobes earlier this year. They have really transformed our house. Richard was so helpful giving us advice, kept us informed about progress and everything was immaculately tidy each day.',
+          author: 'Colin W',
+          location: 'Windsor',
+          project: 'Alcove Cabinets & Wardrobes',
+        },
+        {
+          quote: 'Richard installed an alcove bookcase and cupboard storage for us last week and we couldn\'t be happier with it. It was really straightforward to deal with him, great workmanship and really good value for money. The end result has made a huge difference to the space.',
+          author: 'Becky N W',
+          location: 'Sunninghill',
+          project: 'Alcove Bookcase & Cupboard Storage',
+        },
       ],
     },
   },
