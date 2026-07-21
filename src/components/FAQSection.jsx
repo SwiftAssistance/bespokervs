@@ -65,7 +65,7 @@ const FAQSection = ({ faqs, title = 'Frequently Asked Questions', subtitle, clas
                       ))}
                     </ol>
                   ) : (
-                    <p className="pb-5 text-gray-500 leading-relaxed">{answer}</p>
+                    <p className="pb-5 text-gray-500 leading-relaxed whitespace-pre-line">{answer}</p>
                   )}
                 </div>
               </div>
