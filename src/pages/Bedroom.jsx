@@ -91,6 +91,11 @@ const Bedroom = () => {
             </div>
             <div className="max-w-3xl mx-auto">
               <ImageCarousel images={[
+                { src: '/images/bedroom_23.jpeg', alt: 'Bespoke fitted bedroom with luxury dressing room in Berkshire' },
+                { src: '/images/bedroom_18.jpeg', alt: 'Custom fitted wardrobe with shoe storage and drawers in Windsor' },
+                { src: '/images/bedroom_21.jpeg', alt: 'Bespoke fitted bedroom furniture in Windsor home' },
+                { src: '/images/bedroom_22.jpeg', alt: 'Custom fitted wardrobe with painted finish in Berkshire bedroom' },
+                { src: '/images/bedroom_16.jpeg', alt: 'Bespoke fitted sliding door wardrobes in Windsor bedroom' },
                 { src: '/images/bedroom_1.jpeg', alt: 'Custom fitted wardrobes with organised internal storage in Berkshire bedroom' },
                 { src: '/images/bedroom_2.jpeg', alt: 'Bespoke fitted bedroom storage handcrafted in Windsor workshop' },
                 { src: '/images/bedroom_4.jpeg', alt: 'Bespoke dressing room with open shelving and hanging rails in Berkshire' },
@@ -104,12 +109,7 @@ const Bedroom = () => {
                 { src: '/images/bedroom_12.jpeg', alt: 'Custom fitted bedroom storage with soft close drawers in Slough' },
                 { src: '/images/bedroom_13.jpeg', alt: 'Bespoke fitted wardrobe with internal lighting in Windsor' },
                 { src: '/images/bedroom_14.jpeg', alt: 'Handcrafted fitted bedroom in Maidenhead with shaker doors' },
-                { src: '/images/bedroom_16.jpeg', alt: 'Bespoke fitted sliding door wardrobes in Windsor bedroom' },
-                { src: '/images/bedroom_18.jpeg', alt: 'Custom fitted wardrobe with shoe storage and drawers in Windsor' },
-                { src: '/images/bedroom_23.jpeg', alt: 'Bespoke fitted bedroom with luxury dressing room in Berkshire' },
                 { src: '/images/bedroom_20.jpeg', alt: 'Handcrafted fitted wardrobes with integrated lighting in Windsor home' },
-                { src: '/images/bedroom_21.jpeg', alt: 'Bespoke fitted bedroom furniture in Windsor home' },
-                { src: '/images/bedroom_22.jpeg', alt: 'Custom fitted wardrobe with painted finish in Berkshire bedroom' },
               ]} />
             </div>
           </div>
