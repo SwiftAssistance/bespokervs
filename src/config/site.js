@@ -246,6 +246,12 @@ export const siteConfig = {
           location: 'Maidenhead',
           project: 'Fitted Bookcase & Media Wall',
         },
+        {
+          quote: 'Richard fitted out my study and lounge entertainment centre, and I am thrilled with the bespoke furniture he made me. He always kept me up to date with how the project was going and is a very tidy craftsman.',
+          author: 'Angela B',
+          location: 'Bracknell',
+          project: 'Study & Lounge Entertainment Centre',
+        },
       ],
     },
   },
