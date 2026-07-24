@@ -22,8 +22,8 @@ const AreaPage = () => {
 
   const { contact } = siteConfig;
   const canonicalUrl = `https://rvsbespoke.co.uk/areas/${area.slug}`;
-  const title = `Fitted Furniture ${area.name} | Bespoke Wardrobes, Kitchens & Storage | RVS Bespoke`;
-  const description = `Bespoke fitted furniture in ${area.name}, ${area.county}. Wardrobes, kitchens, home offices and more — designed and built in our Windsor workshop. Free consultation available.`;
+  const title = `Fitted Furniture ${area.name} | Bespoke Wardrobes, Kitchen Furniture & Storage | RVS Bespoke`;
+  const description = `Bespoke fitted furniture in ${area.name}, ${area.county}. Wardrobes, kitchen furniture, home offices and more — designed and built in our Windsor workshop. Free consultation available.`;
   const faqs = areaFaqs(area);
 
   const schema = {
@@ -63,7 +63,7 @@ const AreaPage = () => {
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content={`fitted furniture ${area.name}, bespoke fitted furniture ${area.name}, fitted wardrobes ${area.name}, fitted bedroom ${area.name}, fitted kitchen ${area.name}, ${area.county} furniture maker`} />
+        <meta name="keywords" content={`fitted furniture ${area.name}, bespoke fitted furniture ${area.name}, fitted wardrobes ${area.name}, fitted bedroom ${area.name}, kitchen furniture ${area.name}, ${area.county} furniture maker`} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(schema.localBusiness)}</script>
         <script type="application/ld+json">{JSON.stringify(schema.breadcrumb)}</script>
