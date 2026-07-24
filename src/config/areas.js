@@ -19,7 +19,7 @@ export const areas = [
     slug: 'maidenhead',
     name: 'Maidenhead',
     county: 'Berkshire',
-    intro: 'From riverside homes along the Thames to family houses in the town centre, RVS Bespoke has fitted furniture for kitchens, bedrooms, and living rooms across Maidenhead. Every piece is made to measure in our Windsor workshop and installed by our own team.',
+    intro: 'From riverside homes along the Thames to family houses in the town centre, RVS Bespoke designs, makes and installs fitted furniture for kitchens, bedrooms, and living rooms across Maidenhead. Every piece is made to measure in our Windsor workshop and installed by our own team.',
     postcode: 'SL6',
     nearby: ['Cookham', 'Taplow', 'Bray', 'White Waltham'],
   },
