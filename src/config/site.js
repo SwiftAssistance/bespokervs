@@ -67,7 +67,7 @@ export const siteConfig = {
       shortTitle: 'Living Room, Dining Room & Kitchen',
       shortDescription: 'Alcove cabinets, media walls, kitchen cabinetry and dining storage.',
       description: 'Bespoke fitted furniture for the heart of your home including alcove cabinetry, media walls and bookshelves',
-      image: '/images/living_room_card.jpeg',
+      image: '/images/living_room_28.jpeg',
       path: '/living-room',
     },
     {
@@ -76,7 +76,7 @@ export const siteConfig = {
       shortTitle: 'Bedroom',
       shortDescription: 'Wardrobes, dressing areas and bedroom storage.',
       description: 'Bespoke fitted wardrobes, walk in wardrobes and bedroom storage',
-      image: '/images/bedroom_card.jpeg',
+      image: '/images/bedroom_24.jpeg',
       path: '/bedroom',
     },
     {
