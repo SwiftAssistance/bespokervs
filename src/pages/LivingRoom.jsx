@@ -93,6 +93,7 @@ const LivingRoom = () => {
               <ImageCarousel images={[
                 { src: '/images/living_room_25.jpeg', alt: 'Bespoke fitted dining room storage in Berkshire home' },
                 { src: '/images/living_room_27.jpeg', alt: 'Bespoke fitted living room with painted alcove cabinets in Windsor' },
+                { src: '/images/living_room_28.jpeg', alt: 'Bespoke fitted living room cabinetry handcrafted in Windsor' },
                 { src: '/images/living_room_6.jpeg', alt: 'Handcrafted fitted living room cabinetry in Ascot home' },
                 { src: '/images/living_room_7.jpeg', alt: 'Bespoke painted alcove cabinets with open shelving in Maidenhead' },
                 { src: '/images/living_room_12.jpeg', alt: 'Custom kitchen units with granite worktop in Berkshire' },
