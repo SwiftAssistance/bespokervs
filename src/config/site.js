@@ -103,7 +103,7 @@ export const siteConfig = {
       shortTitle: 'Cloakroom & Under the Stairs',
       shortDescription: 'Smart storage for hallways, cloakrooms and under-stair spaces.',
       description: 'Hallway and understairs cabinetry that keeps your entry way organised and welcoming',
-      image: '/images/cloakroom_card.jpeg',
+      image: '/images/cloakroom_6.jpeg',
       path: '/cloakroom',
     },
   ],
