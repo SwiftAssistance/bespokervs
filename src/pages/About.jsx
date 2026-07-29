@@ -11,7 +11,6 @@ const About = () => {
         <title>About RVS Bespoke | Master Furniture Craftsmen in Windsor, Berkshire</title>
         <meta name="description" content="RVS Bespoke operates from our workshop at 3 Riverway, Barry Avenue, Windsor. We design and build bespoke kitchens, wardrobes, and home offices for clients across Berkshire." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/about" />
-        <meta name="keywords" content="about RVS Bespoke, Windsor furniture maker, Berkshire joinery workshop, bespoke craftsmen, Barry Avenue Windsor" />
         <meta property="og:title" content="About RVS Bespoke | Master Craftsmen in Windsor" />
         <meta property="og:description" content="Operating from our Windsor workshop, we design and build bespoke fitted furniture for homes across Berkshire." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/about" />

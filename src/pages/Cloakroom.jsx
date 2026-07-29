@@ -13,7 +13,6 @@ const Cloakroom = () => {
       <Helmet>
         <title>Fitted Cloakroom Furniture Windsor | Bespoke Boot Room & Hallway Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted cloakroom furniture in Windsor, Berkshire. Custom boot rooms, coat storage, and hallway cabinetry. Handcrafted in our workshop. Free consultation." />
-        <meta name="keywords" content="fitted cloakroom furniture Windsor, bespoke boot room Berkshire, hallway storage Ascot, coat cupboard Maidenhead, fitted hallway furniture Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/cloakroom" />
         <meta property="og:title" content="Fitted Cloakroom Furniture Windsor | Bespoke Boot Room & Hallway Storage | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted cloakroom furniture in Windsor, Berkshire. Custom boot rooms, coat storage, and hallway cabinetry. Handcrafted in our workshop." />

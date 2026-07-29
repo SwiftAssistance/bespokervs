@@ -11,7 +11,6 @@ const Bathroom = () => {
       <Helmet>
         <title>Fitted Bathroom Furniture Windsor | Bespoke Vanity Units & Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted bathroom furniture in Windsor, Berkshire. Custom vanity units, storage cabinets, and shelving. Moisture-resistant finishes. Free consultation." />
-        <meta name="keywords" content="fitted bathroom furniture Windsor, bespoke vanity unit Berkshire, bathroom cabinets Ascot, custom bathroom storage Maidenhead, fitted bathroom Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/bathroom" />
         <script type="application/ld+json">
           {JSON.stringify({

@@ -63,7 +63,6 @@ const AreaPage = () => {
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content={`fitted furniture ${area.name}, bespoke fitted furniture ${area.name}, fitted wardrobes ${area.name}, fitted bedroom ${area.name}, kitchen furniture ${area.name}, ${area.county} furniture maker`} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(schema.localBusiness)}</script>
         <script type="application/ld+json">{JSON.stringify(schema.breadcrumb)}</script>

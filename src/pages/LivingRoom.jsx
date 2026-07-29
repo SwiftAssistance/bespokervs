@@ -13,7 +13,6 @@ const LivingRoom = () => {
       <Helmet>
         <title>Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Custom cabinets, storage and joinery handcrafted in our workshop." />
-        <meta name="keywords" content="fitted living room furniture Windsor, bespoke kitchen cabinets Berkshire, fitted dining room storage Ascot, alcove cabinets Windsor, media wall Maidenhead, kitchen joinery Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/living-room" />
         <meta property="og:title" content="Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Custom cabinets, storage and joinery handcrafted in our workshop." />

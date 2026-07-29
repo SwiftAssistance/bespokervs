@@ -13,7 +13,6 @@ const FittedHomeOffice = () => {
       <Helmet>
         <title>Fitted Home Office Furniture Windsor | Bespoke Desks & Studies | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted home office furniture in Windsor, Berkshire. Custom desks, built-in studies and office storage. Designed for remote working. Free consultation." />
-        <meta name="keywords" content="fitted home office furniture Windsor, bespoke desk Berkshire, fitted study Ascot, custom office Maidenhead, built-in desk Windsor, home office design Slough" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/home-office" />
         <meta property="og:title" content="Fitted Home Office Furniture Windsor | Bespoke Desks & Studies | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted home office furniture in Windsor, Berkshire. Custom desks, built-in studies and office storage. Designed for remote working." />
