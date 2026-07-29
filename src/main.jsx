@@ -1,8 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import App from './App';
+import { ViteReactSSG } from 'vite-react-ssg';
+import { routes } from './routes';
 
 // Self-hosted fonts (latin only) — eliminates render-blocking Google Fonts request
 import '@fontsource/inter/latin-300.css';
@@ -15,12 +12,4 @@ import '@fontsource/playfair-display/latin-700.css';
 
 import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
-  </React.StrictMode>
-);
+export const createRoot = ViteReactSSG({ routes });

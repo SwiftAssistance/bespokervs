@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Outlet } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -19,7 +19,7 @@ const WhatsAppButton = () => (
   </a>
 );
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
         <meta name="twitter:image" content="https://rvsbespoke.co.uk/images/hero.jpeg" />
       </Helmet>
       <Navbar />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow"><Outlet /></main>
       <Footer />
       <WhatsAppButton />
     </div>
