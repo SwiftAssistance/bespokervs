@@ -48,6 +48,10 @@ export const routes = [
         // Every area slug must be listed here or it will not be prerendered.
         getStaticPaths: () => areas.map((a) => `/areas/${a.slug}`),
       },
+      // A literal '404' path (as opposed to the '*' wildcard below) is a
+      // static route, so it gets prerendered to dist/404.html — the file
+      // both Netlify and Vercel serve automatically for any unmatched URL.
+      { path: '404', element: withSuspense(<NotFound />) },
       { path: '*', element: withSuspense(<NotFound />) },
     ],
   },
