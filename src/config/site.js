@@ -120,39 +120,10 @@ export const siteConfig = {
       philosophy: 'Every piece that leaves our workshop carries the hallmarks of traditional craftsmanship combined with modern precision. We believe in taking the time to understand not just what our clients want, but how they live, ensuring every commission perfectly fits their lifestyle.',
       commitment: 'We are committed to sustainable practices, sourcing materials responsibly and building furniture designed to last a lifetime. Our workshop operates with minimal waste, and we actively seek out reclaimed and certified sustainable timbers.',
     },
-    values: [
-      {
-        icon: 'ShieldCheck',
-        title: 'Master Joinery',
-        description: 'We use traditional mortise and tenon joints combined with modern precision for lifetime durability.',
-      },
-      {
-        icon: 'Award',
-        title: 'Local Heritage',
-        description: 'Serving Windsor, Ascot, and the surrounding Berkshire areas for over a decade with distinction.',
-      },
-      {
-        icon: 'Hammer',
-        title: 'Handcrafted Excellence',
-        description: 'Every piece is hand-finished by skilled craftsmen who take pride in their work.',
-      },
-      {
-        icon: 'Leaf',
-        title: 'Sustainable Practice',
-        description: 'We source materials responsibly and build furniture designed to last generations.',
-      },
-    ],
     team: {
       title: 'The Craftsmen',
       description: 'Our team brings together decades of combined experience in traditional joinery, modern design, and customer service excellence.',
     },
-    stats: [
-      { value: '10+', label: 'Years Experience' },
-      { value: '500+', label: 'Projects Completed' },
-      { value: '100%', label: 'Bespoke Design' },
-      { value: '5 Star', label: 'Customer Rating' },
-    ],
-    image: '/images/about_workshop.jpeg',
   },
 
   // Contact Page Content (Required)
@@ -289,7 +260,6 @@ export const siteConfig = {
   // Images (Required)
   images: {
     hero: '/images/hero.jpeg',
-    about: '/images/home_about.jpeg',
     workshop: '/images/hero.jpeg',
   },
 

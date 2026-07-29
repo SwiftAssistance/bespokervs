@@ -11,7 +11,6 @@ const Kitchen = () => {
       <Helmet>
         <title>Fitted Kitchen Furniture Windsor | Bespoke Handmade Kitchens | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted kitchen furniture in Windsor, Berkshire. Custom kitchens designed and built in our local workshop. Free design consultation. Serving Ascot, Maidenhead." />
-        <meta name="keywords" content="fitted kitchen furniture Windsor, bespoke kitchens Berkshire, handmade kitchens Ascot, custom fitted kitchen Maidenhead, kitchen fitters Windsor, shaker kitchens Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/kitchen" />
         <script type="application/ld+json">
           {JSON.stringify({

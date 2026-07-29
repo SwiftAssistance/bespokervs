@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# vite-react-ssg emits a real .html file per route (flat dirStyle, e.g.
+# /bedroom -> dist/bedroom.html). Netlify serves clean URLs for these
+# automatically (it appends .html when no exact file match is found), so
+# no SPA catch-all rewrite is needed here — adding one would send every
+# request back to index.html and undo the prerendering fix.
+#
+# dist/404.html (see src/routes.jsx's '404' route) is picked up
+# automatically as the 404 response for any unmatched path.

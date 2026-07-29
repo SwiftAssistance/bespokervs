@@ -13,7 +13,6 @@ const Bedroom = () => {
       <Helmet>
         <title>Fitted Bedroom Furniture Windsor | Bespoke Wardrobes & Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted bedroom furniture in Windsor, Berkshire. Custom wardrobes, dressing tables, and bedroom storage. Handcrafted in our workshop. Free consultation." />
-        <meta name="keywords" content="fitted bedroom furniture Windsor, bespoke wardrobes Berkshire, fitted wardrobes Ascot, custom bedroom storage Maidenhead, built-in wardrobes Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/bedroom" />
         <meta property="og:title" content="Fitted Bedroom Furniture Windsor | Bespoke Wardrobes & Storage | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted bedroom furniture in Windsor, Berkshire. Custom wardrobes, dressing tables, and bedroom storage. Handcrafted in our workshop." />

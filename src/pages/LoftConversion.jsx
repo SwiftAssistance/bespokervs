@@ -12,7 +12,6 @@ const LoftConversion = () => {
       <Helmet>
         <title>Loft Conversion Fitted Furniture Windsor | Bespoke Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted furniture for loft conversions in Windsor, Berkshire. Custom storage, wardrobes and built-in joinery to make the most of your loft space." />
-        <meta name="keywords" content="loft conversion fitted furniture Windsor, bespoke eaves storage Berkshire, fitted wardrobes loft conversion Ascot, sloped ceiling wardrobes Windsor, loft joinery Berkshire" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/loft-conversion" />
         <meta property="og:title" content="Loft Conversion Fitted Furniture Windsor | Bespoke Storage | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted furniture for loft conversions in Windsor, Berkshire. Custom storage, wardrobes and built-in joinery to make the most of your loft space." />

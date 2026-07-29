@@ -15,6 +15,7 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,13 +24,31 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError('');
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch(import.meta.env.VITE_FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          _source: 'contact-page',
+          _page: typeof window !== 'undefined' ? window.location.pathname : '',
+        }),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error('Enquiry submission failed', err);
+      setSubmitError(
+        'Something went wrong sending your message. Please call 07963 422797 or email rvsbuilding@aol.com and we will pick it up straight away.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -38,7 +57,6 @@ const Contact = () => {
         <title>Contact RVS Bespoke | Visit Our Windsor Workshop | Free Consultation</title>
         <meta name="description" content="Get in touch with RVS Bespoke for a free design consultation. Visit our workshop at 3 Riverway, Barry Ave, Windsor SL4 5JA. Call 07963 422797 or email us." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/contact" />
-        <meta name="keywords" content="contact RVS Bespoke, Windsor furniture maker phone, bespoke kitchen consultation, Barry Avenue Windsor workshop, free furniture quote Berkshire" />
         <meta property="og:title" content="Contact RVS Bespoke | Windsor Workshop" />
         <meta property="og:description" content="Visit our workshop or get in touch for a free design consultation. Bespoke furniture makers in Windsor, Berkshire." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/contact" />
@@ -180,6 +198,15 @@ const Contact = () => {
                   {contactPage.form.title}
                 </h4>
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    tabIndex="-1"
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="hidden"
+                    onChange={handleChange}
+                  />
                   <div className="form-input">
                     <label className="form-label">{contactPage.form.fields.name.label}</label>
                     <input
@@ -247,6 +274,12 @@ const Contact = () => {
                       placeholder={contactPage.form.fields.message.placeholder}
                     ></textarea>
                   </div>
+
+                  {submitError && (
+                    <p role="alert" className="text-sm text-red-400 leading-relaxed">
+                      {submitError}
+                    </p>
+                  )}
 
                   <button
                     type="submit"

@@ -20,6 +20,7 @@ const Home = () => {
   const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', projectType: contactPage.form.projectTypes[0], message: '' });
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [contactError, setContactError] = useState('');
 
   const handleContactChange = (e) => {
     const { name, value } = e.target;
@@ -28,10 +29,27 @@ const Home = () => {
 
   const handleContactSubmit = async (e) => {
     e.preventDefault();
+    setContactError('');
     setContactSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setContactSubmitting(false);
-    setContactSubmitted(true);
+
+    try {
+      const res = await fetch(import.meta.env.VITE_FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ...contactForm, _source: 'homepage-form' }),
+      });
+
+      if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
+
+      setContactSubmitted(true);
+    } catch (err) {
+      console.error('Enquiry submission failed', err);
+      setContactError(
+        'Something went wrong sending your message. Please call 07963 422797 and we will pick it up straight away.'
+      );
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
   const [dragOffset, setDragOffset] = useState(0);
@@ -96,7 +114,7 @@ const Home = () => {
     <div>
       <Helmet>
         <title>RVS Bespoke | Fitted Furniture for Every Room in Windsor, Berkshire</title>
-        <meta name="description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop. Serving Berkshire for over a decade. Free design consultation." />
+        <meta name="description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop, serving Berkshire since [CONFIRM FOUNDING YEAR]. Free design consultation." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/" />
         <meta property="og:title" content="RVS Bespoke | Fitted Furniture for Every Room in Windsor" />
         <meta property="og:description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire." />
@@ -112,7 +130,7 @@ const Home = () => {
             "url": "https://rvsbespoke.co.uk/",
             "name": "RVS Bespoke | Fitted Furniture Windsor, Berkshire",
             "description": "Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire.",
-            "publisher": { "@id": "https://rvsbespoke.co.uk/#organization" },
+            "publisher": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
             "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" }] },
           })}
         </script>
@@ -121,11 +139,10 @@ const Home = () => {
       <section className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-primary-dark">
         <div className="absolute inset-0 z-0">
           <img
-            src={imgUrl(images.hero, 800, 60)}
-            srcSet={imgSrcSet(images.hero, [400, 800, 1200, 1920], 60)}
+            src={images.hero}
             sizes="100vw"
-            width={1920}
-            height={1080}
+            width={945}
+            height={686}
             className="w-full h-full object-cover opacity-50"
             alt="Bespoke fitted kitchen handcrafted by RVS Bespoke in Windsor, Berkshire"
             fetchPriority="high"
@@ -381,6 +398,15 @@ const Home = () => {
               </div>
             ) : (
               <form onSubmit={handleContactSubmit} className="space-y-8">
+                <input
+                  type="text"
+                  name="_gotcha"
+                  tabIndex="-1"
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                  onChange={handleContactChange}
+                />
                 <div>
                   <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3">Name</label>
                   <input type="text" name="name" value={contactForm.name} onChange={handleContactChange} required placeholder="Your name"
@@ -405,6 +431,12 @@ const Home = () => {
                   <textarea name="message" value={contactForm.message} onChange={handleContactChange} rows={3} placeholder="Tell us about your project..."
                     className="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder:text-white/30 focus:border-accent-gold outline-none transition-colors resize-none text-lg" />
                 </div>
+                {contactError && (
+                  <p role="alert" className="text-sm text-red-400 leading-relaxed">
+                    {contactError}
+                  </p>
+                )}
+
                 <button type="submit" disabled={contactSubmitting}
                   className="w-full py-5 bg-accent-gold text-white font-bold uppercase tracking-[0.4em] text-[11px] hover:bg-white hover:text-primary-dark transition-all flex items-center justify-center gap-3 disabled:opacity-50">
                   {contactSubmitting ? <span className="animate-pulse">Sending...</span> : <><span>Submit Enquiry</span><Send size={14} /></>}
