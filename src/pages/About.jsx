@@ -20,21 +20,11 @@ const About = () => {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",
+          "@id": "https://rvsbespoke.co.uk/about#webpage",
           "name": "About RVS Bespoke",
           "description": "RVS Bespoke operates from a workshop at 3 Riverway on Barry Avenue in Windsor. We design and build fitted furniture for clients across Berkshire.",
-          "mainEntity": {
-            "@type": "LocalBusiness",
-            "name": "RVS Bespoke",
-            "description": "Bespoke furniture maker in Windsor, Berkshire",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "3 Riverway, Barry Ave",
-              "addressLocality": "Windsor",
-              "postalCode": "SL4 5JA",
-              "addressCountry": "GB"
-            },
-            "knowsAbout": ["Bespoke Kitchens", "Fitted Wardrobes", "Home Office Furniture", "Custom Joinery"]
-          }
+          "isPartOf": { "@id": "https://rvsbespoke.co.uk/#website" },
+          "mainEntity": { "@id": "https://rvsbespoke.co.uk/#localbusiness" }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -76,7 +66,7 @@ const About = () => {
       <section className="py-24 px-8 bg-white">
         <div className="max-w-[900px] mx-auto">
           <p className="text-2xl md:text-3xl text-primary-dark font-light leading-relaxed mb-12 text-center">
-            Established in Windsor, we have been providing domestic fitted furniture for over 2 decades.
+            Established in Windsor in [CONFIRM FOUNDING YEAR], we have been providing domestic fitted furniture ever since.
           </p>
 
           <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-center">

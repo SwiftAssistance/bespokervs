@@ -44,7 +44,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
       "@id": "https://rvsbespoke.co.uk/#localbusiness",
       "name": "RVS Bespoke",
       "legalName": "RVS Bespoke Furniture Ltd",
@@ -52,7 +52,7 @@
       "url": "https://rvsbespoke.co.uk",
       "telephone": "+447963422797",
       "email": "rvsbuilding@aol.com",
-      "foundingDate": "2014",
+      "foundingDate": "[CONFIRM FOUNDING YEAR]",
       "priceRange": "££-£££",
       "currenciesAccepted": "GBP",
       "paymentAccepted": "Cash, Credit Card, Bank Transfer",
@@ -207,45 +207,6 @@
     }
     </script>
 
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://rvsbespoke.co.uk/"
-        }
-      ]
-    }
-    </script>
-
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://rvsbespoke.co.uk/#organization",
-      "name": "RVS Bespoke",
-      "url": "https://rvsbespoke.co.uk",
-      "logo": "https://rvsbespoke.co.uk/favicon.svg",
-      "sameAs": [
-        "https://www.instagram.com/rvs_bespoke",
-        "https://facebook.com/rvsbespoke"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+44-7963-422797",
-        "contactType": "customer service",
-        "areaServed": "GB",
-        "availableLanguage": "English"
-      }
-    }
-    </script>
-
     <!-- WebSite Schema -->
     <script type="application/ld+json">
     {
@@ -255,7 +216,7 @@
       "url": "https://rvsbespoke.co.uk/",
       "name": "RVS Bespoke",
       "inLanguage": "en-GB",
-      "publisher": { "@id": "https://rvsbespoke.co.uk/#organization" }
+      "publisher": { "@id": "https://rvsbespoke.co.uk/#localbusiness" }
     }
     </script>
   </head>

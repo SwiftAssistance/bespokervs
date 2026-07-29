@@ -2,7 +2,6 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { areas } from '../config/areas';
-import { siteConfig } from '../config/site';
 import { areaFaqs } from '../config/faqs';
 import FAQSection from '../components/FAQSection';
 
@@ -20,36 +19,39 @@ const AreaPage = () => {
 
   if (!area) return <Navigate to="/404" replace />;
 
-  const { contact } = siteConfig;
   const canonicalUrl = `https://rvsbespoke.co.uk/areas/${area.slug}`;
   const title = `Fitted Furniture ${area.name} | Bespoke Wardrobes, Kitchen Furniture & Storage | RVS Bespoke`;
   const description = `Bespoke fitted furniture in ${area.name}, ${area.county}. Wardrobes, kitchen furniture, home offices and more — designed and built in our Windsor workshop. Free consultation available.`;
   const faqs = areaFaqs(area);
 
   const schema = {
-    localBusiness: {
+    webPage: {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "RVS Bespoke",
-      "image": "https://rvsbespoke.co.uk/images/hero.jpeg",
-      "url": "https://rvsbespoke.co.uk",
-      "telephone": contact.phone,
-      "email": contact.email,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": contact.address.line1,
-        "addressLocality": "Windsor",
-        "addressRegion": "Berkshire",
-        "postalCode": "SL4 5JA",
-        "addressCountry": "GB",
-      },
-      "areaServed": [area.name, ...area.nearby, area.county],
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": `Fitted Furniture ${area.name} | RVS Bespoke`,
       "description": description,
-      "priceRange": "££-£££",
+      "isPartOf": { "@id": "https://rvsbespoke.co.uk/#website" },
+      "about": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
+      "inLanguage": "en-GB",
+      "mainEntity": {
+        "@type": "Service",
+        "@id": `${canonicalUrl}#service`,
+        "name": `Bespoke Fitted Furniture in ${area.name}`,
+        "serviceType": "Fitted furniture design, manufacture and installation",
+        "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
+        "areaServed": {
+          "@type": "City",
+          "name": area.name,
+          "containedInPlace": { "@type": "AdministrativeArea", "name": area.county },
+        },
+      },
     },
     breadcrumb: {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
         { "@type": "ListItem", "position": 2, "name": "Areas We Cover", "item": "https://rvsbespoke.co.uk/areas" },
@@ -64,7 +66,7 @@ const AreaPage = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify(schema.localBusiness)}</script>
+        <script type="application/ld+json">{JSON.stringify(schema.webPage)}</script>
         <script type="application/ld+json">{JSON.stringify(schema.breadcrumb)}</script>
       </Helmet>
 

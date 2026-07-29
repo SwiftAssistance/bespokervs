@@ -114,7 +114,7 @@ const Home = () => {
     <div>
       <Helmet>
         <title>RVS Bespoke | Fitted Furniture for Every Room in Windsor, Berkshire</title>
-        <meta name="description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop. Serving Berkshire for over a decade. Free design consultation." />
+        <meta name="description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop, serving Berkshire since [CONFIRM FOUNDING YEAR]. Free design consultation." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/" />
         <meta property="og:title" content="RVS Bespoke | Fitted Furniture for Every Room in Windsor" />
         <meta property="og:description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire." />
@@ -130,7 +130,7 @@ const Home = () => {
             "url": "https://rvsbespoke.co.uk/",
             "name": "RVS Bespoke | Fitted Furniture Windsor, Berkshire",
             "description": "Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire.",
-            "publisher": { "@id": "https://rvsbespoke.co.uk/#organization" },
+            "publisher": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
             "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" }] },
           })}
         </script>
