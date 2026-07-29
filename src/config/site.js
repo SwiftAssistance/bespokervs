@@ -152,7 +152,6 @@ export const siteConfig = {
       { value: '100%', label: 'Bespoke Design' },
       { value: '5 Star', label: 'Customer Rating' },
     ],
-    image: '/images/about_workshop.jpeg',
   },
 
   // Contact Page Content (Required)
@@ -289,7 +288,6 @@ export const siteConfig = {
   // Images (Required)
   images: {
     hero: '/images/hero.jpeg',
-    about: '/images/home_about.jpeg',
     workshop: '/images/hero.jpeg',
   },
 

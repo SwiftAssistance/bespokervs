@@ -139,11 +139,10 @@ const Home = () => {
       <section className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-primary-dark">
         <div className="absolute inset-0 z-0">
           <img
-            src={imgUrl(images.hero, 800, 60)}
-            srcSet={imgSrcSet(images.hero, [400, 800, 1200, 1920], 60)}
+            src={images.hero}
             sizes="100vw"
-            width={1920}
-            height={1080}
+            width={945}
+            height={686}
             className="w-full h-full object-cover opacity-50"
             alt="Bespoke fitted kitchen handcrafted by RVS Bespoke in Windsor, Berkshire"
             fetchPriority="high"
