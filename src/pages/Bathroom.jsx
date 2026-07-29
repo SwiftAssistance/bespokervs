@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import ImageCarousel from '../components/ImageCarousel';
+import FAQSection from '../components/FAQSection';
+import { bathroomFaqs } from '../config/faqs';
 
 const Bathroom = () => {
 
@@ -11,22 +13,19 @@ const Bathroom = () => {
       <Helmet>
         <title>Fitted Bathroom Furniture Windsor | Bespoke Vanity Units & Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted bathroom furniture in Windsor, Berkshire. Custom vanity units, storage cabinets, and shelving. Moisture-resistant finishes. Free consultation." />
-        <link rel="canonical" href="https://rvsbespoke.co.uk/bathroom" />
+        <link rel="canonical" href="https://rvsbespoke.co.uk/fitted-bathrooms" />
+        <meta property="og:title" content="Fitted Bathroom Furniture Windsor | Bespoke Vanity Units & Storage | RVS Bespoke" />
+        <meta property="og:description" content="Bespoke fitted bathroom furniture in Windsor, Berkshire. Custom vanity units, storage cabinets and shelving. Free consultation." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/fitted-bathrooms" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
+            "@id": "https://rvsbespoke.co.uk/fitted-bathrooms#service",
             "name": "Fitted Bathroom Furniture Windsor",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "RVS Bespoke",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Windsor",
-                "addressRegion": "Berkshire",
-                "postalCode": "SL4 5JA"
-              }
-            },
+            "url": "https://rvsbespoke.co.uk/fitted-bathrooms",
+            "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
             "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
             "description": "Bespoke fitted bathroom furniture designed and built in our Windsor workshop. Custom vanity units, cabinets, and storage solutions.",
             "serviceType": "Fitted Bathroom Furniture Design and Installation"
@@ -38,7 +37,8 @@ const Bathroom = () => {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
-              { "@type": "ListItem", "position": 2, "name": "Bathroom", "item": "https://rvsbespoke.co.uk/bathroom" }
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": "Fitted Bathrooms", "item": "https://rvsbespoke.co.uk/fitted-bathrooms" }
             ]
           })}
         </script>
@@ -49,23 +49,23 @@ const Bathroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/bathroom_1.jpeg"
               sizes="100vw"
-              width={1200}
-              height={800}
+              width={1290}
+              height={1654}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted bathroom furniture with custom vanity unit in Windsor"
-              decoding="async"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
           </div>
 
           <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
             <div className="max-w-3xl">
-              <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Fitted Furniture</p>
+              <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Windsor &amp; Berkshire</p>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                Bathroom
-                <span className="block text-accent-gold font-serif italic font-light">Fitted Furniture</span>
+                Fitted Bathroom
+                <span className="block text-accent-gold font-serif italic font-light">Furniture</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
                 Handcrafted vanity units, storage cabinets, and shelving designed
@@ -92,10 +92,14 @@ const Bathroom = () => {
               <ImageCarousel images={[
                 { src: '/images/bathroom_1.jpeg', alt: 'Custom fitted bathroom vanity unit with storage in Berkshire home' },
                 { src: imgUrl('/images/bathroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/bathroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted bathroom cabinets handcrafted in Windsor workshop' },
+                { src: imgUrl('/images/bathroom_card.jpeg', 1200), srcSet: imgSrcSet('/images/bathroom_card.jpeg', [600, 900, 1200]), alt: 'Hand-painted fitted bathroom storage built in our Windsor workshop' },
               ]} />
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQSection faqs={bathroomFaqs} emitSchema={false} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

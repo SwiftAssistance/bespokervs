@@ -27,9 +27,9 @@ const Areas = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
-              width={1200}
-              height={800}
+              src="/images/living_room_28.jpeg"
+              width={945}
+              height={669}
               className="w-full h-full object-cover opacity-30"
               alt="RVS Bespoke fitted furniture workshop Windsor"
               decoding="async"

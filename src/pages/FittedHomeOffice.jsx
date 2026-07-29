@@ -50,10 +50,10 @@ const FittedHomeOffice = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/home_office_card.jpeg"
               sizes="100vw"
-              width={1200}
-              height={800}
+              width={716}
+              height={785}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted home office with custom desk and storage in Windsor"
               decoding="async"
@@ -109,7 +109,7 @@ const FittedHomeOffice = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection faqs={homeOfficeFaqs} />
+        <FAQSection faqs={homeOfficeFaqs} emitSchema={false} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

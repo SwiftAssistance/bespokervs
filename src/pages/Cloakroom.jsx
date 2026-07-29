@@ -50,10 +50,10 @@ const Cloakroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/cloakroom_6.jpeg"
               sizes="100vw"
               width={1200}
-              height={800}
+              height={1600}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted cloakroom and hallway storage in Windsor home"
               decoding="async"
@@ -110,7 +110,7 @@ const Cloakroom = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection faqs={cloakroomFaqs} />
+        <FAQSection faqs={cloakroomFaqs} emitSchema={false} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

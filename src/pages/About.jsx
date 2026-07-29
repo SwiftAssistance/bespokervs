@@ -39,10 +39,10 @@ const About = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero.jpeg"
+            src="/images/service_card.jpeg"
             sizes="100vw"
-            width={1200}
-            height={800}
+            width={720}
+            height={932}
             className="w-full h-full object-cover opacity-40"
             alt="RVS Bespoke joinery workshop in Windsor, Berkshire"
             decoding="async"
@@ -80,7 +80,7 @@ const About = () => {
       </section>
 
       {/* FAQ Section */}
-      <FAQSection faqs={aboutFaqs} className="bg-white border-t border-gray-100" />
+      <FAQSection faqs={aboutFaqs} emitSchema={false} className="bg-white border-t border-gray-100" />
 
       {/* CTA Section */}
       <section className="py-24 px-8 bg-primary-dark">

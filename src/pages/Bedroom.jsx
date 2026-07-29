@@ -50,10 +50,10 @@ const Bedroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/bedroom_24.jpeg"
               sizes="100vw"
-              width={1200}
-              height={800}
+              width={945}
+              height={716}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted bedroom furniture with custom wardrobes in Windsor"
               decoding="async"
@@ -116,7 +116,7 @@ const Bedroom = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection faqs={bedroomFaqs} />
+        <FAQSection faqs={bedroomFaqs} emitSchema={false} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

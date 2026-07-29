@@ -49,10 +49,10 @@ const LoftConversion = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/loft_service.jpeg"
               sizes="100vw"
-              width={1200}
-              height={800}
+              width={720}
+              height={932}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted loft conversion furniture in Windsor"
               decoding="async"
@@ -104,7 +104,7 @@ const LoftConversion = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection faqs={loftConversionFaqs} />
+        <FAQSection faqs={loftConversionFaqs} emitSchema={false} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">
