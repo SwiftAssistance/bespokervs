@@ -76,6 +76,7 @@ const Contact = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/service_card.jpeg"
+            srcSet={imgSrcSet('/images/service_card.jpeg', [400, 800, 1200, 1920])}
             sizes="100vw"
             width={720}
             height={932}

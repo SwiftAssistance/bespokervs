@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { imgSrcSet } from '../utils/image';
 import { siteConfig } from '../config/site';
 import { areas } from '../config/areas';
 
@@ -38,6 +39,7 @@ const Sitemap = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero.jpeg"
+            srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
             sizes="100vw"
             width={1200}
             height={800}

@@ -51,6 +51,7 @@ const LivingRoom = () => {
           <div className="absolute inset-0 z-0">
             <img
               src="/images/living_room_28.jpeg"
+              srcSet={imgSrcSet('/images/living_room_28.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
               width={945}
               height={669}
@@ -90,31 +91,31 @@ const LivingRoom = () => {
             </div>
             <div className="max-w-3xl mx-auto">
               <ImageCarousel images={[
-                { src: '/images/living_room_25.jpeg', alt: 'Bespoke fitted dining room storage in Berkshire home' },
-                { src: '/images/living_room_27.jpeg', alt: 'Bespoke fitted living room with painted alcove cabinets in Windsor' },
-                { src: '/images/living_room_28.jpeg', alt: 'Bespoke fitted living room cabinetry handcrafted in Windsor' },
-                { src: '/images/living_room_6.jpeg', alt: 'Handcrafted fitted living room cabinetry in Ascot home' },
-                { src: '/images/living_room_7.jpeg', alt: 'Bespoke painted alcove cabinets with open shelving in Maidenhead' },
-                { src: '/images/living_room_12.jpeg', alt: 'Custom kitchen units with granite worktop in Berkshire' },
-                { src: '/images/living_room_13.jpeg', alt: 'Bespoke handmade kitchen cabinetry in Ascot home' },
-                { src: '/images/living_room_15.jpeg', alt: 'Custom alcove shelving and cabinets in Slough living room' },
-                { src: '/images/living_room_23.jpeg', alt: 'Handcrafted fitted living room furniture in Ascot home' },
-                { src: '/images/living_room_24.jpeg', alt: 'Fitted media wall with shelving in Windsor living room' },
-                { src: '/images/living_room_26.jpeg', alt: 'Custom fitted kitchen cabinetry handcrafted in Windsor' },
-                { src: '/images/living_room_1.jpeg', alt: 'Bespoke fitted alcove cabinets and shelving in Windsor living room' },
-                { src: '/images/living_room_3.jpeg', alt: 'Fitted media wall with integrated shelving in Windsor home' },
-                { src: '/images/living_room_5.jpeg', alt: 'Custom fitted entertainment unit with TV housing in Windsor' },
-                { src: '/images/living_room_8.jpeg', alt: 'Fitted media wall with concealed cable management in Windsor' },
-                { src: '/images/living_room_11.jpeg', alt: 'Fitted kitchen cabinetry with island in Windsor home' },
-                { src: '/images/living_room_9.jpeg', alt: 'Custom built-in display cabinets in Berkshire living room' },
-                { src: '/images/living_room_10.jpeg', alt: 'Bespoke fitted dining room sideboard handcrafted in Windsor' },
-                { src: '/images/living_room_16.jpeg', alt: 'Bespoke fitted window seat with storage in Windsor home' },
-                { src: '/images/living_room_17.jpeg', alt: 'Handcrafted media wall with floating shelves in Berkshire' },
-                { src: '/images/living_room_18.jpeg', alt: 'Fitted kitchen island with seating in Maidenhead home' },
-                { src: '/images/living_room_19.jpeg', alt: 'Bespoke fitted living room with painted cabinetry in Windsor' },
-                { src: '/images/living_room_20.jpeg', alt: 'Custom dining room fitted furniture handcrafted in Berkshire' },
-                { src: '/images/living_room_21.jpeg', alt: 'Bespoke fitted living room cabinetry in Windsor home' },
-                { src: '/images/living_room_22.jpeg', alt: 'Custom fitted alcove storage in Berkshire living room' },
+                { src: '/images/living_room_25.jpeg', srcSet: imgSrcSet('/images/living_room_25.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted dining room storage in Berkshire home' },
+                { src: '/images/living_room_27.jpeg', srcSet: imgSrcSet('/images/living_room_27.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted living room with painted alcove cabinets in Windsor' },
+                { src: '/images/living_room_28.jpeg', srcSet: imgSrcSet('/images/living_room_28.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted living room cabinetry handcrafted in Windsor' },
+                { src: '/images/living_room_6.jpeg', srcSet: imgSrcSet('/images/living_room_6.jpeg', [400, 800, 1200]), alt: 'Handcrafted fitted living room cabinetry in Ascot home' },
+                { src: '/images/living_room_7.jpeg', srcSet: imgSrcSet('/images/living_room_7.jpeg', [400, 800, 1200]), alt: 'Bespoke painted alcove cabinets with open shelving in Maidenhead' },
+                { src: '/images/living_room_12.jpeg', srcSet: imgSrcSet('/images/living_room_12.jpeg', [400, 800, 1200]), alt: 'Custom kitchen units with granite worktop in Berkshire' },
+                { src: '/images/living_room_13.jpeg', srcSet: imgSrcSet('/images/living_room_13.jpeg', [400, 800, 1200]), alt: 'Bespoke handmade kitchen cabinetry in Ascot home' },
+                { src: '/images/living_room_15.jpeg', srcSet: imgSrcSet('/images/living_room_15.jpeg', [400, 800, 1200]), alt: 'Custom alcove shelving and cabinets in Slough living room' },
+                { src: '/images/living_room_23.jpeg', srcSet: imgSrcSet('/images/living_room_23.jpeg', [400, 800, 1200]), alt: 'Handcrafted fitted living room furniture in Ascot home' },
+                { src: '/images/living_room_24.jpeg', srcSet: imgSrcSet('/images/living_room_24.jpeg', [400, 800, 1200]), alt: 'Fitted media wall with shelving in Windsor living room' },
+                { src: '/images/living_room_26.jpeg', srcSet: imgSrcSet('/images/living_room_26.jpeg', [400, 800, 1200]), alt: 'Custom fitted kitchen cabinetry handcrafted in Windsor' },
+                { src: '/images/living_room_1.jpeg', srcSet: imgSrcSet('/images/living_room_1.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted alcove cabinets and shelving in Windsor living room' },
+                { src: '/images/living_room_3.jpeg', srcSet: imgSrcSet('/images/living_room_3.jpeg', [400, 800, 1200]), alt: 'Fitted media wall with integrated shelving in Windsor home' },
+                { src: '/images/living_room_5.jpeg', srcSet: imgSrcSet('/images/living_room_5.jpeg', [400, 800, 1200]), alt: 'Custom fitted entertainment unit with TV housing in Windsor' },
+                { src: '/images/living_room_8.jpeg', srcSet: imgSrcSet('/images/living_room_8.jpeg', [400, 800, 1200]), alt: 'Fitted media wall with concealed cable management in Windsor' },
+                { src: '/images/living_room_11.jpeg', srcSet: imgSrcSet('/images/living_room_11.jpeg', [400, 800, 1200]), alt: 'Fitted kitchen cabinetry with island in Windsor home' },
+                { src: '/images/living_room_9.jpeg', srcSet: imgSrcSet('/images/living_room_9.jpeg', [400, 800, 1200]), alt: 'Custom built-in display cabinets in Berkshire living room' },
+                { src: '/images/living_room_10.jpeg', srcSet: imgSrcSet('/images/living_room_10.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted dining room sideboard handcrafted in Windsor' },
+                { src: '/images/living_room_16.jpeg', srcSet: imgSrcSet('/images/living_room_16.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted window seat with storage in Windsor home' },
+                { src: '/images/living_room_17.jpeg', srcSet: imgSrcSet('/images/living_room_17.jpeg', [400, 800, 1200]), alt: 'Handcrafted media wall with floating shelves in Berkshire' },
+                { src: '/images/living_room_18.jpeg', srcSet: imgSrcSet('/images/living_room_18.jpeg', [400, 800, 1200]), alt: 'Fitted kitchen island with seating in Maidenhead home' },
+                { src: '/images/living_room_19.jpeg', srcSet: imgSrcSet('/images/living_room_19.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted living room with painted cabinetry in Windsor' },
+                { src: '/images/living_room_20.jpeg', srcSet: imgSrcSet('/images/living_room_20.jpeg', [400, 800, 1200]), alt: 'Custom dining room fitted furniture handcrafted in Berkshire' },
+                { src: '/images/living_room_21.jpeg', srcSet: imgSrcSet('/images/living_room_21.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted living room cabinetry in Windsor home' },
+                { src: '/images/living_room_22.jpeg', srcSet: imgSrcSet('/images/living_room_22.jpeg', [400, 800, 1200]), alt: 'Custom fitted alcove storage in Berkshire living room' },
               ]} />
             </div>
           </div>

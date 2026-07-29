@@ -141,6 +141,7 @@ const Home = () => {
         <div className="absolute inset-0 z-0">
           <img
             src={images.hero}
+            srcSet={imgSrcSet(images.hero, [400, 800, 1200, 1920])}
             sizes="100vw"
             width={945}
             height={686}

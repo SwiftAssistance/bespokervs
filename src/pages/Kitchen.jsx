@@ -50,6 +50,7 @@ const Kitchen = () => {
           <div className="absolute inset-0 z-0">
             <img
               src="/images/kitchen_1.jpeg"
+              srcSet={imgSrcSet('/images/kitchen_1.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
               width={1290}
               height={1688}

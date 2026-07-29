@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { imgSrcSet } from '../utils/image';
 import { ArrowRight } from 'lucide-react';
 import { aboutFaqs } from '../config/faqs';
 import FAQSection from '../components/FAQSection';
@@ -40,6 +41,7 @@ const About = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/service_card.jpeg"
+            srcSet={imgSrcSet('/images/service_card.jpeg', [400, 800, 1200, 1920])}
             sizes="100vw"
             width={720}
             height={932}

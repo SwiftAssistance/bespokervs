@@ -50,6 +50,7 @@ const Bathroom = () => {
           <div className="absolute inset-0 z-0">
             <img
               src="/images/bathroom_1.jpeg"
+              srcSet={imgSrcSet('/images/bathroom_1.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
               width={1290}
               height={1654}
@@ -90,7 +91,7 @@ const Bathroom = () => {
             </div>
             <div className="max-w-3xl mx-auto">
               <ImageCarousel images={[
-                { src: '/images/bathroom_1.jpeg', alt: 'Custom fitted bathroom vanity unit with storage in Berkshire home' },
+                { src: '/images/bathroom_1.jpeg', srcSet: imgSrcSet('/images/bathroom_1.jpeg', [400, 800, 1200]), alt: 'Custom fitted bathroom vanity unit with storage in Berkshire home' },
                 { src: imgUrl('/images/bathroom_2.jpeg', 1200), srcSet: imgSrcSet('/images/bathroom_2.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted bathroom cabinets handcrafted in Windsor workshop' },
                 { src: imgUrl('/images/bathroom_card.jpeg', 1200), srcSet: imgSrcSet('/images/bathroom_card.jpeg', [600, 900, 1200]), alt: 'Hand-painted fitted bathroom storage built in our Windsor workshop' },
               ]} />

@@ -3,6 +3,7 @@
 // a solicitor and must be checked (including every [CONFIRM] below)
 // before the business relies on them.
 import { Helmet } from 'react-helmet-async';
+import { imgSrcSet } from '../utils/image';
 
 const Terms = () => {
   const canonicalUrl = 'https://rvsbespoke.co.uk/terms';
@@ -29,6 +30,7 @@ const Terms = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero.jpeg"
+            srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
             sizes="100vw"
             width={1200}
             height={800}
