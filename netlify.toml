@@ -10,3 +10,27 @@
 #
 # dist/404.html (see src/routes.jsx's '404' route) is picked up
 # automatically as the 404 response for any unmatched path.
+
+# vite-react-ssg embeds a random per-build hash in every HTML page and,
+# when its inline hydration state isn't found, falls back to fetching
+# /static-loader-data-manifest-{hash}.json — a filename that changes on
+# every deploy. If a page is served from cache after a newer deploy has
+# replaced that manifest file, the fetch 404s, Netlify returns its HTML
+# 404 page for it, and the client crashes trying to JSON-parse HTML
+# ("Unexpected token '<'"). Forcing HTML (and the manifest JSON itself)
+# to always revalidate — while hashed, content-addressed assets stay
+# cached indefinitely — prevents that mismatch.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
