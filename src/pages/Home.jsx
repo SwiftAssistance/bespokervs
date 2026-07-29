@@ -187,14 +187,60 @@ const Home = () => {
         </div>
       </section>
 
+      {/* What we do — plain, specific body copy. Every claim here is
+          verified elsewhere in the repo (config/faqs.js, config/site.js);
+          nothing is asserted that the business has not already stated. */}
+      <section className="py-24 px-8 bg-white below-fold">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-8">
+            What RVS Bespoke does
+          </h2>
+          <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+            <p>
+              RVS Bespoke Furniture Ltd is a joinery workshop at 3 Riverway, Barry Avenue, Windsor
+              SL4 5JA. We design, build and install fitted furniture for homes across Berkshire,
+              south Buckinghamshire and north Surrey — usually within about 15 miles of the workshop.
+            </p>
+            <p>
+              We make fitted wardrobes, alcove cabinetry, media walls, kitchen cabinetry, home
+              offices, loft and eaves storage, under-stair storage, boot rooms and bathroom
+              furniture. Everything is made to measure for the room it goes in, rather than adapted
+              from standard carcass sizes.
+            </p>
+            <p>
+              We do not subcontract any part of the work, including the lighting and electrics. The
+              same people who quote your project draw it, build it in the workshop and fit it in
+              your home. All our fitted furniture is hand-painted in eggshell or satinwood, in a
+              colour you choose — Farrow &amp; Ball, Little Greene and Dulux are the ones clients
+              pick most often. Design, installation and all paint finishing are included in the
+              price we quote.
+            </p>
+            <p>
+              Projects start with a phone call, then a free site visit and a written quote. If you
+              go ahead, we take a deposit and agree a start date, and revisit roughly two weeks
+              before work begins to finalise the design and take detailed dimensions.{' '}
+              <Link to="/kitchens" className="text-accent-gold hover:underline">Fitted kitchens</Link>,{' '}
+              <Link to="/bedroom" className="text-accent-gold hover:underline">fitted bedrooms</Link>{' '}
+              and{' '}
+              <Link to="/living-room" className="text-accent-gold hover:underline">living room joinery</Link>{' '}
+              are the work we take on most, and you can see the{' '}
+              <Link to="/areas" className="text-accent-gold hover:underline">areas we cover</Link>{' '}
+              or{' '}
+              <Link to="/contact" className="text-accent-gold hover:underline">get in touch</Link>{' '}
+              to arrange a visit.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-32 md:py-48 px-8 bg-white below-fold">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-20">
             <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-4 font-medium">What We Do</p>
-            <h3 className="text-5xl md:text-7xl font-bold text-primary-dark tracking-tighter">
+            <h2 className="text-5xl md:text-7xl font-bold text-primary-dark tracking-tighter">
               {home.services.title}
-            </h3>
+            </h2>
           </div>
 
           <div className="divide-y divide-gray-100 border-t border-gray-100">
@@ -222,9 +268,9 @@ const Home = () => {
                     <span className="text-accent-gold text-xs font-bold uppercase tracking-[0.4em] block mb-3">
                       0{i + 1}
                     </span>
-                    <h4 className="text-2xl md:text-4xl font-bold text-primary-dark tracking-tight mb-4">
+                    <h3 className="text-2xl md:text-4xl font-bold text-primary-dark tracking-tight mb-4">
                       {service.shortTitle}
-                    </h4>
+                    </h3>
                     <p className="text-gray-500 leading-relaxed mb-7 max-w-md">
                       {service.description}
                     </p>
@@ -252,12 +298,12 @@ const Home = () => {
       <section className="py-32 md:py-48 px-8 bg-background-light below-fold">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-20">
-            <h2 className="section-label justify-center mb-8">
+            <p className="section-label justify-center mb-8">
               {home.testimonials.sectionTitle}
-            </h2>
-            <h3 className="text-5xl md:text-7xl font-bold text-primary-dark tracking-tighter">
+            </p>
+            <h2 className="text-5xl md:text-7xl font-bold text-primary-dark tracking-tighter">
               {home.testimonials.title}
-            </h3>
+            </h2>
           </div>
 
           <div className="relative">
@@ -389,7 +435,7 @@ const Home = () => {
                 <div className="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mb-6">
                   <CheckCircle size={32} className="text-white" />
                 </div>
-                <h4 className="text-white text-2xl font-bold mb-3">Thank You!</h4>
+                <p className="text-white text-2xl font-bold mb-3">Thank You!</p>
                 <p className="text-white/60 max-w-sm">We'll be in touch within 24 hours.</p>
                 <button
                   onClick={() => { setContactSubmitted(false); setContactForm({ name: '', email: '', phone: '', projectType: contactPage.form.projectTypes[0], message: '' }); }}
