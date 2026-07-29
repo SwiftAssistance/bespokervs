@@ -5,14 +5,14 @@ Vite + React marketing site for RVS Bespoke Furniture Ltd, Windsor.
 ## Setup
 
     npm install
-    cp .env.example .env.local   # then set VITE_FORM_ENDPOINT
+    cp .env.example .env.local   # then set VITE_WEB3FORMS_ACCESS_KEY
     npm run dev
 
 ## Required environment variables
 
 | Variable | Purpose |
 |---|---|
-| `VITE_FORM_ENDPOINT` | POST target for all three contact forms. **The site cannot receive enquiries without it.** Set it in Vercel → Project → Settings → Environment Variables as well as locally. |
+| `VITE_WEB3FORMS_ACCESS_KEY` | Access key for [Web3Forms](https://web3forms.com), which all three contact forms POST to. **The site cannot receive enquiries without it.** Set it in Netlify → Site configuration → Environment variables as well as locally. |
 
 ## Build
 

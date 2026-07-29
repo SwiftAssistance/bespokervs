@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { submitEnquiry } from '../utils/forms';
 
 const ContactModal = ({ isOpen, onClose }) => {
   const { contactPage } = siteConfig;
@@ -49,13 +50,13 @@ const ContactModal = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch(import.meta.env.VITE_FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...formData, _source: 'contact-modal' }),
+      await submitEnquiry({
+        ...formData,
+        subject: `New enquiry from ${formData.name} — RVS Bespoke website`,
+        from_name: formData.name,
+        replyto: formData.email,
+        _source: 'contact-modal',
       });
-
-      if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
 
       setIsSubmitted(true);
     } catch (err) {
@@ -137,7 +138,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <input
                 type="text"
-                name="_gotcha"
+                name="botcheck"
                 tabIndex="-1"
                 autoComplete="off"
                 aria-hidden="true"

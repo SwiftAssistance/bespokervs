@@ -5,6 +5,7 @@ import { ArrowRight, Quote, MapPin, Send, CheckCircle, ChevronLeft, ChevronRight
 import { siteConfig } from '../config/site';
 import { homeFaqs } from '../config/faqs';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import { submitEnquiry } from '../utils/forms';
 import ContactModal from '../components/ContactModal';
 import FAQSection from '../components/FAQSection';
 
@@ -33,13 +34,13 @@ const Home = () => {
     setContactSubmitting(true);
 
     try {
-      const res = await fetch(import.meta.env.VITE_FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...contactForm, _source: 'homepage-form' }),
+      await submitEnquiry({
+        ...contactForm,
+        subject: `New enquiry from ${contactForm.name} — RVS Bespoke website`,
+        from_name: contactForm.name,
+        replyto: contactForm.email,
+        _source: 'homepage-form',
       });
-
-      if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
 
       setContactSubmitted(true);
     } catch (err) {
@@ -400,7 +401,7 @@ const Home = () => {
               <form onSubmit={handleContactSubmit} className="space-y-8">
                 <input
                   type="text"
-                  name="_gotcha"
+                  name="botcheck"
                   tabIndex="-1"
                   autoComplete="off"
                   aria-hidden="true"
