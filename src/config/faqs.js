@@ -45,6 +45,19 @@ export const cloakroomFaqs = siteFaqs;
 export const aboutFaqs = siteFaqs;
 
 /**
- * Location-specific FAQ pages reuse the same site-wide Q&As.
+ * Location-specific FAQ pages. The first two questions are genuinely
+ * per-area (reusing the same verified intro copy shown on the page
+ * itself, so nothing here is asserted that isn't already on the site);
+ * the rest fall back to the site-wide Q&As.
  */
-export const areaFaqs = () => siteFaqs;
+export const areaFaqs = (area) => [
+  {
+    question: `Do you cover ${area.name}?`,
+    answer: `Yes. ${area.name} is [CONFIRM] miles from our workshop in Windsor and there is no travel charge. We also work in ${area.nearby.join(', ')}.`,
+  },
+  {
+    question: `What kind of properties do you usually work on in ${area.name}?`,
+    answer: area.intro,
+  },
+  ...siteFaqs.slice(0, 3),
+];
