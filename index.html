@@ -224,24 +224,24 @@
     <noscript>
       <p>RVS Bespoke - Bespoke fitted furniture for every room in your home. Fitted wardrobes, alcove cabinets, media walls, kitchens, home offices and under-stair storage, handcrafted in Windsor, Berkshire. Call 07963 422797 for a free consultation.</p>
     </noscript>
-    <div id="root">
-      <!-- Pre-render shell for instant FCP — replaced when React mounts -->
-      <div style="background:#050A18;min-height:100vh;display:flex;align-items:center;overflow:hidden;position:relative">
-        <div style="position:absolute;inset:0;background:linear-gradient(to right,#050A18,rgba(5,10,24,0.4),transparent);z-index:2"></div>
-        <div style="max-width:1400px;margin:0 auto;padding:2rem 2rem;position:relative;z-index:10;width:100%">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem">
-            <div style="height:1px;width:3rem;background:#B8860B"></div>
-            <span style="color:rgba(255,255,255,0.4);font-size:11px;text-transform:uppercase;letter-spacing:0.6em;font-family:system-ui,sans-serif">Established in Windsor</span>
-          </div>
-          <h1 style="font-size:clamp(3rem,10vw,10rem);font-weight:700;color:white;line-height:0.9;letter-spacing:-0.05em;margin:0 0 3rem;font-family:system-ui,sans-serif">
-            Fitted Furniture<br><span style="color:#B8860B;font-style:italic;font-weight:300">Made in Windsor.</span>
-          </h1>
-          <p style="font-size:clamp(1.1rem,2vw,1.5rem);color:rgba(255,255,255,0.4);max-width:42rem;line-height:1.6;font-weight:300;font-family:system-ui,sans-serif;margin:0">
-            Fitted wardrobes, alcove cabinetry, media walls and kitchens — designed, built and installed by RVS Bespoke from our workshop on Barry Avenue, Windsor. We cover Windsor, Ascot, Maidenhead, Slough and the surrounding Berkshire and Surrey villages.
-          </p>
-        </div>
-      </div>
-    </div>
+    <!--
+      WARNING: the empty #root element immediately below is load-bearing.
+      vite-react-ssg only injects its client hydration script
+      (window.__VITE_REACT_SSG_HASH__) when it can find that exact empty
+      element by a plain string search — so do NOT quote the tag itself
+      anywhere above this comment, or the search will match inside this
+      comment instead of the real element and silently break hydration.
+      Any other content in that element forces vite-react-ssg's AST-based
+      fallback path instead, which omits the hydration script entirely.
+      Without it, every client-side navigation fetches a nonexistent
+      static-loader-data-manifest file and crashes with a hydration or
+      JSON parse error. This previously held a "pre-render shell" for
+      instant first paint, which broke this exact mechanism in
+      production. Every route is already fully prerendered by the SSG
+      build, so there is nothing this element needs to show before React
+      mounts — leave it empty.
+    -->
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
