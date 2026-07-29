@@ -13,6 +13,7 @@ const ContactModal = ({ isOpen, onClose }) => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -44,13 +45,27 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError('');
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch(import.meta.env.VITE_FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ...formData, _source: 'contact-modal' }),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error('Enquiry submission failed', err);
+      setSubmitError(
+        'Something went wrong. Please call 07963 422797 and we will pick it up straight away.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
@@ -58,6 +73,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     // Reset form after animation
     setTimeout(() => {
       setIsSubmitted(false);
+      setSubmitError('');
       setFormData({
         name: '',
         email: '',
@@ -119,6 +135,15 @@ const ContactModal = ({ isOpen, onClose }) => {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+                onChange={handleChange}
+              />
               <div>
                 <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
                   Name
@@ -194,6 +219,12 @@ const ContactModal = ({ isOpen, onClose }) => {
                   className="w-full border-b-2 border-gray-200 py-3 text-lg focus:border-accent-gold outline-none transition-colors resize-none"
                 />
               </div>
+
+              {submitError && (
+                <p role="alert" className="text-sm text-red-500 leading-relaxed">
+                  {submitError}
+                </p>
+              )}
 
               <button
                 type="submit"
