@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { imgUrl, imgSrcSet } from '../utils/image';
+import { submitEnquiry } from '../utils/forms';
 
 const Contact = () => {
   const { contactPage, company } = siteConfig;
@@ -28,17 +29,14 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch(import.meta.env.VITE_FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          _source: 'contact-page',
-          _page: typeof window !== 'undefined' ? window.location.pathname : '',
-        }),
+      await submitEnquiry({
+        ...formData,
+        subject: `New enquiry from ${formData.name} — RVS Bespoke website`,
+        from_name: formData.name,
+        replyto: formData.email,
+        _source: 'contact-page',
+        _page: typeof window !== 'undefined' ? window.location.pathname : '',
       });
-
-      if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`);
 
       setIsSubmitted(true);
     } catch (err) {
@@ -200,7 +198,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <input
                     type="text"
-                    name="_gotcha"
+                    name="botcheck"
                     tabIndex="-1"
                     autoComplete="off"
                     aria-hidden="true"
