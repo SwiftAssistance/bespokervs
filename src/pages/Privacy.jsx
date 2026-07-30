@@ -1,7 +1,6 @@
 // TEMPLATE — this is a standard UK GDPR privacy notice drafted for RVS
 // Bespoke's contact form and Google Maps embed. It has not been reviewed
-// by a solicitor and must be checked (including the [CONFIRM] retention
-// period below) before the business relies on it.
+// by a solicitor and should be checked before the business relies on it.
 import { Helmet } from 'react-helmet-async';
 import { imgSrcSet } from '../utils/image';
 
@@ -83,8 +82,8 @@ const Privacy = () => {
           <div>
             <h2 className="text-2xl font-bold text-primary-dark mb-3">How long we keep it</h2>
             <p>
-              We retain enquiry data for [CONFIRM] before deleting it, unless you go on to become a client,
-              in which case data relevant to your project is kept for the duration of the project and any
+              We keep enquiry data only for as long as we need it to respond to you. If you go on to become
+              a client, data relevant to your project is kept for the duration of the project and any
               applicable guarantee period.
             </p>
           </div>

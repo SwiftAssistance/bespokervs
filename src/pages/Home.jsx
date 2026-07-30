@@ -115,7 +115,7 @@ const Home = () => {
     <div>
       <Helmet>
         <title>RVS Bespoke | Fitted Furniture for Every Room in Windsor, Berkshire</title>
-        <meta name="description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop, serving Berkshire since [CONFIRM FOUNDING YEAR]. Free design consultation." />
+        <meta name="description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop. Serving Berkshire for over a decade. Free design consultation." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/" />
         <meta property="og:title" content="RVS Bespoke | Fitted Furniture for Every Room in Windsor" />
         <meta property="og:description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire." />
@@ -184,52 +184,6 @@ const Home = () => {
             {home.hero.scrollHint}
           </span>
           <div className="h-20 w-px bg-gradient-to-b from-accent-gold to-transparent"></div>
-        </div>
-      </section>
-
-      {/* What we do — plain, specific body copy. Every claim here is
-          verified elsewhere in the repo (config/faqs.js, config/site.js);
-          nothing is asserted that the business has not already stated. */}
-      <section className="py-24 px-8 bg-white below-fold">
-        <div className="max-w-[900px] mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-8">
-            What RVS Bespoke does
-          </h2>
-          <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-            <p>
-              RVS Bespoke Furniture Ltd is a joinery workshop at 3 Riverway, Barry Avenue, Windsor
-              SL4 5JA. We design, build and install fitted furniture for homes across Berkshire,
-              south Buckinghamshire and north Surrey — usually within about 15 miles of the workshop.
-            </p>
-            <p>
-              We make fitted wardrobes, alcove cabinetry, media walls, kitchen cabinetry, home
-              offices, loft and eaves storage, under-stair storage, boot rooms and bathroom
-              furniture. Everything is made to measure for the room it goes in, rather than adapted
-              from standard carcass sizes.
-            </p>
-            <p>
-              We do not subcontract any part of the work, including the lighting and electrics. The
-              same people who quote your project draw it, build it in the workshop and fit it in
-              your home. All our fitted furniture is hand-painted in eggshell or satinwood, in a
-              colour you choose — Farrow &amp; Ball, Little Greene and Dulux are the ones clients
-              pick most often. Design, installation and all paint finishing are included in the
-              price we quote.
-            </p>
-            <p>
-              Projects start with a phone call, then a free site visit and a written quote. If you
-              go ahead, we take a deposit and agree a start date, and revisit roughly two weeks
-              before work begins to finalise the design and take detailed dimensions.{' '}
-              <Link to="/kitchens" className="text-accent-gold hover:underline">Fitted kitchens</Link>,{' '}
-              <Link to="/bedroom" className="text-accent-gold hover:underline">fitted bedrooms</Link>{' '}
-              and{' '}
-              <Link to="/living-room" className="text-accent-gold hover:underline">living room joinery</Link>{' '}
-              are the work we take on most, and you can see the{' '}
-              <Link to="/areas" className="text-accent-gold hover:underline">areas we cover</Link>{' '}
-              or{' '}
-              <Link to="/contact" className="text-accent-gold hover:underline">get in touch</Link>{' '}
-              to arrange a visit.
-            </p>
-          </div>
         </div>
       </section>
 

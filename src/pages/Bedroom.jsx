@@ -13,6 +13,7 @@ const Bedroom = () => {
       <Helmet>
         <title>Fitted Bedroom Furniture Windsor | Bespoke Wardrobes & Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted bedroom furniture in Windsor, Berkshire. Custom wardrobes, dressing tables, and bedroom storage. Handcrafted in our workshop. Free consultation." />
+        <meta name="keywords" content="fitted bedroom furniture Windsor, bespoke wardrobes Berkshire, fitted wardrobes Ascot, custom bedroom storage Maidenhead, built-in wardrobes Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/bedroom" />
         <meta property="og:title" content="Fitted Bedroom Furniture Windsor | Bespoke Wardrobes & Storage | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted bedroom furniture in Windsor, Berkshire. Custom wardrobes, dressing tables, and bedroom storage. Handcrafted in our workshop." />
@@ -50,11 +51,11 @@ const Bedroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/bedroom_24.jpeg"
-              srcSet={imgSrcSet('/images/bedroom_24.jpeg', [400, 800, 1200, 1920])}
+              src="/images/hero.jpeg"
+              srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
-              width={945}
-              height={716}
+              width={1200}
+              height={800}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted bedroom furniture with custom wardrobes in Windsor"
               decoding="async"

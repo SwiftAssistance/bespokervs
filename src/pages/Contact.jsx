@@ -75,11 +75,11 @@ const Contact = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/service_card.jpeg"
-            srcSet={imgSrcSet('/images/service_card.jpeg', [400, 800, 1200, 1920])}
+            src="/images/hero.jpeg"
+            srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
             sizes="100vw"
-            width={720}
-            height={932}
+            width={1200}
+            height={800}
             className="w-full h-full object-cover opacity-30"
             alt="Contact RVS Bespoke furniture makers in Windsor, Berkshire"
             decoding="async"

@@ -20,13 +20,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Bespoke Fitted Kitchens -->
-  <url>
-    <loc>https://rvsbespoke.co.uk/kitchens</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
 
   <!-- Living Room & Dining Room -->
   <url>
@@ -36,13 +29,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Fitted Bathrooms -->
-  <url>
-    <loc>https://rvsbespoke.co.uk/fitted-bathrooms</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
 
   <!-- Fitted Bedroom Furniture -->
   <url>
