@@ -363,7 +363,7 @@ const Home = () => {
             </div>
             <div className="relative overflow-hidden" style={{ height: '240px' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2693867927!2d-0.6168!3d51.4785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI4JzQyLjYiTiAwwrAzNicxMC4xIlc!5e0!3m2!1sen!2suk!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2693867927!2d-0.6188803!3d51.484997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48767b1c7b491979%3A0x8490575cac5f1938!2sRVS%20Bespoke%20Storage%20Solutions!5e0!3m2!1sen!2suk!4v1234567890"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'grayscale(100%) contrast(1.1) brightness(0.85)' }}
@@ -373,7 +373,7 @@ const Home = () => {
                 title="RVS Bespoke Location"
               ></iframe>
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address.full)}`}
+                href="https://maps.google.com/?cid=9552230865193343288"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute bottom-3 right-3 bg-primary-dark/90 px-4 py-2 text-accent-gold text-[10px] font-bold uppercase tracking-widest hover:bg-accent-gold hover:text-white transition-all"

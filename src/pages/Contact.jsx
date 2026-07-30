@@ -304,7 +304,7 @@ const Contact = () => {
       <section className="h-[500px] bg-gray-200 relative">
         <div className="absolute inset-0 bg-primary-dark/10">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2693867927!2d-0.6168!3d51.4785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI4JzQyLjYiTiAwwrAzNicxMC4xIlc!5e0!3m2!1sen!2suk!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2693867927!2d-0.6188803!3d51.484997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48767b1c7b491979%3A0x8490575cac5f1938!2sRVS%20Bespoke%20Storage%20Solutions!5e0!3m2!1sen!2suk!4v1234567890"
             width="100%"
             height="100%"
             style={{ border: 0, filter: 'grayscale(100%) contrast(1.1)' }}
@@ -318,7 +318,7 @@ const Contact = () => {
           <h4 className="font-bold text-primary-dark text-lg mb-2">{company.name}</h4>
           <p className="text-gray-500 text-sm mb-4">{siteConfig.contact.address.full}</p>
           <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.contact.address.full)}`}
+            href="https://maps.google.com/?cid=9552230865193343288"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent-gold text-sm font-bold uppercase tracking-widest hover:text-primary-dark transition-colors"
