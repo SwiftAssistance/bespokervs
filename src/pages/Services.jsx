@@ -14,6 +14,7 @@ const Services = () => {
       <Helmet>
         <title>Our Services | Bespoke Fitted Furniture | RVS Bespoke Windsor</title>
         <meta name="description" content="Explore our full range of bespoke fitted furniture services. From kitchens and bedrooms to living rooms and home offices. Handcrafted in Windsor, Berkshire." />
+        <meta name="keywords" content="bespoke fitted furniture Windsor, fitted furniture services Berkshire, bespoke joinery Windsor, fitted rooms Windsor, bespoke furniture maker Berkshire" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/services" />
         <meta property="og:title" content="Our Services | Bespoke Fitted Furniture | RVS Bespoke Windsor" />
         <meta property="og:description" content="Explore our full range of bespoke fitted furniture services. From kitchens and bedrooms to living rooms and home offices. Handcrafted in Windsor, Berkshire." />

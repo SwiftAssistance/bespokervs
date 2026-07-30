@@ -17,8 +17,6 @@ const Services = lazy(() => import('./pages/Services'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
-const Kitchen = lazy(() => import('./pages/Kitchen'));
-const Bathroom = lazy(() => import('./pages/Bathroom'));
 
 // react-router's data router does not wrap lazy() route elements in
 // Suspense automatically, so each lazy element needs its own boundary.
@@ -33,8 +31,6 @@ export const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: 'living-room', element: withSuspense(<LivingRoom />) },
-      { path: 'kitchens', element: withSuspense(<Kitchen />) },
-      { path: 'fitted-bathrooms', element: withSuspense(<Bathroom />) },
       { path: 'bedroom', element: withSuspense(<Bedroom />) },
       { path: 'home-office', element: withSuspense(<FittedHomeOffice />) },
       { path: 'loft-conversion', element: withSuspense(<LoftConversion />) },

@@ -11,24 +11,25 @@ const LivingRoom = () => {
   return (
     <>
       <Helmet>
-        <title>Fitted Living Room Furniture Windsor | Alcove Cabinets &amp; Storage | RVS Bespoke</title>
-        <meta name="description" content="Bespoke fitted living room furniture in Windsor, Berkshire. Alcove cabinets, media walls, bookcases and dining room storage handcrafted in our workshop." />
+        <title>Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke</title>
+        <meta name="description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Custom cabinets, storage and joinery handcrafted in our workshop." />
+        <meta name="keywords" content="fitted living room furniture Windsor, bespoke kitchen cabinets Berkshire, fitted dining room storage Ascot, alcove cabinets Windsor, media wall Maidenhead, kitchen joinery Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/living-room" />
-        <meta property="og:title" content="Fitted Living Room Furniture Windsor | Alcove Cabinets &amp; Storage | RVS Bespoke" />
-        <meta property="og:description" content="Bespoke fitted living room furniture in Windsor, Berkshire. Alcove cabinets, media walls, bookcases and dining room storage handcrafted in our workshop." />
+        <meta property="og:title" content="Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke" />
+        <meta property="og:description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Custom cabinets, storage and joinery handcrafted in our workshop." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/living-room" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="Fitted Living Room Furniture Windsor | Alcove Cabinets &amp; Storage | RVS Bespoke" />
-        <meta name="twitter:description" content="Bespoke fitted living room furniture in Windsor, Berkshire. Alcove cabinets, media walls and bookcases handcrafted in our workshop." />
+        <meta name="twitter:title" content="Fitted Living Room, Dining Room & Kitchen Furniture Windsor | RVS Bespoke" />
+        <meta name="twitter:description" content="Bespoke fitted furniture for living rooms, dining rooms and kitchens in Windsor, Berkshire. Handcrafted in our workshop." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Fitted Living Room & Dining Room Furniture Windsor",
+            "name": "Fitted Living Room, Dining Room & Kitchen Furniture Windsor",
             "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
             "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
-            "description": "Bespoke fitted furniture for living rooms and dining rooms. Alcove cabinets, media walls, bookcases and dining storage handcrafted in Windsor.",
-            "serviceType": "Fitted Living Room & Dining Room Furniture Design and Installation",
+            "description": "Bespoke fitted furniture for living rooms, dining rooms and kitchens. Alcove cabinets, media walls, kitchen cabinetry and dining storage handcrafted in Windsor.",
+            "serviceType": "Fitted Living Room, Dining Room & Kitchen Furniture Design and Installation",
             "url": "https://rvsbespoke.co.uk/living-room",
           })}
         </script>
@@ -39,7 +40,7 @@ const LivingRoom = () => {
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
               { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
-              { "@type": "ListItem", "position": 3, "name": "Living Room & Dining Room", "item": "https://rvsbespoke.co.uk/living-room" },
+              { "@type": "ListItem", "position": 3, "name": "Living Room, Dining Room & Kitchen", "item": "https://rvsbespoke.co.uk/living-room" },
             ],
           })}
         </script>
@@ -50,13 +51,13 @@ const LivingRoom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/living_room_28.jpeg"
-              srcSet={imgSrcSet('/images/living_room_28.jpeg', [400, 800, 1200, 1920])}
+              src="/images/hero.jpeg"
+              srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
-              width={945}
-              height={669}
+              width={1200}
+              height={800}
               className="w-full h-full object-cover opacity-40"
-              alt="Bespoke fitted living room furniture with alcove cabinetry in Windsor"
+              alt="Bespoke fitted living room, dining room and kitchen furniture in Windsor"
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
@@ -66,8 +67,8 @@ const LivingRoom = () => {
             <div className="max-w-3xl">
               <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Fitted Furniture</p>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                Fitted Living Room
-                <span className="block text-accent-gold font-serif italic font-light">Furniture</span>
+                Living Room, Dining Room
+                <span className="block text-accent-gold font-serif italic font-light">&amp; Kitchen</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
                 Bespoke fitted furniture in the heart of your home

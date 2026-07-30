@@ -13,6 +13,7 @@ const FittedHomeOffice = () => {
       <Helmet>
         <title>Fitted Home Office Furniture Windsor | Bespoke Desks & Studies | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted home office furniture in Windsor, Berkshire. Custom desks, built-in studies and office storage. Designed for remote working. Free consultation." />
+        <meta name="keywords" content="fitted home office furniture Windsor, bespoke desk Berkshire, fitted study Ascot, custom office Maidenhead, built-in desk Windsor, home office design Slough" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/home-office" />
         <meta property="og:title" content="Fitted Home Office Furniture Windsor | Bespoke Desks & Studies | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted home office furniture in Windsor, Berkshire. Custom desks, built-in studies and office storage. Designed for remote working." />
@@ -50,11 +51,11 @@ const FittedHomeOffice = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/home_office_card.jpeg"
-              srcSet={imgSrcSet('/images/home_office_card.jpeg', [400, 800, 1200, 1920])}
+              src="/images/hero.jpeg"
+              srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
-              width={716}
-              height={785}
+              width={1200}
+              height={800}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted home office with custom desk and storage in Windsor"
               decoding="async"

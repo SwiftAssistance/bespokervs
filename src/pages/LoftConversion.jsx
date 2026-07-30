@@ -13,6 +13,7 @@ const LoftConversion = () => {
       <Helmet>
         <title>Loft Conversion Fitted Furniture Windsor | Bespoke Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted furniture for loft conversions in Windsor, Berkshire. Custom storage, wardrobes and built-in joinery to make the most of your loft space." />
+        <meta name="keywords" content="loft conversion fitted furniture Windsor, bespoke eaves storage Berkshire, fitted wardrobes loft conversion Ascot, sloped ceiling wardrobes Windsor, loft joinery Berkshire" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/loft-conversion" />
         <meta property="og:title" content="Loft Conversion Fitted Furniture Windsor | Bespoke Storage | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted furniture for loft conversions in Windsor, Berkshire. Custom storage, wardrobes and built-in joinery to make the most of your loft space." />
@@ -50,11 +51,11 @@ const LoftConversion = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/loft_service.jpeg"
-              srcSet={imgSrcSet('/images/loft_service.jpeg', [400, 800, 1200, 1920])}
+              src="/images/hero.jpeg"
+              srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
-              width={720}
-              height={932}
+              width={1200}
+              height={800}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted loft conversion furniture in Windsor"
               decoding="async"

@@ -1,7 +1,6 @@
 // TEMPLATE — these are draft terms and conditions for RVS Bespoke's
 // design, build and installation work. They have not been reviewed by
-// a solicitor and must be checked (including every [CONFIRM] below)
-// before the business relies on them.
+// a solicitor and should be checked before the business relies on them.
 import { Helmet } from 'react-helmet-async';
 import { imgSrcSet } from '../utils/image';
 
@@ -67,17 +66,18 @@ const Terms = () => {
           <div>
             <h2 className="text-2xl font-bold text-primary-dark mb-3">Deposit and payment</h2>
             <p>
-              A deposit of [CONFIRM]% is payable on acceptance of a quote to secure a start date, with the
-              balance due [CONFIRM — on completion / in staged payments]. We accept cash, credit card and
-              bank transfer.
+              A deposit is payable on acceptance of a quote to secure a start date, with the balance due on
+              completion. The deposit amount and any staged payments are set out in your written quote. We
+              accept cash, credit card and bank transfer.
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl font-bold text-primary-dark mb-3">Lead times</h2>
             <p>
-              Typical lead time from deposit to installation is [CONFIRM]. If a project is delayed beyond
-              the agreed start date, we will contact you as soon as we're aware and agree a revised date.
+              Lead times depend on the size of the project and our current workload, and are confirmed in
+              your quote. If a project is delayed beyond the agreed start date, we will contact you as soon
+              as we're aware and agree a revised date.
             </p>
           </div>
 
@@ -100,9 +100,9 @@ const Terms = () => {
           <div>
             <h2 className="text-2xl font-bold text-primary-dark mb-3">Guarantee</h2>
             <p>
-              We guarantee our workmanship for [CONFIRM period], covering [CONFIRM what the guarantee
-              covers — e.g. faults in construction and installation]. This does not cover damage caused by
-              misuse, or normal wear and tear.
+              We guarantee our workmanship. The guarantee period and exactly what it covers are confirmed
+              in writing with your quote. It does not cover damage caused by misuse, or normal wear and
+              tear.
             </p>
           </div>
 

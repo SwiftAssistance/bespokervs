@@ -13,6 +13,7 @@ const Cloakroom = () => {
       <Helmet>
         <title>Fitted Cloakroom Furniture Windsor | Bespoke Boot Room & Hallway Storage | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted cloakroom furniture in Windsor, Berkshire. Custom boot rooms, coat storage, and hallway cabinetry. Handcrafted in our workshop. Free consultation." />
+        <meta name="keywords" content="fitted cloakroom furniture Windsor, bespoke boot room Berkshire, hallway storage Ascot, coat cupboard Maidenhead, fitted hallway furniture Windsor" />
         <link rel="canonical" href="https://rvsbespoke.co.uk/cloakroom" />
         <meta property="og:title" content="Fitted Cloakroom Furniture Windsor | Bespoke Boot Room & Hallway Storage | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted cloakroom furniture in Windsor, Berkshire. Custom boot rooms, coat storage, and hallway cabinetry. Handcrafted in our workshop." />
@@ -50,11 +51,11 @@ const Cloakroom = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/cloakroom_6.jpeg"
-              srcSet={imgSrcSet('/images/cloakroom_6.jpeg', [400, 800, 1200, 1920])}
+              src="/images/hero.jpeg"
+              srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
               width={1200}
-              height={1600}
+              height={800}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted cloakroom and hallway storage in Windsor home"
               decoding="async"

@@ -9,7 +9,7 @@ export const siteConfig = {
   company: {
     name: 'RVS Bespoke',
     fullName: 'RVS Bespoke Furniture Ltd',
-    tagline: 'Fitted furniture, made in Windsor',
+    tagline: 'Bespoke Excellence',
     description: 'Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire.',
     established: 'Windsor, Berkshire',
   },
@@ -42,11 +42,9 @@ export const siteConfig = {
         name: 'Services',
         path: '/services',
         children: [
-          { name: 'Kitchens', path: '/kitchens' },
-          { name: 'Living Room & Dining Room', path: '/living-room' },
+          { name: 'Living Room, Dining Room & Kitchen', path: '/living-room' },
           { name: 'Bedroom', path: '/bedroom' },
           { name: 'Home Office', path: '/home-office' },
-          { name: 'Fitted Bathrooms', path: '/fitted-bathrooms' },
           { name: 'Loft Conversion', path: '/loft-conversion' },
           { name: 'Cloakroom & Under the Stairs', path: '/cloakroom' },
         ],
@@ -64,19 +62,10 @@ export const siteConfig = {
   // Fitted Furniture Rooms (Required)
   rooms: [
     {
-      id: 'kitchens',
-      title: 'Bespoke Fitted Kitchens',
-      shortTitle: 'Kitchens',
-      shortDescription: 'Handmade kitchen cabinetry, islands and larders.',
-      description: 'Bespoke fitted kitchens designed, built and installed from our Windsor workshop',
-      image: '/images/kitchen_1.jpeg',
-      path: '/kitchens',
-    },
-    {
       id: 'living-room',
-      title: 'Fitted Living Room & Dining Room Furniture',
-      shortTitle: 'Living Room & Dining Room',
-      shortDescription: 'Alcove cabinets, media walls and dining storage.',
+      title: 'Living Room, Dining Room & Kitchen',
+      shortTitle: 'Living Room, Dining Room & Kitchen',
+      shortDescription: 'Alcove cabinets, media walls, kitchen cabinetry and dining storage.',
       description: 'Bespoke fitted furniture for the heart of your home including alcove cabinetry, media walls and bookshelves',
       image: '/images/living_room_28.jpeg',
       path: '/living-room',
@@ -98,15 +87,6 @@ export const siteConfig = {
       description: 'Bespoke desks and home office fitted furniture',
       image: '/images/home_office_card.jpeg',
       path: '/home-office',
-    },
-    {
-      id: 'fitted-bathrooms',
-      title: 'Fitted Bathroom Furniture',
-      shortTitle: 'Fitted Bathrooms',
-      shortDescription: 'Vanity units, cabinets and bathroom storage.',
-      description: 'Bespoke vanity units, cabinets and bathroom storage built for wet environments',
-      image: '/images/bathroom_card.jpeg',
-      path: '/fitted-bathrooms',
     },
     {
       id: 'loft-conversion',
@@ -140,10 +120,39 @@ export const siteConfig = {
       philosophy: 'Every piece that leaves our workshop carries the hallmarks of traditional craftsmanship combined with modern precision. We believe in taking the time to understand not just what our clients want, but how they live, ensuring every commission perfectly fits their lifestyle.',
       commitment: 'We are committed to sustainable practices, sourcing materials responsibly and building furniture designed to last a lifetime. Our workshop operates with minimal waste, and we actively seek out reclaimed and certified sustainable timbers.',
     },
+    values: [
+      {
+        icon: 'ShieldCheck',
+        title: 'Master Joinery',
+        description: 'We use traditional mortise and tenon joints combined with modern precision for lifetime durability.',
+      },
+      {
+        icon: 'Award',
+        title: 'Local Heritage',
+        description: 'Serving Windsor, Ascot, and the surrounding Berkshire areas for over a decade with distinction.',
+      },
+      {
+        icon: 'Hammer',
+        title: 'Handcrafted Excellence',
+        description: 'Every piece is hand-finished by skilled craftsmen who take pride in their work.',
+      },
+      {
+        icon: 'Leaf',
+        title: 'Sustainable Practice',
+        description: 'We source materials responsibly and build furniture designed to last generations.',
+      },
+    ],
     team: {
       title: 'The Craftsmen',
       description: 'Our team brings together decades of combined experience in traditional joinery, modern design, and customer service excellence.',
     },
+    stats: [
+      { value: '10+', label: 'Years Experience' },
+      { value: '500+', label: 'Projects Completed' },
+      { value: '100%', label: 'Bespoke Design' },
+      { value: '5 Star', label: 'Customer Rating' },
+    ],
+    image: '/images/about_workshop.jpeg',
   },
 
   // Contact Page Content (Required)
@@ -199,9 +208,9 @@ export const siteConfig = {
   // Home Page Content (Required)
   home: {
     hero: {
-      title: 'Fitted Furniture',
-      titleHighlight: 'Made in Windsor.',
-      description: 'Wardrobes, alcove cabinets, media walls and kitchens — designed, built and installed by us, from our workshop on Barry Avenue.',
+      title: 'Bespoke',
+      titleHighlight: 'Storage Solutions.',
+      description: 'Handcrafted fitted furniture for your home.',
       cta: {
         primary: 'Begin Your Project',
         secondary: 'Explore Services',
@@ -267,7 +276,7 @@ export const siteConfig = {
 
   // Footer Content (Required)
   footer: {
-    tagline: 'Every piece is drawn, built and installed by us — no subcontractors, including the electrics. Hand-painted in Farrow & Ball, Little Greene or Dulux to your colour.',
+    tagline: 'Crafting the fine details that define extraordinary living spaces. From our workshop to your home, quality is our absolute priority.',
     copyright: 'RVS Bespoke Furniture Ltd',
     links: [
       { name: 'Privacy', path: '/privacy' },
@@ -280,6 +289,7 @@ export const siteConfig = {
   // Images (Required)
   images: {
     hero: '/images/hero.jpeg',
+    about: '/images/home_about.jpeg',
     workshop: '/images/hero.jpeg',
   },
 

@@ -12,6 +12,7 @@ const About = () => {
         <title>About RVS Bespoke | Master Furniture Craftsmen in Windsor, Berkshire</title>
         <meta name="description" content="RVS Bespoke operates from our workshop at 3 Riverway, Barry Avenue, Windsor. We design and build bespoke kitchens, wardrobes, and home offices for clients across Berkshire." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/about" />
+        <meta name="keywords" content="about RVS Bespoke, Windsor furniture maker, Berkshire joinery workshop, bespoke craftsmen, Barry Avenue Windsor" />
         <meta property="og:title" content="About RVS Bespoke | Master Craftsmen in Windsor" />
         <meta property="og:description" content="Operating from our Windsor workshop, we design and build bespoke fitted furniture for homes across Berkshire." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/about" />
@@ -21,11 +22,21 @@ const About = () => {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "@id": "https://rvsbespoke.co.uk/about#webpage",
           "name": "About RVS Bespoke",
           "description": "RVS Bespoke operates from a workshop at 3 Riverway on Barry Avenue in Windsor. We design and build fitted furniture for clients across Berkshire.",
-          "isPartOf": { "@id": "https://rvsbespoke.co.uk/#website" },
-          "mainEntity": { "@id": "https://rvsbespoke.co.uk/#localbusiness" }
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "RVS Bespoke",
+            "description": "Bespoke furniture maker in Windsor, Berkshire",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "3 Riverway, Barry Ave",
+              "addressLocality": "Windsor",
+              "postalCode": "SL4 5JA",
+              "addressCountry": "GB"
+            },
+            "knowsAbout": ["Bespoke Kitchens", "Fitted Wardrobes", "Home Office Furniture", "Custom Joinery"]
+          }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -40,11 +51,11 @@ const About = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/service_card.jpeg"
-            srcSet={imgSrcSet('/images/service_card.jpeg', [400, 800, 1200, 1920])}
+            src="/images/hero.jpeg"
+            srcSet={imgSrcSet('/images/hero.jpeg', [400, 800, 1200, 1920])}
             sizes="100vw"
-            width={720}
-            height={932}
+            width={1200}
+            height={800}
             className="w-full h-full object-cover opacity-40"
             alt="RVS Bespoke joinery workshop in Windsor, Berkshire"
             decoding="async"
@@ -68,7 +79,7 @@ const About = () => {
       <section className="py-24 px-8 bg-white">
         <div className="max-w-[900px] mx-auto">
           <p className="text-2xl md:text-3xl text-primary-dark font-light leading-relaxed mb-12 text-center">
-            Established in Windsor in [CONFIRM FOUNDING YEAR], we have been providing domestic fitted furniture ever since.
+            Established in Windsor, we have been providing domestic fitted furniture for over 2 decades.
           </p>
 
           <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-center">
