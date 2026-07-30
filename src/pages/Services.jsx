@@ -123,7 +123,7 @@ const Services = () => {
         </section>
 
         {/* FAQ */}
-        <FAQSection faqs={servicesFaqs} className="bg-background-light" />
+        <FAQSection faqs={servicesFaqs} emitSchema={false} className="bg-background-light" />
 
         {/* CTA */}
         <section className="py-20 px-8 bg-primary-dark text-center">

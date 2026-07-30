@@ -8,7 +8,16 @@ import { Plus, Minus } from 'lucide-react';
  * the visible content — a requirement for FAQ rich results and the signal
  * answer engines (Google AI Overviews, ChatGPT, Perplexity) draw from.
  */
-const FAQSection = ({ faqs, title = 'Frequently Asked Questions', subtitle, className = 'bg-white' }) => {
+/**
+ * `emitSchema` controls only the JSON-LD, never the visible content. Pass
+ * false on pages that reuse the site-wide Q&As, so the identical FAQPage
+ * block isn't repeated across 20+ URLs — Google restricted FAQ rich
+ * results to government and health sites in August 2023, so duplicating
+ * it sitewide is a duplicate-content signal with no rich-result upside.
+ * The questions still render, and answers stay in the DOM for crawlers
+ * and answer engines either way.
+ */
+const FAQSection = ({ faqs, title = 'Frequently Asked Questions', subtitle, className = 'bg-white', emitSchema = true }) => {
   const [openIndex, setOpenIndex] = useState(0);
 
   const schema = {
@@ -28,9 +37,11 @@ const FAQSection = ({ faqs, title = 'Frequently Asked Questions', subtitle, clas
 
   return (
     <section className={`py-20 px-8 ${className}`}>
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      {emitSchema && (
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        </Helmet>
+      )}
       <div className="max-w-[900px] mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-4">
           {title}

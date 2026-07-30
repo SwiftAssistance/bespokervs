@@ -32,3 +32,6 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
+
+# Build-generated responsive image variants (see scripts/generate-images.mjs)
+public/images/generated/

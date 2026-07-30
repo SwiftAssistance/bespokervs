@@ -35,6 +35,19 @@ export const siteFaqs = [
   },
 ];
 
+/**
+ * Page aliases. These are all still the site-wide Q&As: every answer in
+ * siteFaqs is verified and applies to every service, so they display on
+ * each page. Only the homepage emits the FAQPage JSON-LD (see the
+ * `emitSchema` prop on FAQSection) so identical structured data isn't
+ * repeated across 20+ URLs.
+ *
+ * TODO (needs owner input): genuinely page-specific Q&As — e.g. typical
+ * kitchen lead time, whether appliances/worktops are supplied, moisture
+ * specification for bathroom furniture. Those are real differentiators
+ * for search and AI answer engines, but none can be written without
+ * confirmed facts.
+ */
 export const homeFaqs = siteFaqs;
 export const servicesFaqs = siteFaqs;
 export const livingRoomFaqs = siteFaqs;
@@ -43,21 +56,23 @@ export const homeOfficeFaqs = siteFaqs;
 export const loftConversionFaqs = siteFaqs;
 export const cloakroomFaqs = siteFaqs;
 export const aboutFaqs = siteFaqs;
+export const kitchenFaqs = siteFaqs;
+export const bathroomFaqs = siteFaqs;
 
 /**
- * Location-specific FAQ pages. The first two questions are genuinely
- * per-area (reusing the same verified intro copy shown on the page
- * itself, so nothing here is asserted that isn't already on the site);
- * the rest fall back to the site-wide Q&As.
+ * Location-specific FAQs. The lead question is genuinely per-area; the
+ * rest reuse the site-wide answers. Note we drop siteFaqs[0] ("What
+ * areas do you cover?") because the area-specific question below
+ * answers it better on these pages.
+ *
+ * The page body already renders area.intro, so it deliberately is NOT
+ * repeated here — doing so would print the page's only unique paragraph
+ * twice and add no new information.
  */
 export const areaFaqs = (area) => [
   {
     question: `Do you cover ${area.name}?`,
     answer: `Yes. ${area.name} is [CONFIRM] miles from our workshop in Windsor and there is no travel charge. We also work in ${area.nearby.join(', ')}.`,
   },
-  {
-    question: `What kind of properties do you usually work on in ${area.name}?`,
-    answer: area.intro,
-  },
-  ...siteFaqs.slice(0, 3),
+  ...siteFaqs.slice(1),
 ];

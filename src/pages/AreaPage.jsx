@@ -1,14 +1,18 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { imgSrcSet } from '../utils/image';
 import { areas } from '../config/areas';
+import { siteConfig } from '../config/site';
 import { areaFaqs } from '../config/faqs';
 import FAQSection from '../components/FAQSection';
 
 const services = [
-  { name: 'Fitted Living Room, Dining Room & Kitchen', path: '/living-room', short: 'Living Room & Kitchen' },
+  { name: 'Bespoke Fitted Kitchens', path: '/kitchens', short: 'Kitchens' },
+  { name: 'Fitted Living Room & Dining Room Furniture', path: '/living-room', short: 'Living Room & Dining Room' },
   { name: 'Fitted Bedroom Furniture', path: '/bedroom', short: 'Bedroom' },
   { name: 'Fitted Home Office', path: '/home-office', short: 'Home Office' },
+  { name: 'Fitted Bathroom Furniture', path: '/fitted-bathrooms', short: 'Fitted Bathrooms' },
   { name: 'Loft Conversion Furniture', path: '/loft-conversion', short: 'Loft Conversion' },
   { name: 'Cloakroom & Under the Stairs', path: '/cloakroom', short: 'Cloakroom & Under the Stairs' },
 ];
@@ -23,6 +27,21 @@ const AreaPage = () => {
   const title = `Fitted Furniture ${area.name} | Bespoke Wardrobes, Kitchen Furniture & Storage | RVS Bespoke`;
   const description = `Bespoke fitted furniture in ${area.name}, ${area.county}. Wardrobes, kitchen furniture, home offices and more — designed and built in our Windsor workshop. Free consultation available.`;
   const faqs = areaFaqs(area);
+
+  // Real customer testimonials are tagged by town in site.js. Where we have
+  // one for this area (or one of its nearby villages), show it — a named
+  // local client describing an actual job is the strongest genuine proof
+  // an area page can carry.
+  const localTestimonials = siteConfig.home.testimonials.items.filter(
+    (t) => t.location === area.name || area.nearby.includes(t.location)
+  );
+  // Only claim the work was in this town when a client is actually from it;
+  // otherwise say "near", since the match came via area.nearby. Each card
+  // states the client's real location regardless.
+  const hasExactLocalMatch = localTestimonials.some((t) => t.location === area.name);
+  const proofHeading = hasExactLocalMatch
+    ? `Our Work in ${area.name}`
+    : `Our Work Near ${area.name}`;
 
   const schema = {
     webPage: {
@@ -46,6 +65,16 @@ const AreaPage = () => {
           "name": area.name,
           "containedInPlace": { "@type": "AdministrativeArea", "name": area.county },
         },
+        // Only real, attributed client reviews — never an aggregateRating,
+        // which would be self-serving and unverifiable.
+        ...(localTestimonials.length > 0 && {
+          review: localTestimonials.map((t) => ({
+            "@type": "Review",
+            "author": { "@type": "Person", "name": t.author },
+            "reviewBody": t.quote,
+            "itemReviewed": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
+          })),
+        }),
       },
     },
     breadcrumb: {
@@ -75,9 +104,10 @@ const AreaPage = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
-              width={1200}
-              height={800}
+              src="/images/living_room_28.jpeg"
+              srcSet={imgSrcSet('/images/living_room_28.jpeg', [400, 800, 1200, 1920])}
+              width={945}
+              height={669}
               className="w-full h-full object-cover opacity-30"
               alt={`Bespoke fitted furniture in ${area.name}, ${area.county}`}
               decoding="async"
@@ -137,8 +167,34 @@ const AreaPage = () => {
           </div>
         </section>
 
+        {/* Local proof — only rendered where we genuinely have a client in this area */}
+        {localTestimonials.length > 0 && (
+          <section className="py-20 px-8 bg-white border-t border-gray-100">
+            <div className="max-w-[900px] mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-dark tracking-tight mb-10 text-center">
+                {proofHeading}
+              </h2>
+              <div className="space-y-8">
+                {localTestimonials.map((t) => (
+                  <blockquote key={t.author} className="bg-background-light p-10 shadow-sm">
+                    <p className="text-gray-600 text-lg md:text-xl leading-relaxed italic font-light mb-6">
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    <footer className="border-t border-gray-200 pt-5">
+                      <p className="font-bold text-primary-dark">{t.author}</p>
+                      <p className="text-sm text-gray-400">
+                        {t.location} — {t.project}
+                      </p>
+                    </footer>
+                  </blockquote>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* FAQ */}
-        <FAQSection faqs={faqs} />
+        <FAQSection faqs={faqs} emitSchema={false} />
 
         {/* CTA */}
         <section className="py-20 px-8 bg-primary-dark text-center">

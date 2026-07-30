@@ -38,7 +38,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Preload LCP hero image for fast rendering -->
-    <link rel="preload" as="image" fetchpriority="high" href="/images/hero.jpeg" />
+    <!-- No hero preload here: index.html is the shared shell for all 26
+         prerendered routes, so preloading the homepage hero forced every
+         other page to download a 109 KB image it never renders. Each page's
+         own hero carries fetchPriority="high" instead. -->
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">

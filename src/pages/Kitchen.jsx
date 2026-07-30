@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import ImageCarousel from '../components/ImageCarousel';
+import FAQSection from '../components/FAQSection';
+import { kitchenFaqs } from '../config/faqs';
 
 const Kitchen = () => {
 
@@ -11,22 +13,19 @@ const Kitchen = () => {
       <Helmet>
         <title>Fitted Kitchen Furniture Windsor | Bespoke Handmade Kitchens | RVS Bespoke</title>
         <meta name="description" content="Bespoke fitted kitchen furniture in Windsor, Berkshire. Custom kitchens designed and built in our local workshop. Free design consultation. Serving Ascot, Maidenhead." />
-        <link rel="canonical" href="https://rvsbespoke.co.uk/kitchen" />
+        <link rel="canonical" href="https://rvsbespoke.co.uk/kitchens" />
+        <meta property="og:title" content="Fitted Kitchen Furniture Windsor | Bespoke Handmade Kitchens | RVS Bespoke" />
+        <meta property="og:description" content="Bespoke fitted kitchen furniture in Windsor, Berkshire. Custom kitchens designed and built in our local workshop. Free design consultation." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/kitchens" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
+            "@id": "https://rvsbespoke.co.uk/kitchens#service",
             "name": "Fitted Kitchen Furniture Windsor",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "RVS Bespoke",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Windsor",
-                "addressRegion": "Berkshire",
-                "postalCode": "SL4 5JA"
-              }
-            },
+            "url": "https://rvsbespoke.co.uk/kitchens",
+            "provider": { "@id": "https://rvsbespoke.co.uk/#localbusiness" },
             "areaServed": ["Windsor", "Ascot", "Maidenhead", "Slough", "Berkshire"],
             "description": "Bespoke fitted kitchen furniture designed and built in our Windsor workshop. Custom cabinetry, islands, and worktops using premium materials.",
             "serviceType": "Fitted Kitchen Furniture Design and Installation"
@@ -38,7 +37,8 @@ const Kitchen = () => {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rvsbespoke.co.uk/" },
-              { "@type": "ListItem", "position": 2, "name": "Kitchen", "item": "https://rvsbespoke.co.uk/kitchen" }
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://rvsbespoke.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": "Kitchens", "item": "https://rvsbespoke.co.uk/kitchens" }
             ]
           })}
         </script>
@@ -49,23 +49,24 @@ const Kitchen = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/kitchen_1.jpeg"
+              srcSet={imgSrcSet('/images/kitchen_1.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
-              width={1200}
-              height={800}
+              width={1290}
+              height={1688}
               className="w-full h-full object-cover opacity-40"
-              alt="Bespoke fitted kitchen handcrafted in Windsor by RVS Bespoke"
-              decoding="async"
+              alt="Bespoke fitted kitchen with island and granite worktop handcrafted in Windsor by RVS Bespoke"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
           </div>
 
           <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full py-20">
             <div className="max-w-3xl">
-              <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Fitted Furniture</p>
+              <p className="text-accent-gold text-sm uppercase tracking-[0.4em] mb-6 font-medium">Windsor &amp; Berkshire</p>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                Kitchen
-                <span className="block text-accent-gold font-serif italic font-light">Fitted Furniture</span>
+                Bespoke Fitted
+                <span className="block text-accent-gold font-serif italic font-light">Kitchens</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
                 Handcrafted fitted kitchens designed around the way you cook and live.
@@ -92,6 +93,11 @@ const Kitchen = () => {
               <ImageCarousel images={[
                 { src: imgUrl('/images/kitchen_1.jpeg', 1200), srcSet: imgSrcSet('/images/kitchen_1.jpeg', [600, 900, 1200]), alt: 'Bespoke fitted kitchen island with granite worktop in Windsor home' },
                 { src: imgUrl('/images/kitchen_2.jpeg', 1200), srcSet: imgSrcSet('/images/kitchen_2.jpeg', [600, 900, 1200]), alt: 'Custom fitted kitchen cabinetry handmade in Berkshire' },
+                { src: imgUrl('/images/living_room_11.jpeg', 1200), srcSet: imgSrcSet('/images/living_room_11.jpeg', [600, 900, 1200]), alt: 'Hand-painted fitted kitchen cabinetry with open shelving in a Berkshire home' },
+                { src: imgUrl('/images/living_room_12.jpeg', 1200), srcSet: imgSrcSet('/images/living_room_12.jpeg', [600, 900, 1200]), alt: 'Bespoke kitchen dresser and larder cupboard built in our Windsor workshop' },
+                { src: imgUrl('/images/living_room_13.jpeg', 1200), srcSet: imgSrcSet('/images/living_room_13.jpeg', [600, 900, 1200]), alt: 'Fitted kitchen storage with painted shaker doors in Windsor, Berkshire' },
+                { src: imgUrl('/images/living_room_18.jpeg', 1200), srcSet: imgSrcSet('/images/living_room_18.jpeg', [600, 900, 1200]), alt: 'Bespoke kitchen cabinetry and integrated storage handmade in Berkshire' },
+                { src: imgUrl('/images/living_room_26.jpeg', 1200), srcSet: imgSrcSet('/images/living_room_26.jpeg', [600, 900, 1200]), alt: 'Custom fitted kitchen units hand-painted to the client colour choice' },
               ]} />
             </div>
           </div>
@@ -119,6 +125,9 @@ const Kitchen = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <FAQSection faqs={kitchenFaqs} emitSchema={false} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">

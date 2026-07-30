@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { imgSrcSet } from '../utils/image';
 import { loftConversionFaqs } from '../config/faqs';
 import ImageCarousel from '../components/ImageCarousel';
 import FAQSection from '../components/FAQSection';
@@ -49,10 +50,11 @@ const LoftConversion = () => {
         <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-primary-dark pt-32">
           <div className="absolute inset-0 z-0">
             <img
-              src="/images/hero.jpeg"
+              src="/images/loft_service.jpeg"
+              srcSet={imgSrcSet('/images/loft_service.jpeg', [400, 800, 1200, 1920])}
               sizes="100vw"
-              width={1200}
-              height={800}
+              width={720}
+              height={932}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted loft conversion furniture in Windsor"
               decoding="async"
@@ -88,23 +90,23 @@ const LoftConversion = () => {
             </div>
             <div className="max-w-3xl mx-auto">
               <ImageCarousel images={[
-                { src: '/images/loft_7.jpeg', alt: 'Fitted loft office with built-in desk and shelving in Maidenhead' },
-                { src: '/images/loft_10.jpeg', alt: 'Fitted loft conversion bedroom furniture in Ascot home' },
-                { src: '/images/loft_4.jpeg', alt: 'Bespoke eaves cupboards with pull-out drawers in Berkshire loft' },
-                { src: '/images/loft_5.jpeg', alt: 'Custom fitted loft bedroom with built-in wardrobes in Ascot' },
-                { src: '/images/loft_2.jpeg', alt: 'Custom fitted eaves storage and wardrobes in Berkshire loft' },
-                { src: '/images/loft_6.jpeg', alt: 'Handcrafted loft conversion furniture with eaves storage in Windsor' },
-                { src: '/images/loft_9.jpeg', alt: 'Custom fitted eaves storage with painted doors in Berkshire' },
-                { src: '/images/loft_1.jpeg', alt: 'Bespoke fitted loft conversion storage in Windsor' },
-                { src: '/images/loft_3.jpeg', alt: 'Fitted wardrobes under sloped ceiling in Windsor loft conversion' },
-                { src: '/images/loft_8.jpeg', alt: 'Bespoke sloped ceiling wardrobes in Windsor loft conversion' },
+                { src: '/images/loft_7.jpeg', srcSet: imgSrcSet('/images/loft_7.jpeg', [400, 800, 1200]), alt: 'Fitted loft office with built-in desk and shelving in Maidenhead' },
+                { src: '/images/loft_10.jpeg', srcSet: imgSrcSet('/images/loft_10.jpeg', [400, 800, 1200]), alt: 'Fitted loft conversion bedroom furniture in Ascot home' },
+                { src: '/images/loft_4.jpeg', srcSet: imgSrcSet('/images/loft_4.jpeg', [400, 800, 1200]), alt: 'Bespoke eaves cupboards with pull-out drawers in Berkshire loft' },
+                { src: '/images/loft_5.jpeg', srcSet: imgSrcSet('/images/loft_5.jpeg', [400, 800, 1200]), alt: 'Custom fitted loft bedroom with built-in wardrobes in Ascot' },
+                { src: '/images/loft_2.jpeg', srcSet: imgSrcSet('/images/loft_2.jpeg', [400, 800, 1200]), alt: 'Custom fitted eaves storage and wardrobes in Berkshire loft' },
+                { src: '/images/loft_6.jpeg', srcSet: imgSrcSet('/images/loft_6.jpeg', [400, 800, 1200]), alt: 'Handcrafted loft conversion furniture with eaves storage in Windsor' },
+                { src: '/images/loft_9.jpeg', srcSet: imgSrcSet('/images/loft_9.jpeg', [400, 800, 1200]), alt: 'Custom fitted eaves storage with painted doors in Berkshire' },
+                { src: '/images/loft_1.jpeg', srcSet: imgSrcSet('/images/loft_1.jpeg', [400, 800, 1200]), alt: 'Bespoke fitted loft conversion storage in Windsor' },
+                { src: '/images/loft_3.jpeg', srcSet: imgSrcSet('/images/loft_3.jpeg', [400, 800, 1200]), alt: 'Fitted wardrobes under sloped ceiling in Windsor loft conversion' },
+                { src: '/images/loft_8.jpeg', srcSet: imgSrcSet('/images/loft_8.jpeg', [400, 800, 1200]), alt: 'Bespoke sloped ceiling wardrobes in Windsor loft conversion' },
               ]} />
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <FAQSection faqs={loftConversionFaqs} />
+        <FAQSection faqs={loftConversionFaqs} emitSchema={false} />
 
         {/* Areas Served */}
         <section className="py-16 px-8 bg-white border-t border-gray-100">
