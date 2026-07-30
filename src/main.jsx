@@ -25,14 +25,17 @@ if (typeof window !== 'undefined') {
   window.__VITE_REACT_SSG_STATIC_LOADER_DATA__ ||= {};
 }
 
-// Self-hosted fonts (latin only) — eliminates render-blocking Google Fonts request
+// Self-hosted fonts (latin only) — eliminates render-blocking Google Fonts request.
+// Only the weights actually used are loaded. Inter 600 (font-semibold) and
+// Playfair 700 had zero usages in the codebase — every font-serif use is
+// "font-serif italic font-light". Dropping them is visually identical: under
+// CSS font matching, font-medium (500) already resolves to 400 whether or not
+// 600 is present, and font-light (300) italic serif resolves to Playfair 400.
 import '@fontsource/inter/latin-300.css';
 import '@fontsource/inter/latin-400.css';
-import '@fontsource/inter/latin-600.css';
 import '@fontsource/inter/latin-700.css';
 import '@fontsource/playfair-display/latin-400.css';
 import '@fontsource/playfair-display/latin-400-italic.css';
-import '@fontsource/playfair-display/latin-700.css';
 
 import './index.css';
 

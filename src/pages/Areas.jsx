@@ -8,9 +8,13 @@ const Areas = () => {
   return (
     <>
       <Helmet>
-        <title>Areas We Cover | Fitted Furniture Berkshire & Surrey | RVS Bespoke</title>
-        <meta name="description" content="RVS Bespoke fits bespoke furniture across Windsor, Ascot, Maidenhead, Slough, Virginia Water and surrounding Berkshire and Surrey areas. Handcrafted in our Windsor workshop." />
+        <title>Areas We Cover | Fitted Furniture Berkshire &amp; Surrey</title>
+        <meta name="description" content="Fitted furniture across Windsor, Ascot, Maidenhead, Slough, Virginia Water and the surrounding Berkshire and Surrey areas, built in our workshop." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/areas" />
+        <meta property="og:title" content="Areas We Cover | Fitted Furniture Berkshire &amp; Surrey" />
+        <meta property="og:description" content="Fitted furniture across Windsor, Ascot, Maidenhead, Slough, Virginia Water and the surrounding Berkshire and Surrey areas, built in our workshop." />
+        <meta property="og:url" content="https://rvsbespoke.co.uk/areas" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -34,7 +38,7 @@ const Areas = () => {
               height={800}
               className="w-full h-full object-cover opacity-30"
               alt="RVS Bespoke fitted furniture workshop Windsor"
-              decoding="async"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent" />
           </div>

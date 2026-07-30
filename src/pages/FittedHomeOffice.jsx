@@ -58,7 +58,7 @@ const FittedHomeOffice = () => {
               height={800}
               className="w-full h-full object-cover opacity-40"
               alt="Bespoke fitted home office with custom desk and storage in Windsor"
-              decoding="async"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
           </div>

@@ -21,8 +21,11 @@ const AreaPage = () => {
   if (!area) return <Navigate to="/404" replace />;
 
   const canonicalUrl = `https://rvsbespoke.co.uk/areas/${area.slug}`;
-  const title = `Fitted Furniture ${area.name} | Bespoke Wardrobes, Kitchen Furniture & Storage | RVS Bespoke`;
-  const description = `Bespoke fitted furniture in ${area.name}, ${area.county}. Wardrobes, kitchen furniture, home offices and more — designed and built in our Windsor workshop. Free consultation available.`;
+  // Kept within Google's display limits: titles 50-65 chars, descriptions
+  // 140-160. The previous versions ran to 89-98 and 171-178 and were being
+  // truncated in search results.
+  const title = `Fitted Furniture ${area.name} | Wardrobes, Kitchens & Storage`;
+  const description = `Bespoke fitted furniture in ${area.name}, ${area.county}. Fitted wardrobes, kitchens, home offices and storage, designed and built in our Windsor workshop.`;
   const faqs = areaFaqs(area);
 
   const schema = {
@@ -67,6 +70,12 @@ const AreaPage = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <script type="application/ld+json">{JSON.stringify(schema.webPage)}</script>
         <script type="application/ld+json">{JSON.stringify(schema.breadcrumb)}</script>
       </Helmet>
@@ -82,7 +91,7 @@ const AreaPage = () => {
               height={800}
               className="w-full h-full object-cover opacity-30"
               alt={`Bespoke fitted furniture in ${area.name}, ${area.county}`}
-              decoding="async"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent" />
           </div>
