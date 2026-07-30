@@ -24,6 +24,10 @@ const Sitemap = () => {
         <title>Sitemap | RVS Bespoke</title>
         <meta name="description" content="A full list of every page on the RVS Bespoke website, including our fitted furniture services and the areas we cover." />
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content="Sitemap | RVS Bespoke" />
+        <meta property="og:description" content="A full list of every page on the RVS Bespoke website, including our fitted furniture services and the areas we cover." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
@@ -45,7 +49,7 @@ const Sitemap = () => {
             height={800}
             className="w-full h-full object-cover opacity-30"
             alt="RVS Bespoke joinery workshop in Windsor, Berkshire"
-            decoding="async"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/70 to-transparent"></div>
         </div>
