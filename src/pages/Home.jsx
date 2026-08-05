@@ -34,13 +34,7 @@ const Home = () => {
     setContactSubmitting(true);
 
     try {
-      await submitEnquiry({
-        ...contactForm,
-        subject: `New enquiry from ${contactForm.name} — RVS Bespoke website`,
-        from_name: contactForm.name,
-        replyto: contactForm.email,
-        _source: 'homepage-form',
-      });
+      await submitEnquiry({ ...contactForm, source: 'homepage-form' });
 
       setContactSubmitted(true);
     } catch (err) {
