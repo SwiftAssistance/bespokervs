@@ -80,8 +80,11 @@ export async function submitEnquiry({
     from_name: `${who} via RVS Bespoke website`,
     // Hitting reply in any mail client goes straight back to the customer.
     ...(enquiry.email ? { replyto: enquiry.email } : {}),
-    // Honeypot — bots fill this in, real visitors never see it.
-    botcheck: botcheck || '',
+    // Honeypot — bots fill this in, real visitors never see it. Only sent
+    // when actually filled: an unchecked honeypot is absent from a normal
+    // HTML form submission, so sending an empty one on every enquiry would
+    // be relying on Web3Forms testing the value rather than the key.
+    ...(botcheck ? { botcheck } : {}),
 
     Name: who,
     Email: enquiry.email || 'Not provided',
