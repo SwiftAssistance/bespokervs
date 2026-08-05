@@ -50,13 +50,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
 
     try {
-      await submitEnquiry({
-        ...formData,
-        subject: `New enquiry from ${formData.name} — RVS Bespoke website`,
-        from_name: formData.name,
-        replyto: formData.email,
-        _source: 'contact-modal',
-      });
+      await submitEnquiry({ ...formData, source: 'contact-modal' });
 
       setIsSubmitted(true);
     } catch (err) {

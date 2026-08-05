@@ -29,14 +29,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await submitEnquiry({
-        ...formData,
-        subject: `New enquiry from ${formData.name} — RVS Bespoke website`,
-        from_name: formData.name,
-        replyto: formData.email,
-        _source: 'contact-page',
-        _page: typeof window !== 'undefined' ? window.location.pathname : '',
-      });
+      await submitEnquiry({ ...formData, source: 'contact-page' });
 
       setIsSubmitted(true);
     } catch (err) {
