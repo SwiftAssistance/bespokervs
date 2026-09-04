@@ -254,6 +254,12 @@ export const siteConfig = {
           url: 'https://maps.app.goo.gl/mkRCM4SVngrDtJqr6',
         },
         {
+          quote: 'Richard is a master craftsman. He will design, manufacture and fit furniture to meet your exact needs. Competitively priced against standard high street providers, you will get furniture which will last a life time.',
+          author: 'Lin J',
+          project: 'Bespoke fitted furniture',
+          url: 'https://maps.app.goo.gl/WM6ApPZjaUtHASGC7',
+        },
+        {
           quote: 'I’ve used Richard several times now and I honestly can’t recommend him enough. The work is always spot on, he takes real pride in what he does, and nothing is ever too much trouble. On top of that, he’s a genuinely really nice guy and a pleasure to have around. I wouldn’t use anyone else now. Highly recommended!',
           author: 'Ian M',
           project: 'Repeat commissions',
