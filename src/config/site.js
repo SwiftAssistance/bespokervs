@@ -266,12 +266,6 @@ export const siteConfig = {
           url: 'https://maps.app.goo.gl/nH9jE4tmZxEpA51y9',
         },
         {
-          quote: 'Richard has done a few jobs for us now and we’ve always been really happy with his work. Lovely guy, friendly and reliable. Would definitely recommend him!',
-          author: 'Pili T',
-          project: 'Several projects',
-          url: 'https://maps.app.goo.gl/fPxHWZVwaLscBFfG8',
-        },
-        {
           quote: 'Excellent custom storage design, build, install.',
           author: 'Scott P',
           project: 'Custom storage design & install',
