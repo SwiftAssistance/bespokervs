@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Quote, MapPin, Send, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { areas } from '../config/areas';
 import { homeFaqs } from '../config/faqs';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import { submitEnquiry } from '../utils/forms';
@@ -108,14 +109,14 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>RVS Bespoke | Fitted Furniture for Every Room in Windsor, Berkshire</title>
-        <meta name="description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop. Serving Berkshire for over a decade. Free design consultation." />
+        <title>Fitted Furniture in Windsor &amp; Berkshire | RVS Bespoke</title>
+        <meta name="description" content="Bespoke fitted furniture for every room in your home, handcrafted in our Windsor workshop and installed across Berkshire. Free design consultation, no travel charge." />
         <link rel="canonical" href="https://rvsbespoke.co.uk/" />
-        <meta property="og:title" content="RVS Bespoke | Fitted Furniture for Every Room in Windsor" />
+        <meta property="og:title" content="Fitted Furniture in Windsor &amp; Berkshire | RVS Bespoke" />
         <meta property="og:description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire." />
         <meta property="og:url" content="https://rvsbespoke.co.uk/" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="RVS Bespoke | Fitted Furniture for Every Room in Windsor" />
+        <meta name="twitter:title" content="Fitted Furniture in Windsor &amp; Berkshire | RVS Bespoke" />
         <meta name="twitter:description" content="Bespoke fitted furniture for every room in your home. Handcrafted in our Windsor workshop for homes across Berkshire." />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -326,6 +327,38 @@ const Home = () => {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Areas Covered */}
+      <section className="py-20 px-8 bg-white border-t border-gray-100 below-fold">
+        <div className="max-w-[1200px] mx-auto text-center">
+          <p className="section-label justify-center mb-8">Where We Work</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-primary-dark tracking-tight mb-6">
+            Fitted Furniture Across Berkshire
+          </h2>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            Everything is made in our Windsor workshop and installed by our own team in homes across
+            Berkshire — Windsor, Eton, Slough, Maidenhead, Ascot, Sunningdale, Datchet, Bracknell
+            and Wokingham — with no travel charge anywhere in our area.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {areas.map((area) => (
+              <Link
+                key={area.slug}
+                to={`/areas/${area.slug}`}
+                className="border border-gray-200 px-5 py-2 text-sm text-gray-600 hover:border-accent-gold hover:text-primary-dark transition-colors"
+              >
+                {area.name}
+              </Link>
+            ))}
+          </div>
+          <Link
+            to="/fitted-furniture-berkshire"
+            className="inline-flex items-center gap-4 bg-primary-dark text-white px-12 py-5 font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-accent-gold transition-all"
+          >
+            Fitted Furniture in Berkshire <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 

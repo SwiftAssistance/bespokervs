@@ -50,7 +50,7 @@ const Areas = () => {
                 Areas We <span className="text-accent-gold font-serif italic font-light">Cover</span>
               </h1>
               <p className="text-xl text-white/70 max-w-xl leading-relaxed">
-                We design and install bespoke fitted furniture across Windsor, Berkshire, and the surrounding areas. Based in Windsor, we cover a wide radius with no extra travel charges.
+                We design and install bespoke fitted furniture across Berkshire and the surrounding areas. Based in Windsor, we cover a wide radius with no extra travel charges.
               </p>
             </div>
           </div>
@@ -59,6 +59,25 @@ const Areas = () => {
         {/* Areas Grid */}
         <section className="py-20 px-8 bg-white">
           <div className="max-w-[1200px] mx-auto">
+            <Link
+              to="/fitted-furniture-berkshire"
+              className="group block border border-accent-gold/40 bg-background-light p-8 mb-10 hover:border-accent-gold transition-all"
+            >
+              <p className="text-accent-gold text-[10px] font-bold uppercase tracking-[0.3em] mb-2">
+                County Overview
+              </p>
+              <h2 className="text-2xl font-bold text-primary-dark mb-3">
+                Fitted Furniture in Berkshire
+              </h2>
+              <p className="text-gray-500 text-sm leading-relaxed mb-4 max-w-2xl">
+                What we build for Berkshire homes, the towns and villages we cover, and how a
+                project runs from first call to installation.
+              </p>
+              <span className="inline-flex items-center gap-2 text-primary-dark text-[10px] font-bold uppercase tracking-[0.3em] group-hover:gap-4 transition-all">
+                Read More <ArrowRight size={12} />
+              </span>
+            </Link>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {areas.map((area) => (
                 <Link

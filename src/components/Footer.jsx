@@ -64,6 +64,11 @@ const Footer = () => {
               Areas We Serve
             </h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-white/50 text-sm">
+              <li className="col-span-2">
+                <Link to="/fitted-furniture-berkshire" className="text-white/70 hover:text-white transition-colors">
+                  Fitted Furniture Berkshire
+                </Link>
+              </li>
               {areas.map((area) => (
                 <li key={area.slug}>
                   <Link to={`/areas/${area.slug}`} className="hover:text-white transition-colors">

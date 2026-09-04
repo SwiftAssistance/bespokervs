@@ -122,6 +122,19 @@ const AreaPage = () => {
                 We also cover nearby areas including {area.nearby.join(', ')}.
               </p>
             )}
+
+            <p className="text-gray-500 text-sm mt-4">
+              {area.county === 'Berkshire'
+                ? 'More on our work across the county: '
+                : 'Just over the county line, we also cover '}
+              <Link
+                to="/fitted-furniture-berkshire"
+                className="text-primary-dark font-medium underline decoration-accent-gold underline-offset-4 hover:text-accent-gold transition-colors"
+              >
+                fitted furniture in Berkshire
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

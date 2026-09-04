@@ -85,6 +85,11 @@ const Sitemap = () => {
           <div>
             <h2 className="text-lg font-bold text-primary-dark uppercase tracking-widest mb-4">Areas We Cover</h2>
             <ul className="space-y-3">
+              <li>
+                <Link to="/fitted-furniture-berkshire" className="text-gray-600 hover:text-accent-gold transition-colors">
+                  Fitted Furniture Berkshire
+                </Link>
+              </li>
               {areas.map((area) => (
                 <li key={area.slug}>
                   <Link to={`/areas/${area.slug}`} className="text-gray-600 hover:text-accent-gold transition-colors">

@@ -6,6 +6,7 @@ import { areas } from './config/areas';
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Areas = lazy(() => import('./pages/Areas'));
 const AreaPage = lazy(() => import('./pages/AreaPage'));
+const BerkshireFittedFurniture = lazy(() => import('./pages/BerkshireFittedFurniture'));
 const LivingRoom = lazy(() => import('./pages/LivingRoom'));
 const Bedroom = lazy(() => import('./pages/Bedroom'));
 const FittedHomeOffice = lazy(() => import('./pages/FittedHomeOffice'));
@@ -42,6 +43,9 @@ export const routes = [
       { path: 'terms', element: withSuspense(<Terms />) },
       { path: 'sitemap', element: withSuspense(<Sitemap />) },
       { path: 'areas', element: withSuspense(<Areas />) },
+      // County landing page for 'fitted furniture Berkshire'. A static path, so
+      // it is prerendered like every other non-parameterised route.
+      { path: 'fitted-furniture-berkshire', element: withSuspense(<BerkshireFittedFurniture />) },
       {
         path: 'areas/:areaSlug',
         element: withSuspense(<AreaPage />),
