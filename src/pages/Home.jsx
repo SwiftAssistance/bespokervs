@@ -258,16 +258,20 @@ const Home = () => {
               href={googleReviews.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mt-8 bg-white px-6 py-3 shadow-md hover:shadow-lg transition-shadow"
+              className="group inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-3 mt-10 bg-white border border-gray-200 hover:border-accent-gold px-7 py-4 shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <GoogleLogo size={22} />
-              <span className="font-bold text-primary-dark text-lg leading-none">{googleReviews.rating}</span>
-              <span className="flex gap-0.5" aria-hidden="true">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="text-accent-gold fill-accent-gold" />
-                ))}
+              <GoogleLogo size={24} />
+              <span className="hidden sm:block w-px h-6 bg-gray-200" aria-hidden="true" />
+              <span className="flex items-center gap-2.5">
+                <span className="font-bold text-primary-dark text-xl leading-none">{googleReviews.rating}</span>
+                <span className="flex gap-0.5" aria-hidden="true">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-accent-gold fill-accent-gold" />
+                  ))}
+                </span>
               </span>
-              <span className="text-sm text-gray-500 leading-none">
+              <span className="hidden sm:block w-px h-6 bg-gray-200" aria-hidden="true" />
+              <span className="text-sm text-gray-500 group-hover:text-primary-dark transition-colors leading-none tracking-wide">
                 {googleReviews.reviewCount} Google reviews
               </span>
               <span className="sr-only">{googleReviews.label} — opens our Google Business Profile in a new tab</span>
@@ -312,7 +316,7 @@ const Home = () => {
                           <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
                           <p className="text-sm text-gray-400">{testimonial.project}</p>
                         </div>
-                        <span className="flex items-center gap-2 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2.5 border border-gray-200 bg-white px-4 py-2 text-xs md:text-sm text-gray-500 tracking-wide">
                           <GoogleLogo size={16} />
                           {googleReviews.badge}
                         </span>
