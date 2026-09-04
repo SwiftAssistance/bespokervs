@@ -1,18 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Quote, MapPin, Send, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Quote, MapPin, Send, CheckCircle, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { homeFaqs } from '../config/faqs';
 import { imgUrl, imgSrcSet } from '../utils/image';
 import { submitEnquiry } from '../utils/forms';
 import ContactModal from '../components/ContactModal';
 import FAQSection from '../components/FAQSection';
+import GoogleLogo from '../components/GoogleLogo';
 
 const Home = () => {
   const { home, rooms: services, images, company } = siteConfig;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const testimonials = home.testimonials.items;
+  const googleReviews = home.testimonials.google;
   const loopedTestimonials = [testimonials[testimonials.length - 1], ...testimonials, testimonials[0]];
   const [slideIndex, setSlideIndex] = useState(1);
   const [slideTransitionEnabled, setSlideTransitionEnabled] = useState(true);
@@ -252,6 +254,24 @@ const Home = () => {
             <h2 className="text-5xl md:text-7xl font-bold text-primary-dark tracking-tighter">
               {home.testimonials.title}
             </h2>
+            <a
+              href={googleReviews.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mt-8 bg-white px-6 py-3 shadow-md hover:shadow-lg transition-shadow"
+            >
+              <GoogleLogo size={22} />
+              <span className="font-bold text-primary-dark text-lg leading-none">{googleReviews.rating}</span>
+              <span className="flex gap-0.5" aria-hidden="true">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={16} className="text-accent-gold fill-accent-gold" />
+                ))}
+              </span>
+              <span className="text-sm text-gray-500 leading-none">
+                {googleReviews.reviewCount} Google reviews
+              </span>
+              <span className="sr-only">{googleReviews.label} — opens our Google Business Profile in a new tab</span>
+            </a>
           </div>
 
           <div className="relative">
@@ -279,14 +299,23 @@ const Home = () => {
                   <div key={i} className="min-w-full">
                     <div className="bg-white p-12 shadow-xl relative">
                       <Quote size={48} className="text-accent-gold/20 absolute top-8 right-8" />
+                      <div className="flex gap-1 mb-6" role="img" aria-label="Rated 5 out of 5">
+                        {[...Array(5)].map((_, star) => (
+                          <Star key={star} size={18} className="text-accent-gold fill-accent-gold" />
+                        ))}
+                      </div>
                       <p className="text-gray-600 text-xl md:text-2xl leading-relaxed mb-10 italic font-light">
                         &ldquo;{testimonial.quote}&rdquo;
                       </p>
-                      <div className="border-t border-gray-100 pt-6">
-                        <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
-                        <p className="text-sm text-gray-400">
-                          {testimonial.location} — {testimonial.project}
-                        </p>
+                      <div className="border-t border-gray-100 pt-6 flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                          <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
+                          <p className="text-sm text-gray-400">{testimonial.project}</p>
+                        </div>
+                        <span className="flex items-center gap-2 text-sm text-gray-500">
+                          <GoogleLogo size={16} />
+                          {googleReviews.badge}
+                        </span>
                       </div>
                     </div>
                   </div>
