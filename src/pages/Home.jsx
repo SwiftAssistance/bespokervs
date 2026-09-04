@@ -316,10 +316,21 @@ const Home = () => {
                           <p className="font-bold text-primary-dark text-lg">{testimonial.author}</p>
                           <p className="text-sm text-gray-400">{testimonial.project}</p>
                         </div>
-                        <span className="inline-flex items-center gap-2.5 border border-gray-200 bg-white px-4 py-2 text-xs md:text-sm text-gray-500 tracking-wide">
+                        <a
+                          href={testimonial.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          draggable="false"
+                          onMouseDown={(e) => e.stopPropagation()}
+                          onTouchStart={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-2.5 border border-gray-200 hover:border-accent-gold bg-white px-4 py-2 text-xs md:text-sm text-gray-500 hover:text-primary-dark tracking-wide transition-colors"
+                        >
                           <GoogleLogo size={16} />
                           {googleReviews.badge}
-                        </span>
+                          <span className="sr-only">
+                            {` — read ${testimonial.author}'s review on Google, opens in a new tab`}
+                          </span>
+                        </a>
                       </div>
                     </div>
                   </div>
